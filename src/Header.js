@@ -14,7 +14,7 @@ function Header() {
           </button>
         </div>
       </div>
-      <div className="picture md:h-250 h-75 grid place-content-center w-full ">
+      <div className="picture md:h-250 h-68 grid place-content-center w-full ">
         {' '}
         <h1 className="font-bold  sm:text-8xl text-6xl md:text-9xl lg:text-12xl nft-font text-white">
           Artify Nft's
