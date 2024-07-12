@@ -87,6 +87,9 @@ module.exports = {
       fontWeight: {
         semi: '500px',
       },
+      fontSize: {
+        '12xl': '12rem',
+      },
 
       margin: {
         100: '450px',

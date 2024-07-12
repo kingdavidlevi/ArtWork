@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
-function SignUp() {
+function Login() {
   const [visibility, setVisibility] = useState(false);
 
   const handlePassword = () => {
@@ -10,30 +10,11 @@ function SignUp() {
   };
   return (
     <section className="grid place-items-center mt-20">
-      <p className=" md:font-bold text-base font-semibold  text-blue-900">
-        SIGNUP
-      </p>
-      <p className="mt-3 text-black  font-bold text-lg  md:text-xl">
-        Create an Account
-      </p>
+      <p className=" font-semibold text-base  text-blue-900">LOGIN</p>
 
-      <div className="bg-blue-900 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
+      <div className="bg-blue-900 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6 pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
-            <div className="flex gap-4 w-90%">
-              <div>
-                {' '}
-                <FaUser className="text-white " size={15} />
-              </div>
-              <p className="text-white  text-sm  font-medium">Name</p>
-            </div>
-            <input
-              type="text"
-              placeholder="Enter your Fullname"
-              className="mt-3 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
-            />
-          </section>
-          <section className="mt-6 grid place-items-center">
             <div className="flex gap-4 w-90%">
               <div>
                 {' '}
@@ -63,24 +44,7 @@ function SignUp() {
               required
             />
           </section>
-          <section className="mt-6 grid place-items-center">
-            <div className="flex gap-4 w-90%">
-              <div>
-                {' '}
-                <FaUser className="text-white " size={15} />
-              </div>
-              <p className="text-white  text-sm  font-medium">
-                {' '}
-                Confirm Password
-              </p>
-            </div>
-            <input
-              type={visibility ? 'text' : 'password'}
-              placeholder="Confirm your password"
-              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
-              required
-            />
-          </section>
+
           <section className="mt-6 grid  place-items-center">
             <div className="flex gap-4 w-90%">
               <input
@@ -92,33 +56,24 @@ function SignUp() {
               <p className="text-white  text-sm  font-medium"> Show Password</p>
             </div>
           </section>
-          <section className="mt-8 grid ml-4   place-items-center">
-            <div className="flex gap-4 w-90%">
-              <input type="checkbox" className="w-5 h-5 " required />
-              <p className="text-white  text-sm  font-medium">
-                {' '}
-                I agree to{' '}
-                <span className="text-purple-400">Privacy Policy</span>
-              </p>
-            </div>
-          </section>
+
           <section className="place-items-center grid mt-8">
             <button
               type="submit"
               className=" hover:bg-purple-600 text-base font-medium rounded-full py-2 bg-black w-90% text-white"
               required
             >
-              Sign Up
+              Log In
             </button>
             <p className="text-white mt-8">
-              Already have an account?{' '}
+              Don't have an account?{' '}
               <span>
                 {' '}
                 <NavLink
                   className="font-medium hover:text-purple-300 text-base text-purple-400"
-                  to="/Login"
+                  to="/SignUp"
                 >
-                  Sign in
+                  Register Now
                 </NavLink>
               </span>
             </p>
@@ -128,4 +83,4 @@ function SignUp() {
     </section>
   );
 }
-export default SignUp;
+export default Login;
