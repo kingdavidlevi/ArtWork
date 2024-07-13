@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Header() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 0); // 0ms delay to trigger the effect immediately after mount
+  }, []);
   return (
     <section>
       <div className="w-full fixed z-10 bg-blue-900 h-16 flex place-items-center justify-between pr-3 md:pr-12">
@@ -22,6 +29,16 @@ function Header() {
         <p className="text-white font-bold mt-4 md:mt-8 md:text-3xl grid place-items-center ">
           Market limitless outstanding nft
         </p>
+      </div>
+      <div className="paragraph-container bg-black py-2">
+        <div className=" sliding-paragraph">
+          <p className="text-gray-400 text-lg font-semibold md:text-xl md:font-bold">
+            Welcome to our NFT minting site! Enjoy seamless minting with low
+            fees and user-friendly interfaces. Our platform ensures top-notch
+            security for your digital assets. Experience fast transactions,
+            detailed analytics, and personalized support.
+          </p>
+        </div>
       </div>
     </section>
   );
