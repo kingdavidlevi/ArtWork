@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .picture {
-  background-image: url('./Images/todd-cravens-QnBrjY-nFUs-unsplash.jpg');
+  background-image: url('./Images/240_F_423044511_bCUtUzoO2LUAsOJrZzCtkaX7w3FS7SOZ.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -11,6 +11,22 @@
 .nft-font {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
+}
+/* Header.css */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.glass-header h1 {
+  color: white; /* Text color */
+  margin: 0;
 }
 
 /*25% {
