@@ -16,7 +16,7 @@ function Homepage() {
       </div>
       <div className=" mt-6 paragraph-container bg-black py-2">
         <div className=" sliding-paragraph">
-          <p className="text-gray-300 text-lg font-semibold md:text-xl md:font-bold">
+          <p className="text-gray-300 text-base font-semibold md:text-xl md:font-bold">
             Welcome to our NFT minting site! Enjoy seamless minting with low
             fees and user-friendly interfaces. Our platform ensures top-notch
             security for your digital assets. Experience fast transactions,
@@ -24,9 +24,9 @@ function Homepage() {
           </p>
         </div>
       </div>
-      <div className="w-12 bottom-5 h-12 z-10  grid border right-5 absolute border-blue-200 place-content-center rounded-full bg-blue-500">
+      <div className="w-14  bottom-8 h-14 z-10  grid border right-8 absolute border-blue-200 place-content-center rounded-full bg-blue-500">
         {' '}
-        <FaCommentDots className="text-blue-100 w-6 h-6" />
+        <FaCommentDots className="text-blue-100 w-7 h-7 " />
       </div>
     </div>
   );
