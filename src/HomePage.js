@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Collection from './Collection';
 import { FaCommentDots } from 'react-icons/fa';
 function Homepage() {
   return (
@@ -28,6 +29,7 @@ function Homepage() {
         {' '}
         <FaCommentDots className="text-blue-100 w-7 h-7 " />
       </div>
+      <Collection />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaLock, FaWallet } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 function SignUp() {
@@ -44,6 +44,21 @@ function SignUp() {
             <input
               type="email"
               placeholder="info@yourmail.com"
+              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              required
+            />
+          </section>
+          <section className="mt-6 grid place-items-center">
+            <div className="flex gap-4 w-90%">
+              <div>
+                {' '}
+                <FaWallet className="text-white mt-0.5 " size={15} />
+              </div>
+              <p className="text-white text-sm  font-medium ">Wallet address</p>
+            </div>
+            <input
+              type="email"
+              placeholder="ETH Wallet address"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
               required
             />

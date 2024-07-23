@@ -6,10 +6,17 @@ function Header() {
     <section>
       <div className="w-full fixed z-10 glass-header  h-16 flex place-items-center justify-between pr-3 md:pr-12">
         <div className="text-white">LOGO HERE</div>
+        <div className="flex gap-6 place-items-center">
+          <div>
+            <input className="bg-slate-500 py-2 btn w-96 rounded-lg outline-none " />
+          </div>
+          <div className="text-white text-lg font-semibold">Drops</div>
+          <div className="text-white text-lg font-semibold">Create</div>
+        </div>
         <div className="flex gap-5 md:gap-6">
           <NavLink to="/Login">
             {' '}
-            <button className="md:px-7 text-white hover:bg-red-400 bg-red-500 py-2  md:text-base text-sm px-4 font-medium rounded-lg">
+            <button className="md:px-7 text-white btn bg-slate-500 py-1.5  md:text-base text-sm px-4 font-medium rounded-lg">
               Login
             </button>
           </NavLink>
