@@ -8,7 +8,7 @@ function Header() {
         <div className="text-white">LOGO HERE</div>
         <div className="flex gap-6 place-items-center">
           <div>
-            <input className="bg-slate-500 py-2 btn w-96 rounded-lg outline-none " />
+            <input className=" py-2 btn w-96 rounded-lg outline-none " />
           </div>
           <div className="text-white text-lg font-semibold">Drops</div>
           <div className="text-white text-lg font-semibold">Create</div>
@@ -16,7 +16,7 @@ function Header() {
         <div className="flex gap-5 md:gap-6">
           <NavLink to="/Login">
             {' '}
-            <button className="md:px-7 text-white btn bg-slate-500 py-1.5  md:text-base text-sm px-4 font-medium rounded-lg">
+            <button className="md:px-7 text-white btn   py-1.5  md:text-base text-sm px-4 font-medium rounded-lg">
               Login
             </button>
           </NavLink>

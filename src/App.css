@@ -24,8 +24,11 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 .btn {
+  background: rgba(255, 255, 255, 0.2);
+}
+/*border: 2px solid rgba(255, 255, 255, 0.2);*/
+.btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 .glass-header h1 {
   color: white; /* Text color */
