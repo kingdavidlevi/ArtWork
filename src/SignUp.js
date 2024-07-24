@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaWallet } from 'react-icons/fa';
+import './App.css';
 import { NavLink } from 'react-router-dom';
 
 function SignUp() {
@@ -10,14 +11,14 @@ function SignUp() {
   };
   return (
     <section className="grid place-items-center mt-20">
-      <p className=" md:font-bold text-base font-semibold  text-blue-900">
+      <p className=" md:font-bold text-base font-semibold  text-gray-600">
         SIGNUP
       </p>
       <p className="mt-3 text-black  font-bold text-lg  md:text-xl">
         Create an Account
       </p>
 
-      <div className="bg-blue-900 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
+      <div className=" bg-gray-600 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">

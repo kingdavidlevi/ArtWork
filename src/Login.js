@@ -10,9 +10,9 @@ function Login() {
   };
   return (
     <section className="grid place-items-center mt-20">
-      <p className=" font-semibold text-base  text-blue-900">LOGIN</p>
+      <p className=" font-semibold text-base  text-black">LOGIN</p>
 
-      <div className="bg-blue-900 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6 pb-8 ">
+      <div className=" bg-gray-600 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6 pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">
