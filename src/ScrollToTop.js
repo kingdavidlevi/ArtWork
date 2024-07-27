@@ -1,28 +1,20 @@
-import { Outlet, useLocation, useOutletContext } from "react-router-dom";
-import React,{useState,useEffect} from "react";
+import { Outlet, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
+function ScrollToTop() {
+  const location = useLocation();
 
-function    ScrollToTop (){
-    const location = useLocation();
-    
-useEffect(() =>{
+  const [isOpen, setIsOpen] = useState(false);
 
-    window.scrollTo(0,0);
-  
-   },[location]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
-   return (
+  return (
     <div>
-  
-    <Outlet  />
-   
-
+      <Outlet context={{ isOpen, setIsOpen }} />
     </div>
-)
-
-
+  );
 }
-
-
 
 export default ScrollToTop;

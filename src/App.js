@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ScrollToTop from './ScrollToTop';
+
 import SignUp from './SignUp';
 import {
   Route,
@@ -11,6 +12,7 @@ import {
 } from 'react-router-dom';
 import Login from './Login';
 import Homepage from './HomePage';
+import Header from './Header';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Homepage />} />
       <Route path="SignUp" element={<SignUp />} />
       <Route path="Login" element={<Login />} />
+      <Route path="Header" element={<Header />} />
     </Route>,
   ),
 );
