@@ -10,7 +10,7 @@ function SignUp() {
     setVisibility((prevstate) => !prevstate);
   };
   return (
-    <section className="grid place-items-center mt-20">
+    <section className="grid bg-black place-items-center pt-20">
       <p className=" md:font-bold text-base font-semibold  text-gray-600">
         SIGNUP
       </p>

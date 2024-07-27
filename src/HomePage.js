@@ -4,7 +4,7 @@ import Collection from './Collection';
 import { FaCommentDots } from 'react-icons/fa';
 function Homepage() {
   return (
-    <div>
+    <div className="bg-black px-8 h-full">
       <Header />
       <div className="picture md:h-250 h-68 grid place-content-center w-full ">
         {' '}
@@ -15,7 +15,7 @@ function Homepage() {
           Market limitless outstanding nft
         </p>
       </div>
-      <div className=" mt-6 paragraph-container bg-black py-2">
+      <div className=" mt-6 paragraph-container  btn py-2">
         <div className=" sliding-paragraph">
           <p className="text-gray-300 text-base font-semibold md:text-xl md:font-bold">
             Welcome to our NFT minting site! Enjoy seamless minting with low
