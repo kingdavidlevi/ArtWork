@@ -18,6 +18,7 @@ function Header() {
   const toggleSearchBtn = () => {
     setToggleSearch(!toggleSearch);
   };
+
   return (
     <section>
       {!toggleSearch ? (
@@ -83,16 +84,16 @@ function Header() {
           </div>
         </div>
       ) : (
-        <div className="h-18   pl-6 flex gap-5 items-center w-full glass-header">
-          <div className="text-white mt-1">
+        <div className="h-18   pl-5 flex gap-4 items-center w-full glass-header">
+          <div className="text-white ">
             <FaLessThan
-              className=" font-medium text-gray-300 "
+              className=" font-normal text-lg text-gray-300 "
               onClick={toggleSearchBtn}
             />
           </div>
           <input
             placeholder="Search"
-            className="border-none pr-14 outline-none font-medium w-full text-white text-base placeholder:font-normal  placeholder:text-lg bg-black placeholder:text-gray-300 "
+            className="border-none pr-14 outline-none font-medium w-full text-white text-base placeholder:font-normal  placeholder:text-base  bg-black placeholder:text-gray-300 "
           />
           <FaTimes className="text-gray-300 absolute right-5" />
         </div>
