@@ -4,7 +4,7 @@ import Collection from './Collection';
 import { FaCommentDots } from 'react-icons/fa';
 function Homepage() {
   return (
-    <div className="bg-black px-8 h-full">
+    <div className="bg-black md:px-8 px-3 h-full">
       <Header />
       <div className="picture md:h-250 h-68 grid place-content-center w-full ">
         {' '}

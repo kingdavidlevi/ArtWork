@@ -5,15 +5,15 @@ import { FaWallet, FaSearch, FaUser } from 'react-icons/fa';
 function Header() {
   return (
     <section>
-      <div className="w-full px-8 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
+      <div className="w-full md:px-8 px-3 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
         <div className=" flex xl:gap-10 gap-5 ">
           <div className="text-white Artify-div  pr-6">
             <p className="lg:text-2xl text-xl font-semibold ">Artify Nft's</p>
           </div>
-          <div className="text-white text-lg hidden sm:block font-semibold">
+          <div className="text-white cursor-pointer text-lg hidden sm:block font-semibold">
             Drops
           </div>
-          <div className="text-white text-lg hidden sm:block font-semibold">
+          <div className="text-white cursor-pointer text-lg hidden sm:block font-semibold">
             Authors
           </div>
 
