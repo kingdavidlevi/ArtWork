@@ -9,10 +9,12 @@ function Login() {
     setVisibility((prevstate) => !prevstate);
   };
   return (
-    <section className="grid h-screen bg-black place-items-center pt-20">
-      <p className=" font-semibold text-base  text-white">LOGIN</p>
+    <section className="grid h-screen bg-black place-content-center pt-10">
+      <p className=" font-semibold text-base grid place-items-center text-white">
+        LOGIN
+      </p>
 
-      <div className="   mb-14 btn rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6 pb-8 ">
+      <div className="   mb-14 btn rounded-lg  xl:w-270 w-90% md:w-260  mt-6  pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">
