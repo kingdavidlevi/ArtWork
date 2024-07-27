@@ -12,13 +12,21 @@ import {
 function Header() {
   const { isOpen, setIsOpen } = useOutletContext();
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [search, setSearch] = useState('');
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   const toggleSearchBtn = () => {
     setToggleSearch(!toggleSearch);
   };
+  const handleInput = (e) => {
+    const data = e.target.value;
+    setSearch(data);
+  };
 
+  const removeText = () => {
+    setSearch('');
+  };
   return (
     <section>
       {!toggleSearch ? (
@@ -47,6 +55,8 @@ function Header() {
               <input
                 className=" py-2.5 lg:block hidden text-white text-base pl-12 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-lg placeholder:text-white "
                 placeholder="Search"
+                onChange={handleInput}
+                value={search}
               />
             </div>
           </div>
@@ -94,8 +104,17 @@ function Header() {
           <input
             placeholder="Search"
             className="border-none pr-14 outline-none font-medium w-full text-white text-base placeholder:font-normal  placeholder:text-base  bg-black placeholder:text-gray-300 "
+            onChange={handleInput}
+            value={search}
           />
-          <FaTimes className="text-gray-300 absolute right-5" />
+          {search.length > 0 ? (
+            <FaTimes
+              className="text-gray-300 text-lg absolute right-5"
+              onClick={removeText}
+            />
+          ) : (
+            ''
+          )}
         </div>
       )}
     </section>
