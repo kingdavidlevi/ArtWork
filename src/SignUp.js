@@ -10,7 +10,7 @@ function SignUp() {
     setVisibility((prevstate) => !prevstate);
   };
   return (
-    <section className="grid bg-black place-items-center pt-20">
+    <section className="grid h-full  bg-black place-items-center pt-20">
       <p className=" md:font-bold text-base font-semibold  text-gray-600">
         SIGNUP
       </p>
@@ -18,7 +18,7 @@ function SignUp() {
         Create an Account
       </p>
 
-      <div className=" bg-gray-600 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
+      <div className=" btn mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">
