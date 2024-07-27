@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaWallet, FaSearch, FaUser } from 'react-icons/fa';
+import { FaWallet, FaSearch, FaUser, FaBars } from 'react-icons/fa';
 
 function Header() {
   return (
@@ -42,11 +42,14 @@ function Header() {
               Login
             </button>
           </NavLink>
-          <FaSearch className="   mt-3.5  text-white  sm:hidden block   text-lg" />
+          <FaSearch className="   mt-3.5   text-white  sm:hidden block   text-lg" />
           <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
             <FaUser className="text-white" />
           </div>
         </div>
+        <section>
+          <FaBars className="text-white text-xl" />
+        </section>
       </div>
     </section>
   );

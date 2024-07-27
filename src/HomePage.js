@@ -4,20 +4,20 @@ import Collection from './Collection';
 import { FaCommentDots } from 'react-icons/fa';
 function Homepage() {
   return (
-    <div className="bg-black md:px-8 px-3 h-full">
+    <div className="bg-black md:px-8  h-screen">
       <Header />
       <div className="picture md:h-250 h-68 grid place-content-center w-full ">
         {' '}
-        <h1 className="font-bold  sm:text-8xl text-6xl md:text-9xl lg:text-12xl nft-font text-white">
+        <h1 className="md:font-bold font-medium sm:text-8xl text-6xl md:text-9xl lg:text-12xl nft-font text-white">
           Artify Nft's
         </h1>
-        <p className="text-yellow-400 font-bold mt-4 md:mt-8 md:text-3xl grid place-items-center ">
+        <p className="text-yellow-400 md:font-bold font-medium mt-4 md:mt-8 md:text-3xl grid place-items-center ">
           Market limitless outstanding nft
         </p>
       </div>
       <div className=" mt-6 paragraph-container  btn py-2">
         <div className=" sliding-paragraph">
-          <p className="text-gray-300 text-base font-semibold md:text-xl md:font-bold">
+          <p className="text-gray-300 text-sm font-semibold md:text-xl md:font-bold">
             Welcome to our NFT minting site! Enjoy seamless minting with low
             fees and user-friendly interfaces. Our platform ensures top-notch
             security for your digital assets. Experience fast transactions,
