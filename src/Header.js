@@ -33,7 +33,7 @@ function Header() {
             />
           </div>
         </div>
-        <div className="flex gap-5 md:gap-6">
+        <div className="flex gap-6 md:gap-6">
           <FaSearch className="  mt-3.5 ml-4 text-white lg:hidden sm:block hidden text-lg" />
           <NavLink to="/Login">
             {' '}
@@ -46,10 +46,9 @@ function Header() {
           <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
             <FaUser className="text-white" />
           </div>
+
+          <FaBars className="text-white mt-3 sm:hidden text-xl" />
         </div>
-        <section>
-          <FaBars className="text-white text-xl" />
-        </section>
       </div>
     </section>
   );

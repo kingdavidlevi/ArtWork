@@ -14,7 +14,7 @@ function SignUp() {
       <p className=" md:font-bold text-base font-semibold  text-gray-600">
         SIGNUP
       </p>
-      <p className="mt-3 text-black  font-bold text-lg  md:text-xl">
+      <p className="mt-3 text-white  font-bold text-lg  md:text-xl">
         Create an Account
       </p>
 

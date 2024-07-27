@@ -9,8 +9,8 @@ function Login() {
     setVisibility((prevstate) => !prevstate);
   };
   return (
-    <section className="grid place-items-center mt-20">
-      <p className=" font-semibold text-base  text-black">LOGIN</p>
+    <section className="grid bg-black place-items-center pt-20">
+      <p className=" font-semibold text-base  text-white">LOGIN</p>
 
       <div className=" bg-gray-600 mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6 pb-8 ">
         <form>
