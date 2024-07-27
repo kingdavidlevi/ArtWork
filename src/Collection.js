@@ -8,8 +8,6 @@ function Collection() {
         Latest Collection
       </h1>
       <FaArrowRight className="text-white mt-1.5 md:mt-2" />
-
-      <div className="flex overflow-hidden w-full px-3 md:px-8"></div>
     </div>
   );
 }
