@@ -11,17 +11,17 @@ function Homepage() {
       <Header />
 
       <div
-        className={`  fixed h-full w-full sm:hidden mt-18 menu ${
+        className={`   fixed h-full w-full sm:hidden mt-18 menu ${
           isOpen ? 'open' : ''
         }`}
       >
-        <ul>
-          <li>
-            <FaCalendar />
-            <p>Drops</p>
+        <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
+          <li className="flex  items-center gap-3 w-full">
+            <FaCalendar className="text-white  text-2xl" />
+            <p className="text-white  text-base font-semibold">Drops</p>
           </li>
           <li>
-            <FaGreaterThan />
+            <FaGreaterThan className="font-bold text-sm text-white" />
           </li>
         </ul>
       </div>
