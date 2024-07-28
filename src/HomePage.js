@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Collection from './Collection';
 import { useOutletContext } from 'react-router-dom';
-import { FaCommentDots } from 'react-icons/fa';
+
+import { FaGreaterThan, FaCalendar, FaCommentDots } from 'react-icons/fa6';
 function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
   return (
@@ -14,7 +15,15 @@ function Homepage() {
           isOpen ? 'open' : ''
         }`}
       >
-        hello
+        <ul>
+          <li>
+            <FaCalendar />
+            <p>Drops</p>
+          </li>
+          <li>
+            <FaGreaterThan />
+          </li>
+        </ul>
       </div>
       {!isOpen && (
         <div>

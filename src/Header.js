@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useOutletContext } from 'react-router-dom';
-import {
-  FaWallet,
-  FaSearch,
-  FaUser,
-  FaBars,
-  FaTimes,
-  FaLessThan,
-} from 'react-icons/fa';
+import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { FaLessThan } from 'react-icons/fa6';
 
 function Header() {
   const { isOpen, setIsOpen } = useOutletContext();
@@ -106,7 +100,7 @@ function Header() {
         <div className="h-18  sm:pl-8 pl-5 flex gap-4 items-center w-full glass-header">
           <div className="text-white ">
             <FaLessThan
-              className=" font-normal text-lg text-gray-300 "
+              className=" font-normal text-base text-gray-300 "
               onClick={toggleSearchBtn}
             />
           </div>
@@ -118,7 +112,7 @@ function Header() {
           />
           {search.length > 0 ? (
             <FaTimes
-              className="text-gray-300 text-lg absolute md:right-8 right-5"
+              className="text-gray-300 text-base absolute md:right-8 right-5"
               onClick={removeText}
             />
           ) : (
