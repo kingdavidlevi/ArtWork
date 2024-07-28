@@ -18,6 +18,7 @@ function Header() {
   };
   const toggleSearchBtn = () => {
     setToggleSearch(!toggleSearch);
+    setIsOpen(false);
   };
   const handleInput = (e) => {
     const data = e.target.value;
@@ -53,11 +54,19 @@ function Header() {
             <div className="relative">
               <FaSearch className="md:absolute lg:block mt-3.5 ml-4 text-white hidden  text-lg" />
               <input
-                className=" py-2.5 lg:block hidden text-white text-base pl-12 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-lg placeholder:text-white "
+                className=" py-2.5 lg:block hidden text-white text-base pl-12 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-base placeholder:text-white "
                 placeholder="Search"
                 onChange={handleInput}
                 value={search}
               />
+              {search.length > 0 ? (
+                <FaTimes
+                  className="text-gray-300 cursor-pointer hover:text-gray-100 top-4 text-base hidden lg:block md:absolute  right-4"
+                  onClick={removeText}
+                />
+              ) : (
+                ''
+              )}
             </div>
           </div>
           <div className="flex gap-6 md:gap-6">
@@ -94,7 +103,7 @@ function Header() {
           </div>
         </div>
       ) : (
-        <div className="h-18   pl-5 flex gap-4 items-center w-full glass-header">
+        <div className="h-18  sm:pl-8 pl-5 flex gap-4 items-center w-full glass-header">
           <div className="text-white ">
             <FaLessThan
               className=" font-normal text-lg text-gray-300 "
@@ -109,7 +118,7 @@ function Header() {
           />
           {search.length > 0 ? (
             <FaTimes
-              className="text-gray-300 text-lg absolute right-5"
+              className="text-gray-300 text-lg absolute md:right-8 right-5"
               onClick={removeText}
             />
           ) : (
