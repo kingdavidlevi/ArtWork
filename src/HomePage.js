@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Collection from './Collection';
 import { useOutletContext } from 'react-router-dom';
+import Menu from './Menu';
 
 import {
   FaGreaterThan,
@@ -12,46 +13,11 @@ import {
 } from 'react-icons/fa6';
 function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
+
   return (
     <div className="bg-black md:px-8 h-screen ">
       <Header />
-
-      <div
-        className={`   fixed h-full w-full sm:hidden mt-18 menu ${
-          isOpen ? 'open' : ''
-        }`}
-      >
-        <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
-          <li className="flex  items-center gap-3 w-full">
-            <FaCalendar className="text-white  text-2xl" />
-            <p className="text-white  text-base font-semibold">Drops</p>
-          </li>
-          <li>
-            <FaGreaterThan className="font-bold text-lg text-white" />
-          </li>
-        </ul>
-        <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
-          <li className="flex  items-center gap-3 w-full">
-            <FaPencil className="text-white  text-2xl" />
-            <p className="text-white  text-base font-semibold">Create</p>
-          </li>
-        </ul>
-        <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
-          <li className="flex  items-center gap-3 w-full">
-            <FaUsers className="text-white  text-3xl" />
-            <p className="text-white  text-base font-semibold">Authors</p>
-          </li>
-        </ul>
-        <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
-          <li className="flex  items-center gap-3 w-full">
-            <FaCalendar className="text-white  text-2xl" />
-            <p className="text-white  text-base font-semibold"></p>
-          </li>
-          <li>
-            <FaGreaterThan className="font-bold text-lg text-white" />
-          </li>
-        </ul>
-      </div>
+      <Menu />
       {!isOpen && (
         <div>
           <div className="picture md:h-250 h-68 grid place-content-center w-full ">
