@@ -1,20 +1,17 @@
 {
   "cancelled_deliveries": [
     {
-      "code": "16777908",
-      "name": "DanielChiamaka",
-      "location": "Obinze",
-      "expectedDestination": "Umuchima",
-      "transaction": "Cancelled",
-      "imageUrl": "/images/Ellipse 29 (1).png"
+      "id": "1",
+      "name": "Desmond Gilbert",
+      "EthFloor": "1.59 ETH",
+
+      "imageUrl": "/Images/images(7).jpeg"
     },
     {
-      "code": "16777908",
-      "name": "DanielChiamaka",
-      "location": "Obinze",
-      "expectedDestination": "Umuchima",
-      "transaction": "Cancelled",
-      "imageUrl": "/images/Ellipse 29 (1).png"
+      "id": "2",
+      "name": "Luke Thomas",
+      "EthFloor": "1.59 ETH",
+      "imageUrl": "/Images/images(7).jpeg"
     }
   ]
 }
