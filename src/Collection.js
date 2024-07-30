@@ -24,7 +24,7 @@ function Collection() {
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section className="flex mt-8 pl-8 pb-20 gap-3">
+      <section className="md:flex  mt-8 pl-8 pb-20 gap-3">
         {data.map((item) => (
           <div key={item.id} className="btn  w-70 gap-10 rounded-xl">
             <img className="w-70 rounded-t-xl h-52" src={pic} />
