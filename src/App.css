@@ -36,8 +36,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .menu {
-  background-color: rgba(255, 255, 255, 0.1);
   right: -100%;
+
   transition: right 0.3s ease-in-out;
   overflow: hidden;
 }

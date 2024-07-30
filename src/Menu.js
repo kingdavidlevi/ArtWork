@@ -12,7 +12,7 @@ function Menu() {
   const { isOpen, setIsOpen } = useOutletContext();
   return (
     <div
-      className={`   fixed h-full w-full sm:hidden mt-18 menu ${
+      className={` z-20 bg-black fixed h-full w-full sm:hidden mt-18 menu ${
         isOpen ? 'open' : ''
       }`}
     >

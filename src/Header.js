@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useOutletContext } from 'react-router-dom';
 import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import Menu from './Menu';
 import { FaLessThan } from 'react-icons/fa6';
 
 function Header() {
@@ -120,6 +121,7 @@ function Header() {
           )}
         </div>
       )}
+      <Menu />
     </section>
   );
 }
