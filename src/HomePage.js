@@ -15,7 +15,13 @@ function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
 
   return (
-    <div className="bg-black md:px-8 h-full w-full  ">
+    <div
+      className={` ${
+        isOpen
+          ? 'bg-black md:px-8 h-full w-full fixed '
+          : 'bg-black md:px-8 h-full w-full'
+      }`}
+    >
       <Header />
 
       <div>

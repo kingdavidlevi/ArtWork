@@ -12,7 +12,7 @@ function Menu() {
   const { isOpen, setIsOpen } = useOutletContext();
   return (
     <div
-      className={` z-20 bg-black fixed h-full w-full sm:hidden mt-18 menu ${
+      className={` z-20 bg-black fixed  h-full w-full sm:hidden mt-18 menu ${
         isOpen ? 'open' : ''
       }`}
     >
@@ -21,7 +21,7 @@ function Menu() {
           <FaCalendar className="text-white  text-2xl" />
           <p className="text-white  text-base font-semibold">Drops</p>
         </li>
-        <li>
+        <li className="mt-2">
           <FaGreaterThan className="font-bold text-sm text-white" />
         </li>
       </ul>
