@@ -11,7 +11,7 @@ function SignUp() {
   };
   return (
     <section className="grid h-full  bg-black place-items-center pt-20">
-      <p className=" md:font-bold text-base font-semibold  text-gray-600">
+      <p className=" md:font-bold text-base font-semibold  text-white">
         SIGNUP
       </p>
       <p className="mt-3 text-white  font-bold text-lg  md:text-xl">
