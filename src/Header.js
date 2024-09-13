@@ -31,15 +31,15 @@ function Header() {
             <div className="text-white Artify-div pr-4  md:pr-6">
               <p className="lg:text-2xl text-xl font-semibold ">Artify Nft's</p>
             </div>
-            <div className="text-white cursor-pointer text-lg hidden sm:block font-semibold">
+            <div className="text-white cursor-pointer text-lg hidden sm:block hover:text-gray-200 font-semibold">
               Drops
             </div>
-            <div className="text-white cursor-pointer text-lg hidden sm:block font-semibold">
+            <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden sm:block font-semibold">
               Authors
             </div>
 
             <NavLink to="/SignUp">
-              <div className="text-white hidden sm:block text-lg font-semibold">
+              <div className="text-white hover:text-gray-200  hidden sm:block text-lg font-semibold">
                 Create
               </div>
             </NavLink>
@@ -71,8 +71,8 @@ function Header() {
             />
             <NavLink to="/Login">
               {' '}
-              <FaWallet className="text-white ml-3 absolute mt-3" size={18} />
-              <button className="pr-4 pl-10 text-white btn py-2  md:py-2  md:text-base text-base px-4 font-medium rounded-lg">
+              <FaWallet className="text-white ml-3 text-base md:text-lg absolute font mt-3" />
+              <button className="pr-4 pl-10 text-white btn py-2  md:py-2  md:text-base text-base px-4 font-normal md:font-medium rounded-lg">
                 Login
               </button>
             </NavLink>

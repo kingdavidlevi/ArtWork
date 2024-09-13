@@ -28,9 +28,9 @@
 /*.btn {
   background: rgba(255, 255, 255, 0.2);
 }*/
-/*.btn {
+.btn {
   background: rgba(255, 255, 255, 0.1);
-}*/
+}
 
 .ul {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -47,7 +47,11 @@
 }
 
 /*border: 2px solid rgba(255, 255, 255, 0.2);*/
-.btn {
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.form {
   background: rgba(255, 255, 255, 0.2);
 }
 .Artify-div {

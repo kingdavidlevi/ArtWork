@@ -10,10 +10,10 @@ function Login() {
   };
   return (
     <section className="  grid place-content-center    h-screen   w-full  bg-black  ">
-      <p className=" font-semibold  text-base grid place-items-center  text-white">
+      <p className=" font-semibold text-base  md:text-xl grid place-items-center  text-white">
         LOGIN
       </p>
-      <div className="   mb-14 btn rounded-lg  xl:w-270  md:w-260 w-90 mt-6 pt-2 pb-8 ">
+      <div className="   mb-14  form rounded-lg  xl:w-270  md:w-260 w-90 mt-6 pt-2 pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">

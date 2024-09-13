@@ -11,14 +11,14 @@ function SignUp() {
   };
   return (
     <section className="grid h-full  bg-black place-items-center pt-20">
-      <p className=" md:font-bold text-base font-semibold  text-white">
+      <p className=" md:font-bold lg:text-xl text-base font-semibold  text-white">
         SIGNUP
       </p>
       <p className="mt-3 text-white  font-bold text-lg  md:text-xl">
         Create an Account
       </p>
 
-      <div className=" btn mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
+      <div className=" form mb-14  rounded-lg  xl:w-270 w-90% md:w-260 md:mt-8 mt-6  pb-8 ">
         <form>
           <section className="mt-8 grid place-items-center">
             <div className="flex gap-4 w-90%">
