@@ -1,18 +1,22 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import Footer from './footer';
 
 function ScrollToTop() {
-  const location = useLocation();
-
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
   return (
-    <div>
+    <div
+      className={` ${
+        isOpen
+          ? 'bg-black md:px-8 h-full w-full pb-20 fixed '
+          : 'bg-black md:px-8 pb-20 w-full'
+      }`}
+    >
+      <Header />
       <Outlet context={{ isOpen, setIsOpen }} />
+      <Footer />
     </div>
   );
 }

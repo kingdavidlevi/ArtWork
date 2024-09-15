@@ -12,15 +12,18 @@ import {
 } from 'react-router-dom';
 import Login from './Login';
 import Homepage from './HomePage';
-import Header from './Header';
+import Terms from './TermsOfService';
+import OverAll from './OverAll';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<ScrollToTop />}>
-      <Route path="/" element={<Homepage />} />
+    <Route element={<OverAll />}>
+      <Route element={<ScrollToTop />}>
+        <Route path="/" element={<Homepage />} />
+        <Route path="Terms" element={<Terms />} />
+      </Route>
       <Route path="SignUp" element={<SignUp />} />
       <Route path="Login" element={<Login />} />
-      <Route path="Header" element={<Header />} />
     </Route>,
   ),
 );

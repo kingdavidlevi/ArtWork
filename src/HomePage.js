@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Collection from './Collection';
+import Footer from './footer';
 import { useOutletContext } from 'react-router-dom';
 import Menu from './Menu';
 
@@ -15,15 +16,7 @@ function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
 
   return (
-    <div
-      className={` ${
-        isOpen
-          ? 'bg-black md:px-8 h-full w-full fixed '
-          : 'bg-black md:px-8 h-full w-full'
-      }`}
-    >
-      <Header />
-
+    <div>
       <div>
         <div className="picture md:h-250 h-68 grid place-content-center w-full ">
           {' '}
