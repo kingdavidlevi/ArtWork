@@ -1,5 +1,10 @@
 import { FaRegCopyright } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 function Footer() {
+  const navigate = useNavigate();
+  const terms = () => {
+    navigate('/Terms');
+  };
   return (
     <section className=" grid place-items-center w-full">
       <section className="border-t-r  w-90% border-t-gray-200 pt-6 md:flex  grid place-items-center md:items-start md:justify-between">
@@ -13,7 +18,10 @@ function Footer() {
           <p className="text-white hover:underline cursor-pointer text-sm">
             Privacy Policy{' '}
           </p>
-          <p className="text-white hover:underline cursor-pointer text-sm">
+          <p
+            className="text-white hover:underline cursor-pointer text-sm"
+            onClick={terms}
+          >
             Terms of Services
           </p>
         </div>
