@@ -5,6 +5,9 @@ function Terms() {
         Terms Of Service
       </h2>
 
+      <h2 className="text-white mt-6 mb-6 italic pl-12 md:ml-0 font-medium text-lg">
+        Last Updated : July 2, 2023
+      </h2>
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         1. Introduction
       </h2>

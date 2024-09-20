@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useOutletContext } from 'react-router-dom';
+import { NavLink, useOutletContext, useNavigate } from 'react-router-dom';
 import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import Menu from './Menu';
 import { FaLessThan } from 'react-icons/fa6';
@@ -8,6 +8,7 @@ function Header() {
   const { isOpen, setIsOpen } = useOutletContext();
   const [toggleSearch, setToggleSearch] = useState(false);
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -23,12 +24,19 @@ function Header() {
   const removeText = () => {
     setSearch('');
   };
+
+  const home = () => {
+    navigate('/');
+  };
   return (
     <section>
       {!toggleSearch ? (
         <div className="w-full md:px-8 px-3 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
           <div className=" flex xl:gap-10 gap-5 ">
-            <div className="text-white Artify-div pr-4  md:pr-6">
+            <div
+              className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
+              onClick={home}
+            >
               <p className="lg:text-2xl text-xl font-semibold ">Artify Nft's</p>
             </div>
             <div className="text-white cursor-pointer text-lg hidden sm:block hover:text-gray-200 font-semibold">
