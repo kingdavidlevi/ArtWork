@@ -11,7 +11,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         1. Introduction
       </h2>
-      <div className="ml-12 mb-8 mr-8">
+      <div className="ml-12 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           Welcome to ArtifyNft's (www.ArtifyNfts.com). We are excited to offer a
           cutting-edge platform where creators, collectors, and enthusiasts can
@@ -44,7 +44,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         2. Eligibility
       </h2>
-      <div className="ml-12 mb-6 mr-8">
+      <div className="ml-12 mb-6 md:mr-8">
         <p className="text-white text-base font-semibold ">
           To use the Website and purchase NFTs, you must be at least 18 years
           old and have the legal capacity to enter into a binding contract under
@@ -74,7 +74,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         3. NFT Ownernership
       </h2>
-      <div className="ml-12 mb-8 mr-8">
+      <div className="ml-12 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           NFTs sold on the Website are digital tokens that represent ownership
           or rights in digital artworks or content. Purchasing an NFT grants you
@@ -103,7 +103,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         4. Transactions and Payments
       </h2>
-      <div className="ml-12 mb-8 mr-8">
+      <div className="ml-12 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           All transactions on the Website are conducted using cryptocurrency
           (e.g., Ethereum, Bitcoin). You are responsible for ensuring that you
@@ -130,7 +130,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         5. User Conduct
       </h2>
-      <div className="ml-12 mb-8 mr-8">
+      <div className="ml-12 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           By using the Website, you agree not to:
         </p>
@@ -157,7 +157,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         6. Intellectual Property
       </h2>
-      <div className="ml-12 mb-6 mr-8">
+      <div className="ml-12 mb-6 md:mr-8">
         <p className="text-white text-base font-semibold">
           All intellectual property on the Website, including text, images,
           logos, and other content, is owned by [Your NFT Website Name] or the
@@ -197,7 +197,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         8. Limitation of Liability
       </h2>
-      <div className="ml-12 mb-6 mr-8">
+      <div className="ml-12 mb-6 md:mr-8">
         <p className="text-white text-base font-semibold">
           [ArtifyNfts] and its affiliates shall not be liable for any direct,
           indirect, incidental, or consequential damages arising from your use
@@ -207,7 +207,7 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         9. Amendments
       </h2>
-      <div className="ml-12 mb-6 mr-8">
+      <div className="ml-12 mb-6 md:mr-8">
         <p className="text-white text-base font-semibold">
           We reserve the right to modify or update these Terms at any time.
           Changes will be effective immediately upon posting to the Website.
@@ -218,11 +218,11 @@ function Terms() {
       <h2 className="text-white mt-8 mb-8 pl-12 md:ml-0 font-semibold text-xl">
         10. Contact Information
       </h2>
-      <div className="ml-12 mb-6 mr-8">
+      <div className="ml-12 mb-6 md:mr-8">
         <p className="text-white text-base font-semibold">
           you have any questions regarding these Terms, please contact us at{' '}
           <a
-            className="text-blue-300 ml-2 underline font-semibold  text-base"
+            className="text-blue-300 md:ml-2 underline md:font-semibold  font-medium text-base"
             href="mailto:info@ArtifyNfts.com"
           >
             info@ArtifyNfts.com
