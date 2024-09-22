@@ -7,6 +7,7 @@ import { FaLessThan } from 'react-icons/fa6';
 function Header() {
   const { isOpen, setIsOpen } = useOutletContext();
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [toggleShowDiv, setToggleShowDiv] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const toggleMenu = () => {
@@ -28,20 +29,59 @@ function Header() {
   const home = () => {
     navigate('/');
   };
+
+  const showdiv = () => {
+    setToggleShowDiv(true);
+  };
+  const hidediv = () => {
+    setToggleShowDiv(false);
+  };
   return (
     <section>
       {!toggleSearch ? (
         <div className="w-full md:px-8 px-3 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
-          <div className=" flex xl:gap-10 gap-5 ">
+          <div className=" relative flex xl:gap-10 gap-5 ">
             <div
               className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
               onClick={home}
             >
               <p className="lg:text-2xl text-xl font-semibold ">Artify Nft's</p>
             </div>
-            <div className="text-white cursor-pointer text-lg hidden sm:block hover:text-gray-200 font-semibold">
-              Drops
+
+            <div className="text-white cursor-pointer   text-lg hidden sm:block hover:text-gray-200 font-semibold">
+              <p onMouseEnter={showdiv} onMouseLeave={hidediv}>
+                {' '}
+                Drops
+              </p>
             </div>
+            <section>
+              {toggleShowDiv && (
+                <div
+                  className="h-4 absolute w-12 left-36 top-7 bg-black"
+                  onMouseEnter={showdiv}
+                  onMouseLeave={hidediv}
+                ></div>
+              )}
+            </section>
+
+            <section>
+              {toggleShowDiv && (
+                <div
+                  className="absolute dropdown left-36 px-2 top-10 z-40 rounded-md w-56 py-2 "
+                  onMouseEnter={showdiv}
+                  onMouseLeave={hidediv}
+                >
+                  <ul>
+                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                      Popular
+                    </li>
+                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                      Trending
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </section>
             <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden sm:block font-semibold">
               Authors
             </div>

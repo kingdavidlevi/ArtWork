@@ -29,6 +29,18 @@
   background: rgba(255, 255, 255, 0.2);
 }*/
 .btn {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown {
+  background-color: rgb(48, 48, 48);
+}
+
+.dropdown-li:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -47,9 +59,6 @@
 }
 
 /*border: 2px solid rgba(255, 255, 255, 0.2);*/
-.btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
 
 .form {
   background: rgba(255, 255, 255, 0.2);
