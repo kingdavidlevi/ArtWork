@@ -10,7 +10,7 @@ function Terms() {
       <h2 className="text-white mt-6 mb-6 italic pl-6 md:pl-12 md:ml-0 font-medium text-lg">
         Last Updated : July 2, 2023
       </h2>
-      <h2 className="text-white md:mt-8 mt-6 mb-6 pl-6 md:mb-8 md:pl-12 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
         1. Introduction
       </h2>
       <div className="md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
@@ -43,10 +43,10 @@ function Terms() {
           regulations, and the conditions outlined in these Terms.
         </p>
       </div>
-      <h2 className="text-white mt-8 mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
         2. Eligibility
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold ">
           To use the Website and purchase NFTs, you must be at least 18 years
           old and have the legal capacity to enter into a binding contract under
@@ -73,10 +73,10 @@ function Terms() {
           [ArtifyNfts].
         </p>
       </div>
-      <h2 className="text-white mt-8 mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
         3. NFT Ownernership
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           NFTs sold on the Website are digital tokens that represent ownership
           or rights in digital artworks or content. Purchasing an NFT grants you
@@ -84,7 +84,7 @@ function Terms() {
           property rights over the underlying digital content unless explicitly
           stated.
         </p>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6  md:mt-8 gap-4">
           <div className="bg-white  h-2 w-2 mt-2 min-h-2 min-w-2 rounded-full"></div>
           <p className="text-white text-base font-semibold">
             <span className="font-bold">Ownership Transfer</span>: Ownership of
@@ -92,7 +92,7 @@ function Terms() {
             transaction.
           </p>
         </div>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <div className="bg-white  h-2 w-2 mt-2 min-h-2 min-w-2 rounded-full"></div>
           <p className="text-white text-base font-semibold">
             <span className="font-bold"> No Copyrights or Trademarks </span>:
@@ -102,17 +102,17 @@ function Terms() {
           </p>
         </div>
       </div>
-      <h2 className="text-white mt-8 mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
         4. Transactions and Payments
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           All transactions on the Website are conducted using cryptocurrency
           (e.g., Ethereum, Bitcoin). You are responsible for ensuring that you
           have a valid cryptocurrency wallet and sufficient funds to complete
           transactions.
         </p>
-        <div className="flex  ml-6  mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <section className="bg-white mt-2 h-2 w-2 min-h-2 min-w-2 rounded-full"></section>
           <p className="text-white text-base font-semibold">
             <span className="font-bold">Transaction Fees</span>: All
@@ -121,7 +121,7 @@ function Terms() {
             responsible for.
           </p>
         </div>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <section className="bg-white  h-2 w-2 mt-2 min-h-2 min-w-2 rounded-full"></section>
           <p className="text-white text-base font-semibold">
             <span className="font-bold"> No Refunds </span>: Once a transaction
@@ -129,26 +129,26 @@ function Terms() {
           </p>
         </div>
       </div>
-      <h2 className="text-white mt-8 mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
         5. User Conduct
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           By using the Website, you agree not to:
         </p>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <section className="bg-white mt-2 h-2 w-2 min-h-2 min-w-2 rounded-full"></section>
           <p className="text-white text-base font-semibold">
             Engage in any illegal activities or fraudulent behavior.
           </p>
         </div>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <section className="bg-white  h-2 w-2 min-h-2 min-w-2  mt-2 rounded-full"></section>
           <p className="text-white text-base font-semibold">
             Upload or distribute harmful or malicious content.
           </p>
         </div>
-        <div className="flex  ml-6 mt-8 gap-4">
+        <div className="flex  ml-6 mt-6 md:mt-8 gap-4">
           <section className="bg-white mt-2 h-2 w-2 min-h-2 min-w-2  rounded-full"></section>
           <p className="text-white text-base font-semibold">
             Attempt to exploit, manipulate, or hack the Website or any NFTs
@@ -156,10 +156,10 @@ function Terms() {
           </p>
         </div>
       </div>
-      <h2 className="text-white mt-8 mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
         6. Intellectual Property
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           All intellectual property on the Website, including text, images,
           logos, and other content, is owned by [Your NFT Website Name] or the
@@ -168,10 +168,10 @@ function Terms() {
           permission.
         </p>
       </div>
-      <h2 className="text-white mt-8 mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
         7. Disclaimers
       </h2>
-      <section className="md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <section className="md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <div className="flex ml-6 mt-8 gap-4">
           <section className="bg-white mt-2 max-h-2 max-w-2 h-2 w-2 min-h-2 min-w-2  rounded-full"></section>
           <p className="text-white text-base font-semibold">
@@ -181,7 +181,7 @@ function Terms() {
             purchases.
           </p>
         </div>
-        <div className="flex  ml-6 mr-4 mt-8 gap-4">
+        <div className="flex  ml-6 mr-4 mt-6 md:mt-8 gap-4">
           <section className="bg-white mt-2 h-2 w-2 min-h-2 min-w-2  rounded-full"></section>
           <p className="text-white text-base font-semibold">
             <span className="font-bold">No Guarantee of Value</span>: The value
@@ -189,7 +189,7 @@ function Terms() {
             purchase will increase in value.
           </p>
         </div>
-        <div className=" flex  ml-6 mr-4 mt-8 gap-4">
+        <div className=" flex  ml-6 mr-4 mt-6 md:mt-8 gap-4">
           <section className="bg-white mt-2 h-2 w-2 min-h-2 min-w-2 rounded-full"></section>
           <p className="text-white text-base font-semibold">
             <span className="font-bold">Website Availability</span>: The Website
@@ -198,20 +198,20 @@ function Terms() {
           </p>
         </div>
       </section>
-      <h2 className="text-white mt-8 mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
         8. Limitation of Liability
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           [ArtifyNfts] and its affiliates shall not be liable for any direct,
           indirect, incidental, or consequential damages arising from your use
           of the Website or any NFTs purchased through the Website.
         </p>
       </div>
-      <h2 className="text-white mt-8 mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
         9. Amendments
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
           We reserve the right to modify or update these Terms at any time.
           Changes will be effective immediately upon posting to the Website.
@@ -219,12 +219,12 @@ function Terms() {
           constitutes your acceptance of the revised Terms.
         </p>
       </div>
-      <h2 className="text-white mt-8 mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
+      <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
         10. Contact Information
       </h2>
-      <div className=" md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
+      <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
-          you have any questions regarding these Terms, please contact us at{' '}
+          You have any questions regarding these Terms, please contact us at{' '}
           <a
             className="text-blue-300 md:ml-2 underline md:font-semibold  font-medium text-base"
             href="mailto:info@ArtifyNfts.com"
