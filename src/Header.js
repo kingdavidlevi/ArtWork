@@ -54,20 +54,20 @@ function Header() {
                 Drops
               </p>
             </div>
-            <section>
+            <section className="absolute">
               {toggleShowDiv && (
                 <div
-                  className="h-4 absolute w-12 left-36 top-7 bg-black"
+                  className="h-4 absolute bg-black  w-12 xl:left-45 xl:w-14 left-36 top-7 "
                   onMouseEnter={showdiv}
                   onMouseLeave={hidediv}
                 ></div>
               )}
             </section>
 
-            <section>
+            <section className="absolute">
               {toggleShowDiv && (
                 <div
-                  className="absolute dropdown left-36 px-2 top-10 z-40 rounded-md w-56 py-2 "
+                  className="absolute dropdown  xl:left-45 left-36 px-2 top-10 z-40 rounded-md w-56 py-2 "
                   onMouseEnter={showdiv}
                   onMouseLeave={hidediv}
                 >

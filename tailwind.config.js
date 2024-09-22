@@ -8,6 +8,9 @@ module.exports = {
         newblue: ' #d0e6ff',
         iconblue: '#4893e4',
       },
+      spacing: {
+        45: '185px', // Add a custom spacing value for left
+      },
       width: {
         100: '500px',
         150: '520px',
