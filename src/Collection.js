@@ -17,7 +17,7 @@ function Collection() {
   }, []);
   return (
     <section>
-      <div className="mt-10 flex gap-2  ">
+      <div className="mt-10 pb-96 flex gap-2  ">
         <h1 className="text-white md:pl-8 pl-3 lg:text-xl md:text-lg font-bold">
           Latest Collection
         </h1>

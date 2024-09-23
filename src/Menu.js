@@ -28,7 +28,7 @@ function Menu() {
   return (
     <div
       className={` z-20 bg-black fixed  h-full w-full sm:hidden mt-18 menu ${
-        isOpen ? 'open' : ''
+        isOpen ? 'open fixed' : 'fixed'
       }`}
     >
       <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">

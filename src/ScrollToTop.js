@@ -11,7 +11,7 @@ function ScrollToTop() {
       className={` ${
         isOpen
           ? 'bg-black md:px-8 h-full w-full pb-20 fixed '
-          : 'bg-black md:px-8 pb-20 w-full'
+          : 'bg-black md:px-8 fixed pb-20 w-full'
       }`}
     >
       <Header />
