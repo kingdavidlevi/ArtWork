@@ -45,7 +45,7 @@ function Header() {
               className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
               onClick={home}
             >
-              <p className="lg:text-2xl text-xl font-semibold ">Artify Nft's</p>
+              <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
             </div>
 
             <div className="text-white cursor-pointer   text-lg hidden sm:block hover:text-gray-200 font-semibold">
@@ -57,7 +57,7 @@ function Header() {
             <section className="absolute">
               {toggleShowDiv && (
                 <div
-                  className="h-4 absolute bg-black  w-12 xl:left-45 xl:w-14 left-36 top-7 "
+                  className="h-4 absolute bg-black lg:left-40  w-12 xl:left-45 xl:w-14 left-36 top-7 "
                   onMouseEnter={showdiv}
                   onMouseLeave={hidediv}
                 ></div>
@@ -67,7 +67,7 @@ function Header() {
             <section className="absolute">
               {toggleShowDiv && (
                 <div
-                  className="absolute dropdown  xl:left-45 left-36 px-2 top-10 z-40 rounded-md w-56 py-2 "
+                  className="absolute dropdown lg:left-40 xl:left-45 left-36 px-2 top-10 z-40 rounded-md w-60 py-2 "
                   onMouseEnter={showdiv}
                   onMouseLeave={hidediv}
                 >
@@ -77,6 +77,9 @@ function Header() {
                     </li>
                     <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
                       Trending
+                    </li>
+                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                      Lattest
                     </li>
                   </ul>
                 </div>

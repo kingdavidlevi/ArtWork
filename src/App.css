@@ -39,6 +39,13 @@
 .dropdown {
   background-color: rgb(48, 48, 48);
 }
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.icon-rotated {
+  transform: rotate(90deg); /* Adjust angle as needed */
+}
 
 .dropdown-li:hover {
   background: rgba(255, 255, 255, 0.1);

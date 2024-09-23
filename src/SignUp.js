@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaWallet } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import { NavLink } from 'react-router-dom';
 
 function SignUp() {
   const [visibility, setVisibility] = useState(false);
-
+  const navigate = useNavigate();
   const handlePassword = () => {
     setVisibility((prevstate) => !prevstate);
   };
+
+  const home = () => {
+    navigate('/');
+  };
   return (
     <section className="grid h-full  bg-black place-items-center pt-20">
-      <p className=" md:font-bold lg:text-xl text-base font-semibold  text-white">
+      <header className="top-0 fixed w-full h-20 items-center bg-black glass-header flex justify-around z-10">
+        <div className="text-white     cursor-pointer  " onClick={home}>
+          <p className="lg:text-4xl text-2xl font-semibold ">ArtifyNft's</p>
+        </div>
+      </header>
+      <p className=" md:font-bold lg:text-xl mt-8 text-base font-semibold  text-white">
         SIGNUP
       </p>
       <p className="mt-3 text-white  font-bold text-lg  md:text-xl">
