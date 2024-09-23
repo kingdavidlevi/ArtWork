@@ -69,7 +69,7 @@ function Menu() {
       </ul>
 
       <section className=" grid z-10 bg-black  fixed bottom-0 place-items-center w-full">
-        <section className="border-t-r mb-4 w-90% border-t-gray-200 pt-6 md:flex  grid place-items-center md:items-start md:justify-between">
+        <section className="ful mb-4 w-90%  pt-6 md:flex  grid place-items-center md:items-start md:justify-between">
           <div>
             <p className="text-white gap-2 flex text-sm">
               <FaRegCopyright className="text-sm mt-0.5" /> 2019 - 2024 Artify
