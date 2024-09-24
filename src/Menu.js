@@ -29,7 +29,7 @@ function Menu({ isOpen, setIsOpen }) {
   };
   return (
     <div
-      className={` z-20 bg-black fixed top-0 h-full w-90% sm:hidden mt-18 menu ${
+      className={` z-20 bg-black fixed top-0 w-full h-full  sm:hidden mt-18 menu ${
         isOpen ? 'open  ' : ''
       }`}
     >
