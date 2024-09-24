@@ -4,8 +4,7 @@ import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import Menu from './Menu';
 import { FaLessThan } from 'react-icons/fa6';
 
-function Header() {
-  const { isOpen, setIsOpen } = useOutletContext();
+function Header({ isOpen, setIsOpen }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [toggleShowDiv, setToggleShowDiv] = useState(false);
   const [search, setSearch] = useState('');
@@ -172,7 +171,7 @@ function Header() {
           )}
         </div>
       )}
-      <Menu />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
     </section>
   );
 }

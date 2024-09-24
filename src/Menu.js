@@ -10,13 +10,15 @@ import {
   FaPencil,
 } from 'react-icons/fa6';
 
-function Menu() {
-  const { isOpen, setIsOpen } = useOutletContext();
+function Menu({ isOpen, setIsOpen }) {
   const [toggleDrops, setToggleDrops] = useState(false);
   const navigate = useNavigate();
   const terms = () => {
+    setIsOpen(false);
     navigate('/Terms');
   };
+
+  /*</div>*/
 
   const drops = () => {
     setToggleDrops((prevstate) => !prevstate);
@@ -27,8 +29,8 @@ function Menu() {
   };
   return (
     <div
-      className={` z-20 bg-black fixed  h-full w-full sm:hidden mt-18 menu ${
-        isOpen ? 'open fixed' : 'fixed'
+      className={` z-20 bg-black fixed top-0 h-full w-90% sm:hidden mt-18 menu ${
+        isOpen ? 'open  ' : ''
       }`}
     >
       <ul className="flex px-4  text-red-600  cursor-pointer justify-end w-full ul items-center  h-20 ">
@@ -38,7 +40,10 @@ function Menu() {
         </li>
 
         <li className={`icon ${toggleDrops ? 'icon-rotated mt-2' : 'mt-2'}`}>
-          <FaGreaterThan className="font-bold text-sm text-white" />
+          <FaGreaterThan
+            className="font-bold text-sm text-white"
+            onClick={drops}
+          />
         </li>
       </ul>
       {toggleDrops && (

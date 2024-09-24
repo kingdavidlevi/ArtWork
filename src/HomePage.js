@@ -16,7 +16,7 @@ function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
 
   return (
-    <div className=" ">
+    <div>
       <div className="picture md:h-250 h-68 grid place-content-center w-full ">
         {' '}
         <h1 className="md:font-bold font-medium sm:text-8xl text-6xl md:text-9xl lg:text-12xl nft-font text-white">

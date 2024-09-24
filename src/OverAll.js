@@ -1,10 +1,9 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useOutletContext } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-
+import Header from './Header';
+//<Header isOpen={isOpen} setIsOpen={setIsOpen} />
 function OverAll() {
   const location = useLocation();
-
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,7 +11,7 @@ function OverAll() {
 
   return (
     <div>
-      <Outlet context={{ isOpen, setIsOpen }} />
+      <Outlet />
     </div>
   );
 }
