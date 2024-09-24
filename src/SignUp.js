@@ -41,7 +41,7 @@ function SignUp() {
             <input
               type="text"
               placeholder="Enter your Fullname"
-              className="mt-3 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
             />
           </section>
           <section className="mt-6 grid place-items-center">
@@ -55,7 +55,7 @@ function SignUp() {
             <input
               type="email"
               placeholder="info@yourmail.com"
-              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required
             />
           </section>
@@ -70,7 +70,7 @@ function SignUp() {
             <input
               type="email"
               placeholder="ETH Wallet address"
-              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required
             />
           </section>
@@ -85,7 +85,7 @@ function SignUp() {
             <input
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
-              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required
             />
           </section>
@@ -103,7 +103,7 @@ function SignUp() {
             <input
               type={visibility ? 'text' : 'password'}
               placeholder="Confirm your password"
-              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black rounded-md bg-white py-3  placeholder:text-gray-400 "
               required
             />
           </section>
@@ -111,7 +111,7 @@ function SignUp() {
             <div className="flex gap-4 w-90%">
               <input
                 type="checkbox"
-                className="w-5 h-5"
+                className="w-5 h-5  accent-black  checked:accent-purple-600"
                 onClick={handlePassword}
                 required
               />
@@ -120,7 +120,11 @@ function SignUp() {
           </section>
           <section className="mt-8 grid ml-4   place-items-center">
             <div className="flex gap-4 w-90%">
-              <input type="checkbox" className="w-5 h-5 " required />
+              <input
+                type="checkbox"
+                className="w-5 h-5 accent-black  checked:accent-purple-600"
+                required
+              />
               <p className="text-white  text-sm  font-medium">
                 {' '}
                 I agree to{' '}
@@ -131,7 +135,7 @@ function SignUp() {
           <section className="place-items-center grid mt-8">
             <button
               type="submit"
-              className=" hover:bg-purple-600 text-base font-medium rounded-full py-2 bg-black w-90% text-white"
+              className=" hover:bg-purple-600 md:text-lg md:py-3 text-base form font-medium rounded-full py-2 bg-black w-90% text-white"
               required
             >
               Sign Up

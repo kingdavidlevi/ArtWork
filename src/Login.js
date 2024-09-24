@@ -35,7 +35,7 @@ function Login() {
             <input
               type="email"
               placeholder="info@yourmail.com"
-              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md  placeholder:text-gray-400 "
               required
             />
           </section>
@@ -50,7 +50,7 @@ function Login() {
             <input
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
-              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-gray-400 py-3 bg-black placeholder:text-gray-400 "
+              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required
             />
           </section>
@@ -59,7 +59,7 @@ function Login() {
             <div className="flex gap-4 w-90%">
               <input
                 type="checkbox"
-                className="w-5 h-5"
+                className="w-5 h-5 accent-black peer checked:accent-purple-600"
                 onClick={handlePassword}
                 required
               />
@@ -70,7 +70,7 @@ function Login() {
           <section className="place-items-center grid mt-8">
             <button
               type="submit"
-              className=" hover:bg-purple-600 text-base font-medium rounded-full py-2 bg-black w-90% text-white"
+              className=" hover:bg-purple-600 md:text-lg text-base form font-medium rounded-full md:py-3 py-2 bg-black w-90% text-white"
               required
             >
               Log In
