@@ -265,22 +265,28 @@ function PrivacyPolicy() {
         </p>
       </div>
       <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
-        9. Amendments
+        7. Third-Party Links and Services
       </h2>
       <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
-          We reserve the right to modify or update these Terms at any time.
-          Changes will be effective immediately upon posting to the Website.
-          Your continued use of the Website following the posting of changes
-          constitutes your acceptance of the revised Terms.
+          Our website may contain links to third-party websites or services.
+          Please note that we are not responsible for the privacy practices or
+          content of third-party websites. We encourage you to review their
+          privacy policies before providing them with any personal information.
         </p>
       </div>
       <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 md:pl-12 pl-6 md:ml-0 font-semibold text-xl">
-        10. Contact Information
+        8. Blockchain and Public Information
       </h2>
       <div className=" md:ml-12 mr-4 ml-6 mb-6 md:mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
-          You have any questions regarding these Terms, please contact us at{' '}
+          Since blockchain is a decentralized technology, transactions that
+          occur on the blockchain are public and cannot be deleted or altered.
+          As such, any transactions conducted on the blockchain through our
+          website will be visible to the public, including your wallet address,
+          transaction details, and the NFTs you own. Please consider the privacy
+          implications of this public ledger when interacting with blockchain
+          technology.
           <a
             className="text-blue-300 md:ml-2 underline md:font-semibold  font-medium text-base"
             href="mailto:info@ArtifyNfts.com"
