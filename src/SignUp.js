@@ -68,7 +68,7 @@ function SignUp() {
               <p className="text-white text-sm  font-medium ">Wallet address</p>
             </div>
             <input
-              type="email"
+              type="text"
               placeholder="ETH Wallet address"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required

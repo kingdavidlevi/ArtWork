@@ -15,7 +15,7 @@ import Homepage from './HomePage';
 import Terms from './TermsOfService';
 import OverAll from './OverAll';
 import Menu from './Menu';
-import Header from './Header';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +23,7 @@ const router = createBrowserRouter(
       <Route element={<ScrollToTop />}>
         <Route path="/" element={<Homepage />} />
         <Route path="Terms" element={<Terms />} />
+        <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="Menu" element={<Menu />} />
       </Route>
       <Route path="SignUp" element={<SignUp />} />

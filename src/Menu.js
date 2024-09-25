@@ -18,6 +18,13 @@ function Menu({ isOpen, setIsOpen }) {
     navigate('/Terms');
   };
 
+  const Privacy = () => {
+    setIsOpen(false);
+    navigate('/PrivacyPolicy');
+  };
+  const routeToSignUp = () => {
+    navigate('SignUp');
+  };
   /*</div>*/
 
   const drops = () => {
@@ -59,7 +66,10 @@ function Menu({ isOpen, setIsOpen }) {
           </div>
         </div>
       )}
-      <ul className="flex px-4    cursor-pointer justify-end w-full ul items-center  h-20 ">
+      <ul
+        className="flex px-4    cursor-pointer justify-end w-full ul items-center  h-20 "
+        onClick={routeToSignUp}
+      >
         <li className="flex  items-center gap-3 w-full">
           <FaPencil className="text-white  text-2xl" />
           <p className="text-white  text-base font-semibold">Create</p>
@@ -82,7 +92,10 @@ function Menu({ isOpen, setIsOpen }) {
             </p>
           </div>
           <div className="flex mt-3 lg:mt-0 gap-4">
-            <p className="text-white hover:underline cursor-pointer text-sm">
+            <p
+              className="text-white hover:underline cursor-pointer text-sm"
+              onClick={Privacy}
+            >
               Privacy Policy{' '}
             </p>
             <p
