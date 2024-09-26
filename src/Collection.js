@@ -36,16 +36,20 @@ function Collection() {
             <img src={image1} className="h-48  w-80" />
           </section>
         </div>
-        <div className="form rounded-md  pb-4">
+        <div className="color-div form rounded-lg shadow-md  pb-4">
           <section>
             {' '}
-            <img src={image2} className="h-48  w-80" />{' '}
+            <img src={image2} className="h-48 rounded-t-lg w-80" />{' '}
           </section>
-          <div className="ml-3">
-            <p className="mt-4 text-white">Adams Christopher</p>
-            <section className="w-full flex justify-between mt-6">
-              <p className="text-white">Amount :</p>
-              <p>
+          <div className="mx-3 mt-4">
+            <p className=" text-white md:text-lg text-base  font-semibold">
+              Adams Christopher
+            </p>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white  md:text-lg text-base font-semibold">
+                Amount :
+              </p>
+              <p className="text-white md:text-lg text-base  font-semibold">
                 <span>0.08</span>ETH
               </p>
             </section>
