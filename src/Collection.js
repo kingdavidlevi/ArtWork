@@ -21,52 +21,119 @@ function Collection() {
       .catch((error) => console.error('Error fetching the JSON data:', error));
   }, []);
   return (
-    <section>
-      <div className="md:mt-16 mt-10  flex gap-2  ">
+    <section className=" md:w-full grid md:place-items-start place-items-center">
+      <div className="md:mt-16 mt-10 w-90% md:w-full place-items-center  flex gap-2  ">
         <h1 className="text-white  lg:text-2xl md:text-lg font-bold">
           Latest Collection
         </h1>
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section className="md:flex justify-between mt-8  pb-20 gap-3">
-        <div>
+      <section className="md:flex grid   grid-cols-2   md:justify-between place-items-center mt-8 w-90% md:w-full  pb-20 gap-3">
+        <div className="color-div form px-3 md:w-60 w-40  lg:w-70 xl:w-75 pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
-            <img src={image1} className="h-48  w-80" />
+            <img
+              src={image1}
+              className="md:h-48 h-32 rounded-lg w-60 lg:w-70 xl:w-75"
+            />{' '}
           </section>
-        </div>
-        <div className="color-div form rounded-lg shadow-md  pb-4">
-          <section>
-            {' '}
-            <img src={image2} className="h-48 rounded-t-lg w-80" />{' '}
-          </section>
-          <div className="mx-3 mt-4">
-            <p className=" text-white md:text-lg text-base  font-semibold">
+          <div className=" mt-4">
+            <p className=" text-white  text-base  font-semibold">
               Adams Christopher
             </p>
             <section className="w-full flex justify-between mt-4">
-              <p className="text-white  md:text-lg text-base font-semibold">
-                Amount :
+              <p className="text-white   text-base font-semibold">Amount :</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>0.2</span>ETH
               </p>
-              <p className="text-white md:text-lg text-base  font-semibold">
-                <span>0.08</span>ETH
+            </section>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Total:</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>20</span>ETH
               </p>
             </section>
           </div>
         </div>
-        <div>
+        <div className="color-div form px-3   md:w-60 w-40 lg:w-70 xl:w-75 pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
-            <img src={image3} className="h-48  w-80" />{' '}
+            <img
+              src={image2}
+              className="md:h-48 h-32  rounded-lg w-60 lg:w-70 xl:w-75"
+            />{' '}
           </section>
+          <div className=" mt-4">
+            <p className=" text-white  text-base  font-semibold">
+              Adams Christopher
+            </p>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Amount :</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>0.2</span>ETH
+              </p>
+            </section>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Total:</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>20</span>ETH
+              </p>
+            </section>
+          </div>
+        </div>
+        <div className="color-div form px-3 md:w-60 w-40 lg:w-70 xl:w-75 pt-3 rounded-lg shadow-md  pb-4">
+          <section>
+            {' '}
+            <img
+              src={image3}
+              className="md:h-48 h-32  rounded-lg w-60 lg:w-70 xl:w-75"
+            />{' '}
+          </section>
+          <div className=" mt-4">
+            <p className=" text-white  text-base  font-semibold">
+              Adams Christopher
+            </p>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Amount :</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>0.2</span>ETH
+              </p>
+            </section>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Total:</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>20</span>ETH
+              </p>
+            </section>
+          </div>
         </div>
 
-        <div>
+        <div className="color-div form px-3  md:w-60 w-40 lg:w-70 xl:w-75 pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
-            <img src={image5} className="h-48  w-80" />{' '}
+            <img
+              src={image4}
+              className="md:h-48 h-32  rounded-lg w-60  lg:w-70 xl:w-75"
+            />{' '}
           </section>
+          <div className=" mt-4">
+            <p className=" text-white  text-base  font-semibold">
+              Adams Christopher
+            </p>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Amount :</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>0.2</span>ETH
+              </p>
+            </section>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Total:</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>20</span>ETH
+              </p>
+            </section>
+          </div>
         </div>
       </section>
     </section>
