@@ -116,7 +116,7 @@ function Header({ isOpen, setIsOpen }) {
           </div>
           <div className="flex gap-6 md:gap-6">
             <FaSearch
-              className="  mt-3.5 ml-4 text-white lg:hidden sm:block hidden text-lg"
+              className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
             />
             <NavLink to="/Login">
