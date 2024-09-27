@@ -15,7 +15,32 @@ import image11 from './Images/images (16).jpeg';
 import image12 from './Images/images (17).jpeg';
 
 function Collection() {
+  const [isScrolling, setIsScrolling] = useState(false);
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    let timeout;
+    const handleScroll = () => {
+      setIsScrolling(true);
+
+      // Clear the previous timeout if the user scrolls again
+      clearTimeout(timeout);
+      // Set a timeout to remove the scroll-active class after scrolling stops
+      timeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1500); // 1 second delay before fading out
+    };
+
+    // Add event listener for scrolling
+    const scrollContainer = document.querySelector('.scroll-container');
+    scrollContainer.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     fetch('/data/collection.json')
       .then((response) => {
@@ -36,7 +61,11 @@ function Collection() {
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section className="lg:flex md:grid overflow-hidden  flex overflow-x-scroll   md:grid-cols-2   place-items-center mt-8 w-90% md:w-full pb-4 mb-20 gap-4 md:gap-10">
+      <section
+        className={`lg:flex scroll-container overflow-hidden  flex overflow-x-scroll    place-items-center mt-8 w-90% md:w-full pb-4 mb-20 gap-4 md:gap-6 ${
+          isScrolling ? 'scroll-active ' : ''
+        }`}
+      >
         <div className="color-div form px-3   w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
