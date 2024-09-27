@@ -36,7 +36,7 @@ function Collection() {
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section className="lg:flex md:grid overflow-hidden  flex overflow-x-scroll   md:grid-cols-2   place-items-center mt-8 w-90% md:w-full  pb-20 gap-4 md:gap-10">
+      <section className="lg:flex md:grid overflow-hidden  flex overflow-x-scroll   md:grid-cols-2   place-items-center mt-8 w-90% md:w-full pb-4 mb-20 gap-4 md:gap-10">
         <div className="color-div form px-3   w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
