@@ -53,19 +53,15 @@ function Trending() {
       .catch((error) => console.error('Error fetching the JSON data:', error));
   }, []);
   return (
-    <section className=" md:w-full grid md:place-items-start place-items-center">
+    <section className=" md:w-full mt-10 grid md:place-items-start place-items-center">
       <div className="  w-90% md:w-full place-items-center  flex gap-2  ">
-        <h1 className="text-white  lg:text-2xl md:text-lg font-bold">
+        <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
           Trending Collection
         </h1>
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section
-        className={`lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-12 w-90% md:w-full pb-4  gap-4 md:gap-6 ${
-          isScrolling2 ? 'scroll-active2 ' : ''
-        }`}
-      >
+      <section className="lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-10 w-90% md:w-full pb-4  gap-4 md:gap-6 ">
         <div className="color-div form px-3   w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
