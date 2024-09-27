@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Collection from './Collection';
+import Trending from './Trending';
 import Footer from './footer';
 import { useOutletContext } from 'react-router-dom';
 import Menu from './Menu';
@@ -42,6 +43,7 @@ function Homepage() {
       </div>
 
       <Collection />
+      <Trending />
     </div>
   );
 }

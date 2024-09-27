@@ -168,6 +168,48 @@
   transition: scrollbar-color 0.3s ease;
 }
 
-.scroll-active {
+.scroll-active2 {
+  scrollbar-color: #555 transparent;
+}
+.scroll-container2::-webkit-scrollbar {
+  width: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Customize the scrollbar thumb */
+.scroll-container2::-webkit-scrollbar-thumb {
+  background-color: #555; /* Dark ash scrollbar thumb */
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* Smooth transition for thumb */
+}
+
+/* When scrolling, show the scrollbar thumb */
+.scroll-active2::-webkit-scrollbar {
+  opacity: 1; /* Show scrollbar */
+}
+
+/* Fade out when not scrolling */
+.scroll-active2::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+.scroll-active2 {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent; /* Transparent background, dark ash thumb */
+  transition: scrollbar-color 0.3s ease;
+}
+
+.scroll-container2::-webkit-scrollbar-thumb {
+  opacity: 0; /* Hide scrollbar thumb by default */
+}
+
+/* For Firefox */
+.scroll-container2 {
+  scrollbar-width: thin;
+  scrollbar-color: black transparent; /* Transparent background, dark ash thumb */
+  transition: scrollbar-color 0.3s ease;
+}
+
+.scroll-active2 {
   scrollbar-color: #555 transparent;
 }
