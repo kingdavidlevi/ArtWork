@@ -28,7 +28,7 @@ function Collection() {
       // Set a timeout to remove the scroll-active class after scrolling stops
       timeout = setTimeout(() => {
         setIsScrolling(false);
-      }, 1500); // 1 second delay before fading out
+      }, 2000); // 1 second delay before fading out
     };
 
     // Add event listener for scrolling
