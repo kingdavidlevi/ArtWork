@@ -36,13 +36,13 @@ function Collection() {
         <FaArrowRight className="text-white mt-1.5 md:mt-2" />
       </div>
 
-      <section className="lg:flex grid overflow-hidden  overflow-x-scroll   md:grid-cols-2   place-items-center mt-8 w-90% md:w-full  pb-20 gap-4 md:gap-10">
-        <div className="color-div form px-3   w-full  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
+      <section className="lg:flex md:grid overflow-hidden  flex overflow-x-scroll   md:grid-cols-2   place-items-center mt-8 w-90% md:w-full  pb-20 gap-4 md:gap-10">
+        <div className="color-div form px-3   w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image1}
-              className="md:h-48 h-56 w-full rounded-lg     md:w-70  "
+              className="md:h-48 h-40 w-full rounded-lg     md:w-70  "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -66,12 +66,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3    w-40 md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3    w-56   min-w-56 md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image2}
-              className="md:h-48 h-32  rounded-lg    w-60 md:w-70  "
+              className="md:h-48 h-40 w-full rounded-lg     md:w-70  "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -95,12 +95,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70   w-56  min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image3}
-              className="md:h-48 h-32  rounded-lg w-60   md:w-70  "
+              className="md:h-48 h-40 w-full  rounded-lg     md:w-70  "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -125,12 +125,12 @@ function Collection() {
           </button>
         </div>
 
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70    w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image4}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full   rounded-lg    md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -154,12 +154,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70    w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image5}
-              className="md:h-48 h-32  rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full  rounded-lg    md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -183,12 +183,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70   w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image6}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full   rounded-lg    md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -212,12 +212,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70    w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image7}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full   rounded-lg    md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -241,12 +241,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3   md:min-w-70   w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image8}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full   rounded-lg     md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -270,12 +270,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3   md:min-w-70   w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image9}
-              className="md:h-48 h-32    rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full    rounded-lg    md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -299,12 +299,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70   w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image10}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full  rounded-lg     md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -328,12 +328,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3   md:min-w-70   w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image11}
-              className="md:h-48 h-32   rounded-lg w-40   md:w-70 "
+              className="md:h-48  h-40   rounded-lg w-full   md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
@@ -357,12 +357,12 @@ function Collection() {
             Buy
           </button>
         </div>
-        <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
+        <div className="color-div form px-3  md:min-w-70    w-56 min-w-56 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
               src={image12}
-              className="md:h-48 h-32  rounded-lg w-40   md:w-70 "
+              className="md:h-48 h-40 w-full  rounded-lg     md:w-70 "
             />{' '}
           </section>
           <div className=" mt-4">
