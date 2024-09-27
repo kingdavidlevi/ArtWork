@@ -62,6 +62,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3    w-40 md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -88,6 +91,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -114,6 +120,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
 
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
@@ -141,6 +150,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -167,6 +179,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -193,6 +208,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -219,6 +237,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -245,6 +266,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -271,6 +295,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -297,6 +324,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3   md:min-w-70  w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -323,6 +353,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
         <div className="color-div form px-3  md:min-w-70   w-40 md:w-70   pt-3 rounded-lg shadow-md  pb-4">
           <section>
@@ -349,6 +382,9 @@ function Collection() {
               </p>
             </section>
           </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
         </div>
       </section>
     </section>
