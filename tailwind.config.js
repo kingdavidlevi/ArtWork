@@ -108,6 +108,10 @@ module.exports = {
         34: '135px',
         30: '110px',
       },
+      scale: {
+        101: '1.01', // Custom scale for a 1% increase
+        103: '1.03', // Custom scale for a 3% increase
+      },
     },
   },
   plugins: [],
