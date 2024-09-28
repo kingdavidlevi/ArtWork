@@ -58,7 +58,7 @@ function Collection() {
         <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
           Latest Collection
         </h1>
-        <FaArrowRight className="text-white mt-1.5 md:mt-2" />
+        <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
 
       <section

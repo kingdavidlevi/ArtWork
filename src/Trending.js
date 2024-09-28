@@ -18,7 +18,7 @@ function Trending() {
   const [isScrolling2, setIsScrolling2] = useState(false);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     let timeout;
     const handleScroll = () => {
       setIsScrolling2(true);
@@ -39,7 +39,7 @@ function Trending() {
     return () => {
       scrollContainer.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     fetch('/data/collection.json')
@@ -53,12 +53,12 @@ function Trending() {
       .catch((error) => console.error('Error fetching the JSON data:', error));
   }, []);
   return (
-    <section className=" md:w-full mt-10 grid md:place-items-start place-items-center">
+    <section className=" md:w-full mt-16 grid md:place-items-start place-items-center">
       <div className="  w-90% md:w-full place-items-center  flex gap-2  ">
         <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
           Trending Collection
         </h1>
-        <FaArrowRight className="text-white mt-1.5 md:mt-2" />
+        <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
 
       <section className="lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-10 w-90% md:w-full pb-4  gap-4 md:gap-6 ">

@@ -1,7 +1,7 @@
 function AboutUs() {
   return (
     <section className=" mt-22 grid md:place-items-start place-items-center">
-      <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-bold">
+      <h1 className="text-white text-lg font-bold  md:text-2xl md:font-bold">
         About Us
       </h1>
       <div className="md:mt-10 mb-22 mt-8 md:w-full w-90%">

@@ -164,7 +164,7 @@
 /* For Firefox */
 .scroll-container {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent; /* Transparent background, dark ash thumb */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent; /* Transparent background, dark ash thumb */
   transition: scrollbar-color 0.3s ease;
 }
 
@@ -206,7 +206,7 @@
 /* For Firefox */
 .scroll-container2 {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent; /* Transparent background, dark ash thumb */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent; /* Transparent background, dark ash thumb */
   transition: scrollbar-color 0.3s ease;
 }
 
