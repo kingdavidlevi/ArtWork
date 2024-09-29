@@ -10,7 +10,7 @@ import {
   FaPencil,
 } from 'react-icons/fa6';
 
-function Menu({ isOpen, setIsOpen }) {
+function MainMenu({ isOpen, setIsOpen }) {
   const [toggleDrops, setToggleDrops] = useState(false);
   const navigate = useNavigate();
   const terms = () => {
@@ -23,7 +23,7 @@ function Menu({ isOpen, setIsOpen }) {
     navigate('/PrivacyPolicy');
   };
   const routeToLogin = () => {
-    navigate('Login');
+    navigate('');
   };
   /*</div>*/
 
@@ -111,4 +111,4 @@ function Menu({ isOpen, setIsOpen }) {
   );
 }
 
-export default Menu;
+export default MainMenu;

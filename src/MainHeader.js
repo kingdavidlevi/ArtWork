@@ -4,7 +4,7 @@ import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import Menu from './Menu';
 import { FaLessThan } from 'react-icons/fa6';
 
-function Header({ isOpen, setIsOpen }) {
+function MainHeader({ isOpen, setIsOpen }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [toggleShowDiv, setToggleShowDiv] = useState(false);
   const [search, setSearch] = useState('');
@@ -26,7 +26,7 @@ function Header({ isOpen, setIsOpen }) {
   };
 
   const home = () => {
-    navigate('/');
+    navigate('MainHomePage');
   };
 
   const showdiv = () => {
@@ -88,7 +88,7 @@ function Header({ isOpen, setIsOpen }) {
               Authors
             </div>
 
-            <NavLink to="/Login">
+            <NavLink to="">
               <div className="text-white hover:text-gray-200  hidden sm:block text-lg font-semibold">
                 Create
               </div>
@@ -119,22 +119,21 @@ function Header({ isOpen, setIsOpen }) {
               className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
             />
-            <NavLink to="/MainHomePage">
+            <NavLink to="">
               {' '}
               <FaWallet className="text-white ml-3 text-base md:text-lg absolute font mt-3" />
               <button className="pr-4 pl-10 text-white btn py-2  md:py-2  md:text-base text-base px-4 font-normal md:font-medium rounded-lg">
-                Login
+                Wallet
               </button>
             </NavLink>
             <FaSearch
               className="   mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
-            <NavLink to="/MainHomePage">
-              <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
-                <FaUser className="text-white" />
-              </div>
-            </NavLink>
+            <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
+              <FaUser className="text-white" />
+            </div>
+
             {!isOpen ? (
               <FaBars
                 className="text-white mt-3 sm:hidden text-xl"
@@ -177,4 +176,4 @@ function Header({ isOpen, setIsOpen }) {
   );
 }
 
-export default Header;
+export default MainHeader;

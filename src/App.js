@@ -16,10 +16,17 @@ import Terms from './TermsOfService';
 import OverAll from './OverAll';
 import Menu from './Menu';
 import PrivacyPolicy from './PrivacyPolicy';
+import Main from './Main';
+import MainHomePage from './MainHomePage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<OverAll />}>
+      <Route element={<Main />}>
+        <Route path="MainHomePage" element={<MainHomePage />} />
+        <Route path="Terms" element={<Terms />} />
+        <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
+      </Route>
       <Route element={<ScrollToTop />}>
         <Route path="/" element={<Homepage />} />
         <Route path="Terms" element={<Terms />} />

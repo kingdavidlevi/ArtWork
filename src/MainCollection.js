@@ -14,20 +14,20 @@ import image10 from './Images/images (15).jpeg';
 import image11 from './Images/images (16).jpeg';
 import image12 from './Images/images (17).jpeg';
 
-function Trending() {
-  const [isScrolling2, setIsScrolling2] = useState(false);
+function MainCollection() {
+  const [isScrolling, setIsScrolling] = useState(false);
   const [data, setData] = useState([]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     let timeout;
     const handleScroll = () => {
-      setIsScrolling2(true);
+      setIsScrolling(true);
 
       // Clear the previous timeout if the user scrolls again
       clearTimeout(timeout);
       // Set a timeout to remove the scroll-active class after scrolling stops
       timeout = setTimeout(() => {
-        setIsScrolling2(false);
+        setIsScrolling(false);
       }, 2000); // 1 second delay before fading out
     };
 
@@ -39,7 +39,7 @@ function Trending() {
     return () => {
       scrollContainer.removeEventListener('scroll', handleScroll);
     };
-  }, []);*/
+  }, []);
 
   useEffect(() => {
     fetch('/data/collection.json')
@@ -53,16 +53,16 @@ function Trending() {
       .catch((error) => console.error('Error fetching the JSON data:', error));
   }, []);
   return (
-    <section className=" md:w-full mt-12 md:mt-16 grid md:place-items-start place-items-center">
-      <div className="  w-90% md:w-full place-items-center  flex gap-2  ">
+    <section className=" md:w-full grid md:place-items-start place-items-center">
+      <div className="md:mt-16 mt-10 w-90% md:w-full place-items-center  flex gap-2  ">
         <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
-          Trending Collection
+          Latest Collection
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
 
-      <section className="lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-10 w-90% md:w-full pb-4  gap-4 md:gap-6 ">
-        <div className="color-div form px-3   w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
+      <section className="lg:flex  scroll-container overflow-hidden  flex overflow-x-scroll    place-items-center mt-8 w-90% md:w-full pb-4  gap-4 md:gap-6">
+        <div className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform  hover:scale-103  w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}
             <img
@@ -416,4 +416,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default MainCollection;

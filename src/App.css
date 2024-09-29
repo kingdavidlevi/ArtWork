@@ -8,6 +8,11 @@
   background-position: center;
   width: 100%;
 }
+.main {
+  background-image: url('./Images/240_F_444918960_3UfJsxKqmwAZzWky7nqCY2EF0GRQQEVt.jpg');
+  background-size: cover;
+  background-position: center;
+}
 .nft-font {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
