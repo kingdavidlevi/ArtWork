@@ -114,7 +114,7 @@ function Header({ isOpen, setIsOpen }) {
               )}
             </div>
           </div>
-          <div className="flex gap-6 md:gap-6">
+          <div className="flex gap-3 md:gap-6">
             <FaSearch
               className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
