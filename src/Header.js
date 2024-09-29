@@ -127,7 +127,7 @@ function Header({ isOpen, setIsOpen }) {
               </button>
             </NavLink>
             <FaSearch
-              className="   mt-3.5   text-white  sm:hidden block   text-lg"
+              className=" ml-4  mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
             <NavLink to="/MainHomePage">
