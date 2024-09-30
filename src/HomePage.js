@@ -14,10 +14,7 @@ import {
   FaPencil,
 } from 'react-icons/fa6';
 import AboutUs from './AboutUs';
-/*<div className="w-14  bottom-8 h-14 z-10  grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-500">
-{' '}
-<FaCommentDots className="text-blue-100 w-7 h-7 " />
-</div>*/
+/**/
 function Homepage() {
   const { isOpen, setIsOpen } = useOutletContext();
 

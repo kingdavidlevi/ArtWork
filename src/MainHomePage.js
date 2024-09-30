@@ -1,7 +1,7 @@
 import MainCollection from './MainCollection';
 import Trending from './Trending';
 import AboutUs from './AboutUs';
-import image2 from './Images/NFT (1).png';
+import { FaCommentDots } from 'react-icons/fa6';
 function MainHomePage() {
   return (
     <section className="md:pt-32 pt-28">
@@ -41,6 +41,10 @@ function MainHomePage() {
       <MainCollection />
       <Trending />
       <AboutUs />
+      <div className="w-14  bottom-8 h-14 z-10  grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">
+        {' '}
+        <FaCommentDots className="text-blue-100 w-7 h-7 " />
+      </div>
     </section>
   );
 }
