@@ -16,6 +16,8 @@ import image12 from './Images/images (17).jpeg';
 
 function MainCollection() {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [nftName, setNftName] = useState('Christopher Art Collections9999');
+  const [text, setText] = useState('Adams Christopher99');
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -52,6 +54,10 @@ function MainCollection() {
       .then((data) => setData(data.cancelled_deliveries))
       .catch((error) => console.error('Error fetching the JSON data:', error));
   }, []);
+
+  const truncateText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+  };
   return (
     <section className=" md:w-full grid md:place-items-start place-items-center">
       <div className="md:mt-16 mt-10 w-90% md:w-full place-items-center  flex gap-2  ">
@@ -71,10 +77,19 @@ function MainCollection() {
             />{' '}
           </section>
           <div className=" mt-4">
-            <p className=" text-white  text-base  font-semibold">
-              Adams Christopher
+            <p className=" text-white md:block hidden text-base font-medium italic  md:font-semibold">
+              {truncateText(nftName, 28)}
             </p>
-            <section className="w-full flex justify-between mt-4">
+            <p className=" text-white md:hidden text-base font-medium italic  md:font-semibold">
+              {truncateText(nftName, 25)}
+            </p>
+            <section className="w-full flex items-center justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Artist :</p>
+              <p className="text-gray-400 italic md:text-base text-sm font-semibold">
+                {truncateText(text, 18)}
+              </p>
+            </section>
+            <section className="w-full flex items-center justify-between mt-4">
               <p className="text-white   text-base font-semibold">Amount :</p>
               <p className="text-white  text-base  font-semibold">
                 <span>0.2</span>ETH
