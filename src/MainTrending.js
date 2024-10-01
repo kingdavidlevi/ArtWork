@@ -14,7 +14,7 @@ import image10 from './Images/images (15).jpeg';
 import image11 from './Images/images (16).jpeg';
 import image12 from './Images/images (17).jpeg';
 
-function Trending() {
+function MainTrending() {
   const [isScrolling2, setIsScrolling2] = useState(false);
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
   const [text, setText] = useState('Adams Christopher99');
@@ -432,4 +432,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default MainTrending;

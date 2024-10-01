@@ -30,13 +30,13 @@ function AboutUs() {
           </p>
         </div>
       </section>
-      <div className="grid place-items-center  w-full">
+      <div className="grid place-items-center lg:mt-2 w-full">
         {' '}
         <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-semibold">
           Need help?
         </h1>
         <a href="mailto:info@ArtifyNfts.com">
-          <button className="text-white mt-3 font-semibold text-base rounded-lg md:px-14 px-8 py-3 bg-blue-600">
+          <button className="text-white md:mt-5 mt-3 font-semibold text-base rounded-lg md:px-14 px-8 py-3 bg-blue-600">
             Contact Support
           </button>
         </a>{' '}

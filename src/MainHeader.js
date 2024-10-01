@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useOutletContext, useNavigate } from 'react-router-dom';
 import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import Menu from './Menu';
+import Wallet from './Wallet';
 import { FaLessThan } from 'react-icons/fa6';
 
 function MainHeader({ isOpen, setIsOpen }) {
@@ -38,7 +39,7 @@ function MainHeader({ isOpen, setIsOpen }) {
   return (
     <section>
       {!toggleSearch ? (
-        <div className="w-full md:px-8 px-3 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
+        <div className="w-full md:px-8 px-3 bg-black fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
           <div className=" relative flex xl:gap-10 gap-5 ">
             <div
               className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
@@ -99,7 +100,7 @@ function MainHeader({ isOpen, setIsOpen }) {
             <div className="relative">
               <FaSearch className="md:absolute lg:block mt-3.5 ml-4 text-white hidden  text-lg" />
               <input
-                className=" py-2.5 lg:block hidden text-white text-base pl-12 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-base placeholder:text-white "
+                className=" py-2.5  lg:block hidden text-white text-base pl-12 pr-8 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-base placeholder:text-white "
                 placeholder="Search"
                 onChange={handleInput}
                 value={search}
@@ -148,7 +149,7 @@ function MainHeader({ isOpen, setIsOpen }) {
           </div>
         </div>
       ) : (
-        <div className="h-18  sm:pl-8 pl-5 flex gap-4 items-center w-full glass-header">
+        <div className="h-18  sm:pl-8 pl-5   flex  z-20  gap-4 items-center w-full glass-header">
           <div className="text-white ">
             <FaLessThan
               className=" font-normal text-base text-gray-300 "
@@ -157,7 +158,7 @@ function MainHeader({ isOpen, setIsOpen }) {
           </div>
           <input
             placeholder="Search"
-            className="border-none pr-14 outline-none font-medium w-full text-white text-base placeholder:font-normal  placeholder:text-base  bg-black placeholder:text-gray-300 "
+            className="border-none pr-14  outline-none font-medium w-full text-white text-base placeholder:font-normal  placeholder:text-base  bg-black placeholder:text-gray-300 "
             onChange={handleInput}
             value={search}
           />
@@ -172,6 +173,7 @@ function MainHeader({ isOpen, setIsOpen }) {
         </div>
       )}
       <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Wallet />
     </section>
   );
 }

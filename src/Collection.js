@@ -16,6 +16,8 @@ import image12 from './Images/images (17).jpeg';
 
 function Collection() {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [nftName, setNftName] = useState('Christopher Art Collections9999');
+  const [text, setText] = useState('Adams Christopher99');
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -40,6 +42,10 @@ function Collection() {
       scrollContainer.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const truncateText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+  };
 
   useEffect(() => {
     fetch('/data/collection.json')
@@ -67,6 +73,44 @@ function Collection() {
             {' '}
             <img
               src={image1}
+              className="md:h-48 h-40 w-full rounded-lg     md:w-70  "
+            />{' '}
+          </section>
+          <div className=" mt-4">
+            <p className=" text-white md:block hidden text-base font-medium italic  md:font-semibold">
+              {truncateText(nftName, 28)}
+            </p>
+            <p className=" text-white md:hidden text-base font-medium italic  md:font-semibold">
+              {truncateText(nftName, 25)}
+            </p>
+            <section className="w-full flex items-center justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Artist :</p>
+              <p className="text-gray-400 italic md:text-base text-sm font-semibold">
+                {truncateText(text, 18)}
+              </p>
+            </section>
+            <section className="w-full flex items-center justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Amount :</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>0.2</span>ETH
+              </p>
+            </section>
+            <section className="w-full flex justify-between mt-4">
+              <p className="text-white   text-base font-semibold">Total:</p>
+              <p className="text-white  text-base  font-semibold">
+                <span>20</span>ETH
+              </p>
+            </section>
+          </div>
+          <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+            Buy
+          </button>
+        </div>
+        <div className="color-div form px-3    w-56   min-w-56 md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
+          <section>
+            {' '}
+            <img
+              src={image2}
               className="md:h-48 h-40 w-full rounded-lg     md:w-70  "
             />{' '}
           </section>

@@ -38,7 +38,7 @@ function Header({ isOpen, setIsOpen }) {
   return (
     <section>
       {!toggleSearch ? (
-        <div className="w-full md:px-8 px-3 fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
+        <div className="w-full md:px-8 px-3 fixed z-20 glass-header  h-18 flex place-items-center justify-between ">
           <div className=" relative flex xl:gap-10 gap-5 ">
             <div
               className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
@@ -149,7 +149,7 @@ function Header({ isOpen, setIsOpen }) {
           </div>
         </div>
       ) : (
-        <div className="h-18  sm:pl-8 pl-5 flex gap-4 items-center w-full glass-header">
+        <div className="h-18 z-20  sm:pl-8 pl-5 flex gap-4 items-center w-full glass-header">
           <div className="text-white ">
             <FaLessThan
               className=" font-normal text-base text-gray-300 "
