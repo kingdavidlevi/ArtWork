@@ -10,7 +10,7 @@ function Login() {
     setVisibility((prevstate) => !prevstate);
   };
   const home = () => {
-    navigate('/');
+    navigate('/HomePage');
   };
   return (
     <section className="  grid place-content-center    h-screen   w-full  bg-black  ">

@@ -12,7 +12,7 @@ function SignUp() {
   };
 
   const home = () => {
-    navigate('/');
+    navigate('/HomePage');
   };
   return (
     <section className="grid h-full  bg-black place-items-center pt-20">

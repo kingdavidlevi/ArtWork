@@ -2,9 +2,20 @@ import MainCollection from './MainCollection';
 import MainTrending from './MainTrending';
 import AboutUs from './AboutUs';
 import { FaCommentDots } from 'react-icons/fa6';
+import { useOutletContext } from 'react-router-dom';
 function MainHomePage() {
+  const { walletOpen, setWalletOpen } = useOutletContext();
+
+  const toggleWallet = () => {
+    setWalletOpen(false);
+  };
   return (
-    <section className="md:pt-32 pt-28">
+    <section
+      className={`${
+        walletOpen ? ' md:block md:pt-32 pt-28' : 'block md:pt-32 pt-2'
+      }`}
+      onClick={toggleWallet}
+    >
       <section className="md:block md:place-items-start grid place-items-center">
         <div className="main grid  md:block place-items-center w-90% md:place-items-start  md:w-full pt-10 pb-10 md:pt-16 md:pb-16 md:pl-8  rounded-2xl ">
           <h1 className="text-white hidden md:block font-medium mb-4 lg:text-4xl xl md:text-3xl text-lg italic">

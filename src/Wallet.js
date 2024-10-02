@@ -1,22 +1,78 @@
 import { useState } from 'react';
 import Eth from './Images/download (2).png';
+import metamask from './Images/download (3).png';
 
-function Wallet() {
+import { FaCopy, FaArrowLeft } from 'react-icons/fa';
+import { useOutletContext } from 'react-router-dom';
+
+function Wallet({ walletOpen, setWalletOpen }) {
   const [wallet, setWallet] = useState(
     'UQD05PEF2iwRFrB8QdzEXIUFd0zuafjLZr-GRD14yCM-1whG',
   );
+
+  const back = () => {
+    setWalletOpen(false);
+  };
   return (
-    <section className="top-24  dropdown left-28  h-80 fixed w-83">
-      <section className="h-18  ul">
-        <div className="  gap-2 place-items-center justify-center flex font-medium text-lg   ">
-          <h1 className="text-white">Account </h1>
-          <img src={Eth} className="h-4 w-4 rounded-full" />
-        </div>
-        <div className="w-28 grid place-items-center mt-3 overflow-hidden">
-          {' '}
-          <p className="text-white text-sm text-nowrap">{wallet}</p>{' '}
-        </div>
+    <section className="md:top-20  top-0 h-full md:h-fit z-20 dropdown md:right-24 pt-4 pb-10 fixed w-full md:w-83">
+      <FaArrowLeft
+        className="white md:hidden top-6 text-white absolute left-10"
+        onClick={back}
+      />
+      <section className="h-12 flex justify-center gap-2 ul">
+        <h1 className="text-white text-xl">Wallet</h1>
+        <img src={metamask} className="h-6 w-6 mt-1  " />
       </section>
+
+      <section className="grid place-items-center mt-14 md:mt-4">
+        <h1 className="text-3xl text-white font-normal">
+          <span className="text-3xl text-white font-medium">0</span> ETH
+        </h1>
+      </section>
+      <div className=" mt-4 gap-2 place-items-center justify-center flex font-medium text-base   ">
+        <p className="text-white">Address </p>
+        <img src={Eth} className="h-4 w-4 rounded-full" />
+      </div>
+      <div className="gap-2 flex justify-center  mt-2 ">
+        {' '}
+        <section className="w-28 relative overflow-hidden">
+          <p className=" text-sm text-nowrap text-gray-200">{wallet}</p>{' '}
+        </section>
+        <div className="mt-1">
+          {' '}
+          <FaCopy className="text-white cursor-pointer text-xs" />
+        </div>
+      </div>
+      <div className="mt-10 grid place-items-center">
+        {' '}
+        <p className="text-white  w-90% text-base font-normal">
+          Withdraw network
+        </p>
+        <div className="color-div mb-6 w-90% rounded-md pl-4 mt-2  form py-1.5 text-white outline-none ">
+          <p className="text-sm font-normal">ETH (Ethereum)</p>
+        </div>
+        <form className="w-full grid place-items-center">
+          <p className="text-white w-90% text-base font-normal">
+            Withdrawal Address
+          </p>{' '}
+          <input
+            className=" mt-2 placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white color-div w-90% rounded-md form py-1.5 text-white outline-none "
+            type="text"
+            placeholder="Enter Withdrawal address"
+          />
+          <p className="text-white mt-6  w-90% text-base font-normal">
+            Withdrawal amount
+          </p>
+          <input
+            className="color-div placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white w-90% rounded-md mt-2 form py-1.5 text-white outline-none "
+            type="text"
+            placeholder="Amount"
+          />
+          <button className="py-2.5  bg-black text-base md:mt-8 mt-10 rounded-md   text-white px-10">
+            Withdraw
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

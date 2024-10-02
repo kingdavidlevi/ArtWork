@@ -5,10 +5,16 @@ import Footer from './footer';
 import MainHeader from './MainHeader';
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
+  const [walletOpen, setWalletOpen] = useState(false);
 
   return (
     <section>
-      <MainHeader isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MainHeader
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        walletOpen={walletOpen}
+        setWalletOpen={setWalletOpen}
+      />
 
       <div
         className={` ${
@@ -17,7 +23,7 @@ function Main() {
             : 'bg-black md:px-8  pb-20 w-full'
         }`}
       >
-        <Outlet context={{ isOpen, setIsOpen }} />
+        <Outlet context={{ isOpen, setIsOpen, walletOpen, setWalletOpen }} />
         <Footer />
       </div>
     </section>

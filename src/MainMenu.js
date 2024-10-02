@@ -22,9 +22,7 @@ function MainMenu({ isOpen, setIsOpen }) {
     setIsOpen(false);
     navigate('/PrivacyPolicy');
   };
-  const routeToLogin = () => {
-    navigate('');
-  };
+  const routeMint = () => {};
   /*</div>*/
 
   const drops = () => {
@@ -68,7 +66,7 @@ function MainMenu({ isOpen, setIsOpen }) {
       )}
       <ul
         className="flex px-4    cursor-pointer justify-end w-full ul items-center  h-20 "
-        onClick={routeToLogin}
+        onClick={routeMint}
       >
         <li className="flex  items-center gap-3 w-full">
           <FaPencil className="text-white  text-2xl" />

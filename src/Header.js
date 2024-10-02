@@ -26,7 +26,7 @@ function Header({ isOpen, setIsOpen }) {
   };
 
   const home = () => {
-    navigate('/');
+    navigate('/HomePage');
   };
 
   const showdiv = () => {
@@ -119,7 +119,7 @@ function Header({ isOpen, setIsOpen }) {
               className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
             />
-            <NavLink to="/MainHomePage">
+            <NavLink to="/Login">
               {' '}
               <FaWallet className="text-white ml-3 text-base md:text-lg absolute font mt-3" />
               <button className="pr-4 pl-10 text-white btn py-2  md:py-2  md:text-base text-base px-4 font-normal md:font-medium rounded-lg">
