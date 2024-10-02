@@ -25,7 +25,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
     setWalletOpen(false);
   };
   return (
-    <section className="md:top-20  top-0 h-full md:h-fit z-20 dropdown md:right-24 pt-4 pb-10 fixed w-full md:w-83">
+    <section className="md:top-20   top-0 h-screen md:h-fit z-20 dropdown md:right-24 pt-4 pb-10 fixed w-full md:w-83">
       <FaArrowLeft
         className="white md:hidden top-6 text-white absolute left-10"
         onClick={back}
