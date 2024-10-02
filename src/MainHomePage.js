@@ -11,9 +11,7 @@ function MainHomePage() {
   };
   return (
     <section
-      className={`${
-        walletOpen ? ' md:block md:pt-32 pt-28' : 'block md:pt-32 pt-2'
-      }`}
+      className={`${walletOpen ? ' md:block md:pt-32 pt-28' : 'pt-32 '}`}
       onClick={toggleWallet}
     >
       <section className="md:block md:place-items-start grid place-items-center">
