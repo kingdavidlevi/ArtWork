@@ -9,6 +9,17 @@ function Wallet({ walletOpen, setWalletOpen }) {
   const [wallet, setWallet] = useState(
     'UQD05PEF2iwRFrB8QdzEXIUFd0zuafjLZr-GRD14yCM-1whG',
   );
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(wallet)
+      .then(() => {
+        setCopied(true); // Show "Copied" text
+        setTimeout(() => setCopied(false), 3000); // Hide it after 2 seconds
+      })
+      .catch((err) => console.error('Failed to copy text: ', err));
+  };
 
   const back = () => {
     setWalletOpen(false);
@@ -38,9 +49,17 @@ function Wallet({ walletOpen, setWalletOpen }) {
         <section className="w-28 relative overflow-hidden">
           <p className=" text-sm text-nowrap text-gray-200">{wallet}</p>{' '}
         </section>
-        <div className="mt-1">
+        <div className="mt-1 relative">
           {' '}
-          <FaCopy className="text-white cursor-pointer text-xs" />
+          <FaCopy
+            className="text-white cursor-pointer text-xs"
+            onClick={handleCopy}
+          />
+          {copied && (
+            <p className="text-green-500 text-xs absolute -top-5 text-nowrap font-medium">
+              Copied !
+            </p>
+          )}
         </div>
       </div>
       <div className="mt-10 grid place-items-center">
@@ -48,7 +67,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
         <p className="text-white  w-90% text-base font-normal">
           Withdraw network
         </p>
-        <div className="color-div mb-6 w-90% rounded-md pl-4 mt-2  form py-1.5 text-white outline-none ">
+        <div className="color-div mb-6 w-90% rounded-md pl-4 mt-2  form py-3 text-white outline-none ">
           <p className="text-sm font-normal">ETH (Ethereum)</p>
         </div>
         <form className="w-full grid place-items-center">
@@ -56,7 +75,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
             Withdrawal Address
           </p>{' '}
           <input
-            className=" mt-2 placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white color-div w-90% rounded-md form py-1.5 text-white outline-none "
+            className=" mt-2 placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white color-div w-90% rounded-md form py-3 text-white outline-none "
             type="text"
             placeholder="Enter Withdrawal address"
           />
@@ -64,7 +83,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
             Withdrawal amount
           </p>
           <input
-            className="color-div placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white w-90% rounded-md mt-2 form py-1.5 text-white outline-none "
+            className="color-div placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white w-90% rounded-md mt-2 form py-3 text-white outline-none "
             type="text"
             placeholder="Amount"
           />
