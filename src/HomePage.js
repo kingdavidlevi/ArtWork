@@ -41,7 +41,7 @@ function Homepage() {
       </div>
 
       <Collection />
-      <Trending />
+
       <AboutUs />
     </div>
   );

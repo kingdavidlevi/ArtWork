@@ -18,6 +18,8 @@ import Menu from './Menu';
 import PrivacyPolicy from './PrivacyPolicy';
 import Main from './Main';
 import MainHomePage from './MainHomePage';
+import Collection from './Collection';
+import MainCollection from './MainCollection';
 import Wallet from './Wallet';
 
 const router = createBrowserRouter(
@@ -27,12 +29,14 @@ const router = createBrowserRouter(
         <Route path="/" element={<MainHomePage />} />
         <Route path="Terms" element={<Terms />} />
         <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="MainCollection" element={<MainCollection />} />
       </Route>
       <Route element={<ScrollToTop />}>
         <Route path="Homepage" element={<Homepage />} />
         <Route path="Terms" element={<Terms />} />
         <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="Menu" element={<Menu />} />
+        <Route path="Collection" element={<Collection />} />
       </Route>
       <Route path="SignUp" element={<SignUp />} />
       <Route path="Login" element={<Login />} />

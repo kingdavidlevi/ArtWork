@@ -6,6 +6,7 @@ import MainHeader from './MainHeader';
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
+  const [navigateExplore, setNavigateExplore] = useState(false);
 
   return (
     <section>
@@ -19,11 +20,20 @@ function Main() {
       <div
         className={` ${
           isOpen
-            ? 'bg-black md:px-8 overflow-hidden fixed h-full w-full pb-20 '
-            : 'bg-black md:px-8  pb-20 w-full'
+            ? 'bg-black md:px-8 md:pt-32 pt-28 overflow-hidden fixed h-full w-full pb-20 '
+            : 'bg-black md:px-8 md:pt-32 pt-28 pb-20 w-full'
         }`}
       >
-        <Outlet context={{ isOpen, setIsOpen, walletOpen, setWalletOpen }} />
+        <Outlet
+          context={{
+            isOpen,
+            setIsOpen,
+            navigateExplore,
+            setNavigateExplore,
+            walletOpen,
+            setWalletOpen,
+          }}
+        />
         <Footer />
       </div>
     </section>

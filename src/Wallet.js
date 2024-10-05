@@ -46,7 +46,10 @@ function Wallet({ walletOpen, setWalletOpen }) {
       </div>
       <div className="gap-2 flex justify-center  mt-2 ">
         {' '}
-        <section className="w-28 relative overflow-hidden">
+        <section
+          className="w-28 relative cursor-pointer overflow-hidden"
+          onClick={handleCopy}
+        >
           <p className=" text-sm text-nowrap text-gray-200">{wallet}</p>{' '}
         </section>
         <div className="mt-1 relative">
@@ -65,7 +68,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       <div className="mt-10 grid place-items-center">
         {' '}
         <p className="text-white  w-90% text-base font-normal">
-          Withdraw network
+          Withdrawal network
         </p>
         <div className="color-div mb-6 w-90% rounded-md pl-4 mt-2  form py-3 text-white outline-none ">
           <p className="text-sm font-normal">ETH (Ethereum)</p>

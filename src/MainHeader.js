@@ -48,7 +48,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   return (
     <section>
       {!toggleSearch ? (
-        <div className="w-full md:px-8 px-3 bg-black fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
+        <div className="w-full md:px-8 px-3 bg-white fixed z-10 glass-header  h-18 flex place-items-center justify-between ">
           <div
             className=" relative flex xl:gap-10 gap-5 "
             onClick={toggleHeaderWallet}

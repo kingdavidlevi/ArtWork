@@ -2,7 +2,7 @@ import { FaCircle } from 'react-icons/fa';
 
 function Terms() {
   return (
-    <section className="pt-20">
+    <section className="">
       <h2 className="text-white ml-6 md:ml-0 font-semibold md:text-6xl text-4xl ">
         Terms Of Service
       </h2>
