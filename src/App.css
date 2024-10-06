@@ -222,3 +222,6 @@
 .scroll-active2 {
   scrollbar-color: #555 transparent;
 }
+.text-area {
+  scrollbar-width: none;
+}
