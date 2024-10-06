@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 /* // Reset height to auto
  */
 function UserChat({ openchat, setOpenChat }) {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setText(event.target.value);
     event.target.style.height = 'auto';
@@ -13,10 +15,13 @@ function UserChat({ openchat, setOpenChat }) {
   const closeChat = () => {
     setOpenChat(false);
   };
+  const closeChatroute = () => {
+    navigate('/');
+  };
 
   return (
-    <div className="md:h-85% md:w-97 text-area overflow-y-scroll pt-60   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0  md:bottom-6">
-      <div className="h-32 pl-10 fixed w-full top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
+    <div className="md:h-85% md:w-97 text-area overflow-y-scroll pt-300   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0  md:bottom-6">
+      <div className="h-32 pl-10 fixed w-full z-20 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
         </h1>
@@ -27,14 +32,21 @@ function UserChat({ openchat, setOpenChat }) {
           <div className="h-2.5 w-2.5 mt-1 bg-green-400 rounded-full"></div>
           <p className="text-sm font-medium text-gray-300">Online</p>
         </section>
+        <div
+          className="absolute top-4  hidden md:block cursor-pointer right-4 "
+          onClick={closeChat}
+        >
+          <FaTimes className="text-white text-lg" />
+        </div>
+        <div
+          className="absolute md:hidden top-4 cursor-pointer right-4 "
+          onClick={closeChatroute}
+        >
+          <FaTimes className="text-white text-lg" />
+        </div>
       </div>
-      <div
-        className="absolute top-4 cursor-pointer right-4 "
-        onClick={closeChat}
-      >
-        <FaTimes className="text-white text-lg" />
-      </div>
-      <section className="fixed pl-4  bottom-1 w-full md:bottom-20">
+
+      <section className="fixed pl-4  bottom-4 w-full md:bottom-20">
         <form>
           <textarea
             value={text}
@@ -51,7 +63,7 @@ function UserChat({ openchat, setOpenChat }) {
           />
         </form>
       </section>
-      <div className="h-300">jjjjjjjjjjjjjj</div>
+      <div className="h-300 ">jjjjjjjjjjjjjj</div>
     </div>
   );
 }

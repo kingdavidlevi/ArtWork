@@ -21,6 +21,7 @@ import MainHomePage from './MainHomePage';
 import Collection from './Collection';
 import MainCollection from './MainCollection';
 import Wallet from './Wallet';
+import UserChat from './UsersChat';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="SignUp" element={<SignUp />} />
       <Route path="Login" element={<Login />} />
+      <Route path="UserChat" element={<UserChat />} />
     </Route>,
   ),
 );
