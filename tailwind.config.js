@@ -65,6 +65,7 @@ module.exports = {
       top: {
         88: '340px',
         18: '75px',
+        25: '90px',
       },
 
       height: {
@@ -107,6 +108,7 @@ module.exports = {
         22: '85px',
         30: '120px',
         18: '75px',
+        23: '90px',
       },
 
       padding: {
