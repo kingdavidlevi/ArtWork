@@ -19,7 +19,7 @@ function Main() {
 
       <div
         className={` ${
-          isOpen
+          isOpen || walletOpen
             ? 'bg-black md:px-8 md:pt-32 pt-28 overflow-hidden fixed h-full w-full pb-20 '
             : 'bg-black md:px-8 md:pt-32 pt-28 pb-20 w-full'
         }`}

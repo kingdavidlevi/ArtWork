@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import AboutUs from './AboutUs';
 import { FaCommentDots } from 'react-icons/fa6';
 import { useOutletContext } from 'react-router-dom';
+import UserChat from './UsersChat';
+import { useState } from 'react';
 function MainHomePage() {
   const { walletOpen, navigateExplore, setNavigateExplore, setWalletOpen } =
     useOutletContext();
+  const [openchat, setOpenChat] = useState(false);
   const navigate = useNavigate();
   const toggleWallet = () => {
     setWalletOpen(false);
@@ -13,6 +16,10 @@ function MainHomePage() {
   const Explore = () => {
     navigate('MainCollection');
     setNavigateExplore(true);
+  };
+
+  const chat = () => {
+    setOpenChat(true);
   };
   return (
     <section
@@ -55,16 +62,18 @@ function MainHomePage() {
           </section>
         </div>
       </section>
-      <MainCollection
-        navigateExplore={navigateExplore}
-        setNavigateExplore={setNavigateExplore}
-      />
+      <MainCollection />
 
       <AboutUs />
-      <div className="w-14  bottom-8 h-14 z-10  grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">
+      <div
+        className="w-14   bottom-8 h-14 z-10 cursor-pointer grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600"
+        onClick={chat}
+      >
         {' '}
         <FaCommentDots className="text-blue-100 w-7 h-7 " />
+        <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
       </div>
+      <UserChat />
     </section>
   );
 }

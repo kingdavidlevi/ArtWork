@@ -52,6 +52,7 @@ module.exports = {
       },
       minWidth: {
         70: '260px',
+        '90%': '90%',
       },
       borderWidth: {
         r: '0.1px',
@@ -89,6 +90,9 @@ module.exports = {
         68: '350px',
         57: '280px',
         62: '320px',
+        '90%': '90%',
+        '80%': '80%',
+        '85%': '85%',
       },
 
       fontWeight: {
