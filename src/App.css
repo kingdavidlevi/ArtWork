@@ -227,7 +227,7 @@
 }
 .chat-message {
   position: relative;
-  max-width: 100px;
+  min-width: 45%;
   padding: 10px;
   border-radius: 10px;
   background-color: #e1f5fe;
@@ -242,7 +242,7 @@
   right: 0;
   width: 20px;
   height: 20px;
-  background-color: #dcf8c6;
+  background-color: black;
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 }
 

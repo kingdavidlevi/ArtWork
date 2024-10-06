@@ -52,7 +52,7 @@ function UserChat({ openchat, setOpenChat }) {
         </div>
       </div>
 
-      <section className="fixed pl-4  bottom-4 w-full md:bottom-20">
+      <section className="fixed pl-4  z-40 bottom-4 w-full md:bottom-20">
         <form>
           <textarea
             value={text}
@@ -73,7 +73,7 @@ function UserChat({ openchat, setOpenChat }) {
         {messages.map((message, index) => (
           <div
             key={index}
-            className={`message-wrapper ${message.isSelf ? 'right' : 'left'}`}
+            className={`message-wrapper ${message.isSelf ? 'left' : 'right'}`}
           >
             <div
               className={`chat-message ${
