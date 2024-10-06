@@ -5,6 +5,12 @@ import { useNavigate } from 'react-router-dom';
  */
 function UserChat({ openchat, setOpenChat }) {
   const [text, setText] = useState('');
+  const [messages, setMessages] = useState([
+    { text: 'Hello!', isSelf: false },
+    { text: 'Hi there!', isSelf: true },
+    { text: 'How are you?', isSelf: false },
+    { text: 'I am good, thank you!', isSelf: true },
+  ]);
   const navigate = useNavigate();
   const handleChange = (event) => {
     setText(event.target.value);
@@ -20,7 +26,7 @@ function UserChat({ openchat, setOpenChat }) {
   };
 
   return (
-    <div className="md:h-85% md:w-97 text-area overflow-y-scroll pt-300   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0  md:bottom-6">
+    <div className="md:h-85% md:w-97 text-area  overflow-y-scroll pt-300   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0  md:bottom-6">
       <div className="h-32 pl-10 fixed w-full z-20 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
@@ -52,7 +58,7 @@ function UserChat({ openchat, setOpenChat }) {
             value={text}
             rows="1"
             onChange={handleChange}
-            className=" pl-4 pr-14 text-area overflow-y-scroll block h-auto max-h-32 md:w-90 w-75 placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
+            className=" pl-4 pr-14 text-area overflow-y-scroll block h-auto max-h-32 md:w-86 w-75 placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
             placeholder="Type your message here"
             style={{
               // Hide the scrollbar
@@ -63,7 +69,22 @@ function UserChat({ openchat, setOpenChat }) {
           />
         </form>
       </section>
-      <div className="h-300 ">jjjjjjjjjjjjjj</div>
+      <div className="h-300  text-white mt-40 ">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`message-wrapper ${message.isSelf ? 'right' : 'left'}`}
+          >
+            <div
+              className={`chat-message ${
+                message.isSelf ? 'right bg-blue-600' : 'left'
+              }`}
+            >
+              {message.text}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -225,3 +225,70 @@
 .text-area {
   scrollbar-width: none;
 }
+.chat-message {
+  position: relative;
+  max-width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e1f5fe;
+  color: #333;
+  word-wrap: break-word;
+}
+/* Curve effect for the right side */
+.chat-message.self::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #dcf8c6;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+/* Curve effect for left side messages (if needed) */
+.chat-message::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #e1f5fe;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+
+.message-wrapper.left {
+  justify-content: flex-start;
+}
+
+.chat-message.left {
+  background-color: #e1f5fe; /* Light blue for received messages */
+  border-radius: 10px 10px 10px 0px; /* Curve at the top-left */
+  padding: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* Right (sent) messages */
+.message-wrapper.right {
+  justify-content: flex-end;
+}
+
+.chat-message.right {
+  /* WhatsApp-like green for sent messages */
+  border-radius: 10px 10px 0px 10px; /* Curve at the top-right */
+  padding: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* Optional: Add styles for the text inside the bubbles */
+.chat-message {
+  color: #333;
+  font-size: 14px;
+}
+.message-wrapper {
+  display: flex;
+  margin: 10px 0;
+}
