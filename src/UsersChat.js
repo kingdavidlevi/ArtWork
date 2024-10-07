@@ -37,7 +37,7 @@ function UserChat({ openchat, setOpenChat }) {
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
         </h1>
-        <p className=" mt-2 text-base text-gray-200 ">
+        <p className=" mt-2 text-sm font-medium text-gray-200 ">
           Welcome to ArtifyNft Online support team.
         </p>
         <h1 className="text-white text-lg font-medium">How can we help you?</h1>
