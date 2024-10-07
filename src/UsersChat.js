@@ -32,7 +32,7 @@ function UserChat({ openchat, setOpenChat }) {
   };
 
   return (
-    <section className="md:w-97 md:h-80% pt-34 md:pt-28   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0  md:bottom-6 ">
+    <section className="md:w-97 md:h-80% pt-34 md:pt-28   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 top-0 md:bottom-6 ">
       <div className="h-32 pl-10 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
@@ -94,13 +94,13 @@ function UserChat({ openchat, setOpenChat }) {
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`message-wrapper  font-medium  ${
-                message.isSelf ? 'left' : 'right'
+              className={`message-wrapper text-white font-medium  ${
+                message.isSelf ? 'left text-white' : 'right  '
               }`}
             >
               <div
                 className={`chat-message  ${
-                  message.isSelf ? 'left' : 'right '
+                  message.isSelf ? 'left ' : 'right bg-blue-500 text-white'
                 }`}
               >
                 {message.text}
