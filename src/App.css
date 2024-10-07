@@ -227,14 +227,14 @@
 }
 .chat-message {
   position: relative;
-  min-width: 45%;
+  max-width: 45%;
   padding: 10px;
   border-radius: 10px;
   background-color: #e1f5fe;
   color: #333;
   word-wrap: break-word;
 }
-/* Curve effect for the right side */
+/* Curve effect for the right side 
 .chat-message.self::after {
   content: '';
   position: absolute;
@@ -244,7 +244,7 @@
   height: 20px;
   background-color: rgb(189, 24, 24);
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-}
+}*/
 
 /* Curve effect for left side messages (if needed) 
 .chat-message::after {
@@ -267,7 +267,7 @@
   background-color: #e1f5fe; /* Light blue for received messages */
   border-radius: 10px 10px 10px 0px; /* Curve at the top-left */
   padding: 10px;
-  max-width: 70%;
+  min-width: 50%;
   word-wrap: break-word;
 }
 
@@ -280,7 +280,7 @@
   /* WhatsApp-like green for sent messages */
   border-radius: 10px 10px 0px 10px; /* Curve at the top-right */
   padding: 10px;
-  max-width: 70%;
+  min-width: 50%;
   word-wrap: break-word;
 }
 
