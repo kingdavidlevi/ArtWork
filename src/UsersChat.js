@@ -32,8 +32,8 @@ function UserChat({ openchat, setOpenChat }) {
   };
 
   return (
-    <section className="md:w-97 md:h-80% pt-34 md:pt-28   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 top-0 md:bottom-6 ">
-      <div className="h-32 pl-10 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
+    <section className="md:w-97 md:h-80% pt-34 md:pt-28   md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 ">
+      <div className="h-32 pl-4 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
         </h1>
@@ -90,7 +90,7 @@ function UserChat({ openchat, setOpenChat }) {
           </form>
         </section>
 
-        <div className="h-300  text-white mx-6 ">
+        <div className="h-300  text-white mx-4 ">
           {messages.map((message, index) => (
             <div
               key={index}
