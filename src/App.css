@@ -242,21 +242,22 @@
   right: 0;
   width: 20px;
   height: 20px;
-  background-color: black;
+  background-color: rgb(189, 24, 24);
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 }
 
-/* Curve effect for left side messages (if needed) */
+/* Curve effect for left side messages (if needed) 
 .chat-message::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 30px;
+  border-top-left-radius: 100px;
+  right: 0;
   width: 20px;
   height: 20px;
-  background-color: #e1f5fe;
-  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-}
+  background-color: red;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}*/
 
 .message-wrapper.left {
   justify-content: flex-start;
