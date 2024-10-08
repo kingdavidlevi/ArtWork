@@ -23,7 +23,7 @@ function MainHomePage() {
     setOpenChat(true);
   };
   const chatroute = () => {
-    navigate('AdminPage');
+    navigate('UserChat');
   };
   return (
     <section
