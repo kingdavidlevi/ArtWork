@@ -130,11 +130,7 @@ function Header({ isOpen, setIsOpen }) {
               className=" ml-4  mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
-            <NavLink to="/MainHomePage">
-              <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
-                <FaUser className="text-white" />
-              </div>
-            </NavLink>
+            <NavLink to="/MainHomePage"></NavLink>
             {!isOpen ? (
               <FaBars
                 className="text-white mt-3 sm:hidden text-xl"

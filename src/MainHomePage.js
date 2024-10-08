@@ -5,6 +5,7 @@ import { FaCommentDots } from 'react-icons/fa6';
 import { useOutletContext } from 'react-router-dom';
 import UserChat from './UsersChat';
 import { useState } from 'react';
+import AdminPage from './AdminPage';
 function MainHomePage() {
   const { walletOpen, navigateExplore, setNavigateExplore, setWalletOpen } =
     useOutletContext();
@@ -22,7 +23,7 @@ function MainHomePage() {
     setOpenChat(true);
   };
   const chatroute = () => {
-    navigate('UserChat');
+    navigate('AdminPage');
   };
   return (
     <section
@@ -84,7 +85,7 @@ function MainHomePage() {
         <FaCommentDots className="text-blue-100 w-7 h-7 " />
         <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
       </div>
-      {openchat && <UserChat setOpenChat={setOpenChat} openchat={openchat} />}
+      {openchat && <AdminPage setOpenChat={setOpenChat} openchat={openchat} />}
     </section>
   );
 }

@@ -143,8 +143,10 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
               className="   mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
-            <div className="w-10 hidden cursor-pointer h-10 btn sm:grid place-items-center rounded-lg ">
-              <FaUser className="text-white" />
+            <div className=" hidden cursor-pointer py-2 px-4 btn sm:grid place-items-center rounded-lg ">
+              <p className="text-white  font-normal md:font-medium  text-base">
+                My Collections
+              </p>
             </div>
             {!isOpen ? (
               <FaBars
