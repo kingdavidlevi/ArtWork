@@ -113,7 +113,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
             <div className="relative">
               <FaSearch className="md:absolute lg:block mt-3.5 ml-4 text-white hidden  text-lg" />
               <input
-                className=" py-2.5  lg:block hidden text-white text-base pl-12 pr-8 btn xl:w-98 lg:w-82 w-70 rounded-lg outline-none placeholder:text-base placeholder:text-white "
+                className=" py-2.5  lg:block hidden text-white text-base pl-12 pr-8 btn xl:w-98 lg:w-75 w-70 rounded-lg outline-none placeholder:text-base placeholder:text-white "
                 placeholder="Search"
                 onChange={handleInput}
                 value={search}

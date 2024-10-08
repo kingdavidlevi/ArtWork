@@ -85,7 +85,7 @@ function MainHomePage() {
         <FaCommentDots className="text-blue-100 w-7 h-7 " />
         <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
       </div>
-      {openchat && <AdminPage setOpenChat={setOpenChat} openchat={openchat} />}
+      {openchat && <UserChat setOpenChat={setOpenChat} openchat={openchat} />}
     </section>
   );
 }
