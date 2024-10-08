@@ -70,7 +70,7 @@ function MainHomePage() {
 
       <AboutUs />
       <div
-        className="w-14 hidden  bottom-8 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
+        className="w-14 hidden  bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
         onClick={chat}
       >
         {' '}
