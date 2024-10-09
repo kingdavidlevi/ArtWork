@@ -34,7 +34,7 @@ function CreateCollection() {
       </header>
       <section className="grid  md:pt-36 pt-28 place-items-center">
         <div className=" md:w-260">
-          <p className="text-white text-xl md:text-2xl font-semibold">
+          <p className="text-white text-lg md:text-2xl font-semibold">
             First, you'll need to create a collection for your NFT .
           </p>
           <section className="mt-2">
