@@ -1,15 +1,23 @@
 import ImageSlider from './ImageSlider';
 import { FaImage } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 function CreateNft() {
+  const navigate = useNavigate();
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
     require('./Images/pexels-mccutcheon-1209843.jpg'),
   ];
+  const home = () => {
+    navigate('/');
+  };
   return (
     <section className=" bg-black w-full lg:flex  h-screen relative ">
-      <div className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20">
+      <div
+        className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
+        onClick={home}
+      >
         <FaArrowLeft className="text-white text-base md:text-lg  " />
       </div>
       <div className="w-full lg:h-full lg:hidden ">
