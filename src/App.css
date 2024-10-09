@@ -30,6 +30,18 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional border */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
+.glass-header2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /*background: rgba(255, 255, 255, 0.1); */
+  background-color: black;
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
 /*.btn {
   background: rgba(255, 255, 255, 0.2);
 }*/
