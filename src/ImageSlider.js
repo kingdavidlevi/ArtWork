@@ -23,8 +23,13 @@ const ImageSlider = ({ images }) => {
           style={{ backgroundImage: `url(${image})` }} // Use backgroundImage to cover the container
         ></div>
       ))}
-      <div className="absolute left-14 z-20 lg:hidden bottom-8">
-        <p className="text-white md:text-4xl text-3xl font-semibold">Create</p>
+      <div className="absolute  w-full  grid place-items-center  z-20 lg:hidden bottom-8">
+        <div className="w-90% md:w-80%">
+          {' '}
+          <p className="text-white cursor-pointer md:text-4xl text-3xl font-semibold">
+            Create
+          </p>
+        </div>
       </div>
     </div>
   );

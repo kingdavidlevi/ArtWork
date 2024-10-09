@@ -62,7 +62,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
               onClick={home}
             >
               <div className="">
-                <img src={logo} className="w-8 h-8 rounded-full" />
+                <img src={logo} className="w-6 h-6 " />
               </div>
               <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
             </div>

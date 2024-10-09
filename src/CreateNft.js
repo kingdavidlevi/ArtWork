@@ -24,14 +24,14 @@ function CreateNft() {
         {' '}
         <ImageSlider images={images} />
       </div>
-      <section className="grid lg:ml-10 place-items-center lg:place-items-start lg:place-content-center   w-full   ">
-        <div className="  lg:block  hidden ">
+      <section className="grid lg:ml-10 place-items-center  lg:place-items-start lg:place-content-center   w-full   ">
+        <div className="  lg:block  hidden cursor-pointer">
           <p className="text-white md:text-4xl text-3xl font-semibold">
             Create
           </p>
         </div>
-        <div className="btn mt-14 grid place-items-center myDiv cursor-pointer px-6 py-6 z-40 rounded-md w-90%">
-          <div className="flex w-90% gap-3">
+        <div className="btn mt-14 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%">
+          <div className="flex w-90%  gap-3">
             <FaImage className="text-white text-xl" />
             <p className="text-white font-bold text-base">Collection or item</p>
           </div>
