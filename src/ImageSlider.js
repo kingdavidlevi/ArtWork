@@ -13,7 +13,7 @@ const ImageSlider = ({ images }) => {
   }, [images.length]);
 
   return (
-    <div className="image-container bg-red-300 relative lg:w-50% w-full md:h-68 h-52  lg:h-full   ">
+    <div className="image-container  relative  w-full md:h-68 h-52  lg:h-full   ">
       {images.map((image, index) => (
         <div
           key={index}
@@ -23,7 +23,7 @@ const ImageSlider = ({ images }) => {
           style={{ backgroundImage: `url(${image})` }} // Use backgroundImage to cover the container
         ></div>
       ))}
-      <div className="absolute left-14 z-20 bottom-8">
+      <div className="absolute left-14 z-20 lg:hidden bottom-8">
         <p className="text-white md:text-4xl text-3xl font-semibold">Create</p>
       </div>
     </div>

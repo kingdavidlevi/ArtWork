@@ -8,15 +8,20 @@ function CreateNft() {
     require('./Images/pexels-mccutcheon-1209843.jpg'),
   ];
   return (
-    <section className=" bg-black w-full  h-screen relative ">
+    <section className=" bg-black w-full lg:flex  h-screen relative ">
       <div className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20">
         <FaArrowLeft className="text-white text-base md:text-lg  " />
       </div>
-      <div className="w-full lg:h-full ">
+      <div className="w-full lg:h-full lg:hidden ">
         {' '}
         <ImageSlider images={images} />
       </div>
-      <section className="grid place-items-center">
+      <section className="grid lg:ml-10 place-items-center lg:place-items-start lg:place-content-center   w-full   ">
+        <div className="  lg:block  hidden ">
+          <p className="text-white md:text-4xl text-3xl font-semibold">
+            Create
+          </p>
+        </div>
         <div className="btn mt-14 grid place-items-center myDiv cursor-pointer px-6 py-6 z-40 rounded-md w-90%">
           <div className="flex w-90% gap-3">
             <FaImage className="text-white text-xl" />
@@ -34,6 +39,10 @@ function CreateNft() {
           </section>
         </div>
       </section>
+      <div className="w-full lg:h-full hidden lg:block ">
+        {' '}
+        <ImageSlider images={images} />
+      </div>
     </section>
   );
 }
