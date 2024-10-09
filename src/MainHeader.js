@@ -58,7 +58,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
             onClick={toggleHeaderWallet}
           >
             <div
-              className="text-white Artify-div flex pr-4 cursor-pointer md:pr-6"
+              className="text-white Artify-div flex gap-3 cursor-pointer md:pr-6"
               onClick={home}
             >
               <div className="">
