@@ -290,9 +290,44 @@
 
 /* Optional: Add styles for the text inside the bubbles */
 .chat-message {
-  font-size: 14px;
+  font-size: 16px;
 }
 .message-wrapper {
   display: flex;
   margin: 10px 0;
+}
+
+/* General styling for the image container */
+.image-container {
+  position: relative;
+
+  /* You can adjust the height based on your needs */
+  overflow: hidden;
+}
+
+/* Styling for each image */
+.image-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-size: cover; /* Ensure the whole image is visible */
+  background-position: center; /* Center the image in the container */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+/* When the image is active, make it visible */
+.image-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+.myDiv {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.myDiv:hover {
+  transform: translateY(-10px); /* Moves the div 10px up */
 }

@@ -18,6 +18,9 @@ function MainHomePage() {
     navigate('MainCollection');
     setNavigateExplore(true);
   };
+  const Nft = () => {
+    navigate('CreateNft');
+  };
 
   const chat = () => {
     setOpenChat(true);
@@ -60,7 +63,10 @@ function MainHomePage() {
               Explore
             </button>
 
-            <button className="text-white font-semibold text-base rounded-md  md:px-14 px-8 py-2 md:py-3 bg-red-600">
+            <button
+              className="text-white font-semibold text-base rounded-md  md:px-14 px-8 py-2 md:py-3 bg-red-600"
+              onClick={Nft}
+            >
               Create
             </button>
           </section>

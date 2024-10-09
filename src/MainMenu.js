@@ -22,19 +22,21 @@ function MainMenu({ isOpen, setIsOpen }) {
     setIsOpen(false);
     navigate('/PrivacyPolicy');
   };
-  const routeMint = () => {};
+
   /*</div>*/
 
   const drops = () => {
     setToggleDrops((prevstate) => !prevstate);
   };
-
+  const Nft = () => {
+    navigate('CreateNft');
+  };
   const home = () => {
     navigate('/');
   };
   return (
     <div
-      className={` z-20 bg-black fixed top-0 w-full h-full  sm:hidden mt-18 menu ${
+      className={` z-20 bg-black fixed top-0 w-full h-full  md:hidden mt-18 menu ${
         isOpen ? 'open fixed ' : ''
       }`}
     >
@@ -66,7 +68,7 @@ function MainMenu({ isOpen, setIsOpen }) {
       )}
       <ul
         className="flex px-4    cursor-pointer justify-end w-full ul items-center  h-20 "
-        onClick={routeMint}
+        onClick={Nft}
       >
         <li className="flex  items-center gap-3 w-full">
           <FaPencil className="text-white  text-2xl" />

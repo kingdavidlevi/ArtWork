@@ -23,6 +23,7 @@ import MainCollection from './MainCollection';
 import Wallet from './Wallet';
 import UserChat from './UsersChat';
 import AdminPage from './AdminPage';
+import CreateNft from './CreateNft';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
       <Route path="Login" element={<Login />} />
       <Route path="UserChat" element={<UserChat />} />
       <Route path="AdminPage" element={<AdminPage />} />
+      <Route path="CreateNft" element={<CreateNft />} />
     </Route>,
   ),
 );

@@ -4,6 +4,7 @@ import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import MainMenu from './MainMenu';
 import Wallet from './Wallet';
 import { FaLessThan } from 'react-icons/fa6';
+import logo from './Images/DALL·E 2024-10-09 12.40.06 - A completely unique, random logo with abstract shapes and patterns, blending bold, contrasting colors like vibrant orange, electric blue, and neon gre.webp';
 
 function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   const [toggleSearch, setToggleSearch] = useState(false);
@@ -45,6 +46,9 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   const toggleHeaderWallet = () => {
     setWalletOpen(false);
   };
+  const Nft = () => {
+    navigate('CreateNft');
+  };
   return (
     <section>
       {!toggleSearch ? (
@@ -54,13 +58,16 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
             onClick={toggleHeaderWallet}
           >
             <div
-              className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
+              className="text-white Artify-div flex pr-4 cursor-pointer md:pr-6"
               onClick={home}
             >
+              <div className="">
+                <img src={logo} className="w-8 h-8 rounded-full" />
+              </div>
               <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
             </div>
 
-            <div className="text-white cursor-pointer   text-lg hidden sm:block hover:text-gray-200 font-semibold">
+            <div className="text-white cursor-pointer   text-lg hidden md:block hover:text-gray-200 font-semibold">
               <p onMouseEnter={showdiv} onMouseLeave={hidediv}>
                 {' '}
                 Drops
@@ -97,11 +104,14 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
                 </div>
               )}
             </section>
-            <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden sm:block font-semibold">
+            <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden md:block font-semibold">
               Authors
             </div>
 
-            <div className="text-white hover:text-gray-200  hidden sm:block text-lg font-semibold">
+            <div
+              className="text-white hover:text-gray-200  hidden md:block text-lg font-semibold"
+              onClick={Nft}
+            >
               Create
             </div>
           </div>
@@ -143,19 +153,19 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
               className="   mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
-            <div className=" hidden cursor-pointer py-2 px-4 btn sm:grid place-items-center rounded-lg ">
+            <div className=" hidden cursor-pointer py-2 px-4 btn md:grid place-items-center rounded-lg ">
               <p className="text-white  font-normal md:font-medium  text-base">
                 My Collections
               </p>
             </div>
             {!isOpen ? (
               <FaBars
-                className="text-white mt-3 sm:hidden text-xl"
+                className="text-white mt-3 md:hidden text-xl"
                 onClick={toggleMenu}
               />
             ) : (
               <FaTimes
-                className="text-white mt-3 sm:hidden text-xl"
+                className="text-white mt-3 md:hidden text-xl"
                 onClick={toggleMenu}
               />
             )}

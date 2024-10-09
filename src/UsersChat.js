@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import io from 'socket.io-client';
 import { FaTimes, FaRegPaperPlane } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-/* // Reset height to auto
- */
-function UserChat({ openchat, setOpenChat }) {
-  const [text, setText] = useState('');
+import { useNavigate, useParams } from 'react-router-dom';
 
-  const [messages, setMessages] = useState([
+/* // Reset height to auto
+ const [messages, setMessages] = useState([
     { text: 'Hello!', isSelf: false },
     { text: 'Hi there!', isSelf: true },
     { text: 'Hello!', isSelf: false },
@@ -40,7 +38,16 @@ function UserChat({ openchat, setOpenChat }) {
       isSelf: true,
     },
   ]);
+ */
+function UserChat({ openchat, setOpenChat }) {
+  const [text, setText] = useState('');
+  const [mySocket, setMySocket] = useState();
+  const [messages, setMessages] = useState([]);
+  const [Dbmessages, setDbMessages] = useState();
+  const [user, setuser] = useState('');
   const navigate = useNavigate();
+  const params = useParams(); // Use useParams hook to get route parameters
+  const messagesEndRef = useRef(null);
   const handleChange = (event) => {
     setText(event.target.value);
     event.target.style.height = 'auto';
@@ -52,6 +59,111 @@ function UserChat({ openchat, setOpenChat }) {
   };
   const closeChatroute = () => {
     navigate('/');
+  };
+
+  const Chatitems = () => {};
+  useEffect(() => {
+    const socket = io('https://middlemanbackend.onrender.com');
+    socket.emit('setCustomId', user?.Id);
+    setMySocket(socket);
+  }, []);
+  useEffect(() => {
+    mySocket?.on('private chat', (data) => {
+      setMessages((prevMessages) => [...prevMessages, data]);
+      console.log(data);
+    });
+    return () => {
+      mySocket?.off('private chat');
+    };
+  }, [mySocket]);
+
+  useEffect(() => {
+    const fetdata = async () => {
+      try {
+        const response = await fetch(
+          `https://middlemanbackend.onrender.com/getmessages/${params.id}`,
+          {
+            method: 'GET',
+            credentials: 'include',
+          },
+        );
+        const data = await response.json();
+        setDbMessages(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetdata();
+  }, [params.id]);
+
+  useEffect(() => {
+    if (Dbmessages?.messages?.length > 0) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
+    }
+  }, [Dbmessages]);
+
+  useEffect(() => {
+    const fetdata = async () => {
+      const option = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ contactId: params.id }),
+      };
+      try {
+        const response = await fetch(
+          'https://middlemanbackend.onrender.com/markAsRead',
+          option,
+        );
+        const data = await response.json();
+        console.log(data);
+        // Scroll after marking messages as read
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetdata(); // Call the async function
+  }, [messages, Dbmessages]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMessages((prevMessages) => [...prevMessages]); // Trigger re-render
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatTime = (timestamp) => {
+    const now = new Date();
+    const messageTime = new Date(timestamp);
+
+    const diffInMinutes = Math.floor(
+      (now.getTime() - messageTime.getTime()) / 60000,
+    );
+
+    if (diffInMinutes < 1) {
+      return 'Just now';
+    } else if (diffInMinutes < 60) {
+      return `${diffInMinutes} min ago`; // Use backticks for template literals
+    } else {
+      const hours = Math.floor(diffInMinutes / 60);
+      return `${hours} hr${hours > 1 ? 's' : ''} ago`; // Use backticks for template literals
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim() && params.id) {
+      mySocket.emit('private chat', {
+        from: user?.Id,
+        to: params.id,
+        text,
+        timestamp: Date.now(),
+      });
+      setText(''); // Clear the input field
+    }
   };
 
   return (
@@ -114,19 +226,39 @@ function UserChat({ openchat, setOpenChat }) {
         </section>
 
         <div className="     text-white mx-4 ">
-          {messages.map((message, index) => (
+          {messages.map((prev, index) => (
             <div
               key={index}
-              className={`message-wrapper text-white font-medium  ${
-                message.isSelf ? 'left text-white' : 'right  '
+              className={`message-wrapper text-white font-medium ${
+                prev.from === user?.Id ? 'right' : 'left text-white'
               }`}
             >
               <div
-                className={`chat-message  ${
-                  message.isSelf ? 'left ' : 'right bg-blue-500 text-white'
+                className={`chat-message ${
+                  prev.from === user?.Id
+                    ? 'right bg-blue-500 text-white'
+                    : 'left'
                 }`}
               >
-                {message.text}
+                {prev.message}
+              </div>
+            </div>
+          ))}
+          {Dbmessages?.messages?.map.map((prev, index) => (
+            <div
+              key={index}
+              className={`message-wrapper text-white font-medium ${
+                prev.from === user?.Id ? 'right' : 'left text-white'
+              }`}
+            >
+              <div
+                className={`chat-message ${
+                  prev.from === user?.Id
+                    ? 'right bg-blue-500 text-white'
+                    : 'left'
+                }`}
+              >
+                {prev.message}
               </div>
             </div>
           ))}
