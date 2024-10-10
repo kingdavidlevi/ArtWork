@@ -6,6 +6,12 @@ import { NavLink } from 'react-router-dom';
 
 function SignUp() {
   const [visibility, setVisibility] = useState(false);
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+    fullName: '',
+    confirmPassword: '',
+  });
   const navigate = useNavigate();
   const handlePassword = () => {
     setVisibility((prevstate) => !prevstate);
@@ -13,6 +19,14 @@ function SignUp() {
 
   const home = () => {
     navigate('/HomePage');
+  };
+  const handleFormChanges = (e) => {
+    const { name, value } = e.target;
+
+    setInputs((prevdata) => ({
+      ...prevdata,
+      [name]: value,
+    }));
   };
   return (
     <section className="grid h-full  bg-black place-items-center pt-20">
@@ -39,6 +53,9 @@ function SignUp() {
               <p className="text-white  text-sm  font-medium">Name</p>
             </div>
             <input
+              name="fullName"
+              onChange={handleFormChanges}
+              value={inputs.fullName}
               type="text"
               placeholder="Enter your Fullname"
               className="mt-3 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
@@ -53,27 +70,16 @@ function SignUp() {
               <p className="text-white text-sm  font-medium ">Email address </p>
             </div>
             <input
+              name="email"
+              onChange={handleFormChanges}
+              value={inputs.email}
               type="email"
               placeholder="info@yourmail.com"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
               required
             />
           </section>
-          <section className="mt-6 grid place-items-center">
-            <div className="flex gap-4 w-90%">
-              <div>
-                {' '}
-                <FaWallet className="text-white mt-0.5 " size={15} />
-              </div>
-              <p className="text-white text-sm  font-medium ">Wallet address</p>
-            </div>
-            <input
-              type="text"
-              placeholder="ETH Wallet address"
-              className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
-              required
-            />
-          </section>
+
           <section className="mt-6 grid place-items-center">
             <div className="flex gap-4 w-90%">
               <div>
@@ -83,6 +89,9 @@ function SignUp() {
               <p className="text-white text-sm font-medium">Password</p>
             </div>
             <input
+              name="password"
+              onChange={handleFormChanges}
+              value={inputs.password}
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
               className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
@@ -101,6 +110,9 @@ function SignUp() {
               </p>
             </div>
             <input
+              name="confirmPassword"
+              onChange={handleFormChanges}
+              value={inputs.confirmPassword}
               type={visibility ? 'text' : 'password'}
               placeholder="Confirm your password"
               className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black rounded-md bg-white py-3  placeholder:text-gray-400 "

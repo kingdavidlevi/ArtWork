@@ -6,11 +6,24 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
   const [visibility, setVisibility] = useState(false);
   const navigate = useNavigate();
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+  });
   const handlePassword = () => {
     setVisibility((prevstate) => !prevstate);
   };
   const home = () => {
     navigate('/HomePage');
+  };
+
+  const handleFormChanges = (e) => {
+    const { name, value } = e.target;
+
+    setInputs((prevdata) => ({
+      ...prevdata,
+      [name]: value,
+    }));
   };
   return (
     <section className="  grid place-content-center    h-screen   w-full  bg-black  ">
@@ -33,6 +46,9 @@ function Login() {
               <p className="text-white text-sm  font-medium ">Email address </p>
             </div>
             <input
+              name="email"
+              onChange={handleFormChanges}
+              value={inputs.email}
               type="email"
               placeholder="info@yourmail.com"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md  placeholder:text-gray-400 "
@@ -48,6 +64,9 @@ function Login() {
               <p className="text-white text-sm font-medium">Password</p>
             </div>
             <input
+              name="password"
+              onChange={handleFormChanges}
+              value={inputs.password}
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
               className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
