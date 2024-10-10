@@ -56,6 +56,12 @@ module.exports = {
       minWidth: {
         70: '260px',
         '90%': '90%',
+        '50%': '50%',
+      },
+      maxWidth: {
+        70: '260px',
+        '90%': '90%',
+        '50%': '50%',
       },
       borderWidth: {
         r: '0.1px',

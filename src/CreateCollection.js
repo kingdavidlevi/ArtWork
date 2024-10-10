@@ -147,9 +147,9 @@ function CreateCollection() {
                       )}
                     </div>
                     {image && fileName ? (
-                      <section className="grid min-w-50% w-50% items-center">
+                      <section className="grid max-w-60 w-60 overflow-hidden items-center">
                         {' '}
-                        <p className="text-white mt-2 text-sm font-normal">
+                        <p className="text-white text-wrap mt-2 text-sm font-normal">
                           {fileName}{' '}
                         </p>
                       </section>
@@ -213,7 +213,7 @@ function CreateCollection() {
                       )}
                     </div>
                     {image && fileName ? (
-                      <section className="grid items-center">
+                      <section className="grid w-50% items-center">
                         {' '}
                         <p className="text-white mt-2 text-sm font-normal">
                           {fileName}{' '}
