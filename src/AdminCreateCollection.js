@@ -7,20 +7,18 @@ import deletebtn from './Images/Vector (8).png';
 //
 
 import { FaWallet } from 'react-icons/fa';
-function CreateCollection() {
+function AdminCreateCollection() {
   const [walletOpen, setWalletOpen] = useState(false);
   const [uploadhover, setuploadHover] = useState(false);
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState('');
-  const fileInputRef = useRef(null);
   const [inputs, setInputs] = useState({
     collectionName: '',
+    artistName: '',
     description: '',
   });
-  const navigate = useNavigate();
-  const toggleWallet = () => {
-    setWalletOpen((prev) => !prev);
-  };
+  const fileInputRef = useRef(null);
+
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
@@ -28,8 +26,12 @@ function CreateCollection() {
       ...prevdata,
       [name]: value,
     }));
-    console.log(inputs);
   };
+  const navigate = useNavigate();
+  const toggleWallet = () => {
+    setWalletOpen((prev) => !prev);
+  };
+
   const back = () => {
     navigate('/CreateNft');
   };
@@ -160,7 +162,7 @@ function CreateCollection() {
                     {image && fileName ? (
                       <section className="grid md:max-w-60 max-w-48 w-48 md:w-60 overflow-hidden items-center">
                         {' '}
-                        <p className="text-white text-wrap mt-2 text-sm font-normal">
+                        <p className="text-white text-wrap mt-2 text-base font-semibold">
                           {fileName}{' '}
                         </p>
                       </section>
@@ -258,6 +260,17 @@ function CreateCollection() {
                   type="text"
                   className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
                 />
+                <p className="text-white mt-4 text-base font-normal md:text-xl md:font-semibold">
+                  Artist name
+                </p>
+                <input
+                  name="artistName"
+                  onChange={handleFormChanges}
+                  value={inputs.artistName}
+                  placeholder="Artist Name"
+                  type="text"
+                  className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                />
 
                 <p className="text-white mt-6 text-base font-normal md:text-xl md:font-semibold">
                   Description
@@ -284,4 +297,4 @@ function CreateCollection() {
     </section>
   );
 }
-export default CreateCollection;
+export default AdminCreateCollection;

@@ -25,6 +25,7 @@ import UserChat from './UsersChat';
 import AdminPage from './AdminPage';
 import CreateNft from './CreateNft';
 import CreateCollection from './CreateCollection';
+import AdminCreateCollection from './AdminCreateCollection';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
       <Route path="AdminPage" element={<AdminPage />} />
       <Route path="CreateNft" element={<CreateNft />} />
       <Route path="CreateCollection" element={<CreateCollection />} />
+      <Route path="AdminCreateCollection" element={<AdminCreateCollection />} />
     </Route>,
   ),
 );

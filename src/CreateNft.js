@@ -13,7 +13,7 @@ function CreateNft() {
     navigate('/');
   };
   const create = () => {
-    navigate('/CreateCollection');
+    navigate('/AdminCreateCollection');
   };
   return (
     <section className=" bg-black w-full lg:flex  h-screen relative ">
