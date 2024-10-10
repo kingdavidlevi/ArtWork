@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
-//&& file.type.startsWith('image/')
+//
 
 import { FaWallet } from 'react-icons/fa';
 function CreateCollection() {
@@ -30,7 +30,7 @@ function CreateCollection() {
   };
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
+    if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
