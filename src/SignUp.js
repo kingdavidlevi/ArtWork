@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaWallet } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import './App.css';
 import { NavLink } from 'react-router-dom';
 
 function SignUp() {
   const [visibility, setVisibility] = useState(false);
-  const [inputs, setInputs] = useState({
-    email: '',
-    password: '',
-    fullName: '',
-    confirmPassword: '',
-  });
+  const { inputs, setInputs } = useOutletContext();
+
   const navigate = useNavigate();
   const handlePassword = () => {
     setVisibility((prevstate) => !prevstate);

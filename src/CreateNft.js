@@ -52,9 +52,9 @@ function CreateNft() {
             <FaArrowRight className="text-white text-xl" />
           </section>
         </div>
-        <section className="lg:h-82 pt-2  mt-14 w-90% lg:w-full lg:overflow-y-scroll lg:overflow-hidden">
+        <section className="lg:h-82 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area   lg:overflow-y-scroll lg:overflow-hidden">
           <div
-            className="btn mt-4 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%"
+            className="btn mt-4 grid md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
             onClick={create}
           >
             <div className="flex w-90%  gap-3">
@@ -76,27 +76,6 @@ function CreateNft() {
           </div>
           <div
             className="btn mt-4 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%"
-            onClick={create}
-          >
-            <div className="flex w-90%  gap-3">
-              <FaImage className="text-white text-xl" />
-              <p className="text-white font-bold text-base">
-                Collection or item
-              </p>
-            </div>
-            <section className="w-90% flex justify-between mt-6">
-              <div className="w-80%">
-                <p className="text-white  font-medium text-base">
-                  Create a new NFT collection or add an NFT to an existing one.
-                  Your items will be displayed immediately. List for sale when
-                  you're ready.
-                </p>
-              </div>
-              <FaArrowRight className="text-white text-xl" />
-            </section>
-          </div>
-          <div
-            className="btn mt-14 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%"
             onClick={create}
           >
             <div className="flex w-90%  gap-3">

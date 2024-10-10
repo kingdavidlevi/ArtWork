@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
 function Login() {
   const [visibility, setVisibility] = useState(false);
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({
-    email: '',
-    password: '',
-  });
+  const { Logininputs, setLoginInputs } = useOutletContext();
+
   const handlePassword = () => {
     setVisibility((prevstate) => !prevstate);
   };
@@ -20,7 +19,7 @@ function Login() {
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
-    setInputs((prevdata) => ({
+    setLoginInputs((prevdata) => ({
       ...prevdata,
       [name]: value,
     }));
@@ -48,7 +47,7 @@ function Login() {
             <input
               name="email"
               onChange={handleFormChanges}
-              value={inputs.email}
+              value={Logininputs.email}
               type="email"
               placeholder="info@yourmail.com"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md  placeholder:text-gray-400 "
@@ -66,7 +65,7 @@ function Login() {
             <input
               name="password"
               onChange={handleFormChanges}
-              value={inputs.password}
+              value={Logininputs.password}
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
               className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "

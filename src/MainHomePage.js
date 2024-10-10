@@ -64,7 +64,7 @@ function MainHomePage() {
             </button>
 
             <button
-              className="text-white font-semibold text-base rounded-md  md:px-14 px-8 py-2 md:py-3 bg-red-600"
+              className="text-white font-semibold text-base hover:bg-purple-600 rounded-md  md:px-14 px-8 py-2 md:py-3 bg-purple-700"
               onClick={Nft}
             >
               Create
