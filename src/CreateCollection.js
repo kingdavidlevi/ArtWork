@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
+//&& file.type.startsWith('image/')
 
 import { FaWallet } from 'react-icons/fa';
 function CreateCollection() {
@@ -29,7 +30,7 @@ function CreateCollection() {
   };
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file) {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
@@ -107,8 +108,8 @@ function CreateCollection() {
                     // Added onClick event here
                     className={`${
                       uploadhover
-                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover flex gap-8'
-                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo flex gap-8'
+                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover flex gap-4 md:gap-8'
+                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo flex gap-4 md:gap-8'
                     }`}
                     onMouseOver={hover}
                     onMouseOut={hoverOut}
@@ -157,10 +158,10 @@ function CreateCollection() {
                         <p className="text-white font-semibold text-base md:text-lg">
                           Drag and drop or click to upload
                         </p>
-                        <p className="text-base font-normal mt-2 text-gray-400">
+                        <p className=" md:text-base text-sm font-normal mt-2 text-gray-400">
                           You may change this after uploading.
                         </p>
-                        <p className="text-base mt-1 font-normal text-gray-400">
+                        <p className=" md:text-base text-sm mt-1 font-normal text-gray-400">
                           Recommended size: 350 x 350. File types: JPG, PNG,
                           SVG, or GIF
                         </p>
@@ -174,8 +175,8 @@ function CreateCollection() {
                     onClick={handleDivClick} // Added onClick event here
                     className={`${
                       uploadhover
-                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover flex gap-8'
-                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo flex gap-8'
+                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover   flex gap-4 md:gap-8'
+                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo  flex gap-4 md:gap-8'
                     }`}
                     onMouseOver={hover}
                     onMouseOut={hoverOut}
@@ -224,10 +225,10 @@ function CreateCollection() {
                         <p className="text-white font-semibold text-base md:text-lg">
                           Drag and drop or click to upload
                         </p>
-                        <p className="text-base font-normal mt-2 text-gray-400">
+                        <p className="md:text-base text-sm font-normal mt-2 text-gray-400">
                           You may change this after uploading.
                         </p>
-                        <p className="text-base mt-1 font-normal text-gray-400">
+                        <p className=" md:text-base text-sm mt-1 font-normal text-gray-400">
                           Recommended size: 350 x 350. File types: JPG, PNG,
                           SVG, or GIF
                         </p>
