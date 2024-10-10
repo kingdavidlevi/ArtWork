@@ -125,12 +125,15 @@ function UploadNft() {
           onMouseOut={hoverOut}
           style={{ cursor: 'pointer' }} // Make the div clickable
         >
-          <section
-            className="absolute z-40 top-4 right-3  md:top-6 md:right-8"
-            onClick={handleDelete}
-          >
-            {image && <FaTrash className="text-white" />}
-          </section>
+          {' '}
+          {image && (
+            <section
+              className="absolute z-40 top-4 right-3     md:top-6 md:right-8"
+              onClick={handleDelete}
+            >
+              <FaTrash className="text-white" />
+            </section>
+          )}
           <input
             type="file"
             accept="image/*"
