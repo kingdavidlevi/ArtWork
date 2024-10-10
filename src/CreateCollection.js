@@ -33,6 +33,9 @@ function CreateCollection() {
   const back = () => {
     navigate('/CreateNft');
   };
+  const routeToUpload = () => {
+    navigate('/UploadNft');
+  };
   const hover = () => {
     setuploadHover(true);
   };
@@ -273,7 +276,10 @@ function CreateCollection() {
               </div>
             </section>
           </div>
-          <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+          <button
+            className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+            onClick={routeToUpload}
+          >
             Continue
           </button>
         </section>

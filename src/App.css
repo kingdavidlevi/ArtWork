@@ -93,6 +93,9 @@
 .color-div {
   background: rgba(255, 255, 255, 0.1);
 }
+.upp:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
 .form {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
