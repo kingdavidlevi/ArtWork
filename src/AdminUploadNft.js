@@ -10,11 +10,12 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 
-function UploadNft() {
+function AdminUploadNft() {
   const navigate = useNavigate();
   const [walletOpen, setWalletOpen] = useState(false);
   const [uploadhover, setuploadHover] = useState(false);
   const [inputs, setInputs] = useState({
+    artistName: '',
     nftName: '',
     amount: '',
     Description: '',
@@ -90,7 +91,7 @@ function UploadNft() {
   };
 
   return (
-    <section className="h-full pb-20  bg-black">
+    <section className="h-full pb-20 bg-black">
       <header className="glass-header2 w-full px-2 md:px-6  justify-between z-30 h-18 flex items-center">
         <div className="flex gap-3">
           <div
@@ -118,7 +119,7 @@ function UploadNft() {
           onClick={handleDivClick} // Added onClick event here
           className={`${
             uploadhover
-              ? 'rounded-xl  upp relative md:w-full   mt-10 cover-photohover sm:h-72 h-56 md:h-64 w-80%  sm:w-90   '
+              ? 'rounded-xl  upp relative   mt-10 cover-photohover sm:h-72 h-56 md:h-64 w-80%  md:w-90   '
               : 'rounded-xl  upp relative  mt-10  cover-photo h-56 sm:h-72 md:h-64 w-80%  md:w-90   '
           }`}
           onMouseOver={hover}
@@ -168,54 +169,65 @@ function UploadNft() {
             )}
           </section>
         </div>
-
-        <div className="w-90%">
-          <section className=" mt-4">
-            {' '}
-            <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-              Name *
-            </p>
-          </section>
-          <input
-            name="nftName"
-            onChange={handleFormChanges}
-            value={inputs.nftName}
-            placeholder="Name your NFT"
-            type="text"
-            className="px-3 w-full  mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-          />
-          <section className="w-full mt-4">
-            {' '}
-            <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-              Amount *
-            </p>
-          </section>
-          <input
-            name="amount"
-            onChange={handleFormChanges}
-            value={inputs.amount}
-            placeholder="Name your NFT"
-            type="text"
-            className="px-3 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-          />
-          <section className="w-full mt-4">
-            {' '}
-            <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-              Description
-            </p>
-          </section>
-          <textarea
-            name="Description"
-            onChange={handleFormChanges}
-            value={inputs.Description}
-            placeholder=""
-            type="text"
-            className="px-3 max-h-40 h-40 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-          />
-          <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
-            Create
-          </button>
-        </div>
+        <section className="w-90% mt-4">
+          {' '}
+          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
+            Name *
+          </p>
+        </section>
+        <input
+          name="nftName"
+          onChange={handleFormChanges}
+          value={inputs.nftName}
+          placeholder="Name your NFT"
+          type="text"
+          className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+        />
+        <section className="w-90% mt-4">
+          {' '}
+          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
+            Amount *
+          </p>
+        </section>
+        <input
+          name="amount"
+          onChange={handleFormChanges}
+          value={inputs.amount}
+          placeholder="Name your NFT"
+          type="text"
+          className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+        />
+        <section className="w-90% mt-4">
+          {' '}
+          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
+            Name *
+          </p>
+        </section>
+        <input
+          name="artistName"
+          onChange={handleFormChanges}
+          value={inputs.artistName}
+          placeholder="Artist name"
+          type="text"
+          className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+        />
+        <section className="w-90% mt-4">
+          {' '}
+          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
+            Description
+          </p>
+        </section>
+        <textarea
+          name="Description"
+          onChange={handleFormChanges}
+          value={inputs.Description}
+          placeholder=""
+          type="text"
+          className="px-3 max-h-40 h-40 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+        />
+        <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+          Create
+        </button>
       </section>
 
       {walletOpen && (
@@ -224,4 +236,4 @@ function UploadNft() {
     </section>
   );
 }
-export default UploadNft;
+export default AdminUploadNft;
