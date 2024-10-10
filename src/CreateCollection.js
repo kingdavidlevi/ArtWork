@@ -92,11 +92,11 @@ function CreateCollection() {
       <form>
         <section className="grid place-items-center md:pt-36 pt-28  ">
           <div className=" md:w-260   w-90%">
-            <p className="text-white text-lg md:text-2xl font-medium">
+            <p className="text-white text-base md:text-2xl font-medium">
               First, you'll need to create a collection for your NFT .
             </p>
             <section className="mt-2">
-              <p className="text-white  text-lg md:text-2xl font-medium">
+              <p className="text-white  text-base md:text-2xl font-medium">
                 N/b : Minting of each artwork costs 0.2ETH
               </p>
               <p className="text-white  mt-10   text-base font-normal md:text-xl ">
@@ -147,7 +147,7 @@ function CreateCollection() {
                       )}
                     </div>
                     {image && fileName ? (
-                      <section className="grid items-center">
+                      <section className="grid min-w-50% w-50% items-center">
                         {' '}
                         <p className="text-white mt-2 text-sm font-normal">
                           {fileName}{' '}
@@ -190,7 +190,6 @@ function CreateCollection() {
                     </section>
                     <input
                       type="file"
-                      accept="image/*"
                       onChange={handleFileChange}
                       ref={fileInputRef} // Ref for input
                       style={{ display: 'none' }} // Hide the input
@@ -254,22 +253,6 @@ function CreateCollection() {
                   className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
                 />
               </div>
-              <p className="text-white  mt-10  text-base font-normal md:text-xl  md:font-semibold">
-                Collection name
-              </p>
-              <input
-                placeholder="My Collection Name"
-                type="text "
-                className="px-3 mt-4   collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black "
-              />
-              <p className="text-white  mt-6 text-base font-normal md:text-xl  md:font-semibold">
-                Description
-              </p>
-              <input
-                placeholder="Description"
-                type="text "
-                className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black "
-              />
             </section>
           </div>
           <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
