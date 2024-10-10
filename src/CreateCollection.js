@@ -190,6 +190,7 @@ function CreateCollection() {
                     </section>
                     <input
                       type="file"
+                      accept="image/*"
                       onChange={handleFileChange}
                       ref={fileInputRef} // Ref for input
                       style={{ display: 'none' }} // Hide the input
