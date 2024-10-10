@@ -58,6 +58,10 @@ function MainTrending() {
   const truncateText = (str, maxLength) => {
     return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
   };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
   return (
     <section className=" md:w-full mt-12 md:mt-16 grid md:place-items-start place-items-center">
       <div className="  w-90% md:w-full place-items-center  flex gap-2  ">
@@ -67,7 +71,7 @@ function MainTrending() {
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
 
-      <section className="lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-10 w-90% md:w-full pb-4  gap-4 md:gap-6 ">
+      <section className="lg:flex scroll-container2 overflow-hidden  flex overflow-x-scroll    place-items-center mt-8 w-90% md:w-full pb-4  gap-4 md:gap-6 ">
         <div className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform  hover:scale-103  w-56 min-w-56  md:w-70 md:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
           <section>
             {' '}

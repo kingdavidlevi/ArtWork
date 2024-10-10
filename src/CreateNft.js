@@ -45,8 +45,8 @@ function CreateNft() {
             <div className="w-80%">
               <p className="text-white  font-medium text-base">
                 Create a new NFT collection or add an NFT to an existing one.
-                Your items will displayed immediately.List for sale when you're
-                ready.
+                Your items will be displayed immediately. List for sale when
+                you're ready.
               </p>
             </div>
             <FaArrowRight className="text-white text-xl" />

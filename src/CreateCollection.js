@@ -1,21 +1,77 @@
 import { useState } from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaImage, FaTrash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 import Wallet from './Wallet';
+import deletebtn from './Images/Vector (8).png';
+
 import { FaWallet } from 'react-icons/fa';
 function CreateCollection() {
   const [walletOpen, setWalletOpen] = useState(false);
+  const [uploadhover, setuploadHover] = useState(false);
+  const [image, setImage] = useState(null);
+  const [fileName, setFileName] = useState('');
+  const fileInputRef = useRef(null);
+
   const navigate = useNavigate();
   const toggleWallet = () => {
     setWalletOpen((prev) => !prev);
   };
 
   const back = () => {
-    navigate();
+    navigate('/CreateNft');
   };
+  const hover = () => {
+    setuploadHover(true);
+  };
+  const hoverOut = () => {
+    setuploadHover(false);
+  };
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result);
+        setFileName(file.name);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Handle file drop (via drag and drop)
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result);
+        setFileName(file.name);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Prevent default behavior when dragging files over the drop area
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  // Function to handle file selection
+
+  // Function to trigger file input when div is clicked
+  const handleDivClick = () => {
+    fileInputRef.current.click();
+  };
+  const handleDelete = () => {
+    setImage(null);
+    setFileName(''); // Clear the file name
+  };
+
   return (
-    <section className="h-screen bg-black ">
-      <header className="glass-header2 w-full px-6  justify-between z-20 h-18 flex items-center">
+    <section className="xl:h-full lg:h-screen h-full  bg-black ">
+      <header className="glass-header2 w-full px-2 md:px-6  justify-between z-20 h-18 flex items-center">
         <div className="flex gap-3">
           <div
             className=" cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
@@ -32,19 +88,194 @@ function CreateCollection() {
           </button>
         </div>
       </header>
-      <section className="grid  md:pt-36 pt-28 place-items-center">
-        <div className=" md:w-260">
-          <p className="text-white text-lg md:text-2xl font-semibold">
-            First, you'll need to create a collection for your NFT .
-          </p>
-          <section className="mt-2">
-            <p className="text-white   text-xl md:text-2xl font-semibold">
-              N/b : Minting of each artwork at costs 0.2ETH
+      <form>
+        <section className="grid place-items-center md:pt-36 pt-28  ">
+          <div className=" md:w-260   w-90%">
+            <p className="text-white text-lg md:text-2xl font-medium">
+              First, you'll need to create a collection for your NFT .
             </p>
-          </section>
-        </div>
-      </section>
+            <section className="mt-2">
+              <p className="text-white  text-lg md:text-2xl font-medium">
+                N/b : Minting of each artwork costs 0.2ETH
+              </p>
+              <p className="text-white  mt-10   text-base font-normal md:text-xl ">
+                Logo image
+              </p>
+              <div>
+                {image ? (
+                  <div
+                    // Added onClick event here
+                    className={`${
+                      uploadhover
+                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover flex gap-8'
+                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo flex gap-8'
+                    }`}
+                    onMouseOver={hover}
+                    onMouseOut={hoverOut}
+                    style={{ cursor: 'pointer' }} // Make the div clickable
+                  >
+                    <section
+                      className="absolute z-20 top-6 right-8"
+                      onClick={handleDelete}
+                    >
+                      {image && <FaTrash className="text-white" />}
+                    </section>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      ref={fileInputRef} // Ref for input
+                      style={{ display: 'none' }} // Hide the input
+                    />
 
+                    <div
+                      className={`${
+                        uploadhover
+                          ? 'w-28 h-28 min-w-28 grid place-items-center cover-photohover rounded-xl'
+                          : 'w-28 h-28 min-w-28 grid place-items-center cover-photo rounded-xl'
+                      }`}
+                    >
+                      {image ? (
+                        <img
+                          src={image}
+                          className="w-28 rounded-xl h-28 min-w-28"
+                          alt="uploaded"
+                        />
+                      ) : (
+                        <FaImage className="text-white text-xl" />
+                      )}
+                    </div>
+                    {image && fileName ? (
+                      <section className="grid items-center">
+                        {' '}
+                        <p className="text-white mt-2 text-sm font-normal">
+                          {fileName}{' '}
+                        </p>
+                      </section>
+                    ) : (
+                      <section className=" ">
+                        <p className="text-white font-semibold text-base md:text-lg">
+                          Drag and drop or click to upload
+                        </p>
+                        <p className="text-base font-normal mt-2 text-gray-400">
+                          You may change this after uploading.
+                        </p>
+                        <p className="text-base mt-1 font-normal text-gray-400">
+                          Recommended size: 350 x 350. File types: JPG, PNG,
+                          SVG, or GIF
+                        </p>
+                      </section>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                    onClick={handleDivClick} // Added onClick event here
+                    className={`${
+                      uploadhover
+                        ? 'rounded-xl py-6 relative px-6 md:px-8 md:py-8 mt-6 cover-photohover flex gap-8'
+                        : 'rounded-xl px-6 py-6 relative md:px-8 md:py-8 mt-6 cover-photo flex gap-8'
+                    }`}
+                    onMouseOver={hover}
+                    onMouseOut={hoverOut}
+                    style={{ cursor: 'pointer' }} // Make the div clickable
+                  >
+                    <section
+                      className="absolute z-20 top-6 right-8"
+                      onClick={handleDelete}
+                    >
+                      {image && <FaTrash className="text-white" />}
+                    </section>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      ref={fileInputRef} // Ref for input
+                      style={{ display: 'none' }} // Hide the input
+                    />
+
+                    <div
+                      className={`${
+                        uploadhover
+                          ? 'w-28 h-28 min-w-28 grid place-items-center cover-photohover rounded-xl'
+                          : 'w-28 h-28 min-w-28 grid place-items-center cover-photo rounded-xl'
+                      }`}
+                    >
+                      {image ? (
+                        <img
+                          src={image}
+                          className="w-28 rounded-xl h-28 min-w-28"
+                          alt="uploaded"
+                        />
+                      ) : (
+                        <FaImage className="text-white text-xl" />
+                      )}
+                    </div>
+                    {image && fileName ? (
+                      <section className="grid items-center">
+                        {' '}
+                        <p className="text-white mt-2 text-sm font-normal">
+                          {fileName}{' '}
+                        </p>
+                      </section>
+                    ) : (
+                      <section className=" ">
+                        <p className="text-white font-semibold text-base md:text-lg">
+                          Drag and drop or click to upload
+                        </p>
+                        <p className="text-base font-normal mt-2 text-gray-400">
+                          You may change this after uploading.
+                        </p>
+                        <p className="text-base mt-1 font-normal text-gray-400">
+                          Recommended size: 350 x 350. File types: JPG, PNG,
+                          SVG, or GIF
+                        </p>
+                      </section>
+                    )}
+                  </div>
+                )}
+                <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
+                  Collection name
+                </p>
+                <input
+                  placeholder="My Collection Name"
+                  type="text"
+                  className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                />
+
+                <p className="text-white mt-6 text-base font-normal md:text-xl md:font-semibold">
+                  Description
+                </p>
+                <input
+                  placeholder="Description"
+                  type="text"
+                  className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                />
+              </div>
+              <p className="text-white  mt-10  text-base font-normal md:text-xl  md:font-semibold">
+                Collection name
+              </p>
+              <input
+                placeholder="My Collection Name"
+                type="text "
+                className="px-3 mt-4   collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black "
+              />
+              <p className="text-white  mt-6 text-base font-normal md:text-xl  md:font-semibold">
+                Description
+              </p>
+              <input
+                placeholder="Description"
+                type="text "
+                className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black "
+              />
+            </section>
+          </div>
+          <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+            Continue
+          </button>
+        </section>
+      </form>
       {walletOpen && (
         <Wallet walletOpen={walletOpen} setWalletOpen={setWalletOpen} />
       )}

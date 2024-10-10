@@ -343,3 +343,16 @@
 .myDiv:hover {
   transform: translateY(-10px); /* Moves the div 10px up */
 }
+.cover-photo {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.collection-name {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.collection-name:hover {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cover-photohover {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

@@ -44,10 +44,8 @@ function MainLatest() {
             </p>
           </section>
           <section className="w-full flex items-center justify-between mt-4">
-            <p className="text-white   text-base font-semibold">Amount :</p>
-            <p className="text-white  text-base  font-semibold">
-              <span>0.2</span>ETH
-            </p>
+            <p className="text-white   text-base font-semibold">items :</p>
+            <p className="text-white  text-base  font-semibold">4</p>
           </section>
           <section className="w-full flex justify-between mt-4">
             <p className="text-white   text-base font-semibold">Total:</p>
