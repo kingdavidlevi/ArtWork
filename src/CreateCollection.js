@@ -116,7 +116,7 @@ function CreateCollection() {
                     style={{ cursor: 'pointer' }} // Make the div clickable
                   >
                     <section
-                      className="absolute z-20 top-6 right-8"
+                      className="absolute z-20 md:top-6 right-6 top-4 md:right-8"
                       onClick={handleDelete}
                     >
                       {image && <FaTrash className="text-white" />}
@@ -183,7 +183,7 @@ function CreateCollection() {
                     style={{ cursor: 'pointer' }} // Make the div clickable
                   >
                     <section
-                      className="absolute z-20 top-6 right-8"
+                      className="absolute z-20 top-4  md:top-6 md:right-8"
                       onClick={handleDelete}
                     >
                       {image && <FaTrash className="text-white" />}
