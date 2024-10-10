@@ -215,10 +215,11 @@ function UploadNft() {
             type="text"
             className="px-3 max-h-40 h-40 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
           />
-
-          <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
-            Create
-          </button>
+          <section className="w-full lg:place-items-start grid place-items-center">
+            <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+              Create
+            </button>
+          </section>
         </div>
       </form>
 
