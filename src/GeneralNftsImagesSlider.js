@@ -6,7 +6,7 @@ const GeneralNftsImageSlider = ({ images }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="image-container  relative   w-full  md:h-52   h-40  ">
+    <div className="image-container  relative   w-full  md:h-44   h-36  ">
       <img
         className="w-full  md:h-52   h-40 "
         src={img}
