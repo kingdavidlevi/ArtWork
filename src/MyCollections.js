@@ -33,9 +33,11 @@ function MyCollections() {
         <CollectionImageSlider images={images} />
       </div>
       <section className="h-80  grid place-items-center">
-        <div className="">
-          <p className="text-white">You have no NFT in your collection</p>
-          <button className="bg-blue-600 text-white px-2 py-2 rounded-md">
+        <div className="grid place-items-center">
+          <p className="text-white text-xl font-medium">
+            You have no NFT in your collection
+          </p>
+          <button className="bg-blue-600 text-white mt-6 px-8 py-2 rounded-md">
             Add NFT
           </button>
         </div>
