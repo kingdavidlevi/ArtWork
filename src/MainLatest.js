@@ -24,8 +24,8 @@ function MainLatest() {
     return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
   };
 
-  const viewCollections = () => {
-    navigate('GeneralNfts');
+  const viewCollections = (id) => {
+    navigate(`GeneralNfts/${id}`);
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function MainLatest() {
 
       try {
         const response = await fetch(
-          'https://artifynft.onrender.com/latest',
+          `https://artifynft.onrender.com/latest`,
           options,
         );
         const data = await response.json();
@@ -57,7 +57,7 @@ function MainLatest() {
 
     fetchLatestCollection();
   }, []); // Empty dependency array to run this effect only once on component mount
-  console.log(latestsource);
+
   return (
     <section className="lg:flex  scroll-container overflow-hidden  flex overflow-x-scroll    place-items-center mt-8 w-90% md:w-full pb-4  gap-4 md:gap-6">
       {latestsource.map((item) => (
@@ -95,7 +95,7 @@ function MainLatest() {
           </div>
           <button
             className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white"
-            onClick={viewCollections}
+            onClick={() => viewCollections(item._id)}
           >
             Buy
           </button>

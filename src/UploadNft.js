@@ -176,7 +176,7 @@ function UploadNft() {
           <section className=" mt-4">
             {' '}
             <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-              Name *
+              Item Name *
             </p>
           </section>
           <input
@@ -197,24 +197,11 @@ function UploadNft() {
             name="amount"
             onChange={handleFormChanges}
             value={inputs.amount}
-            placeholder="Name your NFT"
+            placeholder="Amount"
             type="text"
             className="px-3 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
           />
-          <section className="w-full mt-6">
-            {' '}
-            <p className="text-white  text-base font-normal md:text-xl md:font-semibold">
-              Description
-            </p>
-          </section>
-          <textarea
-            name="Description"
-            onChange={handleFormChanges}
-            value={inputs.Description}
-            placeholder=""
-            type="text"
-            className="px-3 max-h-40 h-40 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-          />
+
           <section className="w-full lg:place-items-start grid place-items-center">
             <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
               Create

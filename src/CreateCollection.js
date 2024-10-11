@@ -265,13 +265,13 @@ function CreateCollection() {
                 <p className="text-white mt-6 text-base font-normal md:text-xl md:font-semibold">
                   Description
                 </p>
-                <input
+                <textarea
                   name="description"
                   onChange={handleFormChanges}
                   value={inputs.description}
                   placeholder="Description"
                   type="text"
-                  className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                  className="px-3 mt-4 h-32 max-h-32 collection-name outline-none placeholder:text-base  w-full text-gray-400 py-3 rounded-md bg-black"
                 />
               </div>
             </section>

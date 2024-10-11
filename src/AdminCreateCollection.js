@@ -4,8 +4,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
-/* if (data) {
-  navigate(`/UploadNft/${data._id}`);
+/* ;
 }*/
 
 import { FaWallet } from 'react-icons/fa';
@@ -105,8 +104,10 @@ function AdminCreateCollection() {
       );
       const data = await response.json();
       console.log(data);
-
-      setLatestCollection(data);
+      if (data) {
+        navigate(`/AdminUploadNft/${data._id}`);
+        setLatestCollection(data);
+      }
     } catch (error) {
       setErrorMessage(error);
     }
@@ -174,6 +175,7 @@ function AdminCreateCollection() {
                       {Image && <FaTrash className="text-white" />}
                     </section>
                     <input
+                      required
                       type="file"
                       accept="image/*"
                       onChange={handleFileChange}
@@ -316,14 +318,14 @@ function AdminCreateCollection() {
                 <p className="text-white mt-6 text-base font-normal md:text-xl md:font-semibold">
                   Description
                 </p>
-                <input
+                <textarea
                   required
                   name="description"
                   onChange={handleFormChanges}
                   value={inputs.description}
                   placeholder="Description"
                   type="text"
-                  className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                  className="px-3 mt-4 h-32 max-h-32 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
                 />
               </div>
             </section>

@@ -9,13 +9,18 @@ import {
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
+import { useParams } from 'react-router-dom';
 
 function AdminUploadNft() {
   const navigate = useNavigate();
+  const params = useParams();
   const [walletOpen, setWalletOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState('');
+  const [imageFile, setImageFile] = useState(null);
   const [uploadhover, setuploadHover] = useState(false);
+
   const [inputs, setInputs] = useState({
-    artistName: '',
     nftName: '',
     amount: '',
     Description: '',
@@ -39,7 +44,7 @@ function AdminUploadNft() {
   };
 
   const back = () => {
-    navigate('/AdminCreateCollection');
+    navigate('/');
   };
 
   const hover = () => {
@@ -55,6 +60,7 @@ function AdminUploadNft() {
       reader.onload = () => {
         setImage(reader.result);
         setFileName(file.name);
+        setImageFile(file);
       };
       reader.readAsDataURL(file);
     }
@@ -69,6 +75,7 @@ function AdminUploadNft() {
       reader.onload = () => {
         setImage(reader.result);
         setFileName(file.name);
+        setImageFile(file);
       };
       reader.readAsDataURL(file);
     }
@@ -89,7 +96,40 @@ function AdminUploadNft() {
     setImage(null);
     setFileName(''); // Clear the file name
   };
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    if (!image) return;
 
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('price', inputs.amount);
+    formData.append('itemName', inputs.nftName);
+    formData.append('colId', params.id);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        `https://artifynft.onrender.com/postLatestNft`,
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        setImage(null);
+        setFileName('');
+        setInputs({ nftName: '', amount: '', Description: '' });
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+
+    setLoading(true);
+  };
   return (
     <section className="h-full pb-20 bg-black">
       <header className="glass-header2 w-full px-2 md:px-6  justify-between z-30 h-18 flex items-center">
@@ -136,6 +176,7 @@ function AdminUploadNft() {
             </section>
           )}
           <input
+            required
             type="file"
             accept="image/*"
             onChange={handleFileChange}
@@ -172,10 +213,11 @@ function AdminUploadNft() {
         <section className="w-90% mt-4">
           {' '}
           <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-            Name *
+            Item Name *
           </p>
         </section>
         <input
+          required
           name="nftName"
           onChange={handleFormChanges}
           value={inputs.nftName}
@@ -197,35 +239,11 @@ function AdminUploadNft() {
           type="text"
           className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
         />
-        <section className="w-90% mt-4">
-          {' '}
-          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-            Name *
-          </p>
-        </section>
-        <input
-          name="artistName"
-          onChange={handleFormChanges}
-          value={inputs.artistName}
-          placeholder="Artist name"
-          type="text"
-          className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-        />
-        <section className="w-90% mt-4">
-          {' '}
-          <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-            Description
-          </p>
-        </section>
-        <textarea
-          name="Description"
-          onChange={handleFormChanges}
-          value={inputs.Description}
-          placeholder=""
-          type="text"
-          className="px-3 max-h-40 h-40 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
-        />
-        <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+
+        <button
+          className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+          onClick={handlesubmit}
+        >
           Create
         </button>
       </section>

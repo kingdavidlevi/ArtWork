@@ -32,18 +32,6 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
     };
   }, []);
 
-  useEffect(() => {
-    fetch('/data/collection.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-      })
-      .then((data) => setData(data.cancelled_deliveries))
-      .catch((error) => console.error('Error fetching the JSON data:', error));
-  }, []);
-
   return (
     <section className=" md:w-full grid md:place-items-start place-items-center">
       <div
