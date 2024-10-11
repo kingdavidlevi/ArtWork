@@ -31,6 +31,9 @@ function MainMenu({ isOpen, setIsOpen }) {
   const Nft = () => {
     navigate('CreateNft');
   };
+  const routeMycollection = () => {
+    navigate('MyCollections');
+  };
   const home = () => {
     navigate('/');
   };
@@ -82,7 +85,10 @@ function MainMenu({ isOpen, setIsOpen }) {
           <p className="text-white  text-base font-semibold">Authors</p>
         </li>
       </ul>
-      <ul className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 ">
+      <ul
+        className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 "
+        onClick={routeMycollection}
+      >
         <li className="grid  items-center gap-3 w-full">
           <p className="text-white  text-base font-semibold">My Collection</p>
         </li>

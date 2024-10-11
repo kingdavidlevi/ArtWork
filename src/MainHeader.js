@@ -49,6 +49,10 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   const Nft = () => {
     navigate('CreateNft');
   };
+
+  const routeMycollection = () => {
+    navigate('MyCollections');
+  };
   return (
     <section>
       {!toggleSearch ? (
@@ -153,7 +157,10 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
               className="   mt-3.5   text-white  sm:hidden block   text-lg"
               onClick={toggleSearchBtn}
             />
-            <div className=" hidden cursor-pointer py-2 px-4 btn md:grid place-items-center rounded-lg ">
+            <div
+              className=" hidden cursor-pointer py-2 px-4 btn md:grid place-items-center rounded-lg "
+              onClick={routeMycollection}
+            >
               <p className="text-white  font-normal md:font-medium  text-base">
                 My Collections
               </p>

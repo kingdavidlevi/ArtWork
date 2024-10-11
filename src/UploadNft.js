@@ -38,7 +38,7 @@ function UploadNft() {
   };
 
   const back = () => {
-    navigate('/CreateCollection');
+    navigate(-1);
   };
 
   const hover = () => {
