@@ -96,7 +96,7 @@ function AdminCreateCollection() {
 
     try {
       const response = await fetch(
-        '(http://localhost:3500/getpostLatestCol',
+        'http://localhost:3500/postLatestCol',
         options,
       );
       const data = await response.json();

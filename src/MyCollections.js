@@ -1,9 +1,9 @@
-import ImageSlider from './ImageSlider';
 import { useState } from 'react';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
-import testing from './Images/download (2).png';
+
+import CollectionImageSlider from './CollectionImageSlider';
 
 function MyCollections() {
   const navigate = useNavigate();
@@ -19,9 +19,7 @@ function MyCollections() {
   const create = () => {
     navigate('/AdminCreateCollection');
   };
-  const truncateText = (str, maxLength) => {
-    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
-  };
+
   return (
     <section className=" bg-black w-full pb-10 lg:flex  lg:h-full xl:h-full  lg-pb-0 min-h-screen  relative ">
       <div
@@ -32,7 +30,7 @@ function MyCollections() {
       </div>
       <div className="w-full lg:h-full lg:hidden ">
         {' '}
-        <ImageSlider images={images} />
+        <CollectionImageSlider images={images} />
       </div>
       <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start ">
         <div className="  lg:block  hidden cursor-pointer" onClick={create}>
@@ -43,7 +41,7 @@ function MyCollections() {
       </section>
       <div className="w-full   hidden lg:block ">
         {' '}
-        <ImageSlider images={images} />
+        <CollectionImageSlider images={images} />
       </div>
     </section>
   );
