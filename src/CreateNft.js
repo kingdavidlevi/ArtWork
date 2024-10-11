@@ -1,4 +1,5 @@
 import ImageSlider from './ImageSlider';
+import { useState } from 'react';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
@@ -6,6 +7,7 @@ import testing from './Images/download (2).png';
 
 function CreateNft() {
   const navigate = useNavigate();
+  const [nftName, setNftName] = useState('Christopher Art Collections9999');
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
@@ -16,6 +18,9 @@ function CreateNft() {
   };
   const create = () => {
     navigate('/AdminCreateCollection');
+  };
+  const truncateText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
   };
   return (
     <section className=" bg-black w-full pb-10 lg:flex  lg:h-full xl:h-full  lg-pb-0 min-h-screen  relative ">
@@ -68,44 +73,11 @@ function CreateNft() {
               <p className="text-white text-lg font-medium">
                 Collection Name :
               </p>
-              <p className="text-gray-400 italic text-lg font-medium">
-                Christopher Art Collection.
+              <p className="text-gray-400 md:hidden italic md:text-lg text-base font-medium">
+                {truncateText(nftName, 25)}
               </p>
-            </div>
-          </div>
-          <div className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md ">
-            <img
-              src={testing}
-              className="md:h-28 rounded-md h-22 w-22 md:w-28"
-            />
-            <section className="absolute right-12 top-3">
-              {' '}
-              <FaArrowRight className="text-white text-xl" />
-            </section>
-            <div className="ml-4">
-              <p className="text-white text-lg font-medium">
-                Collection Name :
-              </p>
-              <p className="text-gray-400 italic text-lg font-medium">
-                Christopher Art Collection.
-              </p>
-            </div>
-          </div>
-          <div className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md ">
-            <img
-              src={testing}
-              className="md:h-28 rounded-md h-22 w-22 md:w-28"
-            />
-            <section className="absolute right-12 top-3">
-              {' '}
-              <FaArrowRight className="text-white text-xl" />
-            </section>
-            <div className="ml-4">
-              <p className="text-white text-lg font-medium">
-                Collection Name :
-              </p>
-              <p className="text-gray-400 italic text-lg font-medium">
-                Christopher Art Collection.
+              <p className=" text-white md:block hidden text-base font-medium italic  md:font-semibold">
+                {nftName}
               </p>
             </div>
           </div>
