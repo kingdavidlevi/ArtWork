@@ -49,15 +49,15 @@ const router = createBrowserRouter(
       </Route>
       <Route path="SignUp" element={<SignUp />} />
       <Route path="Login" element={<Login />} />
-      <Route path="UserChat " element={<UserChat />} />
+      <Route path="UserChat" element={<UserChat />} />
       <Route path="AdminPage" element={<AdminPage />} />
-      <Route path="CreateNft " element={<CreateNft />} />
+      <Route path="CreateNft" element={<CreateNft />} />
       <Route path="CreateCollection" element={<CreateCollection />} />
       <Route path="AdminCreateCollection" element={<AdminCreateCollection />} />
-      <Route path="UploadNft " element={<UploadNft />} />
+      <Route path="UploadNft" element={<UploadNft />} />
       <Route path="AdminUploadNft" element={<AdminUploadNft />} />
       <Route path="MyNftCollections" element={<MyNftCollections />} />
-      <Route path="GeneralNfts " element={<GeneralNfts />} />
+      <Route path="GeneralNfts" element={<GeneralNfts />} />
     </Route>,
   ),
 );

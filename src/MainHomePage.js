@@ -19,14 +19,14 @@ function MainHomePage() {
     setNavigateExplore(true);
   };
   const Nft = () => {
-    navigate('CreateNft');
+    navigate('/CreateNft');
   };
 
   const chat = () => {
     setOpenChat(true);
   };
   const chatroute = () => {
-    navigate('UserChat');
+    navigate('/UserChat');
   };
   return (
     <section

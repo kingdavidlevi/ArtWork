@@ -38,6 +38,22 @@ import { useNavigate, useParams } from 'react-router-dom';
       isSelf: true,
     },
   ]);
+    const Chatitems = () => {};
+  useEffect(() => {
+    const socket = io('https://middlemanbackend.onrender.com');
+    socket.emit('setCustomId', user?.Id);
+    setMySocket(socket);
+  }, []);
+  useEffect(() => {
+    mySocket?.on('private chat', (data) => {
+      setMessages((prevMessages) => [...prevMessages, data]);
+      console.log(data);
+    });
+    return () => {
+      mySocket?.off('private chat');
+    };
+  }, [mySocket]);
+
  */
 function UserChat({ openchat, setOpenChat }) {
   const [text, setText] = useState('');
@@ -60,22 +76,6 @@ function UserChat({ openchat, setOpenChat }) {
   const closeChatroute = () => {
     navigate('/');
   };
-
-  const Chatitems = () => {};
-  useEffect(() => {
-    const socket = io('https://middlemanbackend.onrender.com');
-    socket.emit('setCustomId', user?.Id);
-    setMySocket(socket);
-  }, []);
-  useEffect(() => {
-    mySocket?.on('private chat', (data) => {
-      setMessages((prevMessages) => [...prevMessages, data]);
-      console.log(data);
-    });
-    return () => {
-      mySocket?.off('private chat');
-    };
-  }, [mySocket]);
 
   useEffect(() => {
     const fetdata = async () => {
