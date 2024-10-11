@@ -16,6 +16,9 @@ function CreateNft() {
   const home = () => {
     navigate('/');
   };
+  const routoCollections = () => {
+    navigate('/MyCollections');
+  };
   const create = () => {
     navigate('/AdminCreateCollection');
   };
@@ -60,12 +63,15 @@ function CreateNft() {
           </section>
         </div>
         <section className="lg:h-68 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area h-full   lg:overflow-y-scroll lg:overflow-hidden">
-          <div className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md ">
+          <div
+            className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
+            onClick={routoCollections}
+          >
             <img
               src={testing}
               className="md:h-28 rounded-md h-22 w-22 md:w-28"
             />
-            <section className="absolute right-12 top-3">
+            <section className="absolute right-10 top-3">
               {' '}
               <FaArrowRight className="text-white text-xl" />
             </section>
@@ -76,7 +82,7 @@ function CreateNft() {
               <p className="text-gray-400 md:hidden italic md:text-lg text-base font-medium">
                 {truncateText(nftName, 25)}
               </p>
-              <p className=" text-white md:block hidden text-base font-medium italic  md:font-semibold">
+              <p className="text-gray-400 md:block hidden italic md:text-lg text-base font-medium">
                 {nftName}
               </p>
             </div>

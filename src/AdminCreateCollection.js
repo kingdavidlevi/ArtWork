@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaImage, FaTrash } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
@@ -8,10 +8,13 @@ import deletebtn from './Images/Vector (8).png';
 
 import { FaWallet } from 'react-icons/fa';
 function AdminCreateCollection() {
+  const { latestCollection, setLatestCollection } = useOutletContext();
   const [walletOpen, setWalletOpen] = useState(false);
   const [uploadhover, setuploadHover] = useState(false);
-  const [image, setImage] = useState(null);
+  const [Image, setImage] = useState(null);
   const [fileName, setFileName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState('');
   const [inputs, setInputs] = useState({
     collectionName: '',
     artistName: '',
@@ -73,7 +76,37 @@ function AdminCreateCollection() {
   };
 
   // Function to handle file selection
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    if (!Image) return;
 
+    const formData = new FormData();
+    formData.append('image', Image);
+    formData.append('colName', inputs.collectionName);
+    formData.append('artist', inputs.artistName);
+    formData.append('description', inputs.description);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        '(http://localhost:3500/getpostLatestCol',
+        options,
+      );
+      const data = await response.json();
+      setLatestCollection(data);
+    } catch (error) {
+      setErrorMessage(error);
+    }
+
+    setLoading(true);
+  };
   // Function to trigger file input when div is clicked
   const handleDivClick = () => {
     fileInputRef.current.click();
@@ -116,7 +149,7 @@ function AdminCreateCollection() {
                 Logo image
               </p>
               <div>
-                {image ? (
+                {Image ? (
                   <div
                     // Added onClick event here
                     className={`${
@@ -132,7 +165,7 @@ function AdminCreateCollection() {
                       className="absolute z-20 md:top-6 right-6 top-4 md:right-8"
                       onClick={handleDelete}
                     >
-                      {image && <FaTrash className="text-white" />}
+                      {Image && <FaTrash className="text-white" />}
                     </section>
                     <input
                       type="file"
@@ -149,9 +182,9 @@ function AdminCreateCollection() {
                           : 'w-28 h-28 min-w-28 grid place-items-center cover-photo rounded-xl'
                       }`}
                     >
-                      {image ? (
+                      {Image ? (
                         <img
-                          src={image}
+                          src={Image}
                           className="w-28 rounded-xl h-28 min-w-28"
                           alt="uploaded"
                         />
@@ -159,7 +192,7 @@ function AdminCreateCollection() {
                         <FaImage className="text-white text-xl" />
                       )}
                     </div>
-                    {image && fileName ? (
+                    {Image && fileName ? (
                       <section className="grid md:max-w-60 max-w-48 w-48 md:w-60 overflow-hidden items-center">
                         {' '}
                         <p className="text-white text-wrap mt-2 text-base font-semibold">
@@ -199,7 +232,7 @@ function AdminCreateCollection() {
                       className="absolute z-20 top-4  md:top-6 md:right-8"
                       onClick={handleDelete}
                     >
-                      {image && <FaTrash className="text-white" />}
+                      {Image && <FaTrash className="text-white" />}
                     </section>
                     <input
                       type="file"
@@ -216,9 +249,9 @@ function AdminCreateCollection() {
                           : 'w-28 h-28 min-w-28 grid place-items-center cover-photo rounded-xl'
                       }`}
                     >
-                      {image ? (
+                      {Image ? (
                         <img
-                          src={image}
+                          src={Image}
                           className="w-28 rounded-xl h-28 min-w-28"
                           alt="uploaded"
                         />
@@ -226,7 +259,7 @@ function AdminCreateCollection() {
                         <FaImage className="text-white text-xl" />
                       )}
                     </div>
-                    {image && fileName ? (
+                    {Image && fileName ? (
                       <section className="grid w-50% items-center">
                         {' '}
                         <p className="text-white mt-2 text-sm font-normal">
@@ -286,7 +319,10 @@ function AdminCreateCollection() {
               </div>
             </section>
           </div>
-          <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+          <button
+            className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+            onClick={handlesubmit}
+          >
             Continue
           </button>
         </section>

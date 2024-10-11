@@ -4,6 +4,7 @@ import Header from './Header';
 //<Header isOpen={isOpen} setIsOpen={setIsOpen} />
 function OverAll() {
   const location = useLocation();
+  const [latestCollection, setLatestCollection] = useState('');
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
@@ -27,6 +28,8 @@ function OverAll() {
           setInputs,
           Logininputs,
           setLoginInputs,
+          latestCollection,
+          setLatestCollection,
         }}
       />
     </div>
