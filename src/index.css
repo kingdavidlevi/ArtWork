@@ -10,6 +10,7 @@ body {
 html {
   scrollbar-width: thin; /* Width of the scrollbar */
   scrollbar-color: #888 #f1f1f1; /* thumb color, track color */
+  height: 100%;
 }
 
 code {

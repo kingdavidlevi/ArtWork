@@ -82,6 +82,11 @@ function MainMenu({ isOpen, setIsOpen }) {
           <p className="text-white  text-base font-semibold">Authors</p>
         </li>
       </ul>
+      <ul className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 ">
+        <li className="grid  items-center gap-3 w-full">
+          <p className="text-white  text-base font-semibold">My Collection</p>
+        </li>
+      </ul>
 
       <section className=" grid z-10 bg-black  fixed bottom-0 place-items-center w-full">
         <section className="ful mb-4 w-90%  pt-6 md:flex  grid place-items-center md:items-start md:justify-between">
