@@ -15,18 +15,16 @@ const CollectionImageSlider = ({ images }) => {
     navigate('/CreateCollection');
   };
   return (
-    <div className="image-container  relative  w-full md:h-68 h-52  lg:h-full   ">
+    <div className="image-container  relative   w-full  md:h-52   h-40  ">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`image-slide lg:h-full ${
-            index === currentIndex ? 'active' : ''
-          }`}
+          className={`image-slide  ${index === currentIndex ? 'active' : ''}`}
           style={{ backgroundImage: `url(${image})` }} // Use backgroundImage to cover the container
         ></div>
       ))}
       <div className="absolute  w-full  grid place-items-center  z-20 bottom-8">
-        <div className="w-90% md:w-80%">
+        <div className="w-90% ">
           {' '}
           <p
             className="text-white cursor-pointer md:text-4xl text-3xl font-semibold"

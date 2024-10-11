@@ -21,7 +21,6 @@ function AdminCreateCollection() {
     description: '',
   });
   const fileInputRef = useRef(null);
-
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
@@ -50,6 +49,7 @@ function AdminCreateCollection() {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
+        console.log(Image);
         setFileName(file.name);
       };
       reader.readAsDataURL(file);
@@ -64,6 +64,7 @@ function AdminCreateCollection() {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
+        console.log(Image);
         setFileName(file.name);
       };
       reader.readAsDataURL(file);
@@ -88,9 +89,7 @@ function AdminCreateCollection() {
 
     const options = {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
+
       body: formData,
     };
 

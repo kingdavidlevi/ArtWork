@@ -21,7 +21,7 @@ function MyCollections() {
   };
 
   return (
-    <section className=" bg-black w-full pb-10   lg:h-full xl:h-full  lg-pb-0 min-h-screen  relative ">
+    <section className=" bg-black w-full pb-10    lg-pb-0 min-h-screen  relative ">
       <div
         className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
         onClick={home}
@@ -32,7 +32,14 @@ function MyCollections() {
         {' '}
         <CollectionImageSlider images={images} />
       </div>
-      <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start "></section>
+      <section className="h-80  grid place-items-center">
+        <div className="">
+          <p className="text-white">You have no NFT in your collection</p>
+          <button className="bg-blue-600 text-white px-2 py-2 rounded-md">
+            Add NFT
+          </button>
+        </div>
+      </section>
     </section>
   );
 }
