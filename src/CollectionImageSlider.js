@@ -25,7 +25,7 @@ const CollectionImageSlider = ({ images }) => {
           style={{ backgroundImage: `url(${image})` }} // Use backgroundImage to cover the container
         ></div>
       ))}
-      <div className="absolute  w-full  grid place-items-center  z-20 lg:hidden bottom-8">
+      <div className="absolute  w-full  grid place-items-center  z-20 bottom-8">
         <div className="w-90% md:w-80%">
           {' '}
           <p

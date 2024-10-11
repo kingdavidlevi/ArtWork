@@ -21,28 +21,18 @@ function MyCollections() {
   };
 
   return (
-    <section className=" bg-black w-full pb-10 lg:flex  lg:h-full xl:h-full  lg-pb-0 min-h-screen  relative ">
+    <section className=" bg-black w-full pb-10   lg:h-full xl:h-full  lg-pb-0 min-h-screen  relative ">
       <div
         className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
         onClick={home}
       >
         <FaArrowLeft className="text-white text-base md:text-lg  " />
       </div>
-      <div className="w-full lg:h-full lg:hidden ">
+      <div className="w-full  ">
         {' '}
         <CollectionImageSlider images={images} />
       </div>
-      <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start ">
-        <div className="  lg:block  hidden cursor-pointer" onClick={create}>
-          <p className="text-white md:text-4xl text-3xl font-semibold">
-            My Collections
-          </p>
-        </div>
-      </section>
-      <div className="w-full   hidden lg:block ">
-        {' '}
-        <CollectionImageSlider images={images} />
-      </div>
+      <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start "></section>
     </section>
   );
 }
