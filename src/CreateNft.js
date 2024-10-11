@@ -18,7 +18,7 @@ function CreateNft() {
     navigate('/AdminCreateCollection');
   };
   return (
-    <section className=" bg-black w-full lg:flex h-screen  lg-pb-10   relative ">
+    <section className=" bg-black w-full lg:flex h-full  lg-pb-10   relative ">
       <div
         className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
         onClick={home}
@@ -54,7 +54,7 @@ function CreateNft() {
             <FaArrowRight className="text-white text-xl" />
           </section>
         </div>
-        <section className="lg:h-82 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area   lg:overflow-y-scroll lg:overflow-hidden">
+        <section className="lg:h-82 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area h-full   lg:overflow-y-scroll lg:overflow-hidden">
           <div className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md ">
             <img
               src={testing}
