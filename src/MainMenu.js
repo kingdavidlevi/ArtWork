@@ -32,7 +32,7 @@ function MainMenu({ isOpen, setIsOpen }) {
     navigate('CreateNft');
   };
   const routeMycollection = () => {
-    navigate('MyCollections');
+    navigate('CreateNft');
   };
   const home = () => {
     navigate('/');

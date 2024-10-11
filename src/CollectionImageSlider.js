@@ -22,7 +22,7 @@ const CollectionImageSlider = ({ images }) => {
             className="text-white cursor-pointer md:text-4xl text-3xl font-semibold"
             onClick={create}
           >
-            My Collections
+            My Nfts
           </p>
         </div>
       </div>

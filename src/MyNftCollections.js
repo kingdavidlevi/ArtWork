@@ -17,7 +17,7 @@ import image12 from './Images/images (17).jpeg';
 
 import CollectionImageSlider from './CollectionImageSlider';
 
-function MyCollections() {
+function MyNftCollections() {
   const navigate = useNavigate();
   const [text, setText] = useState('Adams Christopher99 uoisjdjdj');
 
@@ -301,4 +301,4 @@ function MyCollections() {
   );
 }
 
-export default MyCollections;
+export default MyNftCollections;

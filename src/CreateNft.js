@@ -16,8 +16,8 @@ function CreateNft() {
   const home = () => {
     navigate('/');
   };
-  const routoCollections = () => {
-    navigate('/MyCollections');
+  const routoNftCollections = () => {
+    navigate('/MyNftCollections');
   };
   const create = () => {
     navigate('/AdminCreateCollection');
@@ -65,7 +65,7 @@ function CreateNft() {
         <section className="lg:h-68 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area h-full   lg:overflow-y-scroll lg:overflow-hidden">
           <div
             className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
-            onClick={routoCollections}
+            onClick={routoNftCollections}
           >
             <img
               src={testing}
