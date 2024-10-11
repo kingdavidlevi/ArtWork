@@ -4,7 +4,9 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
-//
+/* if (data) {
+  navigate(`/UploadNft/${data._id}`);
+}*/
 
 import { FaWallet } from 'react-icons/fa';
 function AdminCreateCollection() {
@@ -98,10 +100,12 @@ function AdminCreateCollection() {
 
     try {
       const response = await fetch(
-        'http://localhost:3500/postLatestCol',
+        'https://artifynft.onrender.com/postLatestCol',
         options,
       );
       const data = await response.json();
+      console.log(data);
+
       setLatestCollection(data);
     } catch (error) {
       setErrorMessage(error);

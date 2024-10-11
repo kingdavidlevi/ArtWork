@@ -62,12 +62,9 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
             onClick={toggleHeaderWallet}
           >
             <div
-              className="text-white Artify-div flex gap-3 cursor-pointer md:pr-6"
+              className="text-white Artify-div  cursor-pointer md:pr-6"
               onClick={home}
             >
-              <div className="">
-                <img src={logo} className="w-6 h-6 " />
-              </div>
               <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
             </div>
 
