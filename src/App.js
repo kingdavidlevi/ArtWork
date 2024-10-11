@@ -28,7 +28,7 @@ import CreateCollection from './CreateCollection';
 import AdminCreateCollection from './AdminCreateCollection';
 import UploadNft from './UploadNft';
 import MyNftCollections from './MyNftCollections';
-
+import GeneralNfts from './GeneralNfts';
 import AdminUploadNft from './AdminUploadNft';
 
 const router = createBrowserRouter(
@@ -57,6 +57,7 @@ const router = createBrowserRouter(
       <Route path="UploadNft" element={<UploadNft />} />
       <Route path="AdminUploadNft" element={<AdminUploadNft />} />
       <Route path="MyNftCollections" element={<MyNftCollections />} />
+      <Route path="GeneralNfts" element={<GeneralNfts />} />
     </Route>,
   ),
 );

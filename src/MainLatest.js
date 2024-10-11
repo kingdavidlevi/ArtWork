@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import image1 from './Images/587a05c52581818aff54365e2025bb19.jpg';
 import image2 from './Images/5e78aed4f319d80d1359d37e339bc1b0.jpg';
 import image3 from './Images/be842cbfe79630ac351b546f0c17643f.jpg';
@@ -16,9 +16,13 @@ import image12 from './Images/images (17).jpeg';
 function MainLatest() {
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
   const [text, setText] = useState('Adams Christopher99');
-
+  const navigate = useNavigate();
   const truncateText = (str, maxLength) => {
     return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+  };
+
+  const viewCollections = () => {
+    navigate('GeneralNfts');
   };
   return (
     <section className="lg:flex  scroll-container overflow-hidden  flex overflow-x-scroll    place-items-center mt-8 w-90% md:w-full pb-4  gap-4 md:gap-6">
@@ -54,7 +58,10 @@ function MainLatest() {
             </p>
           </section>
         </div>
-        <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+        <button
+          className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white"
+          onClick={viewCollections}
+        >
           Buy
         </button>
       </div>

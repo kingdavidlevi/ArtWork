@@ -51,7 +51,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   };
 
   const routeMycollection = () => {
-    navigate('MyCollections');
+    navigate('CreateNft');
   };
   return (
     <section>
