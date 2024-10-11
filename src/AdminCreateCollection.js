@@ -123,7 +123,7 @@ function AdminCreateCollection() {
   };
 
   return (
-    <section className="xl:h-full  h-full  bg-black ">
+    <section className="xl:h-full  h-full min-h-screen bg-black ">
       <header className="glass-header2 w-full px-2 md:px-6  justify-between z-20 h-18 flex items-center">
         <div className="flex gap-3">
           <div
@@ -292,6 +292,7 @@ function AdminCreateCollection() {
                   Collection name
                 </p>
                 <input
+                  required
                   name="collectionName"
                   onChange={handleFormChanges}
                   value={inputs.collectionName}
@@ -303,6 +304,7 @@ function AdminCreateCollection() {
                   Artist name
                 </p>
                 <input
+                  required
                   name="artistName"
                   onChange={handleFormChanges}
                   value={inputs.artistName}
@@ -315,6 +317,7 @@ function AdminCreateCollection() {
                   Description
                 </p>
                 <input
+                  required
                   name="description"
                   onChange={handleFormChanges}
                   value={inputs.description}
