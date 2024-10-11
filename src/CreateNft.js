@@ -2,6 +2,8 @@ import ImageSlider from './ImageSlider';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import testing from './Images/download (2).png';
+
 function CreateNft() {
   const navigate = useNavigate();
   const images = [
@@ -16,7 +18,7 @@ function CreateNft() {
     navigate('/AdminCreateCollection');
   };
   return (
-    <section className=" bg-black w-full lg:flex h-full  lg:h-full  lg-pb-10   relative ">
+    <section className=" bg-black w-full lg:flex h-screen  lg-pb-10   relative ">
       <div
         className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
         onClick={home}
@@ -53,47 +55,23 @@ function CreateNft() {
           </section>
         </div>
         <section className="lg:h-82 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area   lg:overflow-y-scroll lg:overflow-hidden">
-          <div
-            className="btn mt-4 grid md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
-            onClick={create}
-          >
-            <div className="flex w-90%  gap-3">
-              <FaImage className="text-white text-xl" />
-              <p className="text-white font-bold text-base">
-                Collection or item
-              </p>
-            </div>
-            <section className="w-90% flex justify-between mt-6">
-              <div className="w-80%">
-                <p className="text-white  font-medium text-base">
-                  Create a new NFT collection or add an NFT to an existing one.
-                  Your items will be displayed immediately. List for sale when
-                  you're ready.
-                </p>
-              </div>
+          <div className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md ">
+            <img
+              src={testing}
+              className="md:h-28 rounded-md h-22 w-22 md:w-28"
+            />
+            <section className="absolute right-12 top-3">
+              {' '}
               <FaArrowRight className="text-white text-xl" />
             </section>
-          </div>
-          <div
-            className="btn mt-4 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%"
-            onClick={create}
-          >
-            <div className="flex w-90%  gap-3">
-              <FaImage className="text-white text-xl" />
-              <p className="text-white font-bold text-base">
-                Collection or item
+            <div className="ml-4">
+              <p className="text-white text-lg font-medium">
+                Collection Name :
+              </p>
+              <p className="text-gray-400 italic text-lg font-medium">
+                Christopher Art Collection.
               </p>
             </div>
-            <section className="w-90% flex justify-between mt-6">
-              <div className="w-80%">
-                <p className="text-white  font-medium text-base">
-                  Create a new NFT collection or add an NFT to an existing one.
-                  Your items will be displayed immediately. List for sale when
-                  you're ready.
-                </p>
-              </div>
-              <FaArrowRight className="text-white text-xl" />
-            </section>
           </div>
         </section>
       </section>
