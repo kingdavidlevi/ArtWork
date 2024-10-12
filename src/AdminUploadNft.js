@@ -23,7 +23,6 @@ function AdminUploadNft() {
   const [inputs, setInputs] = useState({
     nftName: '',
     amount: '',
-    Description: '',
   });
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState('');
@@ -122,7 +121,7 @@ function AdminUploadNft() {
       if (data) {
         setImage(null);
         setFileName('');
-        setInputs({ nftName: '', amount: '', Description: '' });
+        setInputs({ nftName: '', amount: '' });
         setLoading(false);
       }
     } catch (error) {
@@ -137,7 +136,7 @@ function AdminUploadNft() {
         </div>
       )}
       <div className={`main-content ${loading ? 'blurred' : ''}`}>
-        <header className="glass-header2 w-full px-2 md:px-6  justify-between z-30 h-18 flex items-center">
+        <header className="glass-header2 w-full px-2 md:px-6  justify-between z-40 h-18 flex items-center">
           <div className="flex gap-3">
             <div
               className=" cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
@@ -174,7 +173,7 @@ function AdminUploadNft() {
             {' '}
             {image && (
               <section
-                className="absolute z-40 top-4 right-3     md:top-6 md:right-8"
+                className="absolute z-20 top-4 right-3     md:top-6 md:right-8"
                 onClick={handleDelete}
               >
                 <FaTrash className="text-white text-lg" />
@@ -215,10 +214,10 @@ function AdminUploadNft() {
               )}
             </section>
           </div>
-          <section className="w-90% mt-4">
+          <section className="w-90% mt-10 ">
             {' '}
             <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
-              Item Name *
+              Nft Name *
             </p>
           </section>
           <input
@@ -230,6 +229,7 @@ function AdminUploadNft() {
             type="text"
             className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
           />
+
           <section className="w-90% mt-4">
             {' '}
             <p className="text-white  text-base font-normal md:text-xl md:font-semibold">
@@ -238,19 +238,26 @@ function AdminUploadNft() {
           </section>
           <input
             name="amount"
+            min="0"
             onChange={handleFormChanges}
             value={inputs.amount}
             placeholder="Name your NFT"
-            type="text"
-            className="px-3 w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+            type="number"
+            className="px-3 no-spinner w-90% mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
           />
 
-          <button
-            className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
-            onClick={handlesubmit}
-          >
-            Create
-          </button>
+          {inputs.amount.length > 0 && inputs.nftName.length > 0 && Image ? (
+            <button
+              className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+              onClick={handlesubmit}
+            >
+              Continue
+            </button>
+          ) : (
+            <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+              Continue
+            </button>
+          )}
         </section>
 
         {walletOpen && (

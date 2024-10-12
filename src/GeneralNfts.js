@@ -93,6 +93,12 @@ function GeneralNfts() {
             {latestsource.itemName}
           </span>
         </p>
+        <p className="text-white md:ml-10 ml-4 md:text-xl text-lg font-semibold">
+          Description:{' '}
+          <span className="italic text-2xl text-gray-300">
+            {latestsource.description}
+          </span>
+        </p>
         {latestsource?.nfts?.length > 0 ? (
           <section className="mt-10 grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4  ">
             {latestsource?.nfts?.map((item) => (

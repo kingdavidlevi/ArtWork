@@ -240,14 +240,17 @@ function UploadNft() {
               </p>
             </section>
             <input
+              min="0"
               name="amount"
               onChange={handleFormChanges}
               value={inputs.amount}
               placeholder="Amount"
-              type="text"
-              className="px-3 w-full mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+              type="number"
+              className="px-3 w-full no-spinner mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
             />
-
+            <p className="text-white  absolute text-base font-normal md:text-xl md:font-semibold">
+              ETH
+            </p>
             <section className="w-full lg:place-items-start grid place-items-center">
               <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
                 Create
