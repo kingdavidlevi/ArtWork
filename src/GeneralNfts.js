@@ -89,7 +89,9 @@ function GeneralNfts() {
       <div className=" mt-6 md:mt-10">
         <p className="text-white md:ml-10 ml-4 md:text-xl text-lg font-semibold">
           Collection name :{' '}
-          <span className="italic text-gray-400">{latestsource.itemName}</span>
+          <span className="italic text-2xl text-gray-300">
+            {latestsource.itemName}
+          </span>
         </p>
         {latestsource?.nfts?.length > 0 ? (
           <section className="mt-10 grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4  ">
@@ -136,8 +138,8 @@ function GeneralNfts() {
           </section>
         ) : (
           <section className=" mt-20 place-items-center">
-            <div className="grid place-items-center">
-              <p className="text-white text-xl font-medium"></p>
+            <div className="loading-overlay">
+              <div className="spinner"></div>
             </div>
           </section>
         )}
