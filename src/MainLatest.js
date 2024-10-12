@@ -54,7 +54,7 @@ function MainLatest() {
     >
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white md:block hidden text-base font-medium italic md:font-semibold">
+        <p className="text-white   text-base font-medium italic md:font-semibold">
           CollectionName:
         </p>
         <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>

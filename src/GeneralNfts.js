@@ -167,8 +167,11 @@ function GeneralNfts() {
               </div>
             ) : (
               <div className="grid place-items-center">
-                <p className="text-white text-xl font-medium">
+                <p className="text-white  md:text-xl text-base font-medium">
                   Failed to load collection.
+                </p>
+                <p className="text-white  md:text-xl text-base font-medium">
+                  check internet connection!
                 </p>
               </div>
             )}
