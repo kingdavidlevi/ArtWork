@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import image1 from './Images/587a05c52581818aff54365e2025bb19.jpg';
-import image2 from './Images/5e78aed4f319d80d1359d37e339bc1b0.jpg';
-import image3 from './Images/be842cbfe79630ac351b546f0c17643f.jpg';
-import image4 from './Images/c884b357257314ae0d161084eff8bfd0.jpg';
-import image5 from './Images/f9993c3602994dfba596aa74f67b8367.jpg';
-import image6 from './Images/images (10).jpeg';
-import image7 from './Images/images (11).jpeg';
-import image8 from './Images/images (12).jpeg';
-import image9 from './Images/images (13).jpeg';
-import image10 from './Images/images (15).jpeg';
-import image11 from './Images/images (16).jpeg';
-import image12 from './Images/images (17).jpeg';
 
 function MainLatest() {
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
@@ -45,7 +33,7 @@ function MainLatest() {
           options,
         );
         const data = await response.json();
-
+        console.log(data);
         const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {
@@ -67,7 +55,7 @@ function MainLatest() {
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
         <p className="text-white md:block hidden text-base font-medium italic md:font-semibold">
-          itemName:
+          CollectionName:
         </p>
         <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
         <section className="w-full flex items-center justify-between mt-4">
@@ -95,7 +83,7 @@ function MainLatest() {
           placeholderSkeleton(index),
         )
       ) : latestsource.length > 0 ? (
-        latestsource.map((item, index) => (
+        latestsource?.map((item, index) => (
           <div
             key={index}
             className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4"
@@ -104,7 +92,7 @@ function MainLatest() {
               <img
                 src={item.profilePic}
                 className="h-full w-full rounded-lg"
-                alt={item.itemName}
+                alt={item.profilePic}
               />
             </section>
             <div className="mt-4">
@@ -117,7 +105,7 @@ function MainLatest() {
               <section className="w-full flex items-center justify-between mt-4">
                 <p className="text-white text-base font-semibold">Artist :</p>
                 <p className="text-gray-400 italic md:text-base text-sm font-semibold">
-                  {truncateText(item.itemName, 18)}
+                  {truncateText(item.artiste, 18)}
                 </p>
               </section>
               <section className="w-full flex items-center justify-between mt-4">

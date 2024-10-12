@@ -6,12 +6,10 @@ import { NavLink } from 'react-router-dom';
 
 function SignUp() {
   const [visibility, setVisibility] = useState(false);
-  const { inputs, setInputs } = useOutletContext();
-
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [checkpass, setcheckPass] = useState(false);
   const navigate = useNavigate();
-  const handlePassword = () => {
-    setVisibility((prevstate) => !prevstate);
-  };
 
   const home = () => {
     navigate('/HomePage');
@@ -19,13 +17,59 @@ function SignUp() {
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
-    setInputs((prevdata) => ({
+    setsignUpInputs((prevdata) => ({
       ...prevdata,
       [name]: value,
     }));
   };
+  const handlePassword = () => {
+    setVisibility((prevstate) => !prevstate);
+  };
+  const [SignUpinputs, setsignUpInputs] = useState({
+    email: '',
+    password: '',
+    fullName: '',
+    confirmPassword: '',
+  });
+
+  const checkPasswords = () => {
+    if (SignUpinputs.password !== SignUpinputs.confirmPassword) {
+      setcheckPass(true);
+    } else {
+      setcheckPass(false);
+    }
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: SignUpinputs.email,
+        username: SignUpinputs.fullName,
+        password: SignUpinputs.password,
+      }),
+    };
+
+    try {
+      const response = await fetch('https://', options);
+      const data = await response.json();
+
+      if (data.message && checkPasswords) {
+        navigate('/');
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
+
   return (
-    <section className="grid h-full  bg-black place-items-center pt-20">
+    <section className="grid h-full App  bg-black place-items-center pt-20">
       <header className="top-0 fixed w-full h-20 items-center bg-black glass-header flex justify-around z-10">
         <div className="text-white     cursor-pointer  " onClick={home}>
           <p className="lg:text-4xl text-2xl font-semibold ">ArtifyNft's</p>
@@ -51,7 +95,7 @@ function SignUp() {
             <input
               name="fullName"
               onChange={handleFormChanges}
-              value={inputs.fullName}
+              value={setsignUpInputs.fullName}
               type="text"
               placeholder="Enter your Fullname"
               className="mt-3 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
@@ -68,7 +112,7 @@ function SignUp() {
             <input
               name="email"
               onChange={handleFormChanges}
-              value={inputs.email}
+              value={setsignUpInputs.email}
               type="email"
               placeholder="info@yourmail.com"
               className="mt-3 text-base font-medium placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
@@ -87,7 +131,7 @@ function SignUp() {
             <input
               name="password"
               onChange={handleFormChanges}
-              value={inputs.password}
+              value={setsignUpInputs.password}
               type={visibility ? 'text' : 'password'}
               placeholder="Enter your password"
               className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
@@ -105,15 +149,27 @@ function SignUp() {
                 Confirm Password
               </p>
             </div>
-            <input
-              name="confirmPassword"
-              onChange={handleFormChanges}
-              value={inputs.confirmPassword}
-              type={visibility ? 'text' : 'password'}
-              placeholder="Confirm your password"
-              className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black rounded-md bg-white py-3  placeholder:text-gray-400 "
-              required
-            />
+            {checkpass ? (
+              <input
+                name="confirmPassword"
+                onChange={handleFormChanges}
+                value={setsignUpInputs.confirmPassword}
+                type={visibility ? 'text' : 'password'}
+                placeholder="Confirm your password"
+                className="mt-3 text-base font-medium border-red-500 placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black rounded-md bg-white py-3  placeholder:text-gray-400 "
+                required
+              />
+            ) : (
+              <input
+                name="confirmPassword"
+                onChange={handleFormChanges}
+                value={setsignUpInputs.confirmPassword}
+                type={visibility ? 'text' : 'password'}
+                placeholder="Confirm your password"
+                className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black rounded-md bg-white py-3  placeholder:text-gray-400 "
+                required
+              />
+            )}
           </section>
           <section className="mt-6 grid  place-items-center">
             <div className="flex gap-4 w-90%">
@@ -145,9 +201,11 @@ function SignUp() {
               type="submit"
               className=" hover:bg-purple-600 md:text-lg md:py-3 text-base form font-medium rounded-full py-2 bg-black w-90% text-white"
               required
+              onClick={handleSignUp}
             >
               Sign Up
             </button>
+
             <p className="text-white mt-8">
               Already have an account?{' '}
               <span>

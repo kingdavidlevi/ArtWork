@@ -88,7 +88,7 @@ function AdminCreateCollection() {
     const formData = new FormData();
     formData.append('image', imageFile);
     formData.append('colName', inputs.collectionName);
-    formData.append('artist', inputs.artistName);
+    formData.append('artiste', inputs.artistName);
     formData.append('description', inputs.description);
 
     const options = {
@@ -104,6 +104,41 @@ function AdminCreateCollection() {
       );
       const data = await response.json();
 
+      if (data) {
+        navigate(`/AdminUploadNft/${data._id}`);
+        setLatestCollection(data);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+
+    setLoading(true);
+  };
+  // Function to trigger file input when div is clicked
+
+  const Trending = async (e) => {
+    e.preventDefault();
+    if (!Image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('colName', inputs.collectionName);
+    formData.append('artiste', inputs.artistName);
+    formData.append('description', inputs.description);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        'https://artifynft.onrender.com/postTrendCol',
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
       if (data) {
         navigate(`/AdminUploadNft/${data._id}`);
         setLatestCollection(data);
@@ -346,11 +381,26 @@ function AdminCreateCollection() {
                 className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
                 onClick={handlesubmit}
               >
-                Continue
+                Latest
+              </button>
+            ) : (
+              <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10   mt-8 py-3 rounded-md">
+                Latest
+              </button>
+            )}
+            {inputs.artistName.length > 0 &&
+            inputs.collectionName.length > 0 &&
+            inputs.description.length > 0 &&
+            Image ? (
+              <button
+                className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mt-10 py-3 rounded-md"
+                onClick={Trending}
+              >
+                trending
               </button>
             ) : (
               <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
-                Continue
+                trending
               </button>
             )}
           </section>

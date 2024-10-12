@@ -5,12 +5,7 @@ import Header from './Header';
 function OverAll() {
   const location = useLocation();
   const [latestCollection, setLatestCollection] = useState('');
-  const [inputs, setInputs] = useState({
-    email: '',
-    password: '',
-    fullName: '',
-    confirmPassword: '',
-  });
+
   const [Logininputs, setLoginInputs] = useState({
     email: '',
     password: '',
@@ -24,8 +19,6 @@ function OverAll() {
     <div>
       <Outlet
         context={{
-          inputs,
-          setInputs,
           Logininputs,
           setLoginInputs,
           latestCollection,

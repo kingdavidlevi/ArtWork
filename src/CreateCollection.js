@@ -84,7 +84,7 @@ function CreateCollection() {
     const formData = new FormData();
     formData.append('image', imageFile);
     formData.append('colName', inputs.collectionName);
-    formData.append('artist', inputs.artistName);
+    formData.append('artiste');
     formData.append('description', inputs.description);
 
     const options = {

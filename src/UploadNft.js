@@ -103,6 +103,7 @@ function UploadNft() {
     formData.append('image', imageFile);
     formData.append('price', inputs.amount);
     formData.append('itemName', inputs.nftName);
+    formData.append('artiste');
     formData.append('colId', params.id);
 
     const options = {
