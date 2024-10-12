@@ -89,13 +89,11 @@ function GeneralNfts() {
       <div className=" mt-6 md:mt-10">
         <p className="text-white md:ml-10 ml-4 md:text-xl text-lg font-semibold">
           Collection name :{' '}
-          <span className="italic text-2xl text-gray-300">
-            {latestsource.itemName}
-          </span>
+          <span className="italic  text-gray-300">{latestsource.itemName}</span>
         </p>
-        <p className="text-white md:ml-10 ml-4 md:text-xl text-lg font-semibold">
+        <p className="text-white mt-2 md:ml-10 ml-4 md:text-xl text-lg font-semibold">
           Description:{' '}
-          <span className="italic text-2xl text-gray-300">
+          <span className="italic  text-gray-300">
             {latestsource.description}
           </span>
         </p>

@@ -51,7 +51,7 @@ function AdminCreateCollection() {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
-        console.log(Image);
+
         setFileName(file.name);
       };
       reader.readAsDataURL(file);
@@ -67,7 +67,7 @@ function AdminCreateCollection() {
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
-        console.log(Image);
+
         setFileName(file.name);
       };
       reader.readAsDataURL(file);
@@ -103,7 +103,7 @@ function AdminCreateCollection() {
         options,
       );
       const data = await response.json();
-      console.log(data);
+
       if (data) {
         navigate(`/AdminUploadNft/${data._id}`);
         setLatestCollection(data);

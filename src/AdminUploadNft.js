@@ -19,6 +19,7 @@ function AdminUploadNft() {
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [uploadhover, setuploadHover] = useState(false);
+  const [displayMessage, setdisplayMessage] = useState(false);
 
   const [inputs, setInputs] = useState({
     nftName: '',
