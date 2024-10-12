@@ -3,24 +3,13 @@ import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import image1 from './Images/587a05c52581818aff54365e2025bb19.jpg';
-import image2 from './Images/5e78aed4f319d80d1359d37e339bc1b0.jpg';
-import image3 from './Images/be842cbfe79630ac351b546f0c17643f.jpg';
-import image4 from './Images/c884b357257314ae0d161084eff8bfd0.jpg';
-import image5 from './Images/f9993c3602994dfba596aa74f67b8367.jpg';
-import image6 from './Images/images (10).jpeg';
-import image7 from './Images/images (11).jpeg';
-import image8 from './Images/images (12).jpeg';
-import image9 from './Images/images (13).jpeg';
-import image10 from './Images/images (15).jpeg';
-import image11 from './Images/images (16).jpeg';
-import image12 from './Images/images (17).jpeg';
-
+import { useParams } from 'react-router-dom';
 import CollectionImageSlider from './CollectionImageSlider';
 
 function MyNftCollections() {
   const navigate = useNavigate();
   const [text, setText] = useState('Adams Christopher99 uoisjdjdj');
-
+  const params = useParams();
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),

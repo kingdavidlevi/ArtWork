@@ -56,7 +56,7 @@ const router = createBrowserRouter(
       <Route path="AdminCreateCollection" element={<AdminCreateCollection />} />
       <Route path="UploadNft/:id" element={<UploadNft />} />
       <Route path="AdminUploadNft/:id" element={<AdminUploadNft />} />
-      <Route path="MyNftCollections" element={<MyNftCollections />} />
+      <Route path="MyNftCollections/:id" element={<MyNftCollections />} />
       <Route path="GeneralNfts/:id" element={<GeneralNfts />} />
     </Route>,
   ),

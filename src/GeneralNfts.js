@@ -21,7 +21,7 @@ function GeneralNfts() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState('');
-  const [latestsource, setLatestSource] = useState([]);
+  const [latestsource, setLatestSource] = useState({});
   const [text, setText] = useState('pp');
   const params = useParams();
   const images = [
@@ -78,62 +78,70 @@ function GeneralNfts() {
         <FaArrowLeft className="text-white text-base md:text-lg  " />
       </div>
       <div className="w-full  ">
-        {' '}
-        <GeneralNftsImageSlider />
+        <div className="image-container  relative   w-full  md:h-60   h-36  ">
+          <img
+            className="w-full md:object-cover  md:h-60   h-40 "
+            src={latestsource.profilePic}
+            style={{ backgroundImage: `url(${latestsource.profilePic})` }} // Use backgroundImage to cover the container
+          />
+        </div>
       </div>
       <div className=" mt-6 md:mt-10">
         <p className="text-white md:ml-10 ml-4 md:text-xl text-lg font-semibold">
           Collection name :{' '}
-          <span className="italic text-gray-400">Adams Collection</span>
+          <span className="italic text-gray-400">{latestsource.itemName}</span>
         </p>
-        <section className="mt-10 grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4  ">
-          {latestsource.map((item) => (
-            <div className="color-div mt-6 form px-3   duration-300 transition-transform ease-in-out transform  hover:scale-103  w-40 min-w-40 md:min-w-56 md:w-56  lg:w-70 lg:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
-              <section>
-                {' '}
-                <img
-                  src={item.nftImage}
-                  className="md:h-48 h-28 w-full rounded-lg     md:w-70  "
-                />{' '}
-              </section>
-              <div className=" mt-4 ">
-                <section className="w-full grid place-items-center mt-4">
-                  <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
-                    {truncateText(item.itemName, 16)}
-                  </p>
-                  <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
-                    {truncateText(item.itemName, 24)}
-                  </p>
+        {latestsource?.nfts?.length > 0 ? (
+          <section className="mt-10 grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4  ">
+            {latestsource?.nfts?.map((item) => (
+              <div className="color-div mt-6 form px-3   duration-300 transition-transform ease-in-out transform  hover:scale-103  w-40 min-w-40 md:min-w-56 md:w-56  lg:w-70 lg:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
+                <section>
+                  {' '}
+                  <img
+                    src={item.nftImage}
+                    className="md:h-48 h-28 w-full rounded-lg     md:w-70  "
+                  />{' '}
                 </section>
-                <section className="w-full flex items-center justify-between mt-4">
-                  <p className="text-white   text-base font-semibold">
-                    Amount :
-                  </p>
-                  <p className="text-white  text-base  font-semibold">
-                    <span>0.2</span>ETH
-                  </p>
-                </section>
-                <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
-                  Buy
-                </button>
+                <div className=" mt-4 ">
+                  <section className="w-full grid place-items-center mt-4">
+                    <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
+                      {truncateText(item.itemName, 16)}
+                    </p>
+                    <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
+                      {truncateText(item.itemName, 24)}
+                    </p>
+                  </section>
+                  <section className="w-full flex items-center justify-between mt-4">
+                    <p className="text-white   text-base font-semibold">
+                      Amount :
+                    </p>
+                    <p className="text-white  text-base  font-semibold">
+                      <span>0.2</span>ETH
+                    </p>
+                  </section>
+                  <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium  text-white">
+                    Buy
+                  </button>
+                </div>
               </div>
+            ))}
+          </section>
+        ) : latestsource?.nfts?.length === 0 ? (
+          <section className=" mt-20 place-items-center">
+            <div className="grid place-items-center">
+              <p className="text-white text-xl font-medium">
+                Empty Collection!
+              </p>
             </div>
-          ))}
-        </section>
+          </section>
+        ) : (
+          <section className=" mt-20 place-items-center">
+            <div className="grid place-items-center">
+              <p className="text-white text-xl font-medium"></p>
+            </div>
+          </section>
+        )}
       </div>
-      {/* <section className="h-80 hidden grid place-items-center">
-        <div className="grid place-items-center">
-          <p className="text-white text-xl font-medium">
-            You have no NFT in your collection
-          </p>
-          <button
-            className="bg-blue-600 text-white mt-6 px-8 py-2 rounded-md"
-            onClick={routetoUploadNft}
-          >
-            Add NFT
-          </button>
-        </div>
-      </section> */}
     </section>
   );
 }
