@@ -4,10 +4,12 @@ import { FaArrowRight } from 'react-icons/fa';
 import pic from '../src/Images/images (9).jpeg';
 import MainLatest from './MainLatest';
 
-//<MainLatest />
-//<MainTrending />
+function MainCollection({ navigateExplore, setNavigateExplore }) {
+  const [isScrolling, setIsScrolling] = useState(false);
 
-/*  useEffect(() => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
     let timeout;
     const handleScroll = () => {
       setIsScrolling(true);
@@ -28,11 +30,7 @@ import MainLatest from './MainLatest';
     return () => {
       scrollContainer.removeEventListener('scroll', handleScroll);
     };
-  }, []);*/
-function MainCollection({ navigateExplore, setNavigateExplore }) {
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const [data, setData] = useState([]);
+  }, []);
 
   return (
     <section className=" md:w-full grid md:place-items-start place-items-center">
@@ -45,6 +43,9 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
+
+      <MainLatest />
+      <MainTrending />
     </section>
   );
 }

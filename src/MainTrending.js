@@ -90,9 +90,9 @@ function MainTrending() {
           >
             <section className="md:h-48 h-40 w-full rounded-lg">
               <img
-                src={item.itemName}
+                src={item.profilePic}
                 className="h-full w-full rounded-lg"
-                alt={item.itemName}
+                alt={item.profilePic}
               />
             </section>
             <div className="mt-4">
