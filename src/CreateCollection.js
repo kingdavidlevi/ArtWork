@@ -107,9 +107,8 @@ function CreateCollection() {
       }
     } catch (error) {
       setErrorMessage(error);
+      setLoading(false);
     }
-
-    setLoading(false);
   };
   // Function to handle file selection
 
