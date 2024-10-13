@@ -1,5 +1,5 @@
 import ImageSlider from './ImageSlider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
@@ -8,11 +8,41 @@ import testing from './Images/download (2).png';
 function CreateNft() {
   const navigate = useNavigate();
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const Id = localStorage.getItem('Id');
+  const [cols, setCols] = useState([]);
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
     require('./Images/pexels-mccutcheon-1209843.jpg'),
   ];
+  useEffect(() => {
+    const getCollections = async () => {
+      setLoading(true);
+      const options = {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      };
+
+      try {
+        const response = await fetch(
+          `https://artifynft.onrender.com/myCols/${Id}`,
+          options,
+        );
+        const data = await response.json();
+        console.log(data);
+        if (data) {
+          setCols(data);
+        }
+      } catch (error) {
+        setErrorMessage(error);
+      }
+    };
+    getCollections();
+  }, []);
   const home = () => {
     navigate('/');
   };

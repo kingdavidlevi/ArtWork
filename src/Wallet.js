@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Eth from './Images/download (2).png';
 import metamask from './Images/download (3).png';
 
@@ -6,14 +6,52 @@ import { FaCopy, FaArrowLeft } from 'react-icons/fa';
 import { useOutletContext } from 'react-router-dom';
 
 function Wallet({ walletOpen, setWalletOpen }) {
-  const [wallet, setWallet] = useState(
-    'UQD05PEF2iwRFrB8QdzEXIUFd0zuafjLZr-GRD14yCM-1whG',
-  );
+  const [balance, setBalance] = useState({});
   const [copied, setCopied] = useState(false);
-
+  const [address, setAddress] = useState('');
+  useEffect(() => {
+    const fetchWallet = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      };
+      try {
+        const res = await fetch(
+          `https://artifynft.onrender.com/wallet`,
+          options,
+        );
+        const data = res.json();
+        setAddress(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const fetchBalance = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      };
+      try {
+        const res = await fetch(
+          `https://artifynft.onrender.com/balance/${address}`,
+          options,
+        );
+        const data = res.json();
+        setBalance(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchWallet();
+    address && fetchBalance();
+  }, []);
   const handleCopy = () => {
     navigator.clipboard
-      .writeText(wallet)
+      .writeText(address)
       .then(() => {
         setCopied(true); // Show "Copied" text
         setTimeout(() => setCopied(false), 3000); // Hide it after 2 seconds
@@ -50,7 +88,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
           className="w-28 relative cursor-pointer overflow-hidden"
           onClick={handleCopy}
         >
-          <p className=" text-sm text-nowrap text-gray-200">{wallet}</p>{' '}
+          <p className=" text-sm text-nowrap text-gray-200">{address}</p>{' '}
         </section>
         <div className="mt-1 relative">
           {' '}

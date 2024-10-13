@@ -54,7 +54,7 @@ function MainTrending() {
     >
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white md:block hidden text-base font-medium italic md:font-semibold">
+        <p className="text-white   text-base font-medium italic md:font-semibold">
           CollectionName:
         </p>
         <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
@@ -83,7 +83,7 @@ function MainTrending() {
           placeholderSkeleton(index),
         )
       ) : latestsource.length > 0 ? (
-        latestsource.map((item, index) => (
+        latestsource?.map((item, index) => (
           <div
             key={index}
             className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4"
@@ -105,7 +105,7 @@ function MainTrending() {
               <section className="w-full flex items-center justify-between mt-4">
                 <p className="text-white text-base font-semibold">Artist :</p>
                 <p className="text-gray-400 italic md:text-base text-sm font-semibold">
-                  {truncateText(item.itemName, 18)}
+                  {truncateText(item.artiste, 18)}
                 </p>
               </section>
               <section className="w-full flex items-center justify-between mt-4">

@@ -4,13 +4,20 @@ import AboutUs from './AboutUs';
 import { FaCommentDots } from 'react-icons/fa6';
 import { useOutletContext } from 'react-router-dom';
 import UserChat from './UsersChat';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdminPage from './AdminPage';
 function MainHomePage() {
   const { walletOpen, navigateExplore, setNavigateExplore, setWalletOpen } =
     useOutletContext();
   const [openchat, setOpenChat] = useState(false);
   const navigate = useNavigate();
+  const Id = localStorage.getItem('Id');
+
+  useEffect(() => {
+    if (!Id) {
+      navigate('HomePage');
+    }
+  }, []);
   const toggleWallet = () => {
     setWalletOpen(false);
   };

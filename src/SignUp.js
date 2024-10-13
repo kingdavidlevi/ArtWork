@@ -9,6 +9,7 @@ function SignUp() {
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [checkpass, setcheckPass] = useState(false);
+
   const navigate = useNavigate();
 
   const home = () => {
@@ -57,10 +58,14 @@ function SignUp() {
     };
 
     try {
-      const response = await fetch('https://', options);
+      const response = await fetch(
+        'https://artifynft.onrender.com/signUp',
+        options,
+      );
       const data = await response.json();
-
-      if (data.message && checkPasswords) {
+      console.log(data.UserId);
+      if (data) {
+        localStorage.setItem('Id', data.UserId);
         navigate('/');
       }
     } catch (error) {

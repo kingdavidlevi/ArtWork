@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
@@ -8,13 +9,42 @@ import CollectionImageSlider from './CollectionImageSlider';
 
 function MyNftCollections() {
   const navigate = useNavigate();
+  const [nfts, setNfts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [text, setText] = useState('Adams Christopher99 uoisjdjdj');
+
   const params = useParams();
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
     require('./Images/pexels-mccutcheon-1209843.jpg'),
   ];
+  useEffect(() => {
+    const getNfts = async () => {
+      setLoading(true);
+      const options = {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      };
+      try {
+        const response = await fetch(
+          `https://artifynft.onrender.com/myNfts/${params.id}`,
+          options,
+        );
+        const data = await response.json();
+        console.log(data);
+        if (data) {
+          setNfts(data);
+        }
+      } catch (error) {
+        setErrorMessage(error);
+      }
+    };
+    getNfts();
+  }, []);
   const home = () => {
     navigate(-1);
   };
