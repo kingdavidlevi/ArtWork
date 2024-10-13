@@ -15,7 +15,7 @@ function Collection() {
       <Latest />
       <div className="mt-8 w-90% md:w-full place-items-center  flex gap-2  ">
         <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
-          Latest Collection
+          Trending Collection
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>

@@ -61,6 +61,7 @@ function Login() {
         const data = await response.json();
         console.log(data.UserId);
         if (data) {
+          localStorage.setItem('Id', data.UserId);
           navigate('/');
         }
       } catch (error) {

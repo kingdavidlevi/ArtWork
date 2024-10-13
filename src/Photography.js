@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Trending() {
+function Photography() {
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
   const [text, setText] = useState('Adams Christopher99');
   const [latestsource, setLatestSource] = useState([]);
@@ -76,10 +76,7 @@ function Trending() {
   ];
 
   return (
-    <section
-      className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
-      id="Trending"
-    >
+    <section className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6">
       {loading ? (
         // Render the skeletons while loading
         Array.from({ length: skeletonCount }).map((_, index) =>
@@ -136,4 +133,4 @@ function Trending() {
     </section>
   );
 }
-export default Trending;
+export default Photography;

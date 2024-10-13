@@ -26,7 +26,9 @@ function Menu({ isOpen, setIsOpen }) {
     navigate('Login');
   };
   /*</div>*/
-
+  const cancel = () => {
+    setIsOpen(false);
+  };
   const drops = () => {
     setToggleDrops((prevstate) => !prevstate);
   };
@@ -55,15 +57,30 @@ function Menu({ isOpen, setIsOpen }) {
       </ul>
       {toggleDrops && (
         <div className=" px-4  ul   cursor-pointer  w-full ul items-center  ">
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold"> Popular</p>
-          </div>
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold"> Trending</p>
-          </div>
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold">Latest</p>
-          </div>
+          <a href="#Popular">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={cancel}
+            >
+              <p className="text-base font-semibold"> Popular</p>
+            </div>
+          </a>
+          <a href="#Trending">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={cancel}
+            >
+              <p className="text-base font-semibold"> Trending</p>
+            </div>
+          </a>
+          <a href="#Latest">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={cancel}
+            >
+              <p className="text-base font-semibold">Latest</p>
+            </div>
+          </a>
         </div>
       )}
       <ul
