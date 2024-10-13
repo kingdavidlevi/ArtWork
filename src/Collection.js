@@ -3,45 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Trending from './Trending';
 import Latest from './Latest';
 
-/*useEffect(() => {
-  let timeout;
-  const handleScroll = () => {
-    setIsScrolling(true);
-
-    // Clear the previous timeout if the user scrolls again
-    clearTimeout(timeout);
-    // Set a timeout to remove the scroll-active class after scrolling stops
-    timeout = setTimeout(() => {
-      setIsScrolling(false);
-    }, 2000); // 1 second delay before fading out
-  };
-
-  // Add event listener for scrolling
-  const scrollContainer = document.querySelector('.scroll-container');
-  scrollContainer.addEventListener('scroll', handleScroll);
-
-  // Cleanup the event listener
-  return () => {
-    scrollContainer.removeEventListener('scroll', handleScroll);
-  };
-}, []);*/
-
 function Collection() {
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/collection.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-      })
-      .then((data) => setData(data.cancelled_deliveries))
-      .catch((error) => console.error('Error fetching the JSON data:', error));
-  }, []);
   return (
     <section className=" md:w-full grid md:place-items-start place-items-center">
       <div className="md:mt-16 mt-10 w-90% md:w-full place-items-center  flex gap-2  ">

@@ -33,7 +33,7 @@ function MainTrending() {
           options,
         );
         const data = await response.json();
-        console.log(data);
+
         const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {

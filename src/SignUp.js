@@ -63,7 +63,7 @@ function SignUp() {
     };
 
     try {
-      const response = await fetch('http://localhost:3500', options);
+      const response = await fetch('http://localhost:3500/signUp', options);
       const data = await response.json();
       console.log(data);
       if (data) {
