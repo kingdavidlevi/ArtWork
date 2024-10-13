@@ -15,7 +15,7 @@ function MainPopular() {
   };
 
   const viewCollections = (id) => {
-    navigate(`GeneralNfts/${id}`);
+    navigate(`PopularNfts/${id}`);
   };
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function MainPopular() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/trending`,
+          `https://artifynft.onrender.com/getPopCol`,
           options,
         );
         const data = await response.json();
@@ -76,7 +76,10 @@ function MainPopular() {
   ];
 
   return (
-    <section className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6">
+    <section
+      className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
+      id="MainPopular"
+    >
       {loading ? (
         // Render the skeletons while loading
         Array.from({ length: skeletonCount }).map((_, index) =>

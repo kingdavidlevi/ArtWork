@@ -15,7 +15,7 @@ function MainTrending() {
   };
 
   const viewCollections = (id) => {
-    navigate(`GeneralNfts/${id}`);
+    navigate(`TrendingNfts/${id}`);
   };
 
   useEffect(() => {
@@ -76,7 +76,10 @@ function MainTrending() {
   ];
 
   return (
-    <section className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6">
+    <section
+      className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
+      id="MainTrending"
+    >
       {loading ? (
         // Render the skeletons while loading
         Array.from({ length: skeletonCount }).map((_, index) =>

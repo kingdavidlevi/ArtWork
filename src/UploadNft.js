@@ -16,7 +16,7 @@ function UploadNft() {
   const [walletOpen, setWalletOpen] = useState(false);
   const [uploadhover, setuploadHover] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState('');
+  const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState([]);
   const [inputs, setInputs] = useState({
     nftName: '',
@@ -39,7 +39,6 @@ function UploadNft() {
       ...prevdata,
       [name]: value,
     }));
-    console.log(inputs);
   };
 
   const back = () => {
@@ -98,7 +97,7 @@ function UploadNft() {
   const handlesubmit = async (e) => {
     e.preventDefault();
     if (!image) return;
-
+    setLoading(true);
     const formData = new FormData();
     formData.append('image', imageFile);
     formData.append('price', inputs.amount);
@@ -118,17 +117,16 @@ function UploadNft() {
         options,
       );
       const data = await response.json();
-      console.log(data);
+
       if (data) {
         setImage(null);
         setFileName('');
-        setInputs({ nftName: '', amount: '', Description: '' });
+        setLoading(false);
+        setInputs({ nftName: '', amount: '' });
       }
     } catch (error) {
       setErrorMessage(error);
     }
-
-    setLoading(true);
   };
   return (
     <section className="h-full pb-20 App bg-black">
@@ -178,7 +176,7 @@ function UploadNft() {
             {' '}
             {image && (
               <section
-                className="absolute z-40 top-4 right-3     md:top-6 md:right-8"
+                className="absolute z-10 top-4 right-3     md:top-6 md:right-8"
                 onClick={handleDelete}
               >
                 <FaTrash className="text-white text-lg" />
@@ -219,7 +217,7 @@ function UploadNft() {
             </section>
           </div>
 
-          <div className="w-90%">
+          <div className="w-90% relative">
             <section className=" mt-4">
               {' '}
               <p className="text-white mt-10 text-base font-normal md:text-xl md:font-semibold">
@@ -247,15 +245,26 @@ function UploadNft() {
               value={inputs.amount}
               placeholder="Amount"
               type="number"
-              className="px-3 w-full no-spinner mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
+              className="px-3 w-full  no-spinner mt-4 collection-name outline-none placeholder:text-base text-white py-3 rounded-md bg-black"
             />
-            <p className="text-white  absolute text-base font-normal md:text-xl md:font-semibold">
+            <p className="text-white right-8 top-52 mt-1  absolute text-base font-normal  md:text-lg">
               ETH
             </p>
             <section className="w-full lg:place-items-start grid place-items-center">
-              <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
-                Create
-              </button>
+              {inputs.amount.length > 0 &&
+              inputs.nftName.length > 0 &&
+              image ? (
+                <button
+                  className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+                  onClick={handlesubmit}
+                >
+                  Continue
+                </button>
+              ) : (
+                <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+                  Continue
+                </button>
+              )}
             </section>
           </div>
         </form>

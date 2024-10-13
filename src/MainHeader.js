@@ -93,15 +93,21 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
                   onMouseLeave={hidediv}
                 >
                   <ul>
-                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
-                      Popular
-                    </li>
-                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
-                      Trending
-                    </li>
-                    <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
-                      Lattest
-                    </li>
+                    <a href="#MainPopular">
+                      <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                        Popular
+                      </li>
+                    </a>
+                    <a href="#MainTrending">
+                      <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                        Trending
+                      </li>
+                    </a>
+                    <a href="#MainLatest">
+                      <li className=" dropdown-li cursor-pointer text-base font-medium  text-white flex rounded-md pl-4 items-center h-14">
+                        Latest
+                      </li>
+                    </a>
                   </ul>
                 </div>
               )}

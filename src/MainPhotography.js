@@ -15,7 +15,7 @@ function MainPhotography() {
   };
 
   const viewCollections = (id) => {
-    navigate(`GeneralNfts/${id}`);
+    navigate(`Photography/${id}`);
   };
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function MainPhotography() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/trending`,
+          `https://artifynft.onrender.com/getPhotoNft`,
           options,
         );
         const data = await response.json();

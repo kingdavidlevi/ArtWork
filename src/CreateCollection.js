@@ -104,7 +104,7 @@ function CreateCollection() {
       const data = await response.json();
       console.log(data);
       if (data) {
-        navigate(`UploadNft/${data._id}`);
+        navigate(`/UploadNft/${data._id}`);
       }
     } catch (error) {
       setErrorMessage(error);
@@ -131,7 +131,7 @@ function CreateCollection() {
         </div>
       )}
       <div className={`main-content ${loading ? 'blurred' : ''}`}>
-        <header className="glass-header2 w-full px-2 md:px-6  justify-between z-20 h-18 flex items-center">
+        <header className="glass-header2 w-full px-2 md:px-6  justify-between z-40 h-18 flex items-center">
           <div className="flex gap-3">
             <div
               className=" cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"
@@ -306,7 +306,7 @@ function CreateCollection() {
                     value={inputs.collectionName}
                     placeholder="My Collection Name"
                     type="text"
-                    className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-gray-400 py-3 rounded-md bg-black"
+                    className="px-3 mt-4 collection-name outline-none placeholder:text-base w-full text-white py-3 rounded-md bg-black"
                   />
 
                   <p className="text-white mt-6 text-base font-normal md:text-xl md:font-semibold">
@@ -318,7 +318,7 @@ function CreateCollection() {
                     value={inputs.description}
                     placeholder="Description"
                     type="text"
-                    className="px-3 mt-4 h-32 max-h-32 collection-name outline-none placeholder:text-base  w-full text-gray-400 py-3 rounded-md bg-black"
+                    className="px-3 mt-4 h-32 max-h-32 collection-name outline-none placeholder:text-base  w-full text-white py-3 rounded-md bg-black"
                   />
                 </div>
               </section>

@@ -5,7 +5,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 import { useEffect } from 'react';
 
-function GeneralNfts() {
+function LatestNfts() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false); // Should be a boolean, not a string
@@ -50,35 +50,6 @@ function GeneralNfts() {
     };
 
     fetchLatestCollection();
-  }, [params.id]);
-
-  useEffect(() => {
-    const fetchTrending = async () => {
-      setLoading(true);
-
-      const options = {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-      };
-
-      try {
-        const response = await fetch(
-          `https://artifynft.onrender.com/trendNfts/${params.id}`,
-          options,
-        );
-        const data = await response.json();
-        console.log(data);
-        setLatestSource(data);
-      } catch (error) {
-        setErrorMessage(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTrending();
   }, [params.id]);
 
   return (
@@ -167,7 +138,7 @@ function GeneralNfts() {
           </section>
         ) : (
           <section className="mt-20 place-items-center">
-            {loading ? (
+            {loading && errorMessage ? (
               <div className="loading-overlay">
                 <div className="spinner"></div>
               </div>
@@ -188,4 +159,4 @@ function GeneralNfts() {
   );
 }
 
-export default GeneralNfts;
+export default LatestNfts;

@@ -168,7 +168,7 @@ function AdminCreateCollection() {
 
     try {
       const response = await fetch(
-        'https://artifynft.onrender.com/getPopCol',
+        'https://artifynft.onrender.com/postPopCol',
         options,
       );
       const data = await response.json();
@@ -201,7 +201,7 @@ function AdminCreateCollection() {
 
     try {
       const response = await fetch(
-        'https://artifynft.onrender.com/getPhotoCol',
+        'https://artifynft.onrender.com/postPhotoCol',
         options,
       );
       const data = await response.json();

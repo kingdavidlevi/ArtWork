@@ -15,7 +15,7 @@ function MainLatest() {
   };
 
   const viewCollections = (id) => {
-    navigate(`GeneralNfts/${id}`);
+    navigate(`LatestNfts/${id}`);
   };
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function MainLatest() {
           options,
         );
         const data = await response.json();
-
+        console.log(data);
         const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {
@@ -76,7 +76,10 @@ function MainLatest() {
   ];
 
   return (
-    <section className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6">
+    <section
+      className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
+      id="MainLatest"
+    >
       {loading ? (
         // Render the skeletons while loading
         Array.from({ length: skeletonCount }).map((_, index) =>

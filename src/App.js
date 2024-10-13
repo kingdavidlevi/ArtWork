@@ -28,8 +28,11 @@ import CreateCollection from './CreateCollection';
 import AdminCreateCollection from './AdminCreateCollection';
 import UploadNft from './UploadNft';
 import MyNftCollections from './MyNftCollections';
-import GeneralNfts from './GeneralNfts';
+import LatestNfts from './LatestNfts';
+import TrendingNfts from './TrendingNfts';
 import AdminUploadNft from './AdminUploadNft';
+import PopularNfts from './PopularNfts';
+import Photography from './Photography';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -57,7 +60,10 @@ const router = createBrowserRouter(
       <Route path="UploadNft/:id" element={<UploadNft />} />
       <Route path="AdminUploadNft/:id" element={<AdminUploadNft />} />
       <Route path="MyNftCollections/:id" element={<MyNftCollections />} />
-      <Route path="GeneralNfts/:id" element={<GeneralNfts />} />
+      <Route path="LatestNfts/:id" element={<LatestNfts />} />
+      <Route path="TrendingNfts/:id" element={<TrendingNfts />} />
+      <Route path="PopularNfts/:id" element={<PopularNfts />} />
+      <Route path="Photography/:id" element={<Photography />} />
     </Route>,
   ),
 );

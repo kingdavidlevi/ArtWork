@@ -26,7 +26,7 @@ function OverAll() {
           `https://artifynft.onrender.com/user/${Id}`,
           options,
         );
-        const data = res.json();
+        const data = await res.json();
 
         setUser(data);
       } catch (error) {

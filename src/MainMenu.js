@@ -58,15 +58,21 @@ function MainMenu({ isOpen, setIsOpen }) {
       </ul>
       {toggleDrops && (
         <div className=" px-4  ul   cursor-pointer  w-full ul items-center  ">
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold"> Popular</p>
-          </div>
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold"> Trending</p>
-          </div>
-          <div className="flex text-white     h-20 items-center">
-            <p className="text-base font-semibold">Latest</p>
-          </div>
+          <a href="#MainPopular">
+            <div className="flex text-white     h-20 items-center">
+              <p className="text-base font-semibold"> Popular</p>
+            </div>
+          </a>
+          <a href="#MainTrending">
+            <div className="flex text-white     h-20 items-center">
+              <p className="text-base font-semibold"> Trending</p>
+            </div>
+          </a>
+          <a href="#MainLatest">
+            <div className="flex text-white     h-20 items-center">
+              <p className="text-base font-semibold">Latest</p>
+            </div>
+          </a>
         </div>
       )}
       <ul
