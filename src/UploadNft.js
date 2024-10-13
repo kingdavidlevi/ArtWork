@@ -127,6 +127,7 @@ function UploadNft() {
     } catch (error) {
       setErrorMessage(error);
     }
+    setLoading(false);
   };
   return (
     <section className="h-full pb-20 App bg-black">
