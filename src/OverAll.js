@@ -5,11 +5,36 @@ import Header from './Header';
 function OverAll() {
   const location = useLocation();
   const [latestCollection, setLatestCollection] = useState('');
-
+  const [user, setUser] = useState({});
+  const [error, setError] = useState('');
+  const Id = localStorage.getItem('Id');
   const [Logininputs, setLoginInputs] = useState({
     email: '',
     password: '',
   });
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      };
+      try {
+        const res = await fetch(
+          `https://artifynft.onrender.com/user/${Id}`,
+          options,
+        );
+        const data = res.json();
+        setUser(data);
+      } catch (error) {
+        setError(error);
+        console.log(error);
+      }
+    };
+    fetchUser();
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +48,8 @@ function OverAll() {
           setLoginInputs,
           latestCollection,
           setLatestCollection,
+          user,
+          setUser,
         }}
       />
     </div>

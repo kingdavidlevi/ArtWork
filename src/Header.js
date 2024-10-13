@@ -84,13 +84,15 @@ function Header({ isOpen, setIsOpen }) {
                 </div>
               )}
             </section>
-            <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden sm:block font-semibold">
-              Authors
-            </div>
 
             <NavLink to="/Login">
               <div className="text-white hover:text-gray-200  hidden sm:block text-lg font-semibold">
                 Create
+              </div>
+            </NavLink>
+            <NavLink to="/SignUp">
+              <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden sm:block font-semibold">
+                SignUp
               </div>
             </NavLink>
           </div>
@@ -119,7 +121,7 @@ function Header({ isOpen, setIsOpen }) {
               className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
             />
-            <NavLink to="/Login">
+            <NavLink to="Login">
               {' '}
               <FaWallet className="text-white ml-3 text-base md:text-lg absolute font mt-3" />
               <button className="pr-4 pl-10 text-white btn py-2  md:py-2  md:text-base text-base px-4 font-normal md:font-medium rounded-lg">

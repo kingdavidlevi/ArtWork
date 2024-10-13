@@ -9,6 +9,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
   const [balance, setBalance] = useState({});
   const [copied, setCopied] = useState(false);
   const [address, setAddress] = useState('');
+  const Id = localStorage.getItem('Id');
   useEffect(() => {
     const fetchWallet = async () => {
       const options = {
@@ -19,7 +20,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `https://artifynft.onrender.com/wallet`,
+          `https://artifynft.onrender.com/wallet/${Id}`,
           options,
         );
         const data = res.json();

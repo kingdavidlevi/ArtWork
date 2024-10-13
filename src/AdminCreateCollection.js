@@ -149,6 +149,73 @@ function AdminCreateCollection() {
 
     setLoading(true);
   };
+
+  const Popular = async (e) => {
+    e.preventDefault();
+    if (!Image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('colName', inputs.collectionName);
+    formData.append('artiste', inputs.artistName);
+    formData.append('description', inputs.description);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        'https://artifynft.onrender.com/getPopCol',
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        navigate(`/AdminUploadNft/${data._id}`);
+        setLatestCollection(data);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+
+    setLoading(true);
+  };
+  const Photography = async (e) => {
+    e.preventDefault();
+    if (!Image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('colName', inputs.collectionName);
+    formData.append('artiste', inputs.artistName);
+    formData.append('description', inputs.description);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        'https://artifynft.onrender.com/getPhotoCol',
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        navigate(`/AdminUploadNft/${data._id}`);
+        setLatestCollection(data);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+
+    setLoading(true);
+  };
   // Function to trigger file input when div is clicked
   const handleDivClick = () => {
     fileInputRef.current.click();
@@ -401,6 +468,36 @@ function AdminCreateCollection() {
             ) : (
               <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
                 trending
+              </button>
+            )}
+            {inputs.artistName.length > 0 &&
+            inputs.collectionName.length > 0 &&
+            inputs.description.length > 0 &&
+            Image ? (
+              <button
+                className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mt-10 py-3 rounded-md"
+                onClick={Popular}
+              >
+                popular
+              </button>
+            ) : (
+              <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+                popular
+              </button>
+            )}
+            {inputs.artistName.length > 0 &&
+            inputs.collectionName.length > 0 &&
+            inputs.description.length > 0 &&
+            Image ? (
+              <button
+                className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mt-10 py-3 rounded-md"
+                onClick={Photography}
+              >
+                photography
+              </button>
+            ) : (
+              <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+                photography
               </button>
             )}
           </section>

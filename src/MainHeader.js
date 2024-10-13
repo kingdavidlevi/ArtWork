@@ -10,6 +10,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [toggleShowDiv, setToggleShowDiv] = useState(false);
   const [search, setSearch] = useState('');
+  const { user, setUser } = useOutletContext();
   const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);

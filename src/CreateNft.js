@@ -1,7 +1,7 @@
 import ImageSlider from './ImageSlider';
 import { useEffect, useState } from 'react';
 import { FaImage } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import testing from './Images/download (2).png';
 
@@ -12,6 +12,7 @@ function CreateNft() {
   const [errorMessage, setErrorMessage] = useState('');
   const Id = localStorage.getItem('Id');
   const [cols, setCols] = useState([]);
+
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
@@ -33,7 +34,7 @@ function CreateNft() {
           options,
         );
         const data = await response.json();
-        console.log(data);
+
         if (data) {
           setCols(data);
         }
@@ -68,6 +69,9 @@ function CreateNft() {
         <ImageSlider images={images} />
       </div>
       <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start ">
+        <NavLink
+          to={`${cols.admin ? '/AdminCreateCollection' : '/CreateCollection'}`}
+        ></NavLink>
         <div className="  lg:block  hidden cursor-pointer" onClick={create}>
           <p className="text-white md:text-4xl text-3xl font-semibold">
             Create

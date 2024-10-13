@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaArrowLeft, FaImage, FaTrash } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useRef } from 'react';
 import Wallet from './Wallet';
 import deletebtn from './Images/Vector (8).png';
@@ -15,12 +15,14 @@ function CreateCollection() {
   const [fileName, setFileName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState('');
+  const { user, setUser } = useOutletContext();
   const [inputs, setInputs] = useState({
     collectionName: '',
     description: '',
   });
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
+  const Id = localStorage.getItem('Id');
   const toggleWallet = () => {
     setWalletOpen((prev) => !prev);
   };
@@ -84,8 +86,9 @@ function CreateCollection() {
     const formData = new FormData();
     formData.append('image', imageFile);
     formData.append('colName', inputs.collectionName);
-    formData.append('artiste');
+    formData.append('artiste', user.username);
     formData.append('description', inputs.description);
+    formData.append('id', Id);
 
     const options = {
       method: 'POST',
@@ -94,7 +97,10 @@ function CreateCollection() {
     };
 
     try {
-      const response = await fetch('', options);
+      const response = await fetch(
+        `https://artifynft.onrender.com/postCol`,
+        options,
+      );
       const data = await response.json();
       console.log(data);
       if (data) {

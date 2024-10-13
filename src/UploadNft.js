@@ -43,7 +43,7 @@ function UploadNft() {
   };
 
   const back = () => {
-    navigate(-1);
+    navigate('/');
   };
 
   const hover = () => {
@@ -103,7 +103,7 @@ function UploadNft() {
     formData.append('image', imageFile);
     formData.append('price', inputs.amount);
     formData.append('itemName', inputs.nftName);
-    formData.append('artiste');
+
     formData.append('colId', params.id);
 
     const options = {
@@ -114,7 +114,7 @@ function UploadNft() {
 
     try {
       const response = await fetch(
-        `https://artifynft.onrender.com/postLatestNft`,
+        `https://artifynft.onrender.com/postNft`,
         options,
       );
       const data = await response.json();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegCopyright } from 'react-icons/fa';
-import { useOutletContext, useNavigate } from 'react-router-dom';
+import { useOutletContext, useNavigate, NavLink } from 'react-router-dom';
 import {
   FaGreaterThan,
   FaV,
@@ -75,13 +75,11 @@ function Menu({ isOpen, setIsOpen }) {
           <p className="text-white  text-base font-semibold">Create</p>
         </li>
       </ul>
-
-      <ul className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 ">
-        <li className="flex  items-center gap-3 w-full">
-          <FaUsers className="text-white  text-3xl" />
-          <p className="text-white  text-base font-semibold">Authors</p>
-        </li>
-      </ul>
+      <NavLink to="/SignUp">
+        <ul className=" px-4  flex   cursor-pointe  w-full ul items-center  h-20 ">
+          <p className="text-white  text-base font-semibold">SignUp</p>
+        </ul>
+      </NavLink>
 
       <section className=" grid z-10 bg-black  fixed bottom-0 place-items-center w-full">
         <section className="ful mb-4 w-90%  pt-6 md:flex  grid place-items-center md:items-start md:justify-between">

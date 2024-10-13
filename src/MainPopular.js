@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Latest() {
+function MainPopular() {
   const [nftName, setNftName] = useState('Christopher Art Collections9999');
   const [text, setText] = useState('Adams Christopher99');
   const [latestsource, setLatestSource] = useState([]);
@@ -14,8 +14,8 @@ function Latest() {
     return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
   };
 
-  const viewCollections = () => {
-    navigate('/Login');
+  const viewCollections = (id) => {
+    navigate(`GeneralNfts/${id}`);
   };
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function Latest() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/latest`,
+          `https://artifynft.onrender.com/trending`,
           options,
         );
         const data = await response.json();
@@ -133,4 +133,4 @@ function Latest() {
     </section>
   );
 }
-export default Latest;
+export default MainPopular;
