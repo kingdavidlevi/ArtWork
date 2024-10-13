@@ -16,7 +16,7 @@ function MainHomePage() {
   useEffect(() => {
     console.log(Id);
     if (!Id) {
-      navigate('HomePage');
+      navigate('/HomePage');
     }
   }, []);
   const toggleWallet = () => {

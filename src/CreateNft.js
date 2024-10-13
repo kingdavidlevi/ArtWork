@@ -37,7 +37,7 @@ function CreateNft() {
           options,
         );
         const data = await response.json();
-        console.log(Id);
+
         if (data) {
           setCols(data);
           setLoading(false);
@@ -113,44 +113,45 @@ function CreateNft() {
         </section>
 
         <section className="lg:h-68 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area h-full   lg:overflow-y-scroll lg:overflow-hidden">
-          {cols?.length > 0 ? (
-            cols?.map((items) => (
-              <div
-                className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
-                onClick={() => routoNftCollections(items._id)}
-              >
-                <img
-                  src={items.profilePic}
-                  className="md:h-28 rounded-md h-22 w-22 md:w-28"
-                />
-                <section className="absolute right-10 top-3">
-                  {' '}
-                  <FaArrowRight className="text-white text-xl" />
-                </section>
-                <div className="ml-4">
-                  <p className="text-white text-lg font-medium">
-                    Collection Name :
-                  </p>
-                  <p className="text-gray-400 md:hidden italic md:text-lg text-base font-medium">
-                    {truncateText(items.itemName, 25)}
-                  </p>
-                  <p className="text-gray-400 md:block hidden italic md:text-lg text-base font-medium">
-                    {items.itemName}
-                  </p>
+          {!loading ? (
+            cols?.length > 0 ? (
+              cols?.map((items) => (
+                <div
+                  className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "
+                  onClick={() => routoNftCollections(items._id)}
+                  key={items._id}
+                >
+                  <img
+                    src={items.profilePic}
+                    className="md:h-28 rounded-md h-22 w-22 md:w-28"
+                  />
+                  <section className="absolute right-10 top-3">
+                    <FaArrowRight className="text-white text-xl" />
+                  </section>
+                  <div className="ml-4">
+                    <p className="text-white text-lg font-medium">
+                      Collection Name :
+                    </p>
+                    <p className="text-gray-400 md:hidden italic md:text-lg text-base font-medium">
+                      {truncateText(items.itemName, 25)}
+                    </p>
+                    <p className="text-gray-400 md:block hidden italic md:text-lg text-base font-medium">
+                      {items.itemName}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))
-          ) : cols?.length === 0 ? (
-            <p className="text-white mt-4 md:text-lg  text-base font-medium">
-              {' '}
-              No Collection!
-            </p>
-          ) : loading ? (
+              ))
+            ) : (
+              cols?.length === 0 && (
+                <p className="text-white mt-4 md:text-lg text-base font-medium">
+                  No Collection!
+                </p>
+              )
+            )
+          ) : (
             <div className="loading-overlay">
               <div className="spinner"></div>
             </div>
-          ) : (
-            <p></p>
           )}
         </section>
       </section>

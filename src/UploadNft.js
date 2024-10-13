@@ -17,7 +17,7 @@ function UploadNft() {
   const [uploadhover, setuploadHover] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [imageFile, setImageFile] = useState([]);
+  const [imageFile, setImageFile] = useState(null);
   const [inputs, setInputs] = useState({
     nftName: '',
     amount: '',
@@ -102,7 +102,6 @@ function UploadNft() {
     formData.append('image', imageFile);
     formData.append('price', inputs.amount);
     formData.append('itemName', inputs.nftName);
-
     formData.append('colId', params.id);
 
     const options = {
@@ -120,7 +119,7 @@ function UploadNft() {
       console.log(data);
       if (data) {
         setImage(null);
-        setFileName('');
+        setFileName(null);
         setLoading(false);
         setInputs({ nftName: '', amount: '' });
       }
@@ -153,7 +152,7 @@ function UploadNft() {
             </button>
           </div>
         </header>
-        <section className="grid pt-24  lg:pt-40 place-items-center">
+        <section className="grid pt-24    place-items-center">
           <div className="w-90%">
             <p className="text-xl md:text-2xl  text-white font-medium">
               Create an NFT

@@ -70,7 +70,7 @@ function SignUp() {
       );
       const data = await response.json();
 
-      if (data) {
+      if (data.UserId) {
         localStorage.setItem('Id', data.UserId);
         navigate('/');
         setLoading(false);

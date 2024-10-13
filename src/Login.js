@@ -27,7 +27,8 @@ function Login() {
   const home = () => {
     navigate('/HomePage');
   };
-
+  console.log(Logininputs.email);
+  console.log(Logininputs.password);
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
@@ -38,37 +39,39 @@ function Login() {
   };
 
   const handleSignIn = async (e) => {
-    if (Logininputs.email.length > 0 && Logininputs.password.length > 0) {
-      e.preventDefault();
+    e.preventDefault();
 
-      setLoading(true);
-      const options = {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: setLoginInputs.email,
-          password: setLoginInputs.password,
-        }),
-      };
+    setLoading(true);
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: Logininputs.email,
+        password: Logininputs.password,
+      }),
+    };
 
-      try {
-        const response = await fetch(
-          'https://artifynft.onrender.com/signIn',
-          options,
-        );
-        const data = await response.json();
-
-        if (data) {
-          localStorage.setItem('Id', data.UserId);
-          navigate('/');
-        }
-      } catch (error) {
-        setErrorMessage(error);
+    try {
+      const response = await fetch(
+        'https://artifynft.onrender.com/signIn',
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data.UserId) {
+        localStorage.setItem('Id', data.UserId);
+        navigate('/');
       }
+    } catch (error) {
+      setErrorMessage(error);
+      console.log(errorMessage);
     }
+
+    setLoading(false);
   };
+
   const back = () => {
     navigate('/HomePage');
   };
