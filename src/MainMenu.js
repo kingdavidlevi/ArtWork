@@ -34,8 +34,12 @@ function MainMenu({ isOpen, setIsOpen }) {
   const routeMycollection = () => {
     navigate('CreateNft');
   };
-  const home = () => {
-    navigate('/');
+  const LogOut = () => {
+    localStorage.removeItem('Id');
+    navigate('HomePage');
+  };
+  const Cancel = () => {
+    setIsOpen(false);
   };
   return (
     <div
@@ -59,17 +63,26 @@ function MainMenu({ isOpen, setIsOpen }) {
       {toggleDrops && (
         <div className=" px-4  ul   cursor-pointer  w-full ul items-center  ">
           <a href="#MainPopular">
-            <div className="flex text-white     h-20 items-center">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={Cancel}
+            >
               <p className="text-base font-semibold"> Popular</p>
             </div>
           </a>
           <a href="#MainTrending">
-            <div className="flex text-white     h-20 items-center">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={Cancel}
+            >
               <p className="text-base font-semibold"> Trending</p>
             </div>
           </a>
           <a href="#MainLatest">
-            <div className="flex text-white     h-20 items-center">
+            <div
+              className="flex text-white     h-20 items-center"
+              onClick={Cancel}
+            >
               <p className="text-base font-semibold">Latest</p>
             </div>
           </a>
@@ -85,18 +98,20 @@ function MainMenu({ isOpen, setIsOpen }) {
         </li>
       </ul>
 
-      <ul className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 ">
-        <li className="flex  items-center gap-3 w-full">
-          <FaUsers className="text-white  text-3xl" />
-          <p className="text-white  text-base font-semibold">Authors</p>
-        </li>
-      </ul>
       <ul
         className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 "
         onClick={routeMycollection}
       >
         <li className="grid  items-center gap-3 w-full">
           <p className="text-white  text-base font-semibold">My Collection</p>
+        </li>
+      </ul>
+      <ul
+        className="flex px-4     cursor-pointer justify-end w-full ul items-center  h-20 "
+        onClick={LogOut}
+      >
+        <li className="  w-full">
+          <p className="text-white  text-base font-semibold">LogOut</p>
         </li>
       </ul>
 

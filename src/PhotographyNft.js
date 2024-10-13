@@ -4,8 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 import { useEffect } from 'react';
+import Photography from './Photography';
 
-function TrendingNfts() {
+function PhotographyNfts() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false); // Should be a boolean, not a string
@@ -159,4 +160,4 @@ function TrendingNfts() {
   );
 }
 
-export default TrendingNfts;
+export default PhotographyNft;

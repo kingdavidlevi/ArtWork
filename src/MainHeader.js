@@ -50,6 +50,10 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
   const Nft = () => {
     navigate('CreateNft');
   };
+  const LogOut = () => {
+    localStorage.removeItem('Id');
+    navigate('HomePage');
+  };
 
   const routeMycollection = () => {
     navigate('CreateNft');
@@ -118,6 +122,12 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
               onClick={Nft}
             >
               Create
+            </div>
+            <div
+              className="text-white cursor-pointer hover:text-gray-200  hidden md:block text-lg font-semibold"
+              onClick={LogOut}
+            >
+              Logout
             </div>
           </div>
 

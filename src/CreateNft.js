@@ -113,7 +113,7 @@ function CreateNft() {
         </section>
 
         <section className="lg:h-68 lg:pt-2 grid place-items-center lg:place-items-start  lg:mt-14 w-full text-area h-full   lg:overflow-y-scroll lg:overflow-hidden">
-          {cols?.length > 0 ? (
+          {cols && cols?.length > 0 ? (
             cols.map((items) => (
               <div
                 className="btn relative mt-4 flex md:w-80% place-items-center w-90% myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md "

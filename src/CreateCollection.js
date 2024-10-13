@@ -33,7 +33,6 @@ function CreateCollection() {
       ...prevdata,
       [name]: value,
     }));
-    console.log(inputs);
   };
   const back = () => {
     navigate('/CreateNft');
@@ -102,7 +101,7 @@ function CreateCollection() {
         options,
       );
       const data = await response.json();
-
+      console.log(data);
       if (data) {
         navigate(`/UploadNft/${data._id}`);
       }
@@ -110,7 +109,7 @@ function CreateCollection() {
       setErrorMessage(error);
     }
 
-    setLoading(true);
+    setLoading(false);
   };
   // Function to handle file selection
 

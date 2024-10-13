@@ -138,7 +138,7 @@ function PopularNfts() {
           </section>
         ) : (
           <section className="mt-20 place-items-center">
-            {loading && errorMessage ? (
+            {loading ? (
               <div className="loading-overlay">
                 <div className="spinner"></div>
               </div>
