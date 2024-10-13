@@ -153,7 +153,7 @@ function UploadNft() {
             </button>
           </div>
         </header>
-        <section className="grid pt-24 md:pt-28 lg:pt-40 place-items-center">
+        <section className="grid pt-24  lg:pt-40 place-items-center">
           <div className="w-90%">
             <p className="text-xl md:text-2xl  text-white font-medium">
               Create an NFT
