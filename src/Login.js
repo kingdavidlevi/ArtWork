@@ -142,7 +142,6 @@ function Login() {
                   type="checkbox"
                   className="w-5 h-5 accent-black peer checked:accent-purple-600"
                   onClick={handlePassword}
-                  required
                 />
                 <p className="text-white  text-sm  font-medium">
                   {' '}
