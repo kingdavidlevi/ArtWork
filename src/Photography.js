@@ -104,7 +104,7 @@ function Photography() {
               </p>
               <section className="w-full flex items-center justify-between mt-4">
                 <p className="text-white text-base font-semibold">Artist :</p>
-                <p className="text-gray-400 italic md:text-base text-sm font-semibold">
+                <p className="text-white italic md:text-base text-sm font-semibold">
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
