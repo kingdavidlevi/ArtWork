@@ -27,14 +27,14 @@ function OverAll() {
           options,
         );
         const data = res.json();
+
         setUser(data);
       } catch (error) {
         setError(error);
-        console.log(error);
       }
     };
-    fetchUser();
-  }, []);
+    Id && fetchUser();
+  }, [Id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
