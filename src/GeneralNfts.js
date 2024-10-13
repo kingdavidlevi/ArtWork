@@ -94,7 +94,7 @@ function GeneralNfts() {
           {/* Add a check for profilePic */}
           {latestsource && latestsource.profilePic ? (
             <img
-              className="w-full md:object-cover md:h-60 h-40"
+              className="w-full object-cover md:h-60 h-40"
               src={latestsource.profilePic}
               style={{ backgroundImage: `url(${latestsource.profilePic})` }}
               alt="Profile"
