@@ -54,22 +54,28 @@ function MainPhotography() {
     >
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white   text-base font-medium italic md:font-semibold">
+        <p className="text-white   md:text-base text-sm font-medium italic md:font-semibold">
           CollectionName:
         </p>
-        <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
+        <p className="text-white md:hidden  md:text-base text-sm font-medium italic md:font-semibold"></p>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white text-base font-semibold">Artist :</p>
-          <p className="text-white italic md:text-base text-sm font-semibold"></p>
+          <p className="text-white md:text-base text-sm font-semibold">
+            Artist :
+          </p>
+          <p className="text-white italic md:md:text-base   text-sm font-semibold"></p>
         </section>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white text-base font-semibold">Items :</p>
+          <p className="text-white md:text-base text-sm font-semibold">
+            Items :
+          </p>
         </section>
         <section className="w-full flex justify-between mt-4">
-          <p className="text-white text-base font-semibold">Total:</p>
+          <p className="text-white md:text-base text-sm font-semibold">
+            Total:
+          </p>
         </section>
       </div>
-      <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white">
+      <button className="w-full py-2 mt-3 rounded-md form btn md:text-base text-sm font-medium text-white">
         Buy
       </button>
     </div>,
