@@ -54,19 +54,25 @@ function MainLatest() {
     >
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white   text-base font-medium italic md:font-semibold">
+        <p className="text-white    md:text-base text-sm font-medium italic md:font-semibold">
           CollectionName:
         </p>
         <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white text-base font-semibold">Artist :</p>
+          <p className="text-white  md:text-base text-sm font-semibold">
+            Artist :
+          </p>
           <p className="text-gray-400 italic md:text-base text-sm font-semibold"></p>
         </section>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white text-base font-semibold">Items :</p>
+          <p className="text-white md:text-base text-sm font-semibold">
+            Items :
+          </p>
         </section>
         <section className="w-full flex justify-between mt-4">
-          <p className="text-white text-base font-semibold">Total:</p>
+          <p className="text-white  md:text-base text-sm font-semibold">
+            Total:
+          </p>
         </section>
       </div>
       <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white">
@@ -102,22 +108,30 @@ function MainLatest() {
               <p className="text-white md:block hidden text-base font-medium italic md:font-semibold">
                 {truncateText(item.itemName, 28)}
               </p>
-              <p className="text-white md:hidden text-base font-medium italic md:font-semibold">
+              <p className="text-white md:hidden text-sm md:text-base font-medium italic md:font-semibold">
                 {truncateText(item.itemName, 25)}
               </p>
               <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white text-base font-semibold">Artist :</p>
+                <p className="text-white text-sm md:text-base font-semibold">
+                  Artist :
+                </p>
                 <p className="text-white italic md:text-base text-sm font-semibold">
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
               <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white text-base font-semibold">Items :</p>
-                <p className="text-white text-base font-semibold">4</p>
+                <p className="text-white  md:text-base text-sm font-semibold">
+                  Items :
+                </p>
+                <p className="text-white  md:text-base text-sm font-semibold">
+                  4
+                </p>
               </section>
               <section className="w-full flex justify-between mt-4">
-                <p className="text-white text-base font-semibold">Total:</p>
-                <p className="text-white text-base font-semibold">
+                <p className="text-white  md:text-base text-sm font-semibold">
+                  Total:
+                </p>
+                <p className="text-white  md:text-base text-sm font-semibold">
                   <span>20</span> ETH
                 </p>
               </section>

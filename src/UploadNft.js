@@ -10,7 +10,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
-
+//`https://artifynft.onrender.com/postNft`
 function UploadNft() {
   const navigate = useNavigate();
   const [walletOpen, setWalletOpen] = useState(false);
@@ -112,12 +112,9 @@ function UploadNft() {
     };
 
     try {
-      const response = await fetch(
-        `https://artifynft.onrender.com/postNft`,
-        options,
-      );
+      const response = await fetch(`http://localhost:3500`, options);
       const data = await response.json();
-
+      console.log(data);
       if (data) {
         setImage(null);
         setFileName('');

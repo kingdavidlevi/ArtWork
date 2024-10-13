@@ -97,12 +97,9 @@ function CreateCollection() {
     };
 
     try {
-      const response = await fetch(
-        `https://artifynft.onrender.com/postCol`,
-        options,
-      );
+      const response = await fetch(`http://localhost:3500`, options);
       const data = await response.json();
-      console.log(data);
+
       if (data) {
         navigate(`/UploadNft/${data._id}`);
       }

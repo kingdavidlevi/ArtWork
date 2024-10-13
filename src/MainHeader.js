@@ -112,9 +112,6 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
                 </div>
               )}
             </section>
-            <div className="text-white hover:text-gray-200 cursor-pointer text-lg hidden md:block font-semibold">
-              Authors
-            </div>
 
             <div
               className="text-white hover:text-gray-200  hidden md:block text-lg font-semibold"
