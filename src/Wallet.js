@@ -40,7 +40,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `http://localhost:3500/balance/0xC6323Bc313012C5d1c271fAA719061f76bE01cC`,
+          `http://localhost:3500/balance/0xb795B2109A2264fa4c9d21079897258E09AafEC0`,
           options,
         );
         const data = await res.json();
