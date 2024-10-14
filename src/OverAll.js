@@ -27,7 +27,7 @@ function OverAll() {
           options,
         );
         const data = await res.json();
-
+        console.log(data);
         setUser(data);
       } catch (error) {
         setError(error);
@@ -35,7 +35,7 @@ function OverAll() {
     };
     Id && fetchUser();
   }, [Id]);
-
+  console.log(user);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);

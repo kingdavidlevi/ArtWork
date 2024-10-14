@@ -108,9 +108,9 @@ function PopularNfts() {
                   />
                 </section>
                 <div className="mt-4">
-                  <section className="w-full grid place-items-center mt-4">
-                    <p className="text-gray-400 italic md:text-base text-sm font-semibold">
-                      {truncateText(item.artiste, 24)}
+                  <section className="w-full   mt-4">
+                    <p className=" text-white italic md:text-base text-sm font-semibold">
+                      {truncateText(item.itemName, 24)}
                     </p>
                   </section>
                   <section className="w-full flex items-center justify-between mt-4">

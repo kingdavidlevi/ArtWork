@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-function AdminPage({ openchat, setOpenChat }) {
+function AdminPage({ openchatAdmin, setOpenChatAdmin }) {
   const [text, setText] = useState('');
 
   const [messages, setMessages] = useState([
@@ -23,7 +23,7 @@ function AdminPage({ openchat, setOpenChat }) {
     // Set height based on scrollHeight
   };
   const closeChat = () => {
-    setOpenChat(false);
+    setOpenChatAdmin(false);
   };
   const closeChatroute = () => {
     navigate('/');

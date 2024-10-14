@@ -19,7 +19,6 @@ function CreateNft() {
     require('./Images/pexels-heftiba-1194420.jpg'),
     require('./Images/pexels-mccutcheon-1209843.jpg'),
   ];
-  console.log(user.admin);
 
   useEffect(() => {
     const getCollections = async () => {
@@ -75,7 +74,11 @@ function CreateNft() {
 
       <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start ">
         <NavLink
-          to={`${user.admin ? '/AdminCreateCollection' : '/CreateCollection'}`}
+          to={`${
+            user.admin && user.admin !== undefined
+              ? '/AdminCreateCollection'
+              : '/CreateCollection'
+          }`}
         >
           <div className="  lg:block  hidden cursor-pointer">
             <p className="text-white md:text-4xl text-3xl font-semibold">

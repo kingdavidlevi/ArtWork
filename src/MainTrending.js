@@ -15,7 +15,7 @@ function MainTrending() {
   };
 
   const viewCollections = (id) => {
-    navigate(`LatestNfts/${id}`);
+    navigate(`TrendingNfts/${id}`);
   };
 
   useEffect(() => {
@@ -29,11 +29,11 @@ function MainTrending() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/latest`,
+          `https://artifynft.onrender.com/trending`,
           options,
         );
         const data = await response.json();
-        console.log(data);
+
         const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {

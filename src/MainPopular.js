@@ -15,7 +15,7 @@ function MainPopular() {
   };
 
   const viewCollections = (id) => {
-    navigate(`LatestNfts/${id}`);
+    navigate(`PopularNfts/${id}`);
   };
 
   useEffect(() => {

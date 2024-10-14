@@ -6,6 +6,7 @@ import MainHeader from './MainHeader';
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
+  const { user } = useOutletContext();
 
   const [explorer, setExplorer] = useState(false);
   return (
@@ -30,6 +31,7 @@ function Main() {
           context={{
             isOpen,
             setIsOpen,
+            user,
             explorer,
             setExplorer,
             walletOpen,
