@@ -109,7 +109,7 @@ function LatestNfts() {
                 </section>
                 <div className="mt-4">
                   <section className="w-full grid place-items-center mt-4">
-                    <p className="text-gray-400 italic md:text-base text-sm font-semibold">
+                    <p className="text-white italic md:text-base text-sm font-semibold">
                       {truncateText(item.artiste, 24)}
                     </p>
                   </section>

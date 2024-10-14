@@ -15,7 +15,7 @@ function MainPopular() {
   };
 
   const viewCollections = (id) => {
-    navigate(`PopularNfts/${id}`);
+    navigate(`LatestNfts/${id}`);
   };
 
   useEffect(() => {
@@ -46,6 +46,7 @@ function MainPopular() {
 
     fetchLatestCollection();
   }, []);
+  console.log(latestsource);
   // Empty dependency array to run this effect only once on component mount
   const placeholderSkeleton = (index) => [
     <div
@@ -54,15 +55,15 @@ function MainPopular() {
     >
       <section className="md:h-48 h-40 w-full form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white   md:text-base text-sm font-medium italic md:font-semibold">
+        <p className="text-white    md:text-base text-sm font-medium italic md:font-semibold">
           CollectionName:
         </p>
-        <p className="text-white md:hidden md:text-base text-sm font-medium italic md:font-semibold"></p>
+        <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white md:text-base text-sm font-semibold">
+          <p className="text-white  md:text-base text-sm font-semibold">
             Artist :
           </p>
-          <p className="text-gray-400 italic md:md:text-base   text-sm font-semibold"></p>
+          <p className="text-gray-400 italic md:text-base text-sm font-semibold"></p>
         </section>
         <section className="w-full flex items-center justify-between mt-4">
           <p className="text-white md:text-base text-sm font-semibold">
@@ -70,7 +71,7 @@ function MainPopular() {
           </p>
         </section>
         <section className="w-full flex justify-between mt-4">
-          <p className="text-white md:text-base text-sm font-semibold">
+          <p className="text-white  md:text-base text-sm font-semibold">
             Total:
           </p>
         </section>
@@ -84,14 +85,14 @@ function MainPopular() {
   return (
     <section
       className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
-      id="MainPopular"
+      id="MainLatest"
     >
       {loading ? (
         // Render the skeletons while loading
         Array.from({ length: skeletonCount }).map((_, index) =>
           placeholderSkeleton(index),
         )
-      ) : latestsource.length > 0 ? (
+      ) : latestsource && latestsource.length > 0 ? (
         latestsource?.map((item, index) => (
           <div
             key={index}
@@ -105,20 +106,22 @@ function MainPopular() {
               />
             </section>
             <div className="mt-4">
-              <p className="text-white md:block hidden  md:text-base text-sm font-medium italic md:font-semibold">
+              <p className="text-white md:block hidden text-base font-medium italic md:font-semibold">
                 {truncateText(item.itemName, 28)}
               </p>
-              <p className="text-white md:hidden  md:text-base text-sm font-medium italic md:font-semibold">
+              <p className="text-white md:hidden text-sm md:text-base font-medium italic md:font-semibold">
                 {truncateText(item.itemName, 25)}
               </p>
               <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white text-base font-semibold">Artist :</p>
+                <p className="text-white text-sm md:text-base font-semibold">
+                  Artist :
+                </p>
                 <p className="text-white italic md:text-base text-sm font-semibold">
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
               <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white md:text-base text-smfont-semibold">
+                <p className="text-white  md:text-base text-sm font-semibold">
                   Items :
                 </p>
                 <p className="text-white  md:text-base text-sm font-semibold">
@@ -126,7 +129,7 @@ function MainPopular() {
                 </p>
               </section>
               <section className="w-full flex justify-between mt-4">
-                <p className="text-white md:text-base text-sm font-semibold">
+                <p className="text-white  md:text-base text-sm font-semibold">
                   Total:
                 </p>
                 <p className="text-white  md:text-base text-sm font-semibold">

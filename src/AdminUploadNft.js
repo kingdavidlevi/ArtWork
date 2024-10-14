@@ -96,6 +96,7 @@ function AdminUploadNft() {
     setImage(null);
     setFileName(''); // Clear the file name
   };
+
   const handlesubmit = async (e) => {
     e.preventDefault();
     if (!image) return;
@@ -115,6 +116,105 @@ function AdminUploadNft() {
     try {
       const response = await fetch(
         `https://artifynft.onrender.com/postLatestNft`,
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        setImage(null);
+        setFileName('');
+        setInputs({ nftName: '', amount: '' });
+        setLoading(false);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
+  const handleTrending = async (e) => {
+    e.preventDefault();
+    if (!image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('price', inputs.amount);
+    formData.append('itemName', inputs.nftName);
+    formData.append('colId', params.id);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        `https://artifynft.onrender.com/postTrendNft`,
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        setImage(null);
+        setFileName('');
+        setInputs({ nftName: '', amount: '' });
+        setLoading(false);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
+  const handlePopular = async (e) => {
+    e.preventDefault();
+    if (!image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('price', inputs.amount);
+    formData.append('itemName', inputs.nftName);
+    formData.append('colId', params.id);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        `https://artifynft.onrender.com/postPopNft`,
+        options,
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        setImage(null);
+        setFileName('');
+        setInputs({ nftName: '', amount: '' });
+        setLoading(false);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
+  const handlePhotography = async (e) => {
+    e.preventDefault();
+    if (!image) return;
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    formData.append('price', inputs.amount);
+    formData.append('itemName', inputs.nftName);
+    formData.append('colId', params.id);
+
+    const options = {
+      method: 'POST',
+
+      body: formData,
+    };
+
+    try {
+      const response = await fetch(
+        `https://artifynft.onrender.com/postPhotoNft`,
         options,
       );
       const data = await response.json();
@@ -252,11 +352,47 @@ function AdminUploadNft() {
               className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
               onClick={handlesubmit}
             >
-              Continue
+              Latest
             </button>
           ) : (
             <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
-              Continue
+              Latest
+            </button>
+          )}
+          {inputs.amount.length > 0 && inputs.nftName.length > 0 && Image ? (
+            <button
+              className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+              onClick={handleTrending}
+            >
+              Trending
+            </button>
+          ) : (
+            <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+              Trending
+            </button>
+          )}
+          {inputs.amount.length > 0 && inputs.nftName.length > 0 && Image ? (
+            <button
+              className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+              onClick={handlePopular}
+            >
+              Popular
+            </button>
+          ) : (
+            <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+              Popular
+            </button>
+          )}
+          {inputs.amount.length > 0 && inputs.nftName.length > 0 && Image ? (
+            <button
+              className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
+              onClick={handlePhotography}
+            >
+              Photography
+            </button>
+          ) : (
+            <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
+              Photography
             </button>
           )}
         </section>

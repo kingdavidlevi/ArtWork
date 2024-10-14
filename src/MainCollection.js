@@ -3,6 +3,7 @@ import MainTrending from './MainTrending';
 import { FaArrowRight } from 'react-icons/fa';
 import pic from '../src/Images/images (9).jpeg';
 import MainLatest from './MainLatest';
+import MainPopular from './MainPopular';
 
 function MainCollection({ navigateExplore, setNavigateExplore }) {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -43,7 +44,6 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
-
       <MainLatest />
       <div
         className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
@@ -55,6 +55,15 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
       <MainTrending />
+      <div
+        className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
+          "
+      >
+        <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
+          Popular Collection
+        </h1>
+        <FaArrowRight className="text-white mt-1 md:mt-1.5" />
+      </div>
     </section>
   );
 }

@@ -113,7 +113,7 @@ function UploadNft() {
 
     try {
       const response = await fetch(
-        'https://artifynft.onrender.com/postNft',
+        'https://artifynft.onrender.com/postMynft',
         options,
       );
       const data = await response.json();

@@ -35,7 +35,7 @@ function Photography() {
         const data = await response.json();
 
         const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
-        setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
+        // setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {
           setLoading(false);
         }
@@ -82,7 +82,7 @@ function Photography() {
         Array.from({ length: skeletonCount }).map((_, index) =>
           placeholderSkeleton(index),
         )
-      ) : latestsource.length > 0 ? (
+      ) : latestsource && latestsource?.length > 0 ? (
         latestsource?.map((item, index) => (
           <div
             key={index}

@@ -46,6 +46,7 @@ function MainLatest() {
 
     fetchLatestCollection();
   }, []);
+  console.log(latestsource);
   // Empty dependency array to run this effect only once on component mount
   const placeholderSkeleton = (index) => [
     <div
@@ -91,7 +92,7 @@ function MainLatest() {
         Array.from({ length: skeletonCount }).map((_, index) =>
           placeholderSkeleton(index),
         )
-      ) : latestsource.length > 0 ? (
+      ) : latestsource && latestsource.length > 0 ? (
         latestsource?.map((item, index) => (
           <div
             key={index}
