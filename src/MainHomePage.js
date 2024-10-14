@@ -11,6 +11,7 @@ function MainHomePage() {
     useOutletContext();
   const [openchat, setOpenChat] = useState(false);
   const [openchatAdmin, setOpenChatAdmin] = useState(false);
+  const [laptopId, setLaptopId] = useState(null);
   const { user, setUsers } = useOutletContext();
   const navigate = useNavigate();
   const Id = localStorage.getItem('Id');
@@ -32,7 +33,9 @@ function MainHomePage() {
   const Nft = () => {
     navigate('/CreateNft');
   };
-
+  const laptopchatview = (id) => {
+    setLaptopId(id);
+  };
   const chatforUsers = () => {
     setOpenChat(true);
   };
@@ -42,6 +45,7 @@ function MainHomePage() {
   const chatroute = () => {
     navigate('/UserChat');
   };
+  console.log(user);
   return (
     <>
       {Id && (
@@ -92,7 +96,7 @@ function MainHomePage() {
           <MainCollection />
 
           <AboutUs />
-          {user.admin && user.admin !== undefined ? (
+          {user.admin && user !== undefined ? (
             <div
               className="w-14 hidden  bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
               onClick={chatforAdmin}
@@ -102,35 +106,37 @@ function MainHomePage() {
               <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
             </div>
           ) : (
-            <div
-              className="w-14 hidden  bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
-              onClick={chatforUsers}
-            >
-              {' '}
-              <FaCommentDots className="text-blue-100 w-7 h-7 " />
-              <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
-            </div>
+            user == undefined && (
+              <div
+                className="w-14 hidden  bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
+                onClick={chatforUsers}
+              >
+                {' '}
+                <FaCommentDots className="text-blue-100 w-7 h-7 " />
+                <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
+              </div>
+            )
           )}
-          <NavLink
-            to={`${
-              user.admin && user.admin !== undefined
-                ? '/AdminPage'
-                : '/UserChat'
-            }`}
-          >
-            <div className="w-14 md:hidden  bottom-8 h-14 z-10 cursor-pointer grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">
-              {' '}
-              <FaCommentDots className="text-blue-100 w-7 h-7 " />
-              <div className="h-4 w-4 border-2 border-gray-300  absolute rounded-full bg-green-600"></div>
-            </div>
-          </NavLink>
+          {user && (
+            <NavLink to={`${user.admin ? '/AdminPage' : '/UserChat'}`}>
+              <div className="w-14 md:hidden bottom-8 h-14 z-10 cursor-pointer grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">
+                <FaCommentDots className="text-blue-100 w-7 h-7" />
+                <div className="h-4 w-4 border-2 border-gray-300 absolute rounded-full bg-green-600"></div>
+              </div>
+            </NavLink>
+          )}
           {openchat && (
-            <UserChat setOpenChat={setOpenChat} openchat={openchat} />
+            <UserChat
+              setOpenChat={setOpenChat}
+              openchat={openchat}
+              laptopId={laptopId}
+            />
           )}
           {openchatAdmin && (
             <AdminPage
-              setOpenChat={setOpenChatAdmin}
+              setOpenChatAdmin={setOpenChatAdmin}
               openchat={openchatAdmin}
+              laptopchatview={laptopchatview}
             />
           )}
         </section>

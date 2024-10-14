@@ -55,7 +55,7 @@ import { useNavigate, useParams } from 'react-router-dom';
   }, [mySocket]);
 
  */
-function UserChat({ openchat, setOpenChat }) {
+function UserChat({ openchat, setOpenChat, laptopId }) {
   const [text, setText] = useState('');
   const [mySocket, setMySocket] = useState();
   const [messages, setMessages] = useState([]);
