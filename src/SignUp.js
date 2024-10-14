@@ -39,14 +39,6 @@ function SignUp() {
     setVisibility((prevstate) => !prevstate);
   };
 
-  const checkPasswords = () => {
-    if (SignUpinputs.password !== SignUpinputs.confirmPassword) {
-      setcheckPass(true);
-    } else {
-      setcheckPass(false);
-    }
-  };
-
   const handleSignUp = async (e) => {
     e.preventDefault();
 

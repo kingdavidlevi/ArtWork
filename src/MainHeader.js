@@ -3,6 +3,7 @@ import { NavLink, useOutletContext, useNavigate } from 'react-router-dom';
 import { FaSearch, FaWallet, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import MainMenu from './MainMenu';
 import Wallet from './Wallet';
+import { FaArrowLeft } from 'react-icons/fa';
 import { FaLessThan } from 'react-icons/fa6';
 import logo from './Images/DALL·E 2024-10-09 12.40.06 - A completely unique, random logo with abstract shapes and patterns, blending bold, contrasting colors like vibrant orange, electric blue, and neon gre.webp';
 
@@ -37,6 +38,7 @@ function MainHeader({
   };
 
   const home = () => {
+    setExplorer((prevstate) => !prevstate);
     navigate('/');
   };
 
@@ -73,11 +75,19 @@ function MainHeader({
             className=" relative flex xl:gap-10 gap-5 "
             onClick={toggleHeaderWallet}
           >
-            <div
-              className="text-white Artify-div  cursor-pointer md:pr-6"
-              onClick={home}
-            >
-              <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
+            <div className="text-white Artify-div  cursor-pointer md:pr-6">
+              {explorer ? (
+                <div
+                  className=" cursor-pointer  h-8 w-8 rounded-full grid left-6 top-4  dropdown-li place-items-center z-20"
+                  onClick={home}
+                >
+                  <FaArrowLeft className="text-white text-base md:text-lg  " />
+                </div>
+              ) : (
+                <p className="lg:text-2xl text-xl font-semibold ">
+                  ArtifyNft's
+                </p>
+              )}
             </div>
 
             <div className="text-white cursor-pointer   text-lg hidden md:block hover:text-gray-200 font-semibold">
