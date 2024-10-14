@@ -23,8 +23,8 @@ function MainHomePage() {
     setWalletOpen(false);
   };
   const Explore = () => {
+    setExplorer(true);
     navigate('MainCollection');
-    setExplorer((prevstate) => !prevstate);
   };
   const Nft = () => {
     navigate('/CreateNft');
