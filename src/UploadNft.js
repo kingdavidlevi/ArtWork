@@ -58,9 +58,10 @@ function UploadNft() {
       reader.onload = () => {
         setImage(reader.result);
         setFileName(file.name);
-        setImageFile(file);
+        // setImageFile(file);
       };
       reader.readAsDataURL(file);
+      setImageFile(file);
     }
   };
 
@@ -73,9 +74,10 @@ function UploadNft() {
       reader.onload = () => {
         setImage(reader.result);
         setFileName(file.name);
-        setImageFile(file);
+        // setImageFile(file);
       };
       reader.readAsDataURL(file);
+      setImageFile(file);
     }
   };
 
@@ -106,13 +108,12 @@ function UploadNft() {
 
     const options = {
       method: 'POST',
-
       body: formData,
     };
 
     try {
       const response = await fetch(
-        `https://artifynft.onrender.com/postNft`,
+        'https://artifynft.onrender.com/postNft',
         options,
       );
       const data = await response.json();
@@ -159,7 +160,10 @@ function UploadNft() {
             </p>
           </div>
         </section>
-        <form className="grid mt-4 lg:flex lg:w-full lg:px-20 lg:justify-between  lg:gap-32 lg:place-items-start place-items-center">
+        <form
+          className="grid mt-4 lg:flex lg:w-full lg:px-20 lg:justify-between  lg:gap-32 lg:place-items-start place-items-center"
+          onSubmit={handlesubmit}
+        >
           <div
             onDrop={handleDrop}
             onDragOver={handleDragOver}
@@ -254,10 +258,7 @@ function UploadNft() {
               {inputs.amount.length > 0 &&
               inputs.nftName.length > 0 &&
               image ? (
-                <button
-                  className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md"
-                  onClick={handlesubmit}
-                >
+                <button className="bg-blue-600 text-white font-medium text-base md:px-14  px-10 mb-14 mt-8 py-3 rounded-md">
                   Continue
                 </button>
               ) : (

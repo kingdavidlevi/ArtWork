@@ -15,7 +15,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       const options = {
         method: 'GET',
         headers: {
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
       };
       try {
@@ -23,33 +23,39 @@ function Wallet({ walletOpen, setWalletOpen }) {
           `https://artifynft.onrender.com/wallet/${Id}`,
           options,
         );
-        const data = res.json();
-        setAddress(data);
+        const data = await res.json();
+        console.log(data);
+        setAddress(data.walletadd);
       } catch (error) {
         console.log(error);
       }
     };
+
     const fetchBalance = async () => {
       const options = {
         method: 'GET',
         headers: {
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
       };
       try {
         const res = await fetch(
-          `https://artifynft.onrender.com/balance/${address}`,
+          `http://localhost:3500/0xC6323Bc313012C5d1c271fAA719061f76bE01cC"`,
           options,
         );
-        const data = res.json();
+        const data = await res.json();
+        console.log(data);
         setBalance(data);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchWallet();
-    address && fetchBalance();
+
+    fetchBalance();
   }, []);
+  console.log(address);
   const handleCopy = () => {
     navigator.clipboard
       .writeText(address)
@@ -89,7 +95,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
           className="w-28 relative cursor-pointer overflow-hidden"
           onClick={handleCopy}
         >
-          <p className=" text-sm text-nowrap text-gray-200">{address}</p>{' '}
+          <p className=" text-sm text-nowrap text-gray-200"></p>{' '}
         </section>
         <div className="mt-1 relative">
           {' '}
@@ -112,7 +118,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
         <div className="color-div mb-6 w-90% rounded-md pl-4 mt-2  form py-3 text-white outline-none ">
           <p className="text-sm font-normal">ETH (Ethereum)</p>
         </div>
-        <form className="w-full grid place-items-center">
+        <form className="w-full relative  grid place-items-center">
           <p className="text-white w-90% text-base font-normal">
             Withdrawal Address
           </p>{' '}
@@ -123,6 +129,9 @@ function Wallet({ walletOpen, setWalletOpen }) {
           />
           <p className="text-white mt-6  w-90% text-base font-normal">
             Withdrawal amount
+          </p>
+          <p className="text-white   right-10 top-36 mt-1.5  absolute text-base font-normal">
+            ETH
           </p>
           <input
             className="color-div placeholder:text-sm placeholder:font-normal pl-4 placeholder:text-white w-90% rounded-md mt-2 form py-3 text-white outline-none "

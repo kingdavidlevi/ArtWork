@@ -118,7 +118,7 @@ function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
             </section>
 
             <div
-              className="text-white hover:text-gray-200  hidden md:block text-lg font-semibold"
+              className="text-white cursor-pointer hover:text-gray-200  hidden md:block text-lg font-semibold"
               onClick={Nft}
             >
               Create
