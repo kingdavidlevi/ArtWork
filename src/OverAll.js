@@ -7,6 +7,7 @@ function OverAll() {
   const [latestCollection, setLatestCollection] = useState('');
   const [user, setUser] = useState({});
   const [error, setError] = useState('');
+  const [handleChat, sethandleChat] = useState(false);
   const Id = localStorage.getItem('Id');
   const [Logininputs, setLoginInputs] = useState({
     email: '',
@@ -27,9 +28,12 @@ function OverAll() {
           options,
         );
         const data = await res.json();
-        console.log(data);
-        setUser(data);
+        if (data) {
+          setUser(data);
+          sethandleChat(true);
+        }
       } catch (error) {
+        console.log(error);
         setError(error);
       }
     };
@@ -49,6 +53,8 @@ function OverAll() {
           latestCollection,
           setLatestCollection,
           user,
+          error,
+          handleChat,
           setUser,
         }}
       />

@@ -6,7 +6,7 @@ import MainHeader from './MainHeader';
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
-  const { user } = useOutletContext();
+  const { user, error, handleChat } = useOutletContext();
 
   const [explorer, setExplorer] = useState(false);
   return (
@@ -33,6 +33,7 @@ function Main() {
             setIsOpen,
             user,
             explorer,
+            handleChat,
             setExplorer,
             walletOpen,
             setWalletOpen,
