@@ -7,7 +7,7 @@ import UserChat from './UsersChat';
 import { useEffect, useState } from 'react';
 import AdminPage from './AdminPage';
 function MainHomePage() {
-  const { walletOpen, navigateExplore, setNavigateExplore, setWalletOpen } =
+  const { walletOpen, explorer, setExplorer, setWalletOpen } =
     useOutletContext();
   const [openchat, setOpenChat] = useState(false);
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function MainHomePage() {
   };
   const Explore = () => {
     navigate('MainCollection');
-    setNavigateExplore(true);
+    setExplorer((prevstate) => !prevstate);
   };
   const Nft = () => {
     navigate('/CreateNft');

@@ -6,7 +6,14 @@ import Wallet from './Wallet';
 import { FaLessThan } from 'react-icons/fa6';
 import logo from './Images/DALL·E 2024-10-09 12.40.06 - A completely unique, random logo with abstract shapes and patterns, blending bold, contrasting colors like vibrant orange, electric blue, and neon gre.webp';
 
-function MainHeader({ isOpen, setIsOpen, walletOpen, setWalletOpen }) {
+function MainHeader({
+  isOpen,
+  setIsOpen,
+  explorer,
+  setExplorer,
+  walletOpen,
+  setWalletOpen,
+}) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [toggleShowDiv, setToggleShowDiv] = useState(false);
   const [search, setSearch] = useState('');
