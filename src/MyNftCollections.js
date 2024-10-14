@@ -39,6 +39,7 @@ function MyNftCollections() {
         console.log(data);
         if (data) {
           setNfts(data);
+          setLoading(false);
         }
       } catch (error) {
         setErrorMessage(error);
@@ -85,34 +86,54 @@ function MyNftCollections() {
 
       <div className="w-full  ">
         {' '}
-        <CollectionImageSlider />
+        <img src={nfts.profilePic} />
       </div>
-
-      <div className="color-div mt-6 form px-3   duration-300 transition-transform ease-in-out transform  hover:scale-103    w-40 min-w-40 md:min-w-56 md:w-56  lg:w-70 lg:min-w-70  pt-3 rounded-lg shadow-md  pb-4">
-        <section>
-          {' '}
-          <img
-            src={image1}
-            className="md:h-48 h-28 w-full rounded-lg     md:w-70  "
-          />{' '}
-        </section>
-        <div className=" mt-4">
-          <section className="w-full grid place-items-center mt-4">
-            <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
-              {truncateText(text, 16)}
-            </p>
-            <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
-              {truncateText(text, 24)}
-            </p>
-          </section>
-          <section className="w-full flex items-center justify-between mt-4">
-            <p className="text-white   text-base font-semibold">Amount :</p>
-            <p className="text-white  text-base  font-semibold">
-              <span>0.2</span>ETH
-            </p>
-          </section>
+      {!loading ? (
+        nfts && nfts.length > 0 ? (
+          nfts.map((items) => (
+            <div
+              key={items._id} // Add a unique key if possible
+              className="color-div mt-6 form px-3 duration-300 transition-transform ease-in-out transform hover:scale-103 w-40 min-w-40 md:min-w-56 md:w-56 lg:w-70 lg:min-w-70 pt-3 rounded-lg shadow-md pb-4"
+            >
+              <section>
+                <img
+                  src={image1}
+                  className="md:h-48 h-28 w-full rounded-lg md:w-70"
+                  alt={items.itemName} // Added alt for accessibility
+                />
+              </section>
+              <div className="mt-4">
+                <section className="w-full grid place-items-center mt-4">
+                  <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
+                    {items.itemName && items.itemName.length > 16
+                      ? items.itemName.substring(0, 16) + '...'
+                      : items.itemName}
+                  </p>
+                  <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
+                    {items.itemName && items.itemName.length > 24
+                      ? items.itemName.substring(0, 24) + '...'
+                      : items.itemName}
+                  </p>
+                </section>
+                <section className="w-full flex items-center justify-between mt-4">
+                  <p className="text-white text-base font-semibold">Amount :</p>
+                  <p className="text-white text-base font-semibold">
+                    <span>0.2</span> ETH
+                  </p>
+                </section>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-white mt-4 md:text-lg text-base font-medium">
+            No Collection!
+          </p>
+        )
+      ) : (
+        <div className="loading-overlay">
+          <div className="spinner"></div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
