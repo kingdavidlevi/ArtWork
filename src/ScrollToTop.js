@@ -5,15 +5,10 @@ import Footer from './footer';
 
 function ScrollToTop() {
   const [isOpen, setIsOpen] = useState(false);
-  const [explorer, setExplorer] = useState(false);
+
   return (
     <section>
-      <Header
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        explorer={explorer}
-        setExplorer={setExplorer}
-      />
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div
         className={` ${
@@ -22,7 +17,7 @@ function ScrollToTop() {
             : 'bg-black md:px-8  pb-20 w-full'
         }`}
       >
-        <Outlet context={{ isOpen, setIsOpen, explorer, setExplorer }} />
+        <Outlet context={{ isOpen, setIsOpen }} />
         <Footer />
       </div>
     </section>

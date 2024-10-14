@@ -6,8 +6,8 @@ import MainHeader from './MainHeader';
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
-  const [navigateExplore, setNavigateExplore] = useState(false);
 
+  const [explorer, setExplorer] = useState(false);
   return (
     <section>
       <MainHeader
@@ -15,6 +15,8 @@ function Main() {
         setIsOpen={setIsOpen}
         walletOpen={walletOpen}
         setWalletOpen={setWalletOpen}
+        explorer={explorer}
+        setExplorer={setExplorer}
       />
 
       <div
@@ -28,8 +30,8 @@ function Main() {
           context={{
             isOpen,
             setIsOpen,
-            navigateExplore,
-            setNavigateExplore,
+            explorer,
+            setExplorer,
             walletOpen,
             setWalletOpen,
           }}
