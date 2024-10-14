@@ -34,7 +34,7 @@ function Latest() {
         );
         const data = await response.json();
 
-        const reorderedData = [data[data.length - 1], ...data.slice(0, -1)];
+        const reorderedData = data.reverse();
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {
           setLoading(false);
