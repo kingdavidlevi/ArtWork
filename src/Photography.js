@@ -62,9 +62,7 @@ function Photography() {
           <p className="text-white text-base font-semibold">Artist :</p>
           <p className="text-gray-400 italic md:text-base text-sm font-semibold"></p>
         </section>
-        <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white text-base font-semibold">Items :</p>
-        </section>
+
         <section className="w-full flex justify-between mt-4">
           <p className="text-white text-base font-semibold">Total:</p>
         </section>
@@ -110,14 +108,7 @@ function Photography() {
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
-              <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white md:text-base text-smfont-semibold">
-                  Items :
-                </p>
-                <p className="text-white md:text-base text-smfont-semibold">
-                  4
-                </p>
-              </section>
+
               <section className="w-full flex justify-between mt-4">
                 <p className="text-white md:text-base text-smfont-semibold">
                   Total:

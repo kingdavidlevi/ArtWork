@@ -40,7 +40,8 @@ function MainPhotography() {
           setLoading(false);
         }
       } catch (error) {
-        setErrorMessage(error); // Assuming setErrorMessage is a state setter for errors
+        setErrorMessage(error);
+        console.log(error); // Assuming setErrorMessage is a state setter for errors
       }
     };
 
@@ -64,11 +65,7 @@ function MainPhotography() {
           </p>
           <p className="text-white italic md:md:text-base   text-sm font-semibold"></p>
         </section>
-        <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white md:text-base text-sm font-semibold">
-            Items :
-          </p>
-        </section>
+
         <section className="w-full flex justify-between mt-4">
           <p className="text-white md:text-base text-sm font-semibold">
             Total:
@@ -114,10 +111,7 @@ function MainPhotography() {
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
-              <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white text-base font-semibold">Items :</p>
-                <p className="text-white text-base font-semibold">4</p>
-              </section>
+
               <section className="w-full flex justify-between mt-4">
                 <p className="text-white text-base font-semibold">Total:</p>
                 <p className="text-white text-base font-semibold">

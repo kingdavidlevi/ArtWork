@@ -64,7 +64,7 @@ function SignUp() {
 
       if (data.UserId) {
         localStorage.setItem('Id', data.UserId);
-        navigate('/', { replace: true });
+        navigate('/');
         setLoading(false);
       }
     } catch (error) {

@@ -126,6 +126,7 @@ function UploadNft() {
       }
     } catch (error) {
       setErrorMessage(error);
+      console.log(error);
     }
     setLoading(false);
   };

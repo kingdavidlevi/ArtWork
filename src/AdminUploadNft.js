@@ -40,7 +40,6 @@ function AdminUploadNft() {
       ...prevdata,
       [name]: value,
     }));
-    console.log(inputs);
   };
 
   const back = () => {
@@ -227,6 +226,7 @@ function AdminUploadNft() {
       }
     } catch (error) {
       setErrorMessage(error);
+      console.log(error);
     }
   };
   return (

@@ -101,7 +101,7 @@ function CreateCollection() {
         options,
       );
       const data = await response.json();
-
+      console.log(data);
       if (data) {
         navigate(`/UploadNft/${data._id}`);
       }

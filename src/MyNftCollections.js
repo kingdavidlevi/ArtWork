@@ -41,6 +41,7 @@ function MyNftCollections() {
         }
       } catch (error) {
         setErrorMessage(error);
+        console.log(error);
       }
     };
     getNfts();

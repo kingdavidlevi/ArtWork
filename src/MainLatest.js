@@ -46,7 +46,7 @@ function MainLatest() {
 
     fetchLatestCollection();
   }, []);
-  console.log(latestsource);
+
   // Empty dependency array to run this effect only once on component mount
   const placeholderSkeleton = (index) => [
     <div
@@ -65,11 +65,7 @@ function MainLatest() {
           </p>
           <p className="text-gray-400 italic md:text-base text-sm font-semibold"></p>
         </section>
-        <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white md:text-base text-sm font-semibold">
-            Items :
-          </p>
-        </section>
+
         <section className="w-full flex justify-between mt-4">
           <p className="text-white  md:text-base text-sm font-semibold">
             Total:
@@ -120,14 +116,7 @@ function MainLatest() {
                   {truncateText(item.artiste, 18)}
                 </p>
               </section>
-              <section className="w-full flex items-center justify-between mt-4">
-                <p className="text-white  md:text-base text-sm font-semibold">
-                  Items :
-                </p>
-                <p className="text-white  md:text-base text-sm font-semibold">
-                  4
-                </p>
-              </section>
+
               <section className="w-full flex justify-between mt-4">
                 <p className="text-white  md:text-base text-sm font-semibold">
                   Total:

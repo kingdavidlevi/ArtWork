@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import pic from '../src/Images/images (9).jpeg';
 import MainLatest from './MainLatest';
 import MainPopular from './MainPopular';
-import Photography from './Photography';
+import MainPhotography from './MainPhotography';
 
 function MainCollection({ navigateExplore, setNavigateExplore }) {
   const [isScrolling, setIsScrolling] = useState(false);

@@ -62,7 +62,7 @@ function Login() {
       console.log(data);
       if (data.UserId) {
         localStorage.setItem('Id', data.UserId);
-        navigate('/', { replace: true });
+        navigate('/');
       }
     } catch (error) {
       setErrorMessage(error);
