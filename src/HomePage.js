@@ -25,7 +25,7 @@ function Homepage() {
         <h1 className="md:font-bold font-medium sm:text-8xl text-6xl md:text-9xl lg:text-9xl nft-font text-white">
           Artify Nft's
         </h1>
-        <p className="text-yellow-400 md:font-bold font-medium mt-4 md:mt-8 md:text-3xl grid place-items-center ">
+        <p className="text-white md:font-bold font-medium mt-4 md:mt-8 md:text-3xl grid place-items-center ">
           Market limitless outstanding nft
         </p>
       </div>

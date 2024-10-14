@@ -398,6 +398,14 @@
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+.spinner2 {
+  width: 25px;
+  height: 25px;
+  border: 5px solid rgba(255, 255, 255, 0.2); /* Light transparent border */
+  border-top: 5px solid white; /* Solid border on top */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
 /* Spinner animation */
 @keyframes spin {

@@ -61,7 +61,7 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
           "
       >
         <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
-          Popular Collection
+          Photography Collection
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>

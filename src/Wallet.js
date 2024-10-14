@@ -9,9 +9,12 @@ function Wallet({ walletOpen, setWalletOpen }) {
   const [balance, setBalance] = useState({});
   const [copied, setCopied] = useState(false);
   const [address, setAddress] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const Id = localStorage.getItem('Id');
   useEffect(() => {
     const fetchWallet = async () => {
+      setLoading(true);
       const options = {
         method: 'GET',
         headers: {
@@ -26,12 +29,18 @@ function Wallet({ walletOpen, setWalletOpen }) {
         const data = await res.json();
         console.log(data);
         setAddress(data.walletadd);
+
+        fetchBalance(data.walletadd);
+        if (data.walletadd) {
+          setLoading(false);
+        }
       } catch (error) {
+        setErrorMessage(error);
         console.log(error);
       }
     };
 
-    const fetchBalance = async () => {
+    const fetchBalance = async (id) => {
       const options = {
         method: 'GET',
         headers: {
@@ -40,7 +49,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `http://localhost:3500/balance/0xb795B2109A2264fa4c9d21079897258E09AafEC0`,
+          `https://artifynft.onrender.com/balance/${id}`,
           options,
         );
         const data = await res.json();
@@ -52,8 +61,6 @@ function Wallet({ walletOpen, setWalletOpen }) {
     };
 
     fetchWallet();
-
-    fetchBalance();
   }, []);
   console.log(address);
   const handleCopy = () => {
@@ -95,7 +102,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
           className="w-28 relative cursor-pointer overflow-hidden"
           onClick={handleCopy}
         >
-          <p className=" text-sm text-nowrap text-gray-200"></p>{' '}
+          <p className=" text-sm text-nowrap text-gray-200">{address}</p>{' '}
         </section>
         <div className="mt-1 relative">
           {' '}
@@ -103,6 +110,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
             className="text-white cursor-pointer text-xs"
             onClick={handleCopy}
           />
+          {loading && <div className="spinner2 right-8  absolute"></div>}
           {copied && (
             <p className="text-green-500 text-xs absolute -top-5 text-nowrap font-medium">
               Copied !

@@ -29,7 +29,7 @@ function Popular() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/trending`,
+          `https://artifynft.onrender.com/getPopCol`,
           options,
         );
         const data = await response.json();

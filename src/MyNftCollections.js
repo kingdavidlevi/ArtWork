@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { FaImage } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import image1 from './Images/587a05c52581818aff54365e2025bb19.jpg';
 import { useParams } from 'react-router-dom';
@@ -85,8 +85,24 @@ function MyNftCollections() {
       </div>
 
       <div className="w-full  ">
-        {' '}
-        <img src={nfts.profilePic} />
+        <div className="image-container  relative   w-full  md:h-52   h-40  ">
+          <img
+            className="w-full object-cover  md:h-52   h-40 "
+            src={nfts.profilePic}
+            style={{ backgroundImage: `url(${nfts.profilePic})` }} // Use backgroundImage to cover the container
+          />
+          <div className="absolute  w-full  grid place-items-center  z-20 bottom-8">
+            <div className="w-90% ">
+              {' '}
+              <p
+                className="text-white cursor-pointer md:text-4xl text-3xl font-semibold"
+                onClick={create}
+              >
+                My Nfts
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       {!loading ? (
         nfts && nfts.length > 0 ? (
@@ -97,7 +113,7 @@ function MyNftCollections() {
             >
               <section>
                 <img
-                  src={image1}
+                  src={items.profilePic}
                   className="md:h-48 h-28 w-full rounded-lg md:w-70"
                   alt={items.itemName} // Added alt for accessibility
                 />
@@ -125,9 +141,11 @@ function MyNftCollections() {
             </div>
           ))
         ) : (
-          <p className="text-white mt-4 md:text-lg text-base font-medium">
-            No Collection!
-          </p>
+          <div className="w-full mt-8 grid place-items-center">
+            <p className="text-white mt-4 md:text-lg text-base font-medium">
+              No Nfts!
+            </p>
+          </div>
         )
       ) : (
         <div className="loading-overlay">

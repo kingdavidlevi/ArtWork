@@ -75,7 +75,7 @@ function CreateNft() {
       <section className="   lg:ml-10 lg:place-items-start  lg:mt-20   grid w-full  place-items-center lg:place-content-start ">
         <NavLink
           to={`${
-            user.admin && user.admin !== undefined
+            user.admin && user !== undefined
               ? '/AdminCreateCollection'
               : '/CreateCollection'
           }`}
@@ -89,7 +89,7 @@ function CreateNft() {
         <section className="btn mt-14 grid md:w-80% place-items-center myDiv cursor-pointer pr-5 pl-4 py-6 z-40 rounded-md w-90%">
           <NavLink
             to={`${
-              user.admin && user.admin !== undefined
+              user.admin && user !== undefined
                 ? '/AdminCreateCollection'
                 : '/CreateCollection'
             }`}
