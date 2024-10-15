@@ -339,7 +339,6 @@ function AdminUploadNft() {
           </section>
           <input
             name="amount"
-            min="0"
             onChange={handleFormChanges}
             value={inputs.amount}
             placeholder="Name your NFT"

@@ -39,7 +39,7 @@ function OverAll() {
     };
     Id && fetchUser();
   }, [Id]);
-  console.log(user);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);

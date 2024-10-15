@@ -65,6 +65,7 @@ function MainCollection({ navigateExplore, setNavigateExplore }) {
         </h1>
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
+      <MainPhotography />
     </section>
   );
 }

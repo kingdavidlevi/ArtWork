@@ -4,9 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 import { useEffect } from 'react';
-import Photography from './Photography';
 
-function PhotographyNfts() {
+function PhotographyNft() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false); // Should be a boolean, not a string
@@ -37,7 +36,7 @@ function PhotographyNfts() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/trendNfts/${params.id}`,
+          `https://artifynft.onrender.com/getPhotoNfts/${params.id}`,
           options,
         );
         const data = await response.json();
@@ -45,6 +44,7 @@ function PhotographyNfts() {
         setLatestSource(data);
       } catch (error) {
         setErrorMessage(error.message);
+        console.log(errorMessage);
       } finally {
         setLoading(false);
       }

@@ -32,7 +32,7 @@ import LatestNfts from './LatestNfts';
 import TrendingNfts from './TrendingNfts';
 import AdminUploadNft from './AdminUploadNft';
 import PopularNfts from './PopularNfts';
-import Photography from './Photography';
+import PhotographyNft from './PhotographyNft';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -63,7 +63,7 @@ const router = createBrowserRouter(
       <Route path="LatestNfts/:id" element={<LatestNfts />} />
       <Route path="TrendingNfts/:id" element={<TrendingNfts />} />
       <Route path="PopularNfts/:id" element={<PopularNfts />} />
-      <Route path="Photography/:id" element={<Photography />} />
+      <Route path="PhotographyNft/:id" element={<PhotographyNft />} />
     </Route>,
   ),
 );

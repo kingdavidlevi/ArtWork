@@ -49,7 +49,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `https://artifynft.onrender.com/balance/${id}`,
+          `http://localhost:3500/balance/0xBddBf7A5b5a788FCfd1E9Eeb42e9E515adDDaa3E`,
           options,
         );
         const data = await res.json();
