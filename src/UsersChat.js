@@ -57,7 +57,7 @@ import { useNavigate, useParams } from 'react-router-dom';
  */
 function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [text, setText] = useState('');
-  const [mySocket, setMySocket] = useState();
+  const [mySocket, setMySocket] = useState(null);
   const [messages, setMessages] = useState([]);
   const [Dbmessages, setDbMessages] = useState([]);
   const [user, setuser] = useState('');
@@ -86,7 +86,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const handleChange = (event) => {
     const newText = event.target.value;
     setText(newText);
-    console.log(text);
+
     event.target.style.height = 'auto';
     event.target.style.height = event.target.scrollHeight + 'px';
     // Set height based on scrollHeight

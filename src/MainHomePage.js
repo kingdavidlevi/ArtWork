@@ -41,6 +41,7 @@ function MainHomePage() {
   };
   const chatforUsers = (id) => {
     setLapUser(id);
+    console.log(lapUser);
     setOpenChat(true);
   };
   const chatforAdmin = () => {
