@@ -40,7 +40,7 @@ function TrendingNfts() {
           options,
         );
         const data = await response.json();
-        console.log(data);
+
         setLatestSource(data);
       } catch (error) {
         setErrorMessage(error.message);

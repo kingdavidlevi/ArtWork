@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import Trending from './Trending';
 import Latest from './Latest';
+import Popular from './Popular';
 
 function Collection() {
   return (
@@ -20,6 +21,13 @@ function Collection() {
         <FaArrowRight className="text-white mt-1 md:mt-1.5" />
       </div>
       <Trending />
+      <div className="mt-8 w-90% md:w-full place-items-center  flex gap-2  ">
+        <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
+          Popular Collection
+        </h1>
+        <FaArrowRight className="text-white mt-1 md:mt-1.5" />
+      </div>
+      <Popular />
     </section>
   );
 }

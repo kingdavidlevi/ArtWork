@@ -17,7 +17,6 @@ function MainHomePage() {
   const Id = localStorage.getItem('Id');
 
   useEffect(() => {
-    console.log(Id);
     if (!Id) {
       navigate('/HomePage');
     }

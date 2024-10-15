@@ -338,6 +338,7 @@ function AdminUploadNft() {
             </p>
           </section>
           <input
+            min="0"
             name="amount"
             onChange={handleFormChanges}
             value={inputs.amount}
