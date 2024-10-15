@@ -209,7 +209,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       className="md:w-97 md:h-80% pt-34 md:pt-28 pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
       onSubmit={handleSubmit}
     >
-      <div className="h-32 pl-4 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
+      <div className="h-32 pl-4 fixed w-full z-50  top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
         </h1>
@@ -234,8 +234,8 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           <FaTimes className="text-white text-lg" />
         </div>
       </div>
-      <div className="   h-full text-area  overflow-y-scroll  ">
-        <section className="fixed md:block  md:w-97 pr-4  pl-4  z-40 bottom-6 w-full md:bottom-14">
+      <div className="   h-full text-area   overflow-y-scroll  ">
+        <section className="fixed md:block  md:w-97 pr-4  pl-4  z-40 bottom-0 w-full md:bottom-8 ">
           <textarea
             value={text}
             rows="1"
