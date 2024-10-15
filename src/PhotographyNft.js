@@ -36,7 +36,7 @@ function PhotographyNft() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/getPhotoNfts/${params.id}`,
+          `https://artifynft.onrender.com/getPhotoNft/${params.id}`,
           options,
         );
         const data = await response.json();

@@ -55,7 +55,7 @@ import { useNavigate, useParams } from 'react-router-dom';
   }, [mySocket]);
 
  */
-function UserChat({ openchat, setOpenChat, laptopId }) {
+function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [text, setText] = useState('');
   const [mySocket, setMySocket] = useState();
   const [messages, setMessages] = useState([]);
@@ -64,6 +64,24 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
   const navigate = useNavigate();
   const params = useParams(); // Use useParams hook to get route parameters
   const messagesEndRef = useRef(null);
+  const Id = localStorage.getItem('Id');
+
+  useEffect(() => {
+    const socket = io('https://artifynft.onrender.com');
+    socket.emit('setCustomId', Id);
+    setMySocket(socket);
+  }, []);
+  useEffect(() => {
+    mySocket?.on('private chat', (data) => {
+      setMessages((prevMessages) => [...prevMessages, data]);
+      console.log(data);
+    });
+    return () => {
+      mySocket?.off('private chat');
+    };
+  }, [mySocket]);
+  console.log(messages);
+  console.log(Dbmessages);
   const handleChange = (event) => {
     setText(event.target.value);
     event.target.style.height = 'auto';
@@ -76,12 +94,27 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
   const closeChatroute = () => {
     navigate('/');
   };
+  console.log(laptopId);
 
   useEffect(() => {
-    const fetdata = async () => {
+    const checkId = () => {
+      let msgId;
+      if (lapUser) {
+        msgId = lapUser;
+      }
+      if (laptopId) {
+        msgId = laptopId;
+      }
+      if (params.id) {
+        msgId = params.id;
+      }
+      return msgId;
+    };
+    const fetdata = async (id) => {
       try {
+        console.log(id);
         const response = await fetch(
-          `https://middlemanbackend.onrender.com/getmessages/${params.id}`,
+          `https://artifynft.onrender.com/getmessages/${id}`,
           {
             method: 'GET',
             credentials: 'include',
@@ -93,8 +126,8 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
         console.log(err);
       }
     };
-    fetdata();
-  }, [params.id]);
+    fetdata(checkId());
+  }, [params.id, lapUser, laptopId]);
 
   useEffect(() => {
     if (Dbmessages?.messages?.length > 0) {
@@ -102,36 +135,36 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
     }
   }, [Dbmessages]);
 
-  useEffect(() => {
-    const fetdata = async () => {
-      const option = {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ contactId: params.id }),
-      };
-      try {
-        const response = await fetch(
-          'https://middlemanbackend.onrender.com/markAsRead',
-          option,
-        );
-        const data = await response.json();
-        console.log(data);
-        // Scroll after marking messages as read
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  // useEffect(() => {
+  //   const fetdata = async () => {
+  //     const option = {
+  //       method: 'PUT',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ contactId: params.id }),
+  //     };
+  //     try {
+  //       const response = await fetch(
+  //         'https://middlemanbackend.onrender.com/markAsRead',
+  //         option,
+  //       );
+  //       const data = await response.json();
+  //       console.log(data);
+  //       // Scroll after marking messages as read
+  //       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
 
-    fetdata(); // Call the async function
-  }, [messages, Dbmessages]);
+  //   fetdata(); // Call the async function
+  // }, [messages, Dbmessages]);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setMessages((prevMessages) => [...prevMessages]); // Trigger re-render
     }, 60000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -155,7 +188,7 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() && params.id) {
+    if (text.trim()) {
       mySocket.emit('private chat', {
         from: user?.Id,
         to: params.id,
@@ -167,7 +200,10 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
   };
 
   return (
-    <section className="md:w-97 md:h-80% pt-34 md:pt-28 pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 ">
+    <form
+      className="md:w-97 md:h-80% pt-34 md:pt-28 pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
+      onSubmit={handleSubmit}
+    >
       <div className="h-32 pl-4 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
         <h1 className="text-white text-lg font-medium">
           Hello <span>David</span> {'\u{1F44B}'},
@@ -264,7 +300,7 @@ function UserChat({ openchat, setOpenChat, laptopId }) {
           ))}
         </div>
       </div>
-    </section>
+    </form>
   );
 }
 export default UserChat;

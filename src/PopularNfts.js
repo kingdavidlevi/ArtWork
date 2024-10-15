@@ -36,7 +36,7 @@ function PopularNfts() {
 
       try {
         const response = await fetch(
-          `https://artifynft.onrender.com/getPopNfts/${params.id}`,
+          `https://artifynft.onrender.com/getPopNft/${params.id}`,
           options,
         );
         const data = await response.json();

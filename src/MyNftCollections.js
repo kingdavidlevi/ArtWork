@@ -15,7 +15,7 @@ function MyNftCollections() {
   const [text, setText] = useState('Adams Christopher99 uoisjdjdj');
 
   const params = useParams();
-  console.log(params);
+
   const images = [
     require('./Images/pexels-steve-1572386.jpg'),
     require('./Images/pexels-heftiba-1194420.jpg'),
@@ -152,6 +152,14 @@ function MyNftCollections() {
           <div className="spinner"></div>
         </div>
       )}
+
+      <section className="w-full mt-10 grid place-items-center">
+        <NavLink to={`/UploadNft/${params.id}`}>
+          <button className="bg-blue-600 py-3 text-white text-base font-medium rounded-md px-8">
+            Add Nft
+          </button>
+        </NavLink>
+      </section>
     </section>
   );
 }

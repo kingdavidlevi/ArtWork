@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
   const [text, setText] = useState('');
 
@@ -28,6 +28,7 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
   const closeChatroute = () => {
     navigate('/');
   };
+
   return (
     <section className="md:w-97 md:h-80% pt-24 md:pt-14    md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 ">
       <div className="h-24 pl-8 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-4 bg-blue-600">
@@ -87,7 +88,7 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
           </svg>
         </div>
       </div>
-      <div className="  h-full  mt-4   text-area  overflow-y-scroll  ">
+      <div className=" hidden md:block h-full  mt-4   text-area  overflow-y-scroll  ">
         <div
           className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
           onClick={() => laptopchatview(1)}
@@ -123,39 +124,26 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
           <p className="text-white text-base font-medium">john</p>
         </div>
       </div>
-      <div className="  h-full  mt-4   text-area  overflow-y-scroll  ">
-        <div
-          className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-          onClick={() => laptopchatview(1)}
-        >
-          <p className="text-white text-base font-medium">king david</p>
-          <div></div>
-        </div>
-        <div
-          className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-          onClick={() => laptopchatview(2)}
-        >
+      <div className="  h-full md:hidden mt-4   text-area  overflow-y-scroll  ">
+        <NavLink to={`/UserChat/${1}`}>
+          <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
+            <p className="text-white text-base font-medium">king david</p>
+            <div></div>
+          </div>
+        </NavLink>
+        <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
           <p className="text-white text-base font-medium">Olokwa</p>
           <div></div>
         </div>
-        <div
-          className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-          onClick={() => laptopchatview(3)}
-        >
+        <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
           <p className="text-white text-base font-medium">joshua</p>
           <div></div>
         </div>
-        <div
-          className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-          onClick={() => laptopchatview(4)}
-        >
+        <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
           <p className="text-white text-base font-medium">Christopher</p>
           <div></div>
         </div>
-        <div
-          className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-          onClick={() => laptopchatview(5)}
-        >
+        <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
           <p className="text-white text-base font-medium">john</p>
         </div>
       </div>
