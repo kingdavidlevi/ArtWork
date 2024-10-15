@@ -15,6 +15,7 @@ function MainHomePage() {
   const [lapUser, setLapUser] = useState(null);
   const { user, setUsers, error } = useOutletContext();
   const navigate = useNavigate();
+
   const Id = localStorage.getItem('Id');
 
   useEffect(() => {
@@ -48,6 +49,7 @@ function MainHomePage() {
   const chatroute = () => {
     navigate('/UserChat');
   };
+  console.log(user);
 
   return (
     <>
@@ -113,7 +115,7 @@ function MainHomePage() {
               ) : (
                 <div
                   className="w-14 hidden bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
-                  onClick={() => chatforUsers(1)}
+                  onClick={() => chatforUsers(user.clientChats._id)}
                 >
                   <FaCommentDots className="text-blue-100 w-7 h-7" />
                   <div className="h-4 w-4 border-2 border-gray-300 absolute rounded-full bg-green-600"></div>
@@ -124,7 +126,11 @@ function MainHomePage() {
 
           {/* Handle the NavLink separately, showing it only when the user is present and no errors */}
           {handleChat && (
-            <NavLink to={user.admin ? '/AdminPage' : `/UserChat/${Id}`}>
+            <NavLink
+              to={
+                user.admin ? '/AdminPage' : `/UserChat/${user.clientChats._id}`
+              }
+            >
               <div className="w-14 md:hidden bottom-8 h-14 z-10 cursor-pointer grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">
                 <FaCommentDots className="text-blue-100 w-7 h-7" />
                 <div className="h-4 w-4 border-2 border-gray-300 absolute rounded-full bg-green-600"></div>

@@ -59,7 +59,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [text, setText] = useState('');
   const [mySocket, setMySocket] = useState();
   const [messages, setMessages] = useState([]);
-  const [Dbmessages, setDbMessages] = useState();
+  const [Dbmessages, setDbMessages] = useState([]);
   const [user, setuser] = useState('');
   const navigate = useNavigate();
   const params = useParams(); // Use useParams hook to get route parameters
@@ -67,7 +67,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const Id = localStorage.getItem('Id');
 
   useEffect(() => {
-    const socket = io('https://artifynft.onrender.com');
+    const socket = io('http://localhost:3500');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -114,14 +114,17 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `https://artifynft.onrender.com/getmessages/${id}`,
+          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
           {
             method: 'GET',
-            credentials: 'include',
+            headers: {
+              'content-type': 'application/json',
+            },
           },
         );
         const data = await response.json();
-        setDbMessages(data);
+        console.log(data);
+        // setDbMessages(data);
       } catch (err) {
         console.log(err);
       }
@@ -262,7 +265,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
         </section>
 
         <div className="     text-white mx-4 ">
-          {messages.map((prev, index) => (
+          {messages?.map((prev, index) => (
             <div
               key={index}
               className={`message-wrapper text-white font-medium ${
@@ -280,7 +283,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
               </div>
             </div>
           ))}
-          {Dbmessages?.messages?.map.map((prev, index) => (
+          {Dbmessages?.map((prev, index) => (
             <div
               key={index}
               className={`message-wrapper text-white font-medium ${
