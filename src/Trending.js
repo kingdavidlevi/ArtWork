@@ -139,9 +139,9 @@ function Trending() {
           <p>No data available</p>
         )}
       </section>
-      <section className=" md:w-full grid md:place-items-start place-items-center">
+      <section className=" w-90%    ">
         <div
-          className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
+          className="  mt-10  place-items-center  flex gap-2  
           "
         >
           <h1 className="text-white text-lg font-semibold lg:text-2xl md:text-lg md:font-bold">
@@ -207,7 +207,7 @@ function Trending() {
           <p>No data available</p>
         )}
       </section>
-      <section className=" md:w-full grid md:place-items-start place-items-center">
+      <section className=" w-90%  ">
         <div
           className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
           "

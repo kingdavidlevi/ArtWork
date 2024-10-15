@@ -139,7 +139,7 @@ function MainTrending() {
           <p>No data available</p>
         )}
       </section>
-      <section className=" md:w-full grid md:place-items-start place-items-center">
+      <section className=" w-90% ">
         <div
           className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
           "
@@ -207,7 +207,7 @@ function MainTrending() {
           <p>No data available</p>
         )}
       </section>
-      <section className=" md:w-full grid md:place-items-start place-items-center">
+      <section className="w-90% ">
         <div
           className="  mt-10 w-90% md:w-full place-items-center  flex gap-2  
           "

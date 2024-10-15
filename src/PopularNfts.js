@@ -118,7 +118,7 @@ function PopularNfts() {
                       Amount:
                     </p>
                     <p className="text-white text-base font-semibold">
-                      <span>0.2</span>ETH
+                      <span className="mr-1">{item.price}</span>ETH
                     </p>
                   </section>
                   <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white">
