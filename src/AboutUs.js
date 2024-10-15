@@ -1,3 +1,6 @@
+import { FaEnvelope } from 'react-icons/fa6';
+import { FaDiscord } from 'react-icons/fa';
+
 function AboutUs() {
   return (
     <div>
@@ -34,7 +37,18 @@ function AboutUs() {
         <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-semibold">
           Contact Us
         </h1>
-        <section></section>
+        <section className="mt-4 flex gap-6">
+          <div>
+            <a href="mailto:info@ArtifyNfts.com">
+              <FaEnvelope className="text-white text-2xl" />
+            </a>
+          </div>
+          <div className="">
+            <a href="mailto:info@ArtifyNfts.com">
+              <FaDiscord className="text-white text-2xl" />
+            </a>
+          </div>
+        </section>
       </div>
       <div className="grid place-items-center lg:mt-2 w-full">
         {' '}

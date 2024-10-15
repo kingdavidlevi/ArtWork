@@ -209,31 +209,58 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       className="md:w-97 md:h-80% pt-34 md:pt-28 pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
       onSubmit={handleSubmit}
     >
-      <div className="h-32 pl-4 fixed w-full z-50  top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
-        <h1 className="text-white text-lg font-medium">
-          Hello <span>David</span> {'\u{1F44B}'},
-        </h1>
-        <p className=" mt-2 text-sm font-medium text-gray-200 ">
-          Welcome to ArtifyNft Online support team.
-        </p>
-        <h1 className="text-white text-lg font-medium">How can we help you?</h1>
-        <section className=" flex gap-2">
-          <div className="h-2.5 w-2.5 mt-1 bg-green-400 rounded-full"></div>
-          <p className="text-sm font-medium text-gray-300">Online</p>
-        </section>
-        <div
-          className="absolute top-4  hidden md:block cursor-pointer right-4 "
-          onClick={closeChat}
-        >
-          <FaTimes className="text-white text-lg" />
+      {user?.admin ? (
+        <div className="h-24 pl-8 fixed w-full z-50 top-0 md:top-24 md:w-97 md:rounded-t-xl pt-4 bg-blue-600">
+          <h1 className="text-white text-lg font-medium">
+            Admin {'\u{1F44B}'},
+          </h1>
+
+          <section className=" mt-2 flex gap-2">
+            <div className="h-2.5 w-2.5 mt-1 bg-green-400 rounded-full"></div>
+            <p className="text-sm font-medium text-gray-300">Online</p>
+          </section>
+          <div
+            className="absolute top-4  hidden md:block cursor-pointer right-4 "
+            onClick={closeChat}
+          >
+            <FaTimes className="text-white text-lg" />
+          </div>
+          <div
+            className="absolute md:hidden top-4 cursor-pointer right-4 "
+            onClick={closeChatroute}
+          >
+            <FaTimes className="text-white text-lg" />
+          </div>
         </div>
-        <div
-          className="absolute md:hidden top-4 cursor-pointer right-4 "
-          onClick={closeChatroute}
-        >
-          <FaTimes className="text-white text-lg" />
+      ) : (
+        <div className="h-32 pl-4 fixed w-full z-50  top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
+          <h1 className="text-white text-lg font-medium">
+            Hello <span>David</span> {'\u{1F44B}'},
+          </h1>
+          <p className=" mt-2 text-sm font-medium text-gray-200 ">
+            Welcome to ArtifyNft Online support team.
+          </p>
+          <h1 className="text-white text-lg font-medium">
+            How can we help you?
+          </h1>
+          <section className=" flex gap-2">
+            <div className="h-2.5 w-2.5 mt-1 bg-green-400 rounded-full"></div>
+            <p className="text-sm font-medium text-gray-300">Online</p>
+          </section>
+          <div
+            className="absolute top-4  hidden md:block cursor-pointer right-4 "
+            onClick={closeChat}
+          >
+            <FaTimes className="text-white text-lg" />
+          </div>
+          <div
+            className="absolute md:hidden top-4 cursor-pointer right-4 "
+            onClick={closeChatroute}
+          >
+            <FaTimes className="text-white text-lg" />
+          </div>
         </div>
-      </div>
+      )}
       <div className="   h-full text-area   overflow-y-scroll  ">
         <section className="fixed md:block  md:w-97 pr-4  pl-4  z-40 bottom-0 w-full md:bottom-8 ">
           <textarea
