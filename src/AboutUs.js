@@ -34,6 +34,7 @@ function AboutUs() {
         <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-semibold">
           Contact Us
         </h1>
+        <section></section>
       </div>
       <div className="grid place-items-center lg:mt-2 w-full">
         {' '}

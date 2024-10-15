@@ -82,8 +82,11 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   }, [mySocket]);
   console.log(messages);
   console.log(Dbmessages);
+
   const handleChange = (event) => {
-    setText(event.target.value);
+    const newText = event.target.value;
+    setText(newText);
+    console.log(text);
     event.target.style.height = 'auto';
     event.target.style.height = event.target.scrollHeight + 'px';
     // Set height based on scrollHeight
@@ -198,7 +201,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       text,
       timestamp: Date.now(),
     });
-    setText(''); // Clear the input field
+    console.log(text); // Clear the input field
   };
 
   return (
