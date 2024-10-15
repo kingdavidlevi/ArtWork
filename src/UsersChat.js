@@ -114,7 +114,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
+          `http://localhost:3500/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
