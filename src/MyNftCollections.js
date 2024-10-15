@@ -85,7 +85,7 @@ function MyNftCollections() {
       </div>
 
       <div className="w-full  ">
-        <div className="image-container  relative   w-full  md:h-52   h-40  ">
+        <div className="  relative   w-full  md:h-52   h-40  ">
           <img
             className="w-full object-cover  md:h-52   h-40 "
             src={nfts.profilePic}

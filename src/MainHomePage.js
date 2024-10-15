@@ -41,7 +41,7 @@ function MainHomePage() {
   };
   const chatforUsers = (id) => {
     setLapUser(id);
-    console.log(lapUser);
+
     setOpenChat(true);
   };
   const chatforAdmin = () => {
@@ -51,7 +51,6 @@ function MainHomePage() {
     navigate('/UserChat');
   };
   console.log(user);
-
   return (
     <>
       {Id && (
@@ -129,7 +128,9 @@ function MainHomePage() {
           {handleChat && (
             <NavLink
               to={
-                user.admin ? '/AdminPage' : `/UserChat/${user.clientChats._id}`
+                user.admin
+                  ? '/AdminPage'
+                  : `/UserChat/${user.clientChats.userId}`
               }
             >
               <div className="w-14 md:hidden bottom-8 h-14 z-10 cursor-pointer grid border right-8 fixed border-blue-200 place-content-center rounded-full bg-blue-600">

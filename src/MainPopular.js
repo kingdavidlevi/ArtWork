@@ -46,7 +46,7 @@ function MainPopular() {
 
     fetchLatestCollection();
   }, []);
-  console.log(latestsource);
+
   // Empty dependency array to run this effect only once on component mount
   const placeholderSkeleton = (index) => [
     <div
