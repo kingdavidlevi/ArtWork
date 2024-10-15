@@ -158,7 +158,7 @@ function Trending() {
             placeholderSkeleton(index),
           )
         ) : latestsource && latestsource.length > 0 ? (
-          latestsource?.map((item, index) => (
+          latestsource?.slice(0, 10).map((item, index) => (
             <div
               key={index}
               className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4"
@@ -228,7 +228,7 @@ function Trending() {
             placeholderSkeleton(index),
           )
         ) : latestsource && latestsource.length > 0 ? (
-          latestsource?.map((item, index) => (
+          latestsource?.slice(11, 21).map((item, index) => (
             <div
               key={index}
               className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4"
