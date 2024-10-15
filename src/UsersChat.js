@@ -240,7 +240,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
             value={text}
             rows="1"
             onChange={handleChange}
-            className=" pl-4 pr-14 text-area overflow-y-scroll block h-auto max-h-32 w-85% md:w-90% placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
+            className=" pl-4 pr-14    text-area overflow-y-scroll block h-auto max-h-32 w-85% md:w-90% placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
             placeholder="Type your message here"
             style={{
               // Hide the scrollbar

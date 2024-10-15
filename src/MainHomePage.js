@@ -115,7 +115,7 @@ function MainHomePage() {
               ) : (
                 <div
                   className="w-14 hidden bottom-16 h-14 z-10 cursor-pointer md:grid border right-8 md:fixed border-blue-200 place-content-center rounded-full bg-blue-600"
-                  onClick={() => chatforUsers(user.clientChats._id)}
+                  onClick={() => chatforUsers(user.user.clientChats.userId)}
                 >
                   <FaCommentDots className="text-blue-100 w-7 h-7" />
                   <div className="h-4 w-4 border-2 border-gray-300 absolute rounded-full bg-green-600"></div>
