@@ -191,15 +191,14 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim()) {
-      mySocket.emit('private chat', {
-        from: user?.Id,
-        to: params.id,
-        text,
-        timestamp: Date.now(),
-      });
-      setText(''); // Clear the input field
-    }
+
+    mySocket.emit('private chat', {
+      from: Id,
+      to: params.id,
+      text,
+      timestamp: Date.now(),
+    });
+    setText(''); // Clear the input field
   };
 
   return (
