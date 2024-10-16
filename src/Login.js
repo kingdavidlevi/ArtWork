@@ -27,8 +27,7 @@ function Login() {
   const home = () => {
     navigate('/HomePage');
   };
-  console.log(Logininputs.email);
-  console.log(Logininputs.password);
+
   const handleFormChanges = (e) => {
     const { name, value } = e.target;
 
