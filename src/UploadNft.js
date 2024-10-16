@@ -123,7 +123,7 @@ function UploadNft() {
         setFileName(null);
         setLoading(false);
         setInputs({ nftName: '', amount: '' });
-        // navigate(`/MyNftCollections/${params.id}`);
+        navigate(`/MyNftCollections/${params.id}`);
       }
     } catch (error) {
       setErrorMessage(error);

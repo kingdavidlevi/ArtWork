@@ -41,7 +41,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(() => {
-    const socket = io('http://localhost:3500');
+    const socket = io('https://artifynft.onrender.com:3500');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -91,7 +91,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `http://localhost:3500/getmessages/${Id}/${id}`,
+          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
