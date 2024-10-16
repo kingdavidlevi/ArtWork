@@ -49,7 +49,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `http://localhost:3500/balance/0xBddBf7A5b5a788FCfd1E9Eeb42e9E515adDDaa3E`,
+          `https://artifynft.onrender.com/balance/0xBddBf7A5b5a788FCfd1E9Eeb42e9E515adDDaa3E`,
           options,
         );
         const data = await res.json();
@@ -89,7 +89,10 @@ function Wallet({ walletOpen, setWalletOpen }) {
 
       <section className="grid place-items-center mt-14 md:mt-4">
         <h1 className="text-3xl text-white font-normal">
-          <span className="text-3xl text-white font-medium">0</span> ETH
+          <span className="text-3xl text-white font-medium">
+            {balance.balance}
+          </span>{' '}
+          ETH
         </h1>
       </section>
       <div className=" mt-4 gap-2 place-items-center justify-center flex font-medium text-base   ">
@@ -110,7 +113,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
             className="text-white cursor-pointer text-xs"
             onClick={handleCopy}
           />
-          {loading && <div className="spinner2 right-8  absolute"></div>}
+          {loading && <div className="spinner2 right-16  absolute"></div>}
           {copied && (
             <p className="text-green-500 text-xs absolute -top-5 text-nowrap font-medium">
               Copied !
@@ -118,6 +121,14 @@ function Wallet({ walletOpen, setWalletOpen }) {
           )}
         </div>
       </div>
+      <section className="w-full grid mt-4 place-items-center">
+        <button
+          className="text-white px-4 py-3 rounded-md bg-blue-600"
+          onClick={handleCopy}
+        >
+          Copy ETH Adress
+        </button>
+      </section>
       <div className="mt-10 grid place-items-center">
         {' '}
         <p className="text-white  w-90% text-base font-normal">

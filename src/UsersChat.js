@@ -312,10 +312,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
               >
                 <p> {prev.text}</p>
                 <section className="w-full flex justify-end  h-4">
-                  <p className=" text text-sm  ">
-                    {' '}
-                    {formatTime(prev.timestamp)}
-                  </p>
+                  <p className="  text-sm  "> {formatTime(prev.timestamp)}</p>
                 </section>
               </div>
             </div>
