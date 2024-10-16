@@ -80,9 +80,11 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
             className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
             onClick={() => laptopchatview(item._id)}
           >
-            <p className="text-white text-base font-medium">
-              {item.adminchats.username}
-            </p>
+            {user && (
+              <p className="text-white text-base font-medium">
+                {item.adminchats.username}
+              </p>
+            )}
             <div></div>
           </div>
         ))}
@@ -91,9 +93,11 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
         {user.adminchats.map((item) => (
           <NavLink to={`/UserChat/${item._id}`}>
             <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
-              <p className="text-white text-base font-medium">
-                {item.adminchats.username}
-              </p>
+              {user && (
+                <p className="text-white text-base font-medium">
+                  {item.adminchats.username}
+                </p>
+              )}
               <div></div>
             </div>
           </NavLink>
