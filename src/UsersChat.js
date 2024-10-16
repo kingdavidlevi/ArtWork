@@ -2,6 +2,30 @@ import { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { FaTimes, FaRegPaperPlane } from 'react-icons/fa';
 import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
+// useEffect(() => {
+//   const fetdata = async () => {
+//     const option = {
+//       method: 'PUT',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ contactId: params.id }),
+//     };
+//     try {
+//       const response = await fetch(
+//         'https://middlemanbackend.onrender.com/markAsRead',
+//         option,
+//       );
+//       const data = await response.json();
+//       console.log(data);
+//       // Scroll after marking messages as read
+//       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+//   fetdata(); // Call the async function
+// }, [messages, Dbmessages]);
 
 function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [text, setText] = useState('');
@@ -17,7 +41,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(() => {
-    const socket = io('http://localhost:3500');
+    const socket = io('https://artifynft.onrender.com');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -67,7 +91,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `http://localhost:3500/getmessages/${Id}/${id}`,
+          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
@@ -92,31 +116,15 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     }
   }, [Dbmessages]);
 
-  // useEffect(() => {
-  //   const fetdata = async () => {
-  //     const option = {
-  //       method: 'PUT',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ contactId: params.id }),
-  //     };
-  //     try {
-  //       const response = await fetch(
-  //         'https://middlemanbackend.onrender.com/markAsRead',
-  //         option,
-  //       );
-  //       const data = await response.json();
-  //       console.log(data);
-  //       // Scroll after marking messages as read
-  //       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+  useEffect(() => {
+    // Automatically scroll to bottom on mount and when messages update
+    scrollToBottom();
+  }, [messages]);
 
-  //   fetdata(); // Call the async function
-  // }, [messages, Dbmessages]);
+  useEffect(() => {
+    // Scroll to bottom as soon as the component mounts
+    scrollToBottom();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -233,6 +241,9 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           <textarea
             value={text}
             rows="1"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSubmit();
+            }}
             onChange={handleChange}
             className=" pl-4 pr-14    text-area overflow-y-scroll block h-auto max-h-32 w-85% md:w-90% placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
             placeholder="Type your message here"
