@@ -77,7 +77,7 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
       <div className=" hidden md:block h-full  mt-4   text-area  overflow-y-scroll  ">
         {user.adminchats.map((item) => (
           <div
-            className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
+            className="py-4  flex justify-between mt-2  cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
             onClick={() => laptopchatview(item.userId)}
           >
             {user && (
@@ -85,20 +85,24 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
                 {item.username}
               </p>
             )}
-            <div></div>
+            <div className="h-6 w-6 rounded-full grid place-items-center bg-blue-600 ">
+              <p className="text-white font-medium">1</p>
+            </div>
           </div>
         ))}
       </div>
       <div className="  h-full md:hidden mt-4   text-area  overflow-y-scroll  ">
         {user.adminchats.map((item) => (
           <NavLink to={`/UserChat/${item.userId}`}>
-            <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
+            <div className="py-4   flex justify-between cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
               {user && (
                 <p className="text-white text-base font-medium">
                   {item.username}
                 </p>
               )}
-              <div></div>
+              <div className="h-6 w-6 rounded-full grid place-items-center bg-blue-600 ">
+                <p className="text-white font-medium">1</p>
+              </div>
             </div>
           </NavLink>
         ))}
