@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { FaTimes, FaRegPaperPlane } from 'react-icons/fa';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
 
 /* // Reset height to auto
  const [messages, setMessages] = useState([
@@ -60,7 +60,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [mySocket, setMySocket] = useState(null);
   const [messages, setMessages] = useState([]);
   const [Dbmessages, setDbMessages] = useState([]);
-  const [user, setuser] = useState('');
+  const { user, setuser } = useOutletContext();
   const navigate = useNavigate();
   const params = useParams(); // Use useParams hook to get route parameters
   const messagesEndRef = useRef(null);
@@ -82,7 +82,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   }, [mySocket]);
   console.log(messages);
   console.log(Dbmessages);
-
+  console.log(user);
   const handleChange = (event) => {
     const newText = event.target.value;
     setText(newText);
@@ -201,7 +201,8 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       text,
       timestamp: Date.now(),
     });
-    console.log(text); // Clear the input field
+    console.log(text);
+    setText(''); // Clear the input field
   };
 
   return (
@@ -235,8 +236,10 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       ) : (
         <div className="h-32 pl-4 fixed w-full z-50  top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
           <h1 className="text-white text-lg font-medium">
-            Hello <span>David</span> {'\u{1F44B}'},
+            Hello {user && <span>{user.clientChats.username}</span>}{' '}
+            {'\u{1F44B}'} ,
           </h1>
+
           <p className=" mt-2 text-sm font-medium text-gray-200 ">
             Welcome to ArtifyNft Online support team.
           </p>
