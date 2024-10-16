@@ -40,7 +40,8 @@ function Latest() {
           setLoading(false);
         }
       } catch (error) {
-        setErrorMessage(error); // Assuming setErrorMessage is a state setter for errors
+        setErrorMessage(error);
+        // Assuming setErrorMessage is a state setter for errors
       }
     };
 

@@ -105,21 +105,21 @@ function MyNftCollections() {
         </div>
       </div>
       {!loading ? (
-        nfts && nfts.length > 0 ? (
-          nfts.map((items) => (
+        nfts && nfts?.nfts?.length > 0 ? (
+          nfts?.nfts?.map((items) => (
             <div
               key={items._id} // Add a unique key if possible
-              className="color-div mt-6 form px-3 duration-300 transition-transform ease-in-out transform hover:scale-103 w-40 min-w-40 md:min-w-56 md:w-56 lg:w-70 lg:min-w-70 pt-3 rounded-lg shadow-md pb-4"
+              className="color-div mt-10 mx-8 form px-3 duration-300 transition-transform ease-in-out transform hover:scale-103 w-40 min-w-40 md:min-w-56 md:w-56 lg:w-70 lg:min-w-70 pt-3 rounded-lg shadow-md pb-4"
             >
               <section>
                 <img
-                  src={items.profilePic}
+                  src={items.nftImage}
                   className="md:h-48 h-28 w-full rounded-lg md:w-70"
                   alt={items.itemName} // Added alt for accessibility
                 />
               </section>
-              <div className="mt-4">
-                <section className="w-full grid place-items-center mt-4">
+              <div className="mt-4 ">
+                <section className="w-full  mt-4">
                   <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
                     {items.itemName && items.itemName.length > 16
                       ? items.itemName.substring(0, 16) + '...'
@@ -134,7 +134,7 @@ function MyNftCollections() {
                 <section className="w-full flex items-center justify-between mt-4">
                   <p className="text-white text-base font-semibold">Amount :</p>
                   <p className="text-white text-base font-semibold">
-                    <span>0.2</span> ETH
+                    <span>{items.price}</span> ETH
                   </p>
                 </section>
               </div>
@@ -153,7 +153,7 @@ function MyNftCollections() {
         </div>
       )}
 
-      <section className="w-full mt-10 grid place-items-center">
+      <section className="w-full mt-20 grid place-items-center">
         <NavLink to={`/UploadNft/${params.id}`}>
           <button className="bg-blue-600 py-3 text-white text-base font-medium rounded-md px-8">
             Add Nft

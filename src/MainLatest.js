@@ -20,6 +20,7 @@ function MainLatest() {
 
   useEffect(() => {
     const fetchLatestCollection = async () => {
+      setErrorMessage(null);
       const options = {
         method: 'GET', // 'Get' should be 'GET'
         headers: {
@@ -40,7 +41,8 @@ function MainLatest() {
           setLoading(false);
         }
       } catch (error) {
-        setErrorMessage(error); // Assuming setErrorMessage is a state setter for errors
+        setErrorMessage(error);
+        console.log(errorMessage); // Assuming setErrorMessage is a state setter for errors
       }
     };
 

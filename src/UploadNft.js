@@ -1,5 +1,5 @@
 import Wallet from './Wallet';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FaArrowLeft,
   FaImage,
@@ -123,18 +123,31 @@ function UploadNft() {
         setFileName(null);
         setLoading(false);
         setInputs({ nftName: '', amount: '' });
+        // navigate(`/MyNftCollections/${params.id}`);
       }
     } catch (error) {
       setErrorMessage(error);
       console.log(error);
+      navigate('/UploadNft');
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrorMessage('');
+    }, 3000);
+  });
   return (
     <section className="h-full pb-20 App bg-black">
       {loading && (
         <div className="loading-overlay">
           <div className="spinner"></div>
+        </div>
+      )}
+      {errorMessage && (
+        <div>
+          <p className="">{errorMessage}</p>
         </div>
       )}
       <div className={`main-content ${loading ? 'blurred' : ''}`}>

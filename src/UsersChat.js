@@ -67,7 +67,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const Id = localStorage.getItem('Id');
 
   useEffect(() => {
-    const socket = io('http://localhost:3500');
+    const socket = io('https://artifynft.onrender.com');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -117,7 +117,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `http://localhost:3500/getmessages/${Id}/${id}`,
+          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
@@ -127,7 +127,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
         );
         const data = await response.json();
         console.log(data);
-        // setDbMessages(data);
+        setDbMessages(data);
       } catch (err) {
         console.log(err);
       }
@@ -293,40 +293,43 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           </button>
         </section>
 
-        <div className="     text-white mx-4 ">
-          {messages?.map((prev, index) => (
-            <div
-              key={index}
-              className={`message-wrapper text-white font-medium ${
-                prev.from === user?.Id ? 'right' : 'left text-white'
-              }`}
-            >
-              <div
-                className={`chat-message ${
-                  prev.from === user?.Id
-                    ? 'right bg-blue-500 text-white'
-                    : 'left'
-                }`}
-              >
-                {prev.message}
-              </div>
-            </div>
-          ))}
+        <div className="  text-white mx-4 ">
           {Dbmessages?.map((prev, index) => (
             <div
               key={index}
               className={`message-wrapper text-white font-medium ${
-                prev.from === user?.Id ? 'right' : 'left text-white'
+                prev.from === Id ? 'right' : 'left text-white'
+              }`}
+            >
+              <div
+                className={`chat-message relative ${
+                  prev.from === Id ? 'right  bg-blue-500 text-white' : 'left'
+                }`}
+              >
+                <p> {prev.text}</p>
+                <section className="w-full flex justify-end  h-4">
+                  <p className=" text text-sm  ">
+                    {' '}
+                    {formatTime(prev.timestamp)}
+                  </p>
+                </section>
+              </div>
+            </div>
+          ))}
+          {messages?.map((prev, index) => (
+            <div
+              key={index}
+              className={`message-wrapper text-white font-medium ${
+                prev.from === Id ? 'right' : 'left text-white'
               }`}
             >
               <div
                 className={`chat-message ${
-                  prev.from === user?.Id
-                    ? 'right bg-blue-500 text-white'
-                    : 'left'
+                  prev.from === Id ? 'right bg-blue-500 text-white' : 'left'
                 }`}
               >
-                {prev.message}
+                {prev.text}
+                {formatTime(prev.timestamp)}
               </div>
             </div>
           ))}
