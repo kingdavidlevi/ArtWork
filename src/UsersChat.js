@@ -3,58 +3,6 @@ import io from 'socket.io-client';
 import { FaTimes, FaRegPaperPlane } from 'react-icons/fa';
 import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
 
-/* // Reset height to auto
- const [messages, setMessages] = useState([
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'Hello!', isSelf: false },
-    { text: 'Hi there!', isSelf: true },
-    { text: 'How are you?', isSelf: false },
-    { text: 'How are you?', isSelf: false },
-    { text: 'I am good, thank you!', isSelf: true },
-    {
-      text: 'I am good, thank you! i want to mint an art how do i do it',
-      isSelf: true,
-    },
-  ]);
-    const Chatitems = () => {};
-  useEffect(() => {
-    const socket = io('https://middlemanbackend.onrender.com');
-    socket.emit('setCustomId', user?.Id);
-    setMySocket(socket);
-  }, []);
-  useEffect(() => {
-    mySocket?.on('private chat', (data) => {
-      setMessages((prevMessages) => [...prevMessages, data]);
-      console.log(data);
-    });
-    return () => {
-      mySocket?.off('private chat');
-    };
-  }, [mySocket]);
-
- */
 function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const [text, setText] = useState('');
   const [mySocket, setMySocket] = useState(null);
@@ -65,7 +13,9 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const params = useParams(); // Use useParams hook to get route parameters
   const messagesEndRef = useRef(null);
   const Id = localStorage.getItem('Id');
-
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   useEffect(() => {
     const socket = io('http://localhost:3500');
     socket.emit('setCustomId', Id);
@@ -195,10 +145,23 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const checkId = () => {
+      let msgId;
+      if (lapUser) {
+        msgId = lapUser;
+      }
+      if (laptopId) {
+        msgId = laptopId;
+      }
+      if (params.id) {
+        msgId = params.id;
+      }
+      return msgId;
+    };
 
     mySocket.emit('private chat', {
       from: Id,
-      to: params.id,
+      to: checkId(),
       text,
       timestamp: Date.now(),
     });
