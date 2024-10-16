@@ -37,9 +37,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const params = useParams(); // Use useParams hook to get route parameters
   const messagesEndRef = useRef(null);
   const Id = localStorage.getItem('Id');
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+
   useEffect(() => {
     const socket = io('https://artifynft.onrender.com');
     socket.emit('setCustomId', Id);
@@ -65,6 +63,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     event.target.style.height = event.target.scrollHeight + 'px';
     // Set height based on scrollHeight
   };
+  const bottomDivRef = useRef(null);
   const closeChat = () => {
     setOpenChat(false);
   };
@@ -100,6 +99,9 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           },
         );
         const data = await response.json();
+        if (data) {
+          scrollToBottom();
+        }
         console.log(data);
         setDbMessages(data);
         console.log(Dbmessages);
@@ -115,16 +117,6 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
     }
   }, [Dbmessages]);
-
-  useEffect(() => {
-    // Automatically scroll to bottom on mount and when messages update
-    scrollToBottom();
-  }, [messages]);
-
-  useEffect(() => {
-    // Scroll to bottom as soon as the component mounts
-    scrollToBottom();
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -174,7 +166,14 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       timestamp: Date.now(),
     });
     console.log(text);
-    setText(''); // Clear the input field
+    setText('');
+    scrollToBottom(); // Clear the input field
+  };
+
+  const scrollToBottom = () => {
+    if (bottomDivRef.current) {
+      bottomDivRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -239,6 +238,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       <div className="   h-full text-area   overflow-y-scroll  ">
         <section className="fixed md:block  md:w-97 pr-4  pl-4  z-40 bottom-0 w-full md:bottom-8 ">
           <textarea
+            required
             value={text}
             rows="1"
             onKeyDown={(e) => {
@@ -314,6 +314,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
             </div>
           ))}
         </div>
+        <div ref={bottomDivRef} />
       </div>
     </form>
   );
