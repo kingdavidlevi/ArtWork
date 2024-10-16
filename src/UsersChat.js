@@ -67,7 +67,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
   const Id = localStorage.getItem('Id');
 
   useEffect(() => {
-    const socket = io('https://artifynft.onrender.com');
+    const socket = io('http://localhost:3500');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -117,7 +117,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
+          `http://localhost:3500/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
@@ -128,6 +128,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
         const data = await response.json();
         console.log(data);
         setDbMessages(data);
+        console.log(Dbmessages);
       } catch (err) {
         console.log(err);
       }
@@ -236,7 +237,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       ) : (
         <div className="h-32 pl-4 fixed w-full z-50  top-0 md:top-24 md:w-97 md:rounded-t-xl pt-3 bg-blue-600">
           <h1 className="text-white text-lg font-medium">
-            Hello {user && <span>{user.clientChats.username}</span>}{' '}
+            Hello {user && <span>{user?.clientChats?.username}</span>}{' '}
             {'\u{1F44B}'} ,
           </h1>
 
@@ -331,8 +332,13 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
                   prev.from === Id ? 'right bg-blue-500 text-white' : 'left'
                 }`}
               >
-                {prev.text}
-                {formatTime(prev.timestamp)}
+                <p> {prev.text}</p>
+                <section className="w-full flex justify-end  h-4">
+                  <p className=" text text-sm  ">
+                    {' '}
+                    {formatTime(prev.timestamp)}
+                  </p>
+                </section>
               </div>
             </div>
           ))}

@@ -78,11 +78,11 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
         {user.adminchats.map((item) => (
           <div
             className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4"
-            onClick={() => laptopchatview(item._id)}
+            onClick={() => laptopchatview(item.userId)}
           >
             {user && (
               <p className="text-white text-base font-medium">
-                {item.adminchats.username}
+                {item.username}
               </p>
             )}
             <div></div>
@@ -91,11 +91,11 @@ function AdminPage({ openchatAdmin, setOpenChatAdmin, laptopchatview }) {
       </div>
       <div className="  h-full md:hidden mt-4   text-area  overflow-y-scroll  ">
         {user.adminchats.map((item) => (
-          <NavLink to={`/UserChat/${item._id}`}>
+          <NavLink to={`/UserChat/${item.userId}`}>
             <div className="py-4    cursor-pointer dropdown-li px-4 rounded-md text-white  mx-4">
               {user && (
                 <p className="text-white text-base font-medium">
-                  {item.adminchats.username}
+                  {item.username}
                 </p>
               )}
               <div></div>
