@@ -41,7 +41,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(() => {
-    const socket = io('https://artifynft.onrender.com:3500');
+    const socket = io('https://artifynft.onrender.com');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
