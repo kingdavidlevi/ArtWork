@@ -41,7 +41,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(() => {
-    const socket = io('https://artifynft.onrender.com');
+    const socket = io('http://localhost:3500');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
   }, []);
@@ -91,7 +91,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       try {
         console.log(id);
         const response = await fetch(
-          `https://artifynft.onrender.com/getmessages/${Id}/${id}`,
+          `http://localhost:3500/getmessages/${Id}/${id}`,
           {
             method: 'GET',
             headers: {
@@ -242,7 +242,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
             value={text}
             rows="1"
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSubmit();
+              if (e.key === 'Enter') handleSubmit(e);
             }}
             onChange={handleChange}
             className=" pl-4 pr-14    text-area overflow-y-scroll block h-auto max-h-32 w-85% md:w-90% placeholder:text-base placeholder:font-normal text-base font-medium  outline-none rounded-2xl py-1.5 bg-white"
