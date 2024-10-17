@@ -42,19 +42,18 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     const socket = io('https://artifynft.onrender.com');
     socket.emit('setCustomId', Id);
     setMySocket(socket);
+    scrollToBottom();
   }, []);
   useEffect(() => {
     mySocket?.on('private chat', (data) => {
       setMessages((prevMessages) => [...prevMessages, data]);
-      console.log(data);
+      scrollToBottom();
     });
     return () => {
       mySocket?.off('private chat');
     };
   }, [mySocket]);
-  console.log(messages);
-  console.log(Dbmessages);
-  console.log(user);
+
   const handleChange = (event) => {
     const newText = event.target.value;
     setText(newText);
@@ -104,7 +103,6 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
         }
         console.log(data);
         setDbMessages(data);
-        console.log(Dbmessages);
       } catch (err) {
         console.log(err);
       }
@@ -116,6 +114,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
     if (Dbmessages?.messages?.length > 0) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
     }
+    scrollToBottom();
   }, [Dbmessages]);
 
   useEffect(() => {
@@ -178,7 +177,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
 
   return (
     <form
-      className="md:w-97 md:h-80% pt-34 md:pt-28 pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
+      className="md:w-97 md:h-80%  pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
       onSubmit={handleSubmit}
     >
       {user?.admin ? (
@@ -235,7 +234,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           </div>
         </div>
       )}
-      <div className="   h-full text-area   overflow-y-scroll  ">
+      <div className="  pt-28 md:pt-20 h-full  text-area   overflow-y-scroll  ">
         <section className="fixed md:block  md:w-97 pr-4  pl-4  z-40 bottom-0 w-full md:bottom-8 ">
           <textarea
             required
@@ -289,6 +288,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
                   <p className="  text-sm  "> {formatTime(prev.timestamp)}</p>
                 </section>
               </div>
+              <div ref={bottomDivRef} />
             </div>
           ))}
           {messages?.map((prev, index) => (

@@ -1,6 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-out {
+  animation: fadeInOut 1.5s ease-in-out infinite alternate;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Light gray background for skeleton placeholder */
+  border-radius: 8px; /* Rounded corners for smooth effect */
+}
+@keyframes slideInOutFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f56565;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  animation: slideInOutFromTop 3s ease-in-out forwards;
+  z-index: 1000;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.warning-icon {
+  position: relative;
+  display: inline-block;
+  font-size: 48px; /* Adjust size as needed */
+  color: red; /* Color the triangle red */
+}
+
+.warning-icon .exclamation {
+  color: white; /* Color the exclamation mark white */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the exclamation mark */
+  font-size: 0.6em; /* Adjust size if necessary to fit inside the triangle */
+}
+
+.slide-in {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  color: white;
+  justify-content: center;
+
+  text-align: center;
+  display: flex;
+
+  animation: slideInFromTop 0.5s ease-out forwards;
+  z-index: 10;
+}
 
 .picture {
   background-image: url('./Images/240_F_423044511_bCUtUzoO2LUAsOJrZzCtkaX7w3FS7SOZ.jpg');
@@ -309,7 +406,8 @@
 }
 .message-wrapper {
   display: flex;
-  margin: 10px 0;
+  margin: 10px 0; /* Set a fixed height */
+  /* Enable vertical scrolling */
 }
 
 /* General styling for the image container */
@@ -383,8 +481,9 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   z-index: 9999; /* Make sure it's on top of everything */
   pointer-events: none; /* Prevent interaction on the whole page */
 }

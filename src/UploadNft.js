@@ -10,12 +10,17 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import { FaTriangleExclamation } from 'react-icons/fa6';
 
 function UploadNft() {
   const navigate = useNavigate();
   const [walletOpen, setWalletOpen] = useState(false);
   const [uploadhover, setuploadHover] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState({
+    errorMsg: '',
+    password: '',
+    username: '',
+  });
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [inputs, setInputs] = useState({
@@ -26,6 +31,9 @@ function UploadNft() {
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState('');
   const fileInputRef = useRef(null);
+
+  const [hasInsufficientFunds, setHasInsufficientFunds] = useState(false);
+
   const params = useParams();
 
   const toggleWallet = () => {
@@ -118,26 +126,35 @@ function UploadNft() {
       );
       const data = await response.json();
       console.log(data);
-      if (data) {
+      if (response.ok) {
         setImage(null);
         setFileName(null);
         setLoading(false);
         setInputs({ nftName: '', amount: '' });
         navigate(`/MyNftCollections/${params.id}`);
+      } else {
+        setErrorMessage(data);
+        setHasInsufficientFunds(true);
+        //setTimeout(() => setHasInsufficientFunds(false), 8000);
       }
     } catch (error) {
-      setErrorMessage(error);
-      console.log(error);
       navigate('/UploadNft');
     }
     setLoading(false);
   };
+  const truncateText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '' : str;
+  };
 
-  useEffect(() => {
+  const truncateLongText = (str) => {
+    return str.length > 37 ? str.substring(37) : ''; // Return substring from 38th character onwards
+  };
+
+  /* useEffect(() => {
     setTimeout(() => {
       setErrorMessage('');
     }, 3000);
-  });
+  });*/
   return (
     <section className="h-full pb-20 App bg-black">
       {loading && (
@@ -145,13 +162,55 @@ function UploadNft() {
           <div className="spinner"></div>
         </div>
       )}
-      {errorMessage && (
-        <div>
-          <p className="">{errorMessage}</p>
-        </div>
-      )}
+      <section className="slide-in">
+        {hasInsufficientFunds && (
+          <div className="  dropdown md:w-100 w-80% md:flex justify-center gap-3    rounded-md py-5  mt-24   ">
+            <p className="text-white md:block hidden md:text-lg text-sm font-medium">
+              {errorMessage.errorMsg}{' '}
+            </p>
+            <p className="text-white md:hidden md:text-lg text-base font-medium">
+              {truncateText(errorMessage.errorMsg, 37)}
+            </p>
+            <section className="flex gap-1 mt-2 justify-center md:hidden">
+              <p className="text-white md:hidden md:text-lg text-base font-medium">
+                {truncateLongText(errorMessage.errorMsg)}
+              </p>
+              <div className="relative flex items-center">
+                <FaTriangleExclamation className="text-lg  text-red-500 " />
+
+                <span
+                  className="absolute text-base text-white"
+                  style={{
+                    top: '60%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  !
+                </span>
+              </div>
+            </section>
+            <section className="hidden md:block">
+              <div className="relative flex items-center">
+                <FaTriangleExclamation className="text-lg md:mt-1 text-red-500 mt-0.5" />
+
+                <span
+                  className="absolute text-base text-white"
+                  style={{
+                    top: '60%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  !
+                </span>
+              </div>
+            </section>
+          </div>
+        )}
+      </section>
       <div className={`main-content ${loading ? 'blurred' : ''}`}>
-        <header className="glass-header2 w-full px-2 md:px-6  justify-between z-30 h-18 flex items-center">
+        <header className="glass-header2 w-full px-2 md:px-6 bg-black justify-between z-40 h-18 flex items-center">
           <div className="flex gap-3">
             <div
               className=" cursor-pointer h-8 w-8 rounded-full grid  dropdown-li place-items-center z-20"

@@ -48,26 +48,25 @@ function MainPopular() {
   }, []);
 
   // Empty dependency array to run this effect only once on component mount
-  const placeholderSkeleton = (index) => [
+  const placeholderSkeleton = (index) => (
     <div
       key={index}
-      className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4"
+      className="color-div form px-3 hover:cursor-pointer duration-300 transition-transform ease-in-out transform hover:scale-103 w-56 min-w-56 md:w-70 md:min-w-70 pt-3 rounded-lg shadow-md pb-4 "
     >
-      <section className="md:h-48 h-40 w-full form rounded-lg"></section>
+      <section className="md:h-48 h-40 w-full  fade-in-out form rounded-lg"></section>
       <div className="mt-4">
-        <p className="text-white    md:text-base text-sm font-medium italic md:font-semibold">
+        <p className="text-white md:text-base text-sm font-medium italic md:font-semibold">
           CollectionName:
         </p>
         <p className="text-white md:hidden text-base font-medium italic md:font-semibold"></p>
         <section className="w-full flex items-center justify-between mt-4">
-          <p className="text-white  md:text-base text-sm font-semibold">
+          <p className="text-white md:text-base text-sm font-semibold">
             Artist :
           </p>
           <p className="text-gray-400 italic md:text-base text-sm font-semibold"></p>
         </section>
-
         <section className="w-full flex justify-between mt-4">
-          <p className="text-white  md:text-base text-sm font-semibold">
+          <p className="text-white md:text-base text-sm font-semibold">
             Total:
           </p>
         </section>
@@ -75,13 +74,13 @@ function MainPopular() {
       <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white">
         Buy
       </button>
-    </div>,
-  ];
+    </div>
+  );
 
   return (
     <section
       className="lg:flex scroll-container overflow-hidden  flex overflow-x-scroll place-items-center mt-8 w-90% md:w-full pb-4 gap-4 md:gap-6"
-      id="MainLatest"
+      id="MainPopular"
     >
       {loading ? (
         // Render the skeletons while loading
