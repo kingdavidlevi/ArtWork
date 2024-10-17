@@ -105,45 +105,49 @@ function MyNftCollections() {
         </div>
       </div>
       {!loading ? (
-        nfts && nfts?.nfts?.length > 0 ? (
-          nfts?.nfts?.map((items) => (
-            <div
-              key={items._id} // Add a unique key if possible
-              className="color-div mt-10 mx-8 form px-3 duration-300 transition-transform ease-in-out transform hover:scale-103 w-40 min-w-40 md:min-w-56 md:w-56 lg:w-70 lg:min-w-70 pt-3 rounded-lg shadow-md pb-4"
-            >
-              <section>
-                <img
-                  src={items.nftImage}
-                  className="md:h-48 h-28 w-full rounded-lg md:w-70"
-                  alt={items.itemName} // Added alt for accessibility
-                />
-              </section>
-              <div className="mt-4 ">
-                <section className="w-full  mt-4">
-                  <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
-                    {items.itemName && items.itemName.length > 16
-                      ? items.itemName.substring(0, 16) + '...'
-                      : items.itemName}
-                  </p>
-                  <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
-                    {items.itemName && items.itemName.length > 24
-                      ? items.itemName.substring(0, 24) + '...'
-                      : items.itemName}
-                  </p>
+        nfts?.nfts?.length > 0 ? (
+          <section className="mt-4 grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            {nfts.nfts.map((item) => (
+              <div
+                key={item._id} // Ensure each item has a unique key
+                className="color-div mt-10 mx-8 form px-3 duration-300 transition-transform ease-in-out transform hover:scale-103 w-40 min-w-40 md:min-w-56 md:w-56 lg:w-70 lg:min-w-70 pt-3 rounded-lg shadow-md pb-4"
+              >
+                <section>
+                  <img
+                    src={item.nftImage}
+                    className="md:h-48 h-28 w-full rounded-lg md:w-70"
+                    alt={item.itemName} // Alt attribute for accessibility
+                  />
                 </section>
-                <section className="w-full flex items-center justify-between mt-4">
-                  <p className="text-white text-base font-semibold">Amount :</p>
-                  <p className="text-white text-base font-semibold">
-                    <span>{items.price}</span> ETH
-                  </p>
-                </section>
+                <div className="mt-4">
+                  <section className="w-full mt-4">
+                    <p className="text-gray-400 md:hidden italic md:text-base text-sm font-semibold">
+                      {item.itemName && item.itemName.length > 16
+                        ? item.itemName.substring(0, 16) + '...'
+                        : item.itemName}
+                    </p>
+                    <p className="text-gray-400 hidden md:block italic md:text-base text-sm font-semibold">
+                      {item.itemName && item.itemName.length > 24
+                        ? item.itemName.substring(0, 24) + '...'
+                        : item.itemName}
+                    </p>
+                  </section>
+                  <section className="w-full flex items-center justify-between mt-4">
+                    <p className="text-white text-base font-semibold">
+                      Amount:
+                    </p>
+                    <p className="text-white text-base font-semibold">
+                      <span>{item.price}</span> ETH
+                    </p>
+                  </section>
+                </div>
               </div>
-            </div>
-          ))
+            ))}
+          </section>
         ) : (
           <div className="w-full mt-8 grid place-items-center">
             <p className="text-white mt-4 md:text-lg text-base font-medium">
-              No Nfts!
+              No NFTs!
             </p>
           </div>
         )

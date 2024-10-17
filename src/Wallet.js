@@ -22,12 +22,9 @@ function Wallet({ walletOpen, setWalletOpen }) {
         },
       };
       try {
-        const res = await fetch(
-          `https://artifynft.onrender.com/wallet/${Id}`,
-          options,
-        );
+        const res = await fetch(`http://localhost:3500/wallet/${Id}`, options);
         const data = await res.json();
-        console.log(data);
+
         setAddress(data.walletadd);
 
         fetchBalance(data.walletadd);
@@ -49,12 +46,13 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `https://artifynft.onrender.com/balance/0xBddBf7A5b5a788FCfd1E9Eeb42e9E515adDDaa3E`,
+          `http://localhost:3500/balance/${address}`,
           options,
         );
         const data = await res.json();
         console.log(data);
         setBalance(data);
+        console.log(balance);
       } catch (error) {
         console.log(error);
       }
@@ -62,7 +60,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
 
     fetchWallet();
   }, []);
-  console.log(address);
+
   const handleCopy = () => {
     navigator.clipboard
       .writeText(address)
@@ -87,7 +85,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
         <img src={metamask} className="h-6 w-6 mt-1  " />
       </section>
 
-      <section className="grid place-items-center mt-14 md:mt-4">
+      <section className="grid place-items-center mt-4">
         <h1 className="text-3xl text-white font-normal">
           <span className="text-3xl text-white font-medium">
             {balance.balance}
