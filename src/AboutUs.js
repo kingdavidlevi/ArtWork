@@ -33,7 +33,7 @@ function AboutUs() {
           </p>
         </div>
       </section>
-      <div className="grid place-items-center mb-36 lg:mt-2 w-full">
+      <div className="grid place-items-center mb-24 lg:mt-2 w-full">
         <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-semibold">
           Contact Us
         </h1>

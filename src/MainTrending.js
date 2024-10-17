@@ -123,7 +123,14 @@ function MainTrending() {
                     Total:
                   </p>
                   <p className="text-white  md:text-base text-sm font-semibold">
-                    <span>20</span> ETH
+                    <span>
+                      {' '}
+                      {item.nfts.reduce((total, prev) => {
+                        const unreadCount = prev.price;
+                        return total + unreadCount;
+                      }, 0)}
+                    </span>{' '}
+                    ETH
                   </p>
                 </section>
               </div>
@@ -191,7 +198,14 @@ function MainTrending() {
                     Total:
                   </p>
                   <p className="text-white  md:text-base text-sm font-semibold">
-                    <span>20</span> ETH
+                    <span>
+                      {' '}
+                      {item.nfts.reduce((total, prev) => {
+                        const unreadCount = prev.price;
+                        return total + unreadCount;
+                      }, 0)}
+                    </span>{' '}
+                    ETH
                   </p>
                 </section>
               </div>
@@ -261,7 +275,14 @@ function MainTrending() {
                     Total:
                   </p>
                   <p className="text-white  md:text-base text-sm font-semibold">
-                    <span>20</span> ETH
+                    <span>
+                      {' '}
+                      {item.nfts.reduce((total, prev) => {
+                        const unreadCount = prev.price;
+                        return total + unreadCount;
+                      }, 0)}
+                    </span>{' '}
+                    ETH
                   </p>
                 </section>
               </div>

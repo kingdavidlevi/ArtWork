@@ -48,6 +48,7 @@ function MainLatest() {
 
     fetchLatestCollection();
   }, []);
+  console.log(latestsource);
 
   // Empty dependency array to run this effect only once on component mount
   const placeholderSkeleton = (index) => [
@@ -124,7 +125,13 @@ function MainLatest() {
                   Total:
                 </p>
                 <p className="text-white  md:text-base text-sm font-semibold">
-                  <span>20</span> ETH
+                  <span>
+                    {item.nfts.reduce((total, prev) => {
+                      const unreadCount = prev.price;
+                      return total + unreadCount;
+                    }, 0)}
+                  </span>{' '}
+                  ETH
                 </p>
               </section>
             </div>

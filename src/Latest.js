@@ -114,7 +114,14 @@ function Latest() {
               <section className="w-full flex justify-between mt-4">
                 <p className="text-white text-base font-semibold">Total:</p>
                 <p className="text-white text-base font-semibold">
-                  <span>20</span> ETH
+                  <span>
+                    {' '}
+                    {item.nfts.reduce((total, prev) => {
+                      const unreadCount = prev.price;
+                      return total + unreadCount;
+                    }, 0)}
+                  </span>{' '}
+                  ETH
                 </p>
               </section>
             </div>
