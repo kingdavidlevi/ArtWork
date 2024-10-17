@@ -50,7 +50,7 @@ function MainHomePage() {
   const chatroute = () => {
     navigate('/UserChat');
   };
-  console.log(user);
+
   return (
     <>
       {Id && (

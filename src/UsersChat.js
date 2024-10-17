@@ -164,7 +164,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
       text,
       timestamp: Date.now(),
     });
-    console.log(text);
+
     setText('');
     scrollToBottom(); // Clear the input field
   };
@@ -177,7 +177,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
 
   return (
     <form
-      className="md:w-97 md:h-80%  pb-20  md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
+      className="md:w-97 md:h-80%  pb-20 md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
       onSubmit={handleSubmit}
     >
       {user?.admin ? (
@@ -280,7 +280,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
             >
               <div
                 className={`chat-message relative ${
-                  prev.from === Id ? 'right  bg-blue-500 text-white' : 'left'
+                  prev.from === Id ? 'right  bg-blue-600 text-white' : 'left'
                 }`}
               >
                 <p> {prev.text}</p>
@@ -294,13 +294,13 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           {messages?.map((prev, index) => (
             <div
               key={index}
-              className={`message-wrapper text-white font-medium ${
+              className={`message-wrapper  text-white mb-10 font-medium ${
                 prev.from === Id ? 'right' : 'left text-white'
               }`}
             >
               <div
                 className={`chat-message ${
-                  prev.from === Id ? 'right bg-blue-500 text-white' : 'left'
+                  prev.from === Id ? 'right bg-blue-600  text-white' : 'left'
                 }`}
               >
                 <p> {prev.text}</p>
@@ -314,7 +314,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
             </div>
           ))}
         </div>
-        <div ref={bottomDivRef} />
+        {messages && <div ref={bottomDivRef} className="mb-20" />}
       </div>
     </form>
   );

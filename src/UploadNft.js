@@ -135,7 +135,7 @@ function UploadNft() {
       } else {
         setErrorMessage(data);
         setHasInsufficientFunds(true);
-        //setTimeout(() => setHasInsufficientFunds(false), 8000);
+        setTimeout(() => setHasInsufficientFunds(false), 8000);
       }
     } catch (error) {
       navigate('/UploadNft');
