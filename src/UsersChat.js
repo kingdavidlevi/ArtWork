@@ -210,7 +210,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
           </h1>
 
           <p className=" mt-2 text-sm font-medium text-gray-200 ">
-            Welcome to ArtifyNft Online support team.
+            Welcome to StrokesArtify Online support team.
           </p>
           <h1 className="text-white text-lg font-medium">
             How can we help you?
