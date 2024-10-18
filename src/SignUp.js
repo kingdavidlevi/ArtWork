@@ -62,10 +62,13 @@ function SignUp() {
       );
       const data = await response.json();
 
-      if (data.UserId) {
+      if (response.ok) {
         localStorage.setItem('Id', data.UserId);
         navigate('/');
         setLoading(false);
+        console.log(data);
+      } else {
+        setErrorMessage(data);
       }
     } catch (error) {
       setErrorMessage(error);
@@ -80,8 +83,8 @@ function SignUp() {
       <div className={`main-content ${loading ? 'blurred' : ''}`}>
         <section className="grid h-full App  bg-black place-items-center pt-20">
           {loading && (
-            <div className="loading-overlay">
-              <div className="spinner"></div>
+            <div className="  loading-overlay">
+              <div className="spinner "></div>
             </div>
           )}
           <div

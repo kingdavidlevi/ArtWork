@@ -58,13 +58,16 @@ function Login() {
         options,
       );
       const data = await response.json();
-
-      if (data.UserId) {
+      console.log(data);
+      if (response.ok) {
         localStorage.setItem('Id', data.UserId);
         navigate('/');
+      } else {
+        setErrorMessage(data);
       }
     } catch (error) {
-      setErrorMessage(error);
+      console.log(error);
+
       console.log(errorMessage);
     }
 
@@ -78,7 +81,7 @@ function Login() {
   return (
     <section className=" App grid place-content-center    h-screen   w-full  bg-black  ">
       {loading && (
-        <div className="loading-overlay">
+        <div className="z-50 loading-overlay">
           <div className="spinner"></div>
         </div>
       )}
@@ -97,14 +100,21 @@ function Login() {
         <p className=" font-semibold  mt-8 text-base  md:text-xl grid place-items-center  text-white">
           LOGIN
         </p>
+
         <div className="   mb-14  form rounded-lg  xl:w-270  md:w-260 w-90 mt-6 pt-2 pb-8 ">
           <form onSubmit={handleSignIn}>
             <section className="mt-8 grid place-items-center">
+              <section className="w-90%  mb-2">
+                <p className="text-red-500 font-medium">
+                  {errorMessage.username}
+                </p>
+              </section>
               <div className="flex gap-4 w-90%">
                 <div>
                   {' '}
                   <FaEnvelope className="text-white mt-0.5 " size={15} />
                 </div>
+
                 <p className="text-white text-sm  font-medium ">
                   Email address{' '}
                 </p>
@@ -136,6 +146,9 @@ function Login() {
                 className="mt-3 text-base font-medium  placeholder:text-base pl-4 w-90% outline-none placeholder:font-medium text-black py-3 bg-white rounded-md placeholder:text-gray-400 "
                 required
               />
+              <section className="w-90% ">
+                <p className="text-red-500">{errorMessage.password}</p>
+              </section>
             </section>
 
             <section className="mt-6 grid  place-items-center">

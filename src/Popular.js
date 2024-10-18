@@ -33,7 +33,7 @@ function Popular() {
           options,
         );
         const data = await response.json();
-        console.log(data);
+
         const reorderedData = data.reverse();
         setLatestSource(reorderedData); // Assuming setLatestCollection is a state setter function
         if (data) {

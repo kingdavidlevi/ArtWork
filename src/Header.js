@@ -39,9 +39,9 @@ function Header({ isOpen, setIsOpen }) {
     <section>
       {!toggleSearch ? (
         <div className="w-full md:px-8 px-3 fixed z-20 glass-header  h-18 flex place-items-center justify-between ">
-          <div className=" relative flex xl:gap-10 gap-5 ">
+          <div className=" relative flex xl:gap-10 gap-2 md:gap-5 ">
             <div
-              className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
+              className="text-white Artify-div pr-2 cursor-pointer md:pr-6"
               onClick={home}
             >
               <p className="lg:text-2xl text-xl font-semibold ">
@@ -124,7 +124,7 @@ function Header({ isOpen, setIsOpen }) {
               )}
             </div>
           </div>
-          <div className="flex gap-3 md:gap-6">
+          <div className="flex gap-2 md:gap-6">
             <FaSearch
               className="  mt-3.5 ml-4 text-white lg:hidden sm:block cursor-pointer hidden text-lg"
               onClick={toggleSearchBtn}
