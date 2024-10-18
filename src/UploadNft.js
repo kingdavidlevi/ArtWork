@@ -164,7 +164,7 @@ function UploadNft() {
       )}
       <section className="slide-in">
         {hasInsufficientFunds && (
-          <div className="  dropdown md:w-100 w-80% md:flex justify-center gap-3    rounded-md py-5  mt-24   ">
+          <div className="  dropdown md:w-100 w-90% md:flex justify-center gap-3    rounded-md py-5  mt-24   ">
             <p className="text-white md:block hidden md:text-lg text-sm font-medium">
               {errorMessage.errorMsg}{' '}
             </p>
