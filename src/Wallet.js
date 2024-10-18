@@ -47,9 +47,10 @@ function Wallet({ walletOpen, setWalletOpen }) {
           'Content-Type': 'application/json',
         },
       };
+
       try {
         const res = await fetch(
-          `https://artifynft.onrender.com/balance/${address}`,
+          `https://artifynft.onrender.com/balance/${id}`,
           options,
         );
         const data = await res.json();
