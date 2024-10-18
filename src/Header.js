@@ -44,7 +44,9 @@ function Header({ isOpen, setIsOpen }) {
               className="text-white Artify-div pr-4 cursor-pointer md:pr-6"
               onClick={home}
             >
-              <p className="lg:text-2xl text-xl font-semibold ">ArtifyNft's</p>
+              <p className="lg:text-2xl text-xl font-semibold ">
+                StrokesArtify
+              </p>
             </div>
 
             <div className="text-white cursor-pointer   text-lg hidden sm:block hover:text-gray-200 font-semibold">

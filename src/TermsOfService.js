@@ -15,32 +15,35 @@ function Terms() {
       </h2>
       <div className="md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
-          Welcome to ArtifyNft's (www.ArtifyNfts.com). We are excited to offer a
-          cutting-edge platform where creators, collectors, and enthusiasts can
-          interact with and trade Non-Fungible Tokens (NFTs). These Terms and
-          Conditions (the "Terms") are designed to outline the rules and
-          guidelines for your use of the Website, including but not limited to,
-          accessing our marketplace, purchasing, selling, and creating NFTs, as
-          well as engaging with the community. These Terms govern all aspects of
-          your use of the Website and related services. By accessing or using
-          the Website, you acknowledge that you have read, understood, and agree
-          to be bound by these Terms, our Privacy Policy, and any other
-          applicable agreements or policies that may be in effect from time to
-          time. If you do not agree to any part of these Terms, please
-          discontinue your use of the Website immediately. The Website serves as
-          a marketplace for NFTs, which are unique digital assets stored on the
-          blockchain. These NFTs may represent digital artwork, collectibles, or
-          other digital content, each with its own distinct value and ownership
-          rights. Whether you are a creator minting NFTs or a buyer looking to
-          collect, it is important to understand that blockchain-based
-          transactions carry inherent risks, and we advise users to exercise
-          caution and conduct thorough research before participating in any
-          transactions. Please note that by using our services, you are
-          participating in a decentralized, blockchain-based system where
-          transactions are irreversible and cannot be modified by the Website.
-          You assume full responsibility for ensuring that your interactions
-          with the Website are in compliance with all applicable laws,
-          regulations, and the conditions outlined in these Terms.
+          Welcome to StrokesArtify{' '}
+          <a href="https://strokesartify.com" className="text-blue-400 ">
+            www.StrokesArtify.com
+          </a>{' '}
+          . We are excited to offer a cutting-edge platform where creators,
+          collectors, and enthusiasts can interact with and trade Non-Fungible
+          Tokens (NFTs). These Terms and Conditions (the "Terms") are designed
+          to outline the rules and guidelines for your use of the Website,
+          including but not limited to, accessing our marketplace, purchasing,
+          selling, and creating NFTs, as well as engaging with the community.
+          These Terms govern all aspects of your use of the Website and related
+          services. By accessing or using the Website, you acknowledge that you
+          have read, understood, and agree to be bound by these Terms, our
+          Privacy Policy, and any other applicable agreements or policies that
+          may be in effect from time to time. If you do not agree to any part of
+          these Terms, please discontinue your use of the Website immediately.
+          The Website serves as a marketplace for NFTs, which are unique digital
+          assets stored on the blockchain. These NFTs may represent digital
+          artwork, collectibles, or other digital content, each with its own
+          distinct value and ownership rights. Whether you are a creator minting
+          NFTs or a buyer looking to collect, it is important to understand that
+          blockchain-based transactions carry inherent risks, and we advise
+          users to exercise caution and conduct thorough research before
+          participating in any transactions. Please note that by using our
+          services, you are participating in a decentralized, blockchain-based
+          system where transactions are irreversible and cannot be modified by
+          the Website. You assume full responsibility for ensuring that your
+          interactions with the Website are in compliance with all applicable
+          laws, regulations, and the conditions outlined in these Terms.
         </p>
       </div>
       <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
@@ -227,9 +230,9 @@ function Terms() {
           You have any questions regarding these Terms, please contact us at{' '}
           <a
             className="text-blue-300 md:ml-2 underline md:font-semibold  font-medium text-base"
-            href="mailto:info@ArtifyNfts.com"
+            href="mailto:info@StrokesArtify.com"
           >
-            info@ArtifyNfts.com
+            info@StrokesArtify.com
           </a>{' '}
           .
         </p>

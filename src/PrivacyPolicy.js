@@ -13,12 +13,12 @@ function PrivacyPolicy() {
       </h2>
       <div className="md:ml-12 mr-4 ml-6 mb-8 md:mr-8">
         <p className="text-white text-base font-semibold">
-          At [ArtifyNft'safeguard], we value your privacy and are committed to
-          protecting your personal information. This Privacy Policy explains how
-          we collect, use, disclose, and safeguard your data when you visit our
-          website [www.yournftwebsite.com] and use our services, including any
-          mobile applications, and when you interact with our platform for NFT
-          purchases, sales, or transfers.
+          At [ StrokesArtify safeguard], we value your privacy and are committed
+          to protecting your personal information. This Privacy Policy explains
+          how we collect, use, disclose, and safeguard your data when you visit
+          our website [www.yournftwebsite.com] and use our services, including
+          any mobile applications, and when you interact with our platform for
+          NFT purchases, sales, or transfers.
         </p>
       </div>
       <h2 className="text-white  md:mt-8 mt-6 mb-4  md:mb-8 pl-6 md:pl-12 md:ml-0 font-semibold text-xl">
@@ -289,9 +289,9 @@ function PrivacyPolicy() {
           technology.
           <a
             className="text-blue-300 md:ml-2 underline md:font-semibold  font-medium text-base"
-            href="mailto:info@ArtifyNfts.com"
+            href="mailto:info@StrokesArtify.com"
           >
-            info@ArtifyNfts.com
+            info@StrokesArtify.com
           </a>{' '}
           .
         </p>

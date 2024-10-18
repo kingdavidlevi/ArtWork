@@ -85,7 +85,7 @@ function MainHeader({
                 </div>
               ) : (
                 <p className="lg:text-2xl text-xl font-semibold ">
-                  ArtifyNft's
+                  StrokesArtify
                 </p>
               )}
             </div>
