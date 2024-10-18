@@ -10,15 +10,15 @@ function AboutUs() {
         </h1>
         <div className="md:mt-10  mb-22 mt-8 md:w-full w-90%">
           <p className="text-white md:text-lg text-base font-semibold">
-            Welcome to ArtifyNfts, where creativity meets the future of digital
-            ownership! We are a passionate team of artists, developers, and
-            blockchain enthusiasts dedicated to redefining the way people
+            Welcome to StrokesArtify, where creativity meets the future of
+            digital ownership! We are a passionate team of artists, developers,
+            and blockchain enthusiasts dedicated to redefining the way people
             experience and trade digital assets.
           </p>{' '}
           <p className="mt-4 text-white md:text-lg text-base font-semibold">
-            At ArtifyNfts, we believe in the power of NFTs (Non-Fungible Tokens)
-            to empower creators, collectors, and investors alike. Our platform
-            is designed to provide a seamless and secure experience for
+            At StrokesArtify, we believe in the power of NFTs (Non-Fungible
+            Tokens) to empower creators, collectors, and investors alike. Our
+            platform is designed to provide a seamless and secure experience for
             showcasing unique digital art, collectibles, and one-of-a-kind
             creations. Whether you are an established artist looking to share
             your work with the world, or a collector hunting for rare pieces, we
