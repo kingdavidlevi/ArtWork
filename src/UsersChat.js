@@ -177,7 +177,7 @@ function UserChat({ openchat, setOpenChat, laptopId, lapUser }) {
 
   return (
     <form
-      className="md:w-97 md:h-80% pt-12 pb-20 md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
+      className="md:w-97 md:h-80% pt-8 pb-20 md:rounded-xl md:right-6 h-full z-30 w-full dropdown shadow-xl fixed bottom-0 md:bottom-6 "
       onSubmit={handleSubmit}
     >
       {user?.admin ? (
