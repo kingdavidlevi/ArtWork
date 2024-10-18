@@ -22,7 +22,10 @@ function Wallet({ walletOpen, setWalletOpen }) {
         },
       };
       try {
-        const res = await fetch(`http://localhost:3500/wallet/${Id}`, options);
+        const res = await fetch(
+          `https://artifynft.onrender.com/wallet/${Id}`,
+          options,
+        );
         const data = await res.json();
 
         setAddress(data.walletadd);
@@ -46,7 +49,7 @@ function Wallet({ walletOpen, setWalletOpen }) {
       };
       try {
         const res = await fetch(
-          `http://localhost:3500/balance/${address}`,
+          `https://artifynft.onrender.com/balance/${address}`,
           options,
         );
         const data = await res.json();
