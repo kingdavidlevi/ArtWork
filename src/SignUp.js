@@ -66,7 +66,6 @@ function SignUp() {
         localStorage.setItem('Id', data.UserId);
         navigate('/');
         setLoading(false);
-        console.log(data);
       } else {
         setErrorMessage(data);
       }
