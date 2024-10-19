@@ -2,15 +2,21 @@ import { useState } from 'react';
 import { FaImage } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
-
+import { FaTriangleExclamation } from 'react-icons/fa6';
 import { useEffect } from 'react';
 
 function TrendingNfts() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false); // Should be a boolean, not a string
-  const [latestsource, setLatestSource] = useState(null); // Set initial state to null
+  const [latestsource, setLatestSource] = useState(null);
+
+  // Set initial state to null
   const params = useParams();
+  const [hasInsufficientFunds, setHasInsufficientFunds] = useState(false);
+  const [textInsufficient, setInsufficient] = useState(
+    'Insufficient funds, please fund your wallet',
+  );
 
   const home = () => {
     navigate(-1);
@@ -24,9 +30,9 @@ function TrendingNfts() {
   };
 
   useEffect(() => {
-    const fetchTrending = async () => {
+    const fetchLatestCollection = async () => {
       setLoading(true);
-      setErrorMessage(null);
+
       const options = {
         method: 'GET',
         headers: {
@@ -40,20 +46,76 @@ function TrendingNfts() {
           options,
         );
         const data = await response.json();
-
+        console.log(data);
         setLatestSource(data);
       } catch (error) {
-        setErrorMessage(error.message);
+        setErrorMessage(error.message); // Set error message
       } finally {
         setLoading(false);
       }
     };
 
-    fetchTrending();
+    fetchLatestCollection();
   }, [params.id]);
-
+  const buyItem = () => {
+    setHasInsufficientFunds(true);
+    setTimeout(() => setHasInsufficientFunds(false), 8000);
+  };
+  const truncateinsufficientText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '' : str;
+  };
+  const truncateLongText = (str) => {
+    return str.length > 37 ? str.substring(37) : ''; // Return substring from 38th character onwards
+  };
   return (
     <section className="bg-black w-full pb-10 min-h-screen relative">
+      <section className="slide-in">
+        {hasInsufficientFunds && (
+          <div className="  dropdown md:w-100 w-90% md:flex justify-center gap-3    rounded-md py-5  mt-24   ">
+            <p className="text-white md:block hidden md:text-lg text-sm font-medium">
+              {textInsufficient}{' '}
+            </p>
+            <p className="text-white md:hidden md:text-lg text-base font-medium">
+              {truncateinsufficientText(textInsufficient, 37)}
+            </p>
+            <section className="flex gap-1 mt-2 justify-center md:hidden">
+              <p className="text-white md:hidden md:text-lg text-base font-medium">
+                {truncateLongText(textInsufficient)}
+              </p>
+              <div className="relative flex items-center">
+                <FaTriangleExclamation className="text-lg  text-red-500 " />
+
+                <span
+                  className="absolute text-base text-white"
+                  style={{
+                    top: '60%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  !
+                </span>
+              </div>
+            </section>
+            <section className="hidden md:block">
+              <div className="relative flex items-center">
+                <FaTriangleExclamation className="text-lg md:mt-1 text-red-500 mt-0.5" />
+
+                <span
+                  className="absolute text-base text-white"
+                  style={{
+                    top: '60%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  !
+                </span>
+              </div>
+            </section>
+          </div>
+        )}
+      </section>
       <div
         className="absolute top-4 left-6 cursor-pointer h-8 w-8 rounded-full grid place-items-center z-20"
         onClick={home}
@@ -121,7 +183,10 @@ function TrendingNfts() {
                       <span className="mr-1">{item.price}</span>ETH
                     </p>
                   </section>
-                  <button className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white">
+                  <button
+                    className="w-full py-2 mt-3 rounded-md form btn text-base font-medium text-white"
+                    onClick={buyItem}
+                  >
                     Buy
                   </button>
                 </div>

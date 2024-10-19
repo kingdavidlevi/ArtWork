@@ -70,7 +70,7 @@ function MainHeader({
   return (
     <section>
       {!toggleSearch ? (
-        <div className="w-full md:px-8 px-3   z-10 glass-header  h-18 flex place-items-center justify-between ">
+        <div className="w-full md:px-8 px-3   z-20 glass-header  h-18 flex place-items-center justify-between ">
           <div
             className=" relative flex xl:gap-10 gap-5 "
             onClick={toggleHeaderWallet}

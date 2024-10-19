@@ -505,6 +505,11 @@ html {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+#google_translate_element {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 /* Spinner animation */
 @keyframes spin {
@@ -540,4 +545,24 @@ input[type='number'] {
 }
 img {
   pointer-events: none; /* Prevents any mouse interaction */
+}
+
+/* Hide Google Translate top bar */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important; /* Fixes any shifting caused by the hidden header */
+}
+
+/* Hide the Google Translate iframe container */
+.goog-te-gadget-icon {
+  display: none !important; /* Hide the icon */
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
