@@ -39,7 +39,7 @@ function AboutUs() {
         </h1>
         <section className="mt-4 flex gap-6">
           <div>
-            <a href="mailto:support@strokesartify.com">
+            <a href="mailto:strokesartify@gmail.com">
               <FaEnvelope className="text-white text-2xl" />
             </a>
           </div>
@@ -55,7 +55,7 @@ function AboutUs() {
         <h1 className="text-white text-lg font-semibold  md:text-2xl md:font-semibold">
           Need help?
         </h1>
-        <a href="mailto:support@strokesartify.com">
+        <a href="mailto:strokesartify@gmail.com">
           <button className="text-white md:mt-5 mt-3 font-semibold text-base rounded-lg md:px-14 px-8 py-3 bg-blue-600">
             Contact Support
           </button>
