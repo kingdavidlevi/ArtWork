@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Eth from './Images/download (2).png';
+
+import { FaTriangleExclamation } from 'react-icons/fa6';
 import metamask from './Images/download (3).png';
 
 import { FaCopy, FaArrowLeft } from 'react-icons/fa';
@@ -10,7 +12,11 @@ function Wallet({ walletOpen, setWalletOpen }) {
   const [copied, setCopied] = useState(false);
   const [address, setAddress] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [hasInsufficientFunds, setHasInsufficientFunds] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [textInsufficient, setInsufficient] = useState(
+    'Minimum withdrawal 1 ETH',
+  );
   const Id = localStorage.getItem('Id');
   useEffect(() => {
     const fetchWallet = async () => {
@@ -78,12 +84,27 @@ function Wallet({ walletOpen, setWalletOpen }) {
   const back = () => {
     setWalletOpen(false);
   };
+
+  const truncateinsufficientText = (str, maxLength) => {
+    return str.length > maxLength ? str.substring(0, maxLength) + '' : str;
+  };
+  const truncateLongText = (str) => {
+    return str.length > 37 ? str.substring(37) : ''; // Return substring from 38th character onwards
+  };
+
+  const withdrawbtn = (e) => {
+    e.preventDefault();
+    setHasInsufficientFunds(true);
+    setTimeout(() => setHasInsufficientFunds(false), 8000);
+  };
+
   return (
     <section className="md:top-20   top-0 h-screen md:h-fit z-20 dropdown md:right-24 pt-4 pb-8 fixed w-full md:w-83">
       <FaArrowLeft
         className="white md:hidden top-6 text-white absolute left-10"
         onClick={back}
       />
+
       <section className="h-12 flex justify-center gap-2 ul">
         <h1 className="text-white text-xl">Wallet</h1>
         <img src={metamask} className="h-6 w-6 mt-1  " />
@@ -148,7 +169,12 @@ function Wallet({ walletOpen, setWalletOpen }) {
             type="text"
             placeholder="Enter Withdrawal address"
           />
-          <p className="text-white mt-6  w-90% text-base font-normal">
+          {hasInsufficientFunds && (
+            <p className="text-red-500 w-90% font-normal text-sm">
+              Minimum withdrawal 1 ETH
+            </p>
+          )}
+          <p className="text-white mt-4  w-90% text-base font-normal">
             Withdrawal amount
           </p>
           <p className="text-white   right-10 top-36 mt-1.5  absolute text-base font-normal">
@@ -159,7 +185,10 @@ function Wallet({ walletOpen, setWalletOpen }) {
             type="text"
             placeholder="Amount"
           />
-          <button className="py-2.5  bg-black text-base md:mt-8 mt-10 rounded-md   text-white px-10">
+          <button
+            className="py-2.5  bg-black text-base md:mt-8 mt-10 rounded-md   text-white px-10"
+            onClick={withdrawbtn}
+          >
             Withdraw
           </button>
         </form>
