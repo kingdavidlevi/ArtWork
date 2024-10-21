@@ -15,7 +15,7 @@ function MainLatest() {
   };
 
   const viewCollections = (id) => {
-    navigate(`LatestNfts/${id}`);
+    navigate(`/LatestNfts/${id}`);
   };
 
   useEffect(() => {

@@ -15,7 +15,7 @@ function MainTrending() {
   };
 
   const viewCollections = (id) => {
-    navigate(`TrendingNfts/${id}`);
+    navigate(`/TrendingNfts/${id}`);
   };
 
   useEffect(() => {

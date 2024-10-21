@@ -15,7 +15,7 @@ function MainPhotography() {
   };
 
   const viewCollections = (id) => {
-    navigate(`PhotographyNft/${id}`);
+    navigate(`/PhotographyNft/${id}`);
   };
 
   useEffect(() => {

@@ -29,7 +29,7 @@ function MainHomePage() {
   };
   const Explore = () => {
     setExplorer((prevstate) => !prevstate);
-    navigate('MainCollection');
+    navigate('/MainCollection');
   };
   const Nft = () => {
     navigate('/CreateNft');

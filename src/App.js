@@ -41,7 +41,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<MainHomePage />} />
         <Route path="Terms" element={<Terms />} />
         <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="MainCollection" element={<MainCollection />} />
+        <Route path="/MainCollection" element={<MainCollection />} />
       </Route>
       <Route element={<ScrollToTop />}>
         <Route path="Homepage" element={<Homepage />} />
