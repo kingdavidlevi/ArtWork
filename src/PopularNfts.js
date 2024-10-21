@@ -19,7 +19,7 @@ function PopularNfts() {
   );
 
   const home = () => {
-    navigate(-1);
+    navigate('/');
   };
 
   const truncateText = (str, maxLength) => {
